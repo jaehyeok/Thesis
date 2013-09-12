@@ -1,0 +1,243 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Exclusion of the Standard Model Higgs Boson} 
+The procedure of calculating observed limit is described in this section.
+The detailed description can be found in \cite{combination_stat}.
+
+\begin{itemize}
+%
+\item{\textbf{Step 1 : Construct likelihood function based on Poisson statistics} } \\
+\begin{eqnarray} 
+\mathcal{L} ( X | \mu, \theta) 
+\, = \,
+\prod_{i}^{N_{bin}} \frac{ \left( \mu s_i(\theta) + b_i(\theta) \right)^{X_i}}{X_i!} 
+\, e^{ - \mu s_i(\theta) - b_i(\theta) }   \times
+\prod_{j}^{N_{nuisance}} p\left( \tilde{\theta_j} | \theta_j \right)
+\end{eqnarray}
+The $X=\left\{X_i\right\}$ is a set of measurements which can be   
+can be the real data from measurement or a pseudo-data generated 
+to construct $pdf$s on a given hypothesis. $N_{bin}$ is the number of 
+measurements which corresponds to number of bins in the shape analysis. 
+$\mu$ indicates the signal strength (signal strength modifier).
+$\theta$ is the all nuisance parameters in consideration. 
+$s_i(\theta)$ and $b_i(\theta)$ are expected signal and background 
+yields, respectively, in the $i^{th}$ measurement(bin).
+$p\left( \tilde{\theta_j} | \theta_j \right)$ is the \textit{pdf} for 
+$\theta_j$ which is constructed from auxiliary measurements or some  
+assumptions. $\theta_j$ is the measured or assumed value of $\theta$. 
+\textcolor{red}{need more explanation on the prior. 
+especailly why its frequentist approach}  
+%
+\item{\textbf{Step 2 : Construct a test static, $\tilde{q}_\mu$} }  \\
+By Neyman-Pearson lemma [ref], the ratio of two likelihoods, 
+\textit{i.e. signal+backgrond} and \textit{background-only}, 
+is the most powerful discriminator. 
+Log of the raio is taken because of a number of advantages
+\footnote{Log converts multiplication of likelihoods into linear summation. 
+Terms in exponent becomes a mulitplication factor.}.  
+At LHC, due to its asymtotic properties which is described in detail 
+in Appendix \ref{ch:app_stat}, the profiled log-likelihood ratio (LLR) is used as a test static.   
+\begin{eqnarray} 
+\tilde{q}_\mu 
+= 
+\left\{ \begin{array}{l l}
+\displaystyle
+-2 \ln \frac{\mathcal{L} ( X | \mu, \hat{\theta}_\mu)}
+            {\mathcal{L} ( X | \hat{\mu}, \hat{\theta})}  
+            & \quad \quad \quad \quad \textrm{if } 0 \le \hat{\mu} \le \mu \\
+0           & \quad \quad \quad \quad \textrm{otherwise}
+\end{array} \right.
+\end{eqnarray}  
+$\hat{\theta}_\mu$ is the bestf-fit value of $\theta$ for a given $\mu$. 
+$\hat{\mu}$ and $\hat{\theta}$ are the best-fit values from global fit on data. 
+The requirement $0 \le \hat{\mu}$ is imposed because signal rate must be positive. 
+$\hat{\mu} \le \mu$ constrains for one-sided confidence level. 
+This also means that the region, $\mu < \hat{\mu}$, is not considered  
+more incompatable than the data observed, $\hat{\mu}$. This region 
+is not tested for setting upper limits.
+%For example, if $\hat{\mu}=1$ then we do not test for $\mu=0.5$ 
+%because $\mu=0.5$ is not less compatible than  
+%
+\item{\textbf{Step 3 : Find the observed values}}  \\
+Find the observed values of the test static ($\tilde{q}_\mu^{obs}$), and 
+nuisance parameters ($\hat{\theta}_\mu^{obs}$ and $\hat{\theta}_0^{obs}$)
+that maximize the likelihoods. 
+$\mathcal{L} ( X | \mu, \hat{\theta}_\mu)$ is used to calculate
+$\tilde{q}_\mu^{obs}$ and $\hat{\theta}_\mu^{obs}$ for \textit{signal + background}
+hypothesis with the given signal strength modifier, $\mu$,
+and $\mathcal{L} ( X | 0, \hat{\theta}_0)$ is used to get $\hat{\theta}_0^{obs}$
+for \textit{background-only} hypothesis.    
+%
+\item{\textbf{Step 4 : Construct \textit{pdf}s for \textit{signal + background} 
+       and \textit{background-only} hypotheses} } \\
+Using the profiled nuisance parameters, $\hat{\theta}_\mu^{obs}$ and $\hat{\theta}_0^{obs}$, 
+Monte-Carlo toys are generated to construct \textit{pdf}s for \textit{signal + background}
+and \textit{background-only} hypotheses, 
+$f\left( \hat{q}_\mu | \mu, \hat{\theta}_\mu^{obs} \right)$ and 
+$f\left( \hat{q}_\mu | 0, \hat{\theta}_0^{obs} \right)$, respectively.
+Since generating toys requires a large consumption of CPU power, 
+we can take advantage of the fact that $\tilde{q}_\mu^{obs}$ follows 
+a half $\chi^2$ in the asymtotic limit, \textit{i.e.} infinite statistics.
+This is true if $\hat{\mu}>0$ \textcolor{red}{WHY not equal sign here?} 
+is not applied. But, even with the requirement $\hat{\mu}>0$, 
+$\tilde{q}_\mu$ can be calculated analytically
+\begin{eqnarray} 
+f\left( \tilde{q}_\mu | \mu \right) 
+= 
+\frac{1}{2} \delta \left( \tilde{q}_\mu \right)  + 
+\left\{ \begin{array}{l l}
+\displaystyle
+\frac{1}{2\sqrt{2\pi}} \frac{1}{\sqrt{\tilde{q}_\mu}}  e^{-\tilde{q}_\mu/2}
+   & \quad \quad \quad 0 < \tilde{q}_\mu \le \mu^2/\sigma^2 \\
+\frac{\sigma}{2\sqrt{2\pi}\mu} 
+   \textrm{exp}\left[-\frac{1}{2} \frac{(\tilde{q}_\mu^2+\mu^2/\sigma^2)^2}{(2\mu/\sigma)^2}   \right]
+   & \quad \quad \quad \tilde{q}_\mu > \mu^2/\sigma^2 
+\end{array} \right.
+\end{eqnarray} 
+where $\delta(\tilde{q}_\mu)$ is Dirac delta function.
+$\displaystyle \sigma^2 = \frac{\mu^2}{q_{\mu,A}}$ 
+is the uncertainty on the test statistics evaluated using Asimov data set. 
+Asimov dataset is a representative dataset made with expected background 
+and nuisance parameters. This is the dataset that corresponds to the infinite statistics. 
+In this analysis expected sensitivity(exclusion and significance) is calculated 
+in the asymtotic limit.
+Similarly, the $pdf$ for the \textit{background-only} hypothesis,
+$f\left( \tilde{q}_\mu | 0 \right)$, can be obtained 
+using the same technique. The two $pdf$s are used to construct 
+a measure for hypothesis test.
+
+%
+\item{\textbf{Step 5 : Calculated statistical significance of observation }}  \\
+For the measurement X, the test static,$\tilde{q}_\mu^{obs}$, can be used to 
+test significance of the observation. At LEP, modified frequentist method 
+($\textrm{CL}_\textrm{s}$) 
+was developed in order to mitigate the problem of having downward fluctuation 
+in data where small signal strength. LHC uses the same techique. 
+$\textrm{CL}_\textrm{s}$ is defined by two p-values, $p_\mu$ and $1-p_b$. 
+$p_\mu$ is the p-value with \textit{signal + background} hypothesis and defined by 
+\begin{eqnarray} 
+p_\mu
+&=& P\left(\tilde{q}_\mu \ge \tilde{q}_\mu^{obs} | signal+background \right)  \\
+&=& \int^{\infty}_{\tilde{q}_\mu^{obs}}  f\left(  \tilde{q}_\mu | \mu \right) d\tilde{q}_\mu.
+\end{eqnarray} 
+Larger value of $p_\mu$ represents a high chance that observation is compatible 
+with the hypothesed signal strength, $\mu$.
+$1-p_b$ is the p-value with \textit{background-only} hypothesis and defined by 
+\begin{eqnarray} 
+1-p_b
+&=& P\left(\tilde{q}_\mu \ge \tilde{q}_\mu^{obs} | background-only \right)  \\
+&=& \int^{\infty}_{\tilde{q}_\mu^{obs}}  f\left(  \tilde{q}_\mu | 0 \right) d\tilde{q}_\mu.
+\end{eqnarray} 
+Larger value of $1-p_0$ represents a high chance that observation is compatible 
+with the null hypothesis, $\mu=0$. Thus, $p_b$ is low if data is 
+\textit{signal + background}-like. 
+$\textrm{CL}_\textrm{s}$ is defined as a ratio of the two p-values 
+\begin{eqnarray} 
+\textrm{CL}_\textrm{s} \left( \mu \right) = \frac{p_\mu}{1 - p_b}.   
+\end{eqnarray} 
+Upper limit on $\mu$ at $\alpha$\% Conficence level is the value of $\mu$  
+which gives $\textrm{CL}_\textrm{s} = 1 - \alpha \%$ . Writing for $\mu$, 
+\begin{eqnarray} 
+\mu^{\alpha \%} = \textrm{CL}_\textrm{s}^{-1} ( 1-\alpha\%).
+\end{eqnarray} 
+In this case, the \textit{signal+background} hypothesis with $\mu > \mu^{\alpha \%}$
+is incompatible with data and said to be excluded at $\alpha\%$ $\textrm{CL}_\textrm{s}$ 
+confidence level.
+It is useful to know how expected $\mu^{\alpha \%}$ varies by fluctuation in data
+because even though the true $\mu$ (call it $\mu'$) is correct, data we actually observe 
+can have different value by statistical fluctuation.  
+The median expected limits and its uncertainty bands($\pm N\sigma$) 
+assuming \textit{background-only} hypothesis ($\mu'=0$) are given by 
+\begin{eqnarray} 
+\mu^{up}_{\pm N\sigma} 
+= 
+\sigma \left( \Phi^{-1}(1-\alpha) \pm N \right). 
+\end{eqnarray} 
+where $\Phi$ is a cumulative distribution of standard normal distribution.
+\textcolor{red}{Why is equation different in \cite{combination_stat}? 
+Where is $\Phi(N)$ from? Real results have asym bands. How can explain this?}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Discovery of a New Boson}
+In order to claim a discovery of a new particle, we test the compatibilty of 
+\textit{background-only} hypothesis against data. Large deviation in p-value 
+indicates that the observed data is not compatible with \textit{background-only} 
+hypothesis, thus something "new'' needs to be taken into account. 
+This test can be performed by throwing many "pseudo-data'' assuming 
+\textit{background-only} hypothesis and contruct \textit{pdf} for the choice 
+of test statistic. The choice of test statistic is the following. 
+\begin{eqnarray} 
+q_0
+=
+\left\{ \begin{array}{l l}
+\displaystyle
+-2 \ln \frac{\mathcal{L}( X | 0, \hat{\theta}_0)}
+            {\mathcal{L}( X | \mu, \hat{\theta}_\mu)} 
+             & \qquad \textrm{ with } \hat{\mu} \ge 0 \\   
+0 
+             & \qquad \textrm{ with } \hat{\mu} < 0    
+\end{array} \right.
+\end{eqnarray} 
+We don't consider downward fluctuation in data($\hat{\mu} < 0$) as a 
+incompatiblity with data as upward fluctuation. Downward fluctuation 
+is more likely due to systematic uncertainties such as over-estimation 
+of backgrounds. So, in case of $\hat{\mu} < 0$ the test statistic is 
+set 0. Given the test statistic, construct \textit{pdf}, $f(q_0|0,\hat{\theta}_0)$, 
+with many pseudo-datasets generated assuming \textit{background-only} hypothesis.
+The p-value for the observation, $q_0^{obs}$, is given by 
+\begin{eqnarray} 
+p_0
+&=& P \left( q_0 \ge q_0^{obs} | background-only \right)  \\
+&=& \int^{\infty}_{ q_0^{obs} }  f\left( q_0 | 0, \hat{\theta}_0 \right) dq_0.
+\end{eqnarray} 
+The calculated p-value can be converted into an one-sided(\textcolor{red}{Why one-sided?}) 
+significance Z by finding Z that satisfies 
+\begin{eqnarray} 
+p-value 
+= 
+\int^{\infty}_{Z} \frac{1}{\sqrt{2\pi}} e^{ -\frac{x^2}{2}} dx.   
+\end{eqnarray} 
+In the asymtotic limit, the \textit{pdf} is given by 
+\begin{eqnarray} 
+f\left(q_0 | 0, \hat{\theta}_0 \right) 
+= 
+\frac{1}{2} \delta \left(q_0\right)  
++ 
+\frac{1}{2\sqrt{2\pi}\sqrt{q_0}} e^{-\frac{q_0}{2}}.
+\end{eqnarray} 
+In this case p-value can be obtained by 
+\begin{eqnarray}
+p_0 = 1 - \Phi \left( \sqrt{q_0} \right).
+\end{eqnarray} 
+Using this equation, the significance is given by  
+\begin{eqnarray} 
+Z_0 = \Phi^{-1} \left( 1 - p_0 \right) = \sqrt{q_0}.
+\end{eqnarray} 
+
+The sensitivity to discovery of a process is often measured by 
+expected significance. It is the p-value obtained by a pseudo-dataset 
+assuming $\mu=1$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Hypothesis Separation} 
+Once a particle is observed, it is important to test its properties 
+such as mass, spin, parity, \textit{etc}. It is shown that the full leptonic 
+WW analysis is sensitive to distinguish between SM model hypothesis and a spin-2 
+resonance, which couples to the dibosons through minimal couplings \cite{spin2_ref}. 
+
+We perform MLL fit to each hypothesis to extract the signal strength and 
+background contributions. The same likelihood function as SM Higgs search 
+is used. For a given dataset, MLL fits for both hypotheses are performed. 
+In the likelihood calculation, the signal strength is allowed to float as 
+SM Higgs search. The signal strength and nuisance parameters of the two 
+hypotheses are treated independently. The difference in the best-fit likelihoods 
+\begin{eqnarray}
+q
+=
+-2 \ln \frac{\mathcal{L}_{2^+_{min}}}{\mathcal{L}_{0^+}}
+=
+-2 \ln \frac{\mathcal{L}\left( X | \hat{\mu}_{2^+_{min}}, \hat{\theta}_{2^+_{min}} \right)}
+            {\mathcal{L}\left( X | \hat{\mu}_{0^+}, \hat{\theta}_{0^+} \right)}
+\end{eqnarray} 
+is used to quantify the consistenby of data to the two hypothesis.   
+

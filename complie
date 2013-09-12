@@ -1,0 +1,5 @@
+#!/bin/sh 
+
+pdflatex thesis_jae
+bibtex thesis_jae
+pdflatex thesis_jae
