@@ -97,6 +97,7 @@
 
 % defined by Jae
 \usepackage{color}
+\usepackage{multirow}
 \input{commands.tex}
 
 \begin{document}
@@ -128,14 +129,9 @@
 \include{lhc_cms}
 
 %
-\chapter{Event Reconstruction}
-\label{ch:event_reconstruction}
-\include{event_reconstruction}
-
-%
-\chapter{Event Selection}
-\label{ch:event_selection}
-\include{event_selection}
+\chapter{Event Reconstruction and Selection}
+\label{ch:event_reconstruction_selection}
+\include{event_reconstruction_selection}
 
 %
 \chapter{Efficiency Measurements}
@@ -158,6 +154,11 @@
 \include{systematics}
 
 %
+\chapter{Fit Validation}
+\label{ch:fit_validation}
+\include{fit_validation}
+
+%
 \chapter{Statistical Interpretation}
 \label{ch:stat_interpret}
 \include{stat_interpret}
@@ -177,9 +178,6 @@
 \label{ch:app_stat}
 \include{app_stat}
 
-%
-\chapter{next appendix}
-
 
 
 
@@ -189,7 +187,7 @@
 %               but haven't cited in the braces.
 \bibliographystyle{unsrt}  %% This is just my personal favorite style. 
 %                              There are many others.
-\bibliography{reference.bib}  %% This looks for the bibliography in myrefs.bib 
+\bibliography{reference}  %% This looks for the bibliography in myrefs.bib 
 %                                which should be formatted as a bibtex file.
 \end{document}
 

@@ -1,0 +1,88 @@
+\contentsline {frontmatter}{\numberline {}Signature Page}{iii}
+\contentsline {frontmatter}{\numberline {}Dedication}{iv}
+\contentsline {frontmatter}{\numberline {}Epigraph}{v}
+\contentsline {frontmatter}{\numberline {}Table of Contents}{vi}
+\contentsline {frontmatter}{\numberline {}Acknowledgements}{ix}
+\contentsline {frontmatter}{\numberline {}Vita and Publications}{x}
+\contentsline {frontmatter}{\numberline {}Abstract of the Dissertation}{xi}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}1}Higgs Boson in Standard Model}{1}
+\contentsline {section}{\numberline {1.1}Higgs Mechanism}{2}
+\contentsline {subsection}{\numberline {1.1.1}How particles become massive : Higgs Mechanism}{3}
+\contentsline {section}{\numberline {1.2}Production and Decay of Higgs Boson}{9}
+\contentsline {subsection}{\numberline {1.2.1}Production of Higgs Boson}{9}
+\contentsline {subsection}{\numberline {1.2.2}Decay of Higgs Boson}{12}
+\contentsline {section}{\numberline {1.3}Limits on Higgs Boson Mass}{15}
+\contentsline {subsection}{\numberline {1.3.1}Theoretical Limits}{15}
+\contentsline {subsubsection}{Perturbative Unitarity : $W_L^+W_L^- \rightarrow W_L^+W_L^-$}{15}
+\contentsline {subsubsection}{Triviality and Stability bounds}{17}
+\contentsline {subsubsection}{Fine tuning}{19}
+\contentsline {subsection}{\numberline {1.3.2}Experimental Limits}{21}
+\contentsline {subsubsection}{Indirect search}{21}
+\contentsline {subsubsection}{Direct search}{22}
+\contentsline {section}{\numberline {1.4}\ensuremath {H\to W^+W^-\to 2l2\nu }}{23}
+\contentsline {subsection}{\numberline {1.4.1}Large expected signal yields}{23}
+\contentsline {subsection}{\numberline {1.4.2}Angular distribution of leptons in the final state}{24}
+\contentsline {subsection}{\numberline {1.4.3}Kinematic variables}{25}
+\contentsline {subsection}{\numberline {1.4.4}CMS HWW results as of 2011}{27}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}2}LHC and CMS Detector}{28}
+\contentsline {section}{\numberline {2.1}Large Hadron Collider}{29}
+\contentsline {section}{\numberline {2.2}Compact Muon Solenoid detector}{29}
+\contentsline {subsection}{\numberline {2.2.1}Tracker : pixel and silicon detector}{29}
+\contentsline {subsection}{\numberline {2.2.2}ECAL}{29}
+\contentsline {subsection}{\numberline {2.2.3}HCAL}{29}
+\contentsline {subsection}{\numberline {2.2.4}Magnet}{29}
+\contentsline {subsection}{\numberline {2.2.5}Muon System}{29}
+\contentsline {subsection}{\numberline {2.2.6}Forward : HF}{29}
+\contentsline {subsection}{\numberline {2.2.7}Computing : grid computing}{29}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}3}Event Reconstruction and Selection}{30}
+\contentsline {section}{\numberline {3.1}Trigger}{31}
+\contentsline {subsection}{\numberline {3.1.1}Analysis Triggers}{31}
+\contentsline {subsection}{\numberline {3.1.2}Utility Triggers}{33}
+\contentsline {section}{\numberline {3.2} Event Primary Vertex }{34}
+\contentsline {section}{\numberline {3.3} Electron }{35}
+\contentsline {section}{\numberline {3.4} Muon }{36}
+\contentsline {section}{\numberline {3.5} Jet }{37}
+\contentsline {section}{\numberline {3.6} Missing Transverse Energy }{37}
+\contentsline {section}{\numberline {3.7} Top-tagging }{37}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}4}Efficiency Measurements}{38}
+\contentsline {section}{\numberline {4.1}Lepton Efficiency}{39}
+\contentsline {subsection}{\numberline {4.1.1}Electron Selection Efficiency}{40}
+\contentsline {subsection}{\numberline {4.1.2}Muon Selection Efficiency}{43}
+\contentsline {subsection}{\numberline {4.1.3}Trigger Efficiency}{45}
+\contentsline {section}{\numberline {4.2}Jet Counting Efficiency}{53}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}5}Signal Extraction}{56}
+\contentsline {section}{\numberline {5.1}Cut-based Method}{57}
+\contentsline {section}{\numberline {5.2}Shape-based Method}{57}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}6}Background Estimation}{58}
+\contentsline {section}{\numberline {6.1} WW }{59}
+\contentsline {section}{\numberline {6.2} Top }{59}
+\contentsline {section}{\numberline {6.3} DY }{59}
+\contentsline {section}{\numberline {6.4} W+jets }{59}
+\contentsline {section}{\numberline {6.5} Wgamma(*) }{60}
+\contentsline {section}{\numberline {6.6} DYtt }{60}
+\contentsline {section}{\numberline {6.7} WZ/ZZ }{60}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}7}Systematic Uncertainty}{61}
+\contentsline {section}{\numberline {7.1}Instrumental Uncertainties}{62}
+\contentsline {section}{\numberline {7.2}Background Estimation}{62}
+\contentsline {section}{\numberline {7.3}Theoretical systematic uncertainties to signal}{62}
+\contentsline {subsection}{\numberline {7.3.1}Jet Counting Efficiency}{62}
+\contentsline {subsection}{\numberline {7.3.2}Acceptance}{62}
+\contentsline {subsection}{\numberline {7.3.3}UEPS?}{62}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}8}Fit Validation}{63}
+\contentsline {section}{\numberline {8.1}Validation of Fit Model}{64}
+\contentsline {subsection}{\numberline {8.1.1}Fit Validation with Pseudo data}{64}
+\contentsline {subsection}{\numberline {8.1.2}Fit Validation with Real data}{64}
+\contentsline {subsection}{\numberline {8.1.3}Result on qqWW events : for qqWW}{64}
+\contentsline {section}{\numberline {8.2}Post-fit Analysis}{68}
+\contentsline {subsection}{\numberline {8.2.1}Post-fit result of nuisances}{68}
+\contentsline {subsection}{\numberline {8.2.2}Correlations of nuisances}{71}
+\contentsline {subsection}{\numberline {8.2.3}Post-fit normalization}{74}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}9}Statistical Interpretation}{79}
+\contentsline {section}{\numberline {9.1}Exclusion of the Standard Model Higgs Boson}{80}
+\contentsline {section}{\numberline {9.2}Discovery of a New Boson}{83}
+\contentsline {section}{\numberline {9.3}Hypothesis Separation}{84}
+\contentsline {chapter}{\numberline {Chapter\nobreakspace {}10}Study on Spin-Parity of the New Boson}{85}
+\contentsline {chapter}{\numberline {Appendix\nobreakspace {}A}Some Details on Statistical Procedure}{86}
+\contentsline {section}{\numberline {A.1}Asimov data set}{87}
+\contentsline {section}{\numberline {A.2}Asymtotic behavior of profiled LLR}{87}
+\contentsline {backmatter}{Bibliography}{88}

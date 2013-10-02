@@ -1,0 +1,67 @@
+This is BibTeX, Version 0.99d (TeX Live 2011)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis_jae.aux
+A level-1 auxiliary file: template_frontmatter.aux
+A level-1 auxiliary file: intro_higgs.aux
+A level-1 auxiliary file: lhc_cms.aux
+A level-1 auxiliary file: event_reconstruction.aux
+A level-1 auxiliary file: event_selection.aux
+A level-1 auxiliary file: efficiency_measurement.aux
+A level-1 auxiliary file: signal_extraction.aux
+A level-1 auxiliary file: background_estimation.aux
+A level-1 auxiliary file: systematics.aux
+A level-1 auxiliary file: fit_validation.aux
+A level-1 auxiliary file: stat_interpret.aux
+A level-1 auxiliary file: study_spin.aux
+A level-1 auxiliary file: app_stat.aux
+The style file: unsrt.bst
+Database file #1: reference.bib
+Warning--I didn't find a database entry for "Dittmaier:2012vm"
+Warning--I didn't find a database entry for "31-33"
+Warning--I didn't find a database entry for "optical"
+Warning--empty journal in LEP-2
+Warning--empty journal in spin2_ref
+Name 1 in "G. Cowan, K. Cranmer, E. Gross, and O. Vitells" has a comma at the end for entry cowan_asimov
+while executing---line 944 of file unsrt.bst
+You've used 11 entries,
+            1791 wiz_defined-function locations,
+            533 strings with 5649 characters,
+and the built_in function-call counts, 2146 in all, are:
+= -- 191
+> -- 73
+< -- 0
++ -- 30
+- -- 19
+* -- 138
+:= -- 362
+add.period$ -- 33
+call.type$ -- 11
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 96
+empty$ -- 222
+format.name$ -- 19
+if$ -- 467
+int.to.chr$ -- 0
+int.to.str$ -- 11
+missing$ -- 11
+newline$ -- 58
+num.names$ -- 11
+pop$ -- 21
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 36
+stack$ -- 0
+substring$ -- 149
+swap$ -- 9
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 21
+width$ -- 13
+write$ -- 118
+(There was 1 error message)

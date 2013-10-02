@@ -1,0 +1,68 @@
+\begin{thebibliography}{10}
+
+\bibitem{PhysRevD.49.79}
+V.~Barger, K.~Cheung, A.~Djouadi, B.~A. Kniehl, and P.~M. Zerwas.
+\newblock Higgs bosons: Intermediate mass range at ${e}^{+}{e}^{-}$ colliders.
+\newblock {\em Phys. Rev. D}, 49:79--90, Jan 1994.
+
+\bibitem{Djouadi20081}
+Abdelhak Djouadi.
+\newblock The anatomy of electroweak symmetry breaking: Tome i: The higgs boson
+  in the standard model.
+\newblock {\em Physics Reports}, 457(1–4):1 -- 216, 2008.
+
+\bibitem{Kolda:2000wi}
+Christopher~F. Kolda and Hitoshi Murayama.
+\newblock {The Higgs mass and new physics scales in the minimal standard
+  model}.
+\newblock {\em JHEP}, 0007:035, 2000.
+
+\bibitem{LEP-2}
+{The ALEPH, DELPHI, L3, OPAL Collaborations, the LEP Electroweak Working
+  Group}.
+\newblock {Electroweak Measurements in Electron-Positron Collisions at
+  W-Boson-Pair Energies at LEP}.
+\newblock 2013.
+
+\bibitem{Beringer:1900zz}
+J.~Beringer et~al.
+\newblock {Review of Particle Physics (RPP)}.
+\newblock {\em Phys.Rev.}, D86:010001, 2012.
+
+\bibitem{Chatrchyan201226}
+CMS Collaboration.
+\newblock Combined results of searches for the standard model higgs boson in pp
+  collisions at.
+\newblock {\em Physics Letters B}, 710(1):26 -- 48, 2012.
+
+\bibitem{Aad201249}
+ATLAS Collaboration.
+\newblock Combined search for the standard model higgs boson using up to 4.9
+  \ifb{} of pp collision data at with the atlas detector at the lhc.
+\newblock {\em Physics Letters B}, 710(1):49 -- 66, 2012.
+
+\bibitem{Chatrchyan201291}
+CMS Collaboration.
+\newblock Search for the standard model higgs boson decaying to in the fully
+  leptonic final state in pp collisions at.
+\newblock {\em Physics Letters B}, 710(1):91 -- 113, 2012.
+
+\bibitem{combination_stat}
+CMS~Collaborations The~ATLAS and the LHC Higgs Combination~Group.
+\newblock \textit{Procedure for the LHC Higgs boson search combination in
+  summer 2011}.
+\newblock {\em ATL-PHYS-PUB-2011-11, CMS-NOTE-2011-005}, 2011.
+
+\bibitem{spin2_ref}
+A.~V. Gritsan~\textit{et al} S.~Bolognesi, Y.~Gao.
+\newblock \textit{On the spin and parity of a single-produced resonance at the
+  LHC}.
+\newblock arXiv:1208.4018.
+
+\bibitem{cowan_asimov}
+E.~Gross G.~Cowan, K.~Cranmer and O.~Vitells.
+\newblock \textit{Asymptotic formulae for likelihood-based tests of new
+  physics}.
+\newblock {\em The European Physical Journal C}, \textbf{71}:1--19, 2011.
+
+\end{thebibliography}

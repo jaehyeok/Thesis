@@ -1,0 +1,361 @@
+Discuss how basic objects(vertex, electron, muon, jet, MET, top-tagging) 
+are reconstructed and what selections are.
+Other selections will be discussed in the next chapter, Signal Extraction.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Trigger}
+\label{sec:trigger}
+\begin{itemize} 
+\item \textcolor{red}{list of triggers} 
+\item \textcolor{red}{what are the requirements : already in AN }
+\end{itemize} 
+
+As seen in section~\ref{subsec:kinimetic_variables}, \hww{} events have trailing lepton 
+whose transverse momentum goes down very low for low \mHi{} hypotheses. Triggering low 
+\pt{} leptons is very challenging because of large background events. 
+Therefore, in order to record signal events, we need to trigger on the leading lepton, 
+or on both leptons. The leading lepton option is not possible because the identification 
+and isolation requirements should be very tight and momentum thresholds should be very 
+high to maintain sustainable bandwidth. Thus, we trigger on the both leptons. 
+The double-lepton triggers we designed for this analysis have high efficiency for  
+signal events, but are loose enough to collect events in the several control regions 
+we used for various studies. We also use control region triggers that allow 
+fake rate and lepton selection efficiency measurements with the precision
+good enough for this analysis. 
+
+\textcolor{red}{Where can I check the bandwidth of triggers? want to know 
+the total bandwidth of CMS and the bandwidth of triggers we use}
+
+\subsection{Analysis Triggers}
+
+The double-lepton triggers that are listed in Table~\ref{tab:trg_doublelepton} require 
+two HLT objects and each of them is required to match an L1 seed. The offline lepton \pt{} 
+requirement is 20/10 \GeV, so the online lepton \pt{} reuquirement is a bit looser, 17/8 \GeV, 
+in order to be safe from possible tigher online selection. In addition,
+the longitudinal distance between the two vertices of the leptons is required 
+to be less than 0.2 cm in order to reduce Pile-Up events. 
+
+For electron HLT objects there are additional requirements on
+shower shapes, %(H/E, $\sigma_{\eta\eta}$), 
+track-to-cluster matching, %($|\Delta\eta|$, $|\Delta\phi|$, $|\frac{1}{E}-\frac{1}{p}|$),
+track/calorimeter isolation. %(ECalIso, HCalIso, TrkIso). 
+The exact variables and cut values are described in Table~\ref{tab:trg_requirement_def}.
+In the table, the naming convention of CMS HLT triggers are shown 
+with the corresponding requirements. 
+H/E is the ratio of energy deposit in HCAL to that of ECAL. 
+$\sigma_{\eta\eta}$ is the weighted sum of \Eta{} difference between the 
+seed crystal and the 5x5 crystals surrouding the it.   
+$|\Delta\eta|(|\Delta\phi|)$ is the difference in absolute value between 
+the center of the supercluster and the direction of the track trajectory 
+in \Eta($\phi$) direction.   
+$|\frac{1}{E}-\frac{1}{p}|$ is the difference between the reciprocal of supercluster energy 
+and the reciprocal of the track momentum.  
+$\mathrm{ECalIso/E_T}$, $\mathrm{HCalIso/E_T}$, and $\mathrm{TrkIso/E_T}$ 
+are the sum of the trasverse energy within $dR<0.3$ \textcolor{red}{(checked)} 
+around the center of energy deposit or track trajectory
+divided by the transverse energy, $\mathrm{E_T}$. 
+% E_T(SC) for Ecal, and elecand.pt() for Hcal and Tk (guess this is track momentum)  
+Because simplified algorithm is used for online variables, the variables 
+do not exactly correspond to the offline ones. To account for this, we measure 
+tirgger efficiency with respect to the offline selection and do corrections accordingly. 
+The details on this can be found in~\ref{subsec:trg_eff} where trigger efficiency 
+measurement is discussed.
+\textcolor{red}{what is TkMu8? what is the iso requirement on single muon triggers?} 
+
+\begin{table}[!ht]
+  \centering 
+  \begin{tabular} {l|l}
+  \hline
+  Double-lepton trigger name & L1 seed \\
+  \hline \hline
+  HLT\_Ele17\_CaloIdT\_CaloIsoVL\_TrkIdVL\_TrkIsoVL\_ 	    &  L1\_DoubleEG\_13\_7  \\
+  Ele8\_CaloIdT\_CaloIsoVL\_TrkIdVL\_TrkIsoVL\_v[15-19] 	&                       \\ 
+  %190456-190738 %190762-191419 %191512-194533
+  \hline
+  HLT\_Mu17\_Mu8\_v[16-22] 	    & L1\_DoubleMu\_10\_Open    \\ %190456-193686 %193806-194533
+  HLT\_Mu17\_TkMu8\_v[9-14] 	& OR L1\_DoubleMu\_10\_3p5  \\ %190456-193686 %193806-194533
+  \hline
+  HLT\_Mu17\_Ele8\_CaloIdT\_CaloIsoVL\_ 	& L1\_Mu12\_EG7     \\
+  TrkIdVL\_TrkIsoVL\_v[4-9] 	            &     \\
+  %190456-190738 %190762-191419 %191512-193686 %193806-194533
+  HLT\_Mu8\_Ele17\_CaloIdT\_CaloIsoVL\_	    & L1\_MuOpen\_EG12       \\ 
+  TrkIdVL\_TrkIsoVL\_v[4-9] 	            & OR L1\_Mu3p5\_EG12     \\ 
+  %190456-190738 %190762-191419 %191512-193686 %193806-194533
+  \hline
+  \end{tabular} 
+  \caption{Double-lepton triggers used to collect signal events.} 
+  \label{tab:trg_doublelepton}
+\end{table}
+%
+\begin{table}[!ht]
+  \centering 
+  \begin{tabular} {l|l}
+  \hline
+  Single-lepton trigger name & L1 seed \\
+  \hline \hline
+  HLT\_Ele27\_WP80\_v[8-11] & L1\_SingleEG20 OR L1\_SingleEG22  \\ 
+  %190456-190738 %190762-191419 %191512-194533
+  \hline 
+  HLT\_IsoMu24\_eta2p1\_v[11-15]   & L1\_SingleMu16er  \\  
+  %190456-190738 %190762-193686 %193806-194533
+  \hline \hline
+  \end{tabular}
+  \caption{Single-lepton triggers used to collect signal events.} 
+  \label{tab:trg_singlelepton}
+\end{table}
+
+%
+\begin{table}[!ht]
+ \centering
+ \begin{tabular}{l|c}
+   \hline
+   name                       &  criterion \\
+   \hline \hline
+   \multirow{2}{*}{CaloId\_T} & $\mathrm{H/E < 0.15 (0.10) }$ \\
+                               & $\sigma_{\eta\eta}\mathrm{< 0.011\;(0.031)}$ \\
+    \hline
+   \multirow{2}{*}{CaloId\_VT} & $\mathrm{H/E < 0.05 (0.05) }$ \\
+                               & $\sigma_{\eta\eta}\mathrm{< 0.011\;(0.031)}$  \\
+    \hline \hline
+    \multirow{2}{*}{TrkId\_VL} & $|\Delta\eta|\mathrm{< 0.01\; (0.01)}$ \\
+                               & $|\Delta\phi|\mathrm{< 0.15\;(0.10)}$  \\
+    \hline
+    \multirow{2}{*}{TrkId\_T} & $|\Delta\eta|\mathrm{< 0.008\; (0.008)}$ \\
+                              & $|\Delta\phi|\mathrm{< 0.07\;(0.05)}$ \\
+    \hline \hline
+    \multirow{2}{*}{CaloIso\_VL} & $\mathrm{ECalIso/E_T <0.2\;(0.2)}$ \\
+                                 & $\mathrm{HCalIso/E_T <0.2\;(0.2)}$ \\
+    \hline
+    \multirow{2}{*}{CaloIso\_T} & $\mathrm{ECalIso/E_T <0.15\;(0.075)}$ \\
+                                 & $\mathrm{HCalIso/E_T <0.15\;(0.075)}$ \\
+    \hline
+    \multirow{2}{*}{CaloIso\_VT} & $\mathrm{ECalIso/E_T <0.05\;(0.05)}$ \\
+                                 & $\mathrm{HCalIso/E_T <0.05\;(0.05)}$ \\
+    \hline \hline
+    TrkIso\_VL                   & $\mathrm{TrkIso/E_T <0.2\;(0.2)}$ \\
+    \hline
+    TrkIso\_T                   & $\mathrm{TrkIso/E_T <0.15\;(0.075)}$ \\
+    \hline
+    TrkIso\_VT                   & $\mathrm{TrkIso/E_T <0.05\;(0.05)}$ \\
+    \hline \hline
+    \multirow{8}{*}{WP80} 		& $\mathrm{H/E < 0.10 (0.05) }$ \\
+                               	& $\sigma_{\eta\eta}\mathrm{< 0.01\;(0.03)}$ \\
+    							& $|\Delta\eta|\mathrm{< 0.007\; (0.007)}$ \\
+                               	& $|\Delta\phi|\mathrm{< 0.06\;(0.03)}$  \\
+                               	& $|\frac{1}{E}-\frac{1}{p}|\mathrm{< 0.05\;(0.05)}$  \\
+    							& $\mathrm{ECalIso/E_T <0.15\;(0.10)}$ \\
+                                & $\mathrm{HCalIso/E_T <0.10\;(0.10)}$ \\
+                       			& $\mathrm{TrkIso/E_T <0.05\;(0.05)}$\\
+    \hline
+ \end{tabular}
+ \caption{Summary of requirements applied to electrons in the triggers used for this analysis.
+The selection requirements are given for electrons in the barrel (endcap).
+The abbrevation in the names means L=Loose, VL=Very Loose, T=Tight, and VT=Very Tight.}
+ \label{tab:trg_requirement_def}
+\end{table}
+
+\subsection{Utility Triggers}
+
+The lepton selection efficiency measurements are performed using \tnp{} method
+on \dyll{} events. In order to use \tnp{} method, we should select pure sample 
+of \dyll{} events to reduce systematics due to selecting non-prompt leptons from 
+other background processes or Pile-Up. Apart from analysis triggers, for this 
+kind of study we do not have to select all events, but pure samples with 
+adequate statistics. The single lepton triggers used to collect signal events, 
+listed in Table~\ref{tab:trg_singlelepton}, can be used to also select 
+\dyll{} events. The leading lepton is likely to be triggered, letting the 
+trailing leptons be unbiased sample of leptons that covers wide range of 
+kinematic region that streches to the low \pt region.   
+
+In order to estimate backgrounds such as \wjets{} that have a non-prompt 
+lepton that passes the full lepton selection, we use "fake rate" method.  
+The details of this method are discussed in~\ref{sec:wjets}. 
+In this method we define a looser selection and calculate the ratio of the 
+events that pass the full selection to the events that pass the looser 
+selection using single-lepton events dominated by QCD processes. 
+The ratio is called fake rate. The fake rate differs by event kinematics
+such as \pt{} and \Eta{} of the lepton, and the \pt{} of the leading jet 
+that recoils off the lepton. Given that the leptons in the data sample
+collected by the analysis triggers are trigger objects, the tighest possible 
+loose definition is the trigger requirements of the analysis triggers.
+We devised a set of single-lepton triggers that have the looser or same requirements 
+on leptons as the double-lepton triggers. Note that the single lepton triggers 
+have tighter requirements on leptons. In order to cover large lepton \pt{} range, 
+we use several triggers with different lepton \pt{} thresholds.
+Because the jet \pt{} distribution is exponentially falling, 
+we need triggers that require corrected leading jet \pt{} be greater than 30 \GeV. 
+These triggers give sufficient samples for systematic study on fake rate method. 
+
+%For the data-driven estimation for \dyll{} backgrounds we have alternate method 
+%that uses photon + jets events. These events are triggered by photon triggers 
+%and the photon triggers used for this analysis are listed in the Table~\ref{tab:}.
+
+
+\begin{table}[!ht]
+  \begin{center}
+ {\small
+  \begin{tabular} {l|l}
+\hline
+ Trigger name & L1 seed \\
+\hline\hline
+ HLT\_Ele8\_CaloIdT\_TrkIdVL\_v[2-5]	& L1\_SingleEG5 		\\ %190456-190738 %190762-191419 %191512-194533
+ HLT\_Ele8\_CaloIdT\_CaloIsoVL\_		& L1\_SingleEG7 		\\ 
+ TrkIdVL\_TrkIsoVL\_v[12-15]			&  						\\ %190456-190738 %190762-191419 %191512-194533
+ HLT\_Ele17\_CaloIdT\_CaloIsoVL\_  		& L1\_SingleEG12		\\ 
+ TrkIdVL\_TrkIsoVL\_v[3-6]  			& 						\\ %190456-190738 %190762-191419 %191512-194533
+ HLT\_Ele8\_CaloIdT\_CaloIsoVL\_      	& L1\_SingleEG7         \\
+ TrkIdVL\_TrkIsoVL\_Jet30\_v[3-7]      	& 						\\ %190456-190738 %190762-191419 %191512-194533
+ HLT\_Ele17\_CaloIdT\_CaloIsoVL\_		& L1\_SingleEG12		\\ 
+ TrkIdVL\_TrkIsoVL\_Jet30\_v[3-7]		& 						\\ %190456-190738 %190762-191419 %191512-194533
+	\hline \hline
+ HLT\_Mu8\_v[16-18] 	&  L1\_SingleMu3  		\\ %190456 - 194533
+ HLT\_Mu17\_v[3-5]      &  L1\_SingleMu12   	\\ %190456 - 194533   
+%	\hline \hline
+% HLT\_Photon22\_R9Id90\_HE10\_Iso40\_EBOnly\_v[2-4]					& L1\_SingleEG22		\\ %190456-190738 190762-191419 %191512-194731
+% HLT\_Photon36\_R9Id90\_HE10\_Iso40\_EBOnly\_v[2-4]					& L1\_SingleEG22		\\ %190456-190738 190762-191419 %191512-194731
+% HLT\_Photon50\_R9Id90\_HE10\_Iso40\_EBOnly\_v[2-4]					& L1\_SingleEG22		\\ %190456-190738 190762-191419 %191512-194731
+% HLT\_Photon75\_R9Id90\_HE10\_Iso40\_EBOnly\_v[2-4]					& L1\_SingleEG22		\\ %190456-190738 190762-191419 %191512-194731
+% HLT\_Photon90\_R9Id90\_HE10\_Iso40\_EBOnly\_v[2-4]					& L1\_SingleEG22		\\ %190456-190738 190762-191419 %191512-194731
+    \hline 
+  \end{tabular}
+}
+  \caption{Utility triggers for fake rate method and zeta method. 
+  The identification and isolation requirements for electrons are described in Table~\ref{tab:trg_requirement_def}.
+%The identification and isolation requirements for photons are described in Table~\ref{tab:PhotonPlusLeptonTriggerCuts}.
+}
+%and ``$\zeta$ method " are used for Drell-Yan background estimation.}
+   \label{tab:triggers_util}
+  \end{center}
+\end{table}
+
+%
+%\begin{table}[htb]
+%  \centering
+%  \begin{tabular}{l|c}
+%    \hline
+%    name                        &  criterion \\
+%    \hline \hline 
+%    \multirow{1}{*}{R9Id90} 	& $\mathrm{R9 > 0.9 }$ \\
+%    \hline 
+%    \multirow{1}{*}{HE10} 		& $\mathrm{H/E < 0.1 }$ \\
+%    \hline 
+%    \multirow{3}{*}{Iso40}     	& $\mathrm{ECalIso} < 4.0 $ \\
+%                                & $\mathrm{HCalIso} < 4.0 $ \\
+%                                & $\mathrm{TrkIso}  < 4.0 $ \\
+%    \hline 
+%  \end{tabular}
+%   \caption{Summary of requirements applied in the photon triggers used for this analysis.}
+%   \label{tab:trg_requirement_def_photon}
+%\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Event Primary Vertex }
+\begin{itemize}
+\item \textcolor{red}{Track reconstruction : Kalman Filter, ...}
+\item \textcolor{red}{Vertex reconstruction : vertex finding, vertex fitting, ...}
+\item \textcolor{red}{Primary Vertex selection}
+\end{itemize}
+
+The primary vertices are reconstructed by Deterministic Annealing clustering of 
+tracks \cite{davertex}.
+
+The offline primary vertices are required to be within 24 cm from the center of the 
+detector\textcolor{red}{(or beamspot?)} in z direction. 
+It should be within 2 cm from the beamspot in the radial direction. 
+The degrees of freedom of the vertex fit should be 4 or larger. 
+\textcolor{red}{what does this mean exactly?} 
+
+At high luminosity collisions, there are multiple proton-proton interactions 
+happening at the same bunch crossing. In those interactions there is usually 
+only one interaction that is of interest for our analysis, that triggered that event. 
+These interactions tend to be associated with energetic objects, 
+while the other interactions are mostly inelastic scatterings that produce soft objects.
+Therefore, we choose the event primary vertex by selecting the primary vertex 
+with largest scalar sum of $\pt^2$ of tracks associated the vertex. 
+The vertices of leptons are required to be very close to the event primary vertex.  
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Electron }
+\begin{itemize}
+\item \textcolor{red}{Electron reconstruction : GSF track, seeding, ... }
+\item \textcolor{red}{ID  : MVA (list of input variables, trainig samples, cut values)}
+\item \textcolor{red}{ISO : list of variables to calculate the final cut variable, cut values  }
+\end{itemize}
+
+Electrons are reconstructed using tracks and energy deposit ECAL. 
+Since they brem in the tracker, this loss of energy should be taken 
+into account in the reconstruction. 
+
+An electron candidate is reconstructed if there is a track and a SC energy deposit
+compatible with the track momentum. When there is a random combination of 
+a track from $\pi^\pm$ and a SC energy deposit from $\pi^0$ that eventually 
+decays to two photons, a fake electron candidate can be made. 
+In order to suppress them, we apply electron selection which is composed of 
+requirements on identification(track-to-SC matching, 
+track fit quality, shower shape, energy loss due to bremstraulung, ratio of hadronic energy
+to electromagnetic energy), isolation, impact parameter.  
+Other source of fake electrons is a photon conversion to a pair of electron and a positron 
+in the material. If the conversion is asymmetric, \textit{i.e.} one particle carries 
+most of the photon momentum, that particle can be selected as an electron 
+candidate. Thus, we apply additional requirement on the convertion rejection.
+
+% indentification 
+For the electron identification we use BDT-based multivariate approach \cite{electronBDT}.  
+The trainig is done with 2011 data; \dyll{} events for signal and QCD-dominated events 
+collected by the fakerate triggers listed in section~\ref{sec:trigger}. 
+In order to increase the separation by selecting and mitigate possible bias 
+due to triggers, a set of preselection cuts that are as tight as trigger requirements 
+is applied.  
+
+% isolation 
+
+% conversion
+In order to suppress the electrons from a conversion from a photon, we reject the electron 
+if there is a recontructed conversion vertex where one of the two tracks match with 
+the electron, if the probability of the conversion vertex fit is greater than $10^{-6}$, 
+\verb|What about cms2.convs_dl()[iconv]> dlMin ?|  
+and there are any missing hits in the electron track before the conversion vertex.   
+
+% impact parameters
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Muon }
+\begin{itemize}
+\item \textcolor{red}{Muon reconstruction : ...}
+\item \textcolor{red}{ID  : list variables and cut values }
+\item \textcolor{red}{ISO : MVA (list of input variables, trainig samples, cut values) }
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Jet }
+\begin{itemize}
+\item \textcolor{red}{Jet reconstruction : anti-kT (dR = 0.5) }
+\item \textcolor{red}{Jet energy correction : L1Fastjet/L2/L3 (+ Residual correction in data) }
+\item \textcolor{red}{lepton veto ($dR>0.3$) }
+\item \textcolor{red}{MVA jet ID(list of input variables, training samples, cut values)}
+\item \textcolor{red}{two definitions : (1) jet bin counting($\pt>30~\GeV$) (2) top veto($10<\pt<30~\GeV$) }
+% have a plot like this for MVA Jet ID? not sure how I drew this though
+% maybe a script is somewhere on uaf
+%http://uaf-2.t2.ucsd.edu/~jaehyeok/HWW/PhilJetIDMVA/dev/PhilJetIDMVAefssssssss.pdf
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Missing Transverse Energy }
+\begin{itemize}
+\item \textcolor{red}{How MET(pfMET and trackMET) is calculated } 
+\item \textcolor{red}{mention MET $\phi$ modulation correction }
+\item \textcolor{red}{define projected MET (compare signal and bkgd, (ex) \ztt)}
+\item \textcolor{red}{cut values ($\textrm{minMET} > 20~\GeV$) }
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Top-tagging }
+\begin{itemize}
+\item \textcolor{red}{How B-tagging algorithm works and working point
+      (TCHEM : Track Counting High Efficiency Medium)}
+\item \textcolor{red}{how the discriminating variable is calculated }
+\item \textcolor{red}{quote some performance plots }
+\item \textcolor{red}{soft-muon tagging requirement }
+\end{itemize}
