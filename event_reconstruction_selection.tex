@@ -285,16 +285,16 @@ The vertices of leptons are required to be very close to the event primary verte
 \end{itemize}
 
 Electrons are reconstructed using tracks and energy deposit ECAL. 
-Since they brem in the tracker, this loss of energy should be taken 
+Since they bremsstrahlung in the tracker, this loss of energy should be taken 
 into account in the reconstruction. 
 
-An electron candidate is reconstructed if there is a track and a SC energy deposit
+An electron candidate is reconstructed if there is a track and a supercluster energy deposit
 compatible with the track momentum. When there is a random combination of 
-a track from $\pi^\pm$ and a SC energy deposit from $\pi^0$ that eventually 
+a track from $\pi^\pm$ and a supercluster energy deposit from $\pi^0$ that eventually 
 decays to two photons, a fake electron candidate can be made. 
 In order to suppress them, we apply electron selection which is composed of 
-requirements on identification(track-to-SC matching, 
-track fit quality, shower shape, energy loss due to bremstraulung, ratio of hadronic energy
+requirements on identification(track-to-supercluster matching, 
+track fit quality, shower shape, energy loss due to bremsstrahlung, ratio of hadronic energy
 to electromagnetic energy), isolation, impact parameter.  
 Other source of fake electrons is a photon conversion to a pair of electron and a positron 
 in the material. If the conversion is asymmetric, \textit{i.e.} one particle carries 
@@ -306,10 +306,131 @@ For the electron identification we use BDT-based multivariate approach \cite{ele
 The trainig is done with 2011 data; \dyll{} events for signal and QCD-dominated events 
 collected by the fakerate triggers listed in section~\ref{sec:trigger}. 
 In order to increase the separation by selecting and mitigate possible bias 
-due to triggers, a set of preselection cuts that are as tight as trigger requirements 
-is applied.  
+due to trigger selections, a set of preselection cuts that are as tight as trigger 
+requirements is applied as follows. 
+\begin{itemize}
+  \item $\pt>10~\GeV$ and $|\eta| < 2.5$
+  \item $\sigma_{i\eta i\eta} < 0.01/0.03$ (barrel/endcap)
+  \item $|\Delta\phi_{in}| < 0.15/0.10$ (barrel/endcap)
+  \item $|\Delta\eta_{in}| < 0.007/0.009$ (barrel/endcap)
+  \item $\textrm{H/E}< 0.12/0.10$ (barrel/endcap)
+  \item $\displaystyle \frac{\sum_{\textrm{tracks with dR}<0.3}\Et}{\pt}<0.2$
+  \item $\displaystyle \frac{\left(\sum_{\textrm{ECAL with dR}<0.3}\Et\right)-1}{\pt}<0.2$
+  \item $\displaystyle \frac{\sum_{\textrm{HCAL with dR}<0.3}\Et}{\pt}<0.2$
+\end{itemize}
+The additional subtraction of 1 GeV in the numerator of ECAL isolation is 
+to suppress the constant noise. 
+The input variables to the MVA are the following.
+\begin{itemize}
+\item kinematics : $\pt$,  $\eta$
+\item shower shape : $\sigma_{i\eta i\eta}$, $\phi_{i\eta i\eta}$, $\Delta \phi_{SC}$, $\Delta \eta_{SC}$, $E_{3\times3}/E_{5\times5}$(R9), $E_{1\times5}/E_{5\times5}$
+\item track fit quality : $\chi^2(\textrm{GSF})/\textrm{ndof} $, $\chi^2(\textrm{CTF})/\textrm{ndof}$ 
+\item $\textrm{N}_\textrm{number of tracker layers}$  
+\item cluter-track matching (geometry) : $\Delta \phi_{in}$, $\Delta \eta_{in}$, $\Delta \eta_{out}$
+\item cluter-track matching (energy-momentum) : $E_{in}/p$, $E/p_{out}$, $1/E_\textrm{ECAL} - 1/p_{\textrm{GSF track}}$ 
+\item fraction of energy carried away by bremsstrahlung : $f_{brem}$ 
+\item ratio of hadronic energy to EM energy  : $H/E$ 
+\item impact parameter :  transverse and 3D impact parameters w.r.t. primary vertex
+\item $E_{\textrm{PS}}/E_{\textrm{SC}}$
+\end{itemize}
+The $\sigma_{i\eta i\eta}$($\phi_{i\eta i\eta}$) is the weighted sum of \Eta($\phi$) 
+difference between the seed crystal, \textit{highest energy crystal}, 
+and the $5\times5$ crystals surrouding it.
+The $\Delta \phi_{SC}$($\Delta \eta_{SC}$) is the width of average distance 
+between the seed crystal and the $5\times5$ crystals surrouding it.
+The $E_{3\times3}/E_{5\times5}$(R9) and $E_{1\times5}/E_{5\times5}$ 
+are the ratio of energy deposit in the $3\times3$($1\times5$) crystals to 
+$5\times5$ crystals centered at the seed crystal. 
+The $\chi^2(\textrm{GSF})/\textrm{ndof}$ and $\chi^2(\textrm{CTF})/\textrm{ndof}$
+are the variables to measure the quality of GSF and CTF track fits, respectively. 
+$\textrm{N}_\textrm{number of tracker layers}$ is the number of tracker layers 
+where the electron made hits. 
+The $\Delta \phi_{in}$($\Delta \eta_{in}$) is the distance in \Eta($\phi$) direction 
+between supercluster position and the track trajectory extrapolated from the interaction point
+to the SC. $\Delta \eta_{out}$ is the distance in \Eta{} direction
+between the supercluster position and the track trajectory extrapolated 
+from the supercluster to the interaction point.
+$E_{in}/p$ is the ratio of  ... 
+$E/p_{out}$ is the ratio of  ... 
+$1/E_\textrm{ECAL} - 1/p_{\textrm{GSF track}}$ is the difference between ... 
+% Double_t EoP                =   cms2.els_eOverPIn()[ele];
+% Double_t eleEoPout          =   cms2.els_eOverPOut()[ele];
+% Double_t IoEmIoP            =   1./cms2.els_ecalEnergy()[ele] - 1./cms2.els_p4()[ele].P(); 
+The $f_{brem}$ is the ratio of difference between the momemta measured 
+at the vertex and the outermost state to the momemtum measured at the 
+vertex. This variable shows what franction of the initial momentum  
+was lost by bremsstrahlung. 
+H/E is the ratio of the energy deposit in the HCAL tower behind the electromagnetic 
+seed cluster to the energy of the seed cluster.
+$E_{\textrm{PS}}/E_{\textrm{SC}}$ is the ratio of the energy deposit in the preshower 
+detector and the energy deposit in the supercluster. 
+\begin{table}[!ht]
+  \centering 
+  \begin{tabular} {c||c|c|c}
+  \hline
+        & $0<|\eta|<0.8$ & $0.8<|\eta|<1.479$ & $1.479<|\eta|<2.5$\\
+  \hline \hline
+   $10~\GeV<\pt<20~\GeV$    & 0.0   & 0.1   & 0.62 \\ 
+  \hline
+   $\pt>20~\GeV$            & 0.94  & 0.85  & 0.92 \\ 
+  \hline 
+  \end{tabular}
+  \caption{Cut values on BDT output for electron identification. Electrons with BDT output
+  greater than the corresponding values in the table are considered as good electrons.} 
+  \label{tab:electronid_bdtcut}
+\end{table}
+For selecting good electrons, we finally require the BDT to be greater 
+than the values depending on the kinematic region as shown in Table~\ref{tab:electronid_bdtcut}. 
 
 % isolation 
+The isolation requirements are imposed by computing isolation variable using 
+PF candidates. In the high PileUp environment, there are random contributions 
+from ... \textcolor{red}{mention PU issue here}.  
+Thus, we need to correct this to mitigate the degradation due to random noise.
+To reduce contribution from the random charged PF candidates, they are 
+required to be close to the event primary vertex. The contribution from 
+the random neutral PF candidates is corrected by subracting the expected contribution. 
+The variable is defined as the scalar sum of the \pt{} of the 
+PF candidates satisfying the following requirements. 
+\begin{itemize}
+\item $\Delta R~<~0.4$ to the electron in the $\eta \times \phi$ plane
+\item Other PF electrons and PF muons in the isolation cone are vetoed
+\item Gamma PF candidates are required to be outside of the footprint 
+      veto region of $\Delta R~<~0.08$ 
+\item Charged hadron PF candidates are required to be outside of the footprint 
+      veto regoin of $\Delta R~<~0.015$ 
+\item Charged hadron PF candiates are required to be associated with the event primary vertex
+      \textcolor{red}{mention exact value} 
+\item Neutral components are corrected by subtracting pileup contribution which is 
+      calculated by $\rho \times \textrm{A}_{\rm{eff}}$,
+\end{itemize}
+where $\rho$ is the event-by-event energy density \cite{} calculated using 
+\texttt{kt6PFJets} algorithm, 
+and $\textrm{A}_{\textrm{eff}}$ is the effective area shown in Table~\ref{tab:electron_Aeff}. 
+\begin{table}[!ht]
+  \centering 
+  \begin{tabular} {c||c|c|c|c|c|c}
+  \hline
+    $|\eta|$    & 0 - 1.0 & 1.0 - 1.479 & 1.479 - 2.0 & 2.0 - 2.2 & 2.2 - 2.3 & 2.3 - 2.4  \\
+  \hline \hline
+    $\textrm{A}_{\rm{eff}}$  & 0.19 & 0.25 & 0.12 & 0.21 & 0.27 & 0.44 \\ 
+  \hline 
+  \end{tabular}
+  \caption{Effective area used for electron isolation calculation.}
+  \label{tab:electron_Aeff}
+\end{table}
+Finally, the isolation variable we cut on is calculated as 
+\begin{equation}
+\frac{\rm{Iso}_{PF}}{\pt}
+=
+\left[ \rm{Iso}_{charged \, hadron} + \left\{ \rm{Iso}_{gamma} 
+       + \rm{Iso}_{neutral \, hadron} -\rho \times \textrm{A}_{\textrm{eff}} \right\} \right]
+\times \frac{1}{\pt}
+\end{equation}
+where $\rm{Iso}_{charged \, hadron}$, $\rm{Iso}_{gamma}$, and $\rm{Iso}_{neutral \, hadron}$ 
+arethe scalar sum of the \pt{} of charged hadron, gamma and neutral hadron PF candidates, 
+respectivlely, in the isolation cone of $0.4$ around the electron.
+We require $\frac{\rm{Iso}_{PF}}{\pt}$ to be less than $0.15$ in both barrel and endcap.  
 
 % conversion
 In order to suppress the electrons from a conversion from a photon, we reject the electron 
@@ -319,6 +440,11 @@ the electron, if the probability of the conversion vertex fit is greater than $1
 and there are any missing hits in the electron track before the conversion vertex.   
 
 % impact parameters
+The impact parameter requirements are such that the transverse(longitudinal) impact parameter
+between the electron track and the event primary vertex is less than 0.02 cm(0.1 cm). 
+
+The efficiency of the full electron selection measured in MC is \textcolor{red}{XX} \% 
+for electrons from HWW 125 and \textcolor{red}{YY} \% for electrons from W+jets.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Muon }
@@ -327,6 +453,195 @@ and there are any missing hits in the electron track before the conversion verte
 \item \textcolor{red}{ID  : list variables and cut values }
 \item \textcolor{red}{ISO : MVA (list of input variables, trainig samples, cut values) }
 \end{itemize}
+
+In CMS there are three types of muon reconstruction approaches 
+depending on the information(detectors) used in the reconstruction.  
+
+The \textit{Standalone} muon reconstruction uses information from 
+the muon system(DT, CSC, RPC), \textit{i.e.} the inner tracker information is not used. 
+It starts with the reconstruction of the track segments in the muon chambers. 
+The digitized electronic signals in DT, CSC, and RPC are used to 
+reconstruct hits. Then, the hits in DT and CSC are matched to form the segments. 
+The information of these segments, such as momentum, at the innermost 
+muon chamber is used as a seed to construct a muon track using Kalman-filter 
+algorithm \cite{kalmanfilter}. The Kalman-filter is an iterative altorithm 
+that updates the track parameters iteratively as it goes to the next station. 
+At each step of estimating the track parameters, if no matching segment is found 
+then the search continues to the next station taking into account the detector 
+effects such as multiple scattering and energy loss in the material. 
+The procedure goes until the outermost station updating the track parameters 
+at each step. After this, the Kalman-filter is applied from the outermost to 
+the innermost station, and the track parameters are defined at the innermost 
+station. As the last step, the measured muon track is extaploated to the interaction 
+point and a vertex-constrained fit is performed to get the final track parameters. 
+
+The \textit{Tracker} muon reconstruction uses information from  
+the inner tracker, \textit{i.e.} the muon system information is not used
+for the momentum measurement. This approach considers all tracks as 
+potential muon candiates and checks their compatibility with 
+muon system. All tracker tracks with $\pt>0.5~\GeV$ and $p>2.5~\GeV$ 
+are extrapolated to the muon system considering the expected detector effects 
+such as magnetic field, multiple scattering, and energy loss in the material. 
+If there is at least one muon segment matched to the 
+extrapolated track, this muon is considered as the Tracker muon. 
+Tracker muon gives good momentum measurement and identification for low \pt{} muons
+which is hard to be reconsructed due to leaving not enough track segments 
+in the muon system. 
+
+The \textit{Global} muon reconstruction uses information from both tracker 
+and the muon system. For a standalone muon track obtained by the way explained 
+already, matching between the muon track and a tracker track is performed. 
+The muon track at the innermost station is extrapolated to the last layer 
+of the tracker considering the expected detector effects 
+such as magnetic field, multiple scattering, and energy loss in the material.
+Once the matching is done, the Kalman-filter is used to reconstruct the tracks. 
+After that, all reconstructed tracks are fitted again without constraints on the 
+beamspot using all hits used to reconstruct standalone muons and the hits 
+in the silicon strips. A fit is done again using the tracker hits and the 
+hits in the innermost muon station, and the fit quality is compared with 
+that of the tracker-only fit. This is to detect muon bremsstrahlung  or 
+any loss of energy before reaching the muon station.
+
+In summary, there are three approaches for muon reconstruction in CMS. 
+Having multiple algorithms provides more reliable muon reconstruction 
+and physics analysis can choose their algorithms for their interests. 
+\begin{figure}[!hbtp]
+\centering
+\includegraphics[width=.45\textwidth]{figures/Figure_001-005-a.pdf}
+\includegraphics[width=.45\textwidth]{figures/Figure_001-005-b.pdf}
+\caption{Resolution of muon momemtun in $0.0<|\eta|<0.2$ and $1.8<|\eta|<2.0$. 
+Red, blue, and green are global, standalone, and tracker muons, respectively.} 
+\label{fig:muon_res}
+\end{figure}
+Fig.~\ref{fig:muon_res} shows the momentum resolution of difference muon 
+reconstruction algorithms as a function of muon \pt in the barrel(left) and endcap(right). 
+The resolution of standalone muons is dominated by mutiple scattering in the material 
+before the muon station at $\pt<200~\GeV$ and and by the spacial resolution 
+of the muon chambers at $\pt>200~\GeV$. The tracker muons give much better 
+resolution at low \pt{}, but the resolution goes up to the same level 
+with the stanalone muons at very high \pt. 
+
+The muon selection is composed of requirements on identification, isolation, and 
+impact parameters.
+
+%identification
+The muon identification requirements are as follows. 
+\begin{itemize}
+\item The muon should be identified as PF muon 
+\item $\pt>10~\GeV$ and $|\eta|<2.4$ 
+\item $N_{\textrm{track layers}}>5$ 
+\item $N_{\textrm{pixel hits}}$
+\item $\displaystyle \frac{\delta \pt}{\pt} < 0.1$  
+\item $\displaystyle \frac{\chi^2_{\textrm{kink finder}}}{\textrm{ndof}} < 20$
+\item The muon should be global muon or tracker muons  
+\end{itemize}
+where $N_{\textrm{track layers}}$ is the number of tracker layers where the muon track has hits, 
+$N_{\textrm{pixel hits}}$ is the number of pixel hits of the muon track,
+$\displaystyle \frac{\delta \pt}{\pt} < 0.1$ is the relative resolution 
+of the muon \pt, 
+and $\displaystyle \chi^2_{\textrm{kink finder}}/\textrm{ndof}$ is the quality 
+of kink finder algorithm which finds muons from decay-in-flights.  
+In addtion to these requirements, the muons are required to be the global muons with 
+$\chi^2/\textrm{ndof}<10$ on the global fit, 
+having at least one muon hit matching the global fit 
+\textcolor{red}{(what is the difference between hits and segments?)},  
+and having at least two muon segments in different muon stations. 
+Or, the muon can be a tracker muon satisfying that at least two muon 
+segments one of which is in the outermost muon station are matched.  
+
+%isolation 
+For the isolation requirement, the MVA-based isolation variable~\cite{MuonRingIso} is used.
+%to reduce contamination from non-isolated muons originating from jets. 
+It uses the energy deposits of PF candidates of three categories, 
+charged hadron, gamma, and neutral hadrons in the concentric isolation cones
+of size $\Delta R = 0-0.1,~0.1-0.2,~0.2-0.3,~0.3-0.4,~0.4-0.5$.
+Neutral components are corrected by subtracting Pileup contribution which is 
+calculated by $\rho \times \textrm{A}_{\textrm{eff}}$ where $\rho$ (\texttt{kt6PFJets}) is the 
+event-by-event energy density and $\textrm{A}_{\textrm{eff}}$ is the effective area.  
+Effective areas are from Fall 11 simulation (\texttt{kMuEAFall11MC}) and 
+values are shown in Table~\ref{tab:muAeff}.  
+Exact definition of input variables to the MVA is the following. 
+\begin{itemize}
+\item PF charged hadron
+	\begin{itemize}
+    \item minimum of $\textrm{Iso}_\textrm{PF charged, 01}/\pt$ and 2.5	
+    \item minimum of $\textrm{Iso}_\textrm{PF charged, 12}/\pt$ and 2.5	
+    \item minimum of $\textrm{Iso}_\textrm{PF charged, 23}/\pt$ and 2.5	
+    \item minimum of $\textrm{Iso}_\textrm{PF charged, 34}/\pt$ and 2.5	
+    \item minimum of $\textrm{Iso}_\textrm{PF charged, 45}/\pt$ and 2.5	
+	\end{itemize}
+\item PF gamma : If negative, 0.0 is assigned
+	\begin{itemize}
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF gamma, 01} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF gamma, 12} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF gamma, 23} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF gamma, 34} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF gamma, 45} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+	\end{itemize}
+\item PF neutral hadron : If negative, 0.0 is assigned
+	\begin{itemize}
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF neutral, 01} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF neutral, 12} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF neutral, 23} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF neutral, 34} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+    \item minimum of $\left[\textrm{Iso}_\textrm{PF neutral, 45} - \rho \times \textrm{A}_{\textrm{eff}}\right]/\pt$ and 2.5 
+	\end{itemize}
+\end{itemize}
+where we defined 
+\begin{eqnarray} 
+\textrm{Iso}_\textrm{PF,XY} 
+= 
+\sum_{
+\begin{subarray}{l}
+\textrm{PF candidates in the cone of} \\
+\textrm{0.X}   < \Delta R^{\mu-\textrm{PF candidate}} < \textrm{0.Y} 
+    \end{subarray} }
+\pt
+%\textrm{the scalar sum of \pt\ of PF candidates in the cone of 0.X} 
+%< \Delta R^{\mu-\textrm{PF candidate}} < \textrm{0.Y}.
+\end{eqnarray} 
+We require that the MVA output be greater than 0.82 (0.86) in $10<\pt~<20~\GeV$ 
+and 0.86 (0.82) in $\pt~>20~\GeV$. The cut values correspond to the ones in barrel (endcap).
+
+\begin{table}[htp]
+	\centering
+		\begin{tabular}{c|c|c|c|c|c|c}
+			\hline 
+				\multicolumn{7}{c}{PF gamma} \\
+	  	    \hline
+			 	$|\eta|$     & $0.0 - 1.0$ & $1.0 - 1.479$ & $1.479 - 2.0$ & $2.0 - 2.2$ & $2.2 - 2.3$ & $2.3-$ \\       		
+	  	    \hline \hline
+				$0.0<dR<0.1$ & 0.004& 0.002& 0.003& 0.009& 0.003& 0.011 \\
+				$0.1<dR<0.2$ & 0.012& 0.008& 0.006& 0.012& 0.019& 0.024 \\
+				$0.2<dR<0.3$ & 0.026& 0.020& 0.012& 0.022& 0.027& 0.034 \\
+				$0.3<dR<0.4$ & 0.042& 0.033& 0.022& 0.036& 0.059& 0.068 \\
+				$0.4<dR<0.5$ & 0.060& 0.043& 0.036& 0.055& 0.092& 0.115 \\
+	  	    \hline \hline 
+				\multicolumn{7}{c}{PF neutral hadron} \\
+	  	    \hline 
+			 	$|\eta|$     & $0.0 - 1.0$ & $1.0 - 1.479$ & $1.479 - 2.0$ & $2.0 - 2.2$ & $2.2 - 2.3$ & $2.3-$ \\       		
+	  	    \hline \hline
+				$0.0<dR<0.1$ & 0.002& 0.004& 0.004& 0.004& 0.010& 0.014 \\
+			    $0.1<dR<0.2$ & 0.005& 0.007& 0.009& 0.009& 0.015& 0.017 \\
+			    $0.2<dR<0.3$ & 0.009& 0.015& 0.016& 0.018& 0.022& 0.026 \\ 
+				$0.3<dR<0.4$ & 0.013& 0.021& 0.026& 0.032& 0.037& 0.042 \\ 
+				$0.4<dR<0.5$ & 0.017& 0.026& 0.035& 0.046& 0.063& 0.135 \\ 
+			\hline
+		\end{tabular}
+		\caption{ Effective areas used for muon isolation. They were calculated with Fall11 MC sample.}
+	\label{tab:muAeff}
+\end{table}
+
+%impact parameter 
+In addtion, we apply require transverse/longditudinal impact parameters 
+to be associated with the event primary vertex. 
+The transverse impact parameter is required 
+to be less than 0.01 cm for $\pt<20~\GeV$ and 0.02 cm for $\pt>20~\GeV$. 
+The longitudinal impact parameter is required to be less than 0.01 cm. 
+
+The efficiency of the full muon selection measured in MC is \textcolor{red}{XX} \% 
+for electrons from HWW 125 and \textcolor{red}{YY} \% for electrons from W+jets.  
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Jet }
@@ -341,6 +656,63 @@ and there are any missing hits in the electron track before the conversion verte
 %http://uaf-2.t2.ucsd.edu/~jaehyeok/HWW/PhilJetIDMVA/dev/PhilJetIDMVAefssssssss.pdf
 \end{itemize}
 
+The existence of gluons and quarks in the event is manifested as a hadronic shower, 
+``jets", which leaves an energy deposit primarily in the HCAL. 
+Thanks to the fine granuality of CMS detector system, individual hadrons can 
+be reconstructed by PF algorithm. 
+The, jets are reconstructed with PF candidates using anti-$\textrm{k}_\textrm{T}$ algorithm \cite{}
+with a cone size $\Delta R$ = 0.5. Due to the non-linear calorimeter response of CMS detector, 
+the measured jet energy can not be translated into the energy of the true parton which 
+initiated the jet. CMS employs jet energy correction(JEC) method \cite{} factorized into 
+several levels, L1, L2, L3 and residual corrections for data. 
+The L1 correction is the PileUp/noise correction, \textit{i.e.} to remove offset energy 
+from PileUp and noise. The correction is composed of two sub-correction, 
+one from the real jet energy loss due to detector thresholds and 
+the other from PileUp. The offset energy in a jet area is measured as a function 
+of \Eta{} in the zero-bias and min-bias samples.    
+The L2 correction is to make the jet energy response flat in \Eta.  
+At a given \Eta{} response is corrected so that the it becomes at the same level 
+of the central region, $|\Eta|<1.3$. So, the correction is relative. 
+The correction factors are derived from either MC or using data-driven method
+(di-jet balance \cite{}).
+The L3 correction is to make the jet energy response flat in \pt.  
+The central region, $|\Eta|<1.3$, is used as a referece for the correction. 
+Apart from the L2 correction, L3 correction is an absolute correction 
+such that the corrected jet \pt{} is same as the \pt{} of the parton that 
+initiated the jet. The correction factors are derived from either MC 
+or using data-driven method($Z/\gamma^*$+jet balance \cite{}). 
+For L2 and L3 corrections, the corrections based on MC truth is done for MC 
+and residual corrections are applied to data to account for the small differences 
+between data and MC. 
+
+Jets fot this analysis are selected first by rejecting overlaps with selected electrons 
+and muons. If the $\Delta R$ between a lepton and the jet is less than 0.3, the jet 
+is very likely to be a lepton, thus it is rejected. In high PileUp environment, 
+clustering random PF particle from PileUp interactions can lead to a high \pt{} jet. 
+To suppress this noise, we apply MVA-based PileUp jets suppression techique. 
+Jets from pileup are soft, so they need to be overlaid to pass the jet $\pt$ threshold. 
+Therefore, energy deposit of pileup jets are more spread than the one from hard interactions.
+We select jets of which MVA outputs are greater than the values 
+which correspond to the loose working point in Table~\ref{tab:jetidcut}.
+\begin{table}[htp]
+	\centering
+		\begin{tabular}{c|c|c|c|c}
+			\hline
+									&  $0<|\eta|<2.5$ 	& $2.5<|\eta|<2.75$		& $2.75<|\eta|<3.0$ 	& $3.0<|\eta|<4.7$ 		\\ 
+			\hline \hline
+				$\pt<10$ \GeV		& 0.0 				& 0.0					& 0.0	 				& 0.2					\\ 
+				$10<\pt<20$	\GeV 	& -0.4 				& -0.4					& -0.4	 				& 0.4					\\
+				$20<\pt<30$	\GeV	& 0.0 				& 0.0					& 0.2	 				& 0.6					\\ 
+				$\pt>30$ \GeV 		& 0.0 				& 0.0					& 0.6	 				& 0.2					\\
+			\hline 
+		\end{tabular}
+		\caption{Cut values on jet identification MVA outputs. MVA output is required to be greater than 
+				these values to be counted as a jet.}
+	\label{tab:jetidcut}
+\end{table}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Missing Transverse Energy }
 \begin{itemize}
@@ -349,6 +721,8 @@ and there are any missing hits in the electron track before the conversion verte
 \item \textcolor{red}{define projected MET (compare signal and bkgd, (ex) \ztt)}
 \item \textcolor{red}{cut values ($\textrm{minMET} > 20~\GeV$) }
 \end{itemize}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Top-tagging }
