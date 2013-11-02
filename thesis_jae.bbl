@@ -47,6 +47,34 @@ CMS Collaboration.
   leptonic final state in pp collisions at.
 \newblock {\em Physics Letters B}, 710(1):91 -- 113, 2012.
 
+\bibitem{cmsnotetrackfilter}
+P.~Azzurri and B.~Mangano.
+\newblock Optimal filtering of fake tracks.
+\newblock {\em CMS Internal Note}, 2008.
+
+\bibitem{cmsnoteiterativetracking}
+M.~Pioppi.
+\newblock Iterative tracking.
+\newblock {\em CMS Internal Note}, 2008.
+
+\bibitem{0954-3899-31-9-N01}
+W~Adam, R~Frühwirth, A~Strandlie, and T~Todorov.
+\newblock Reconstruction of electrons with the gaussian-sum filter in the cms
+  tracker at the lhc.
+\newblock {\em Journal of Physics G: Nuclear and Particle Physics}, 31(9):N9,
+  2005.
+
+\bibitem{CMS-PAS-HIG-12-038}
+The~CMS collaboration.
+\newblock Search for the standard model higgs boson decaying to a w pair in the
+  fully leptonic final state in pp collisions at sqrt(s) = 8 tev.
+\newblock {\em Physics Analysis Summary}, (CMS-PAS-HIG-12-038).
+
+\bibitem{Kidonakis:2012rm}
+Nikolaos Kidonakis.
+\newblock {NNLL threshold resummation for top-pair and single-to production}.
+\newblock 2012.
+
 \bibitem{combination_stat}
 CMS~Collaborations The~ATLAS and the LHC Higgs Combination~Group.
 \newblock \textit{Procedure for the LHC Higgs boson search combination in

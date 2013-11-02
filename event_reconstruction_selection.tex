@@ -33,7 +33,7 @@ two HLT objects and each of them is required to match an L1 seed. The offline le
 requirement is 20/10 \GeV, so the online lepton \pt{} reuquirement is a bit looser, 17/8 \GeV, 
 in order to be safe from possible tigher online selection. In addition,
 the longitudinal distance between the two vertices of the leptons is required 
-to be less than 0.2 cm in order to reduce Pile-Up events. 
+to be less than 0.2~cm in order to reduce Pile-Up events. 
 
 For electron HLT objects there are additional requirements on
 shower shapes, %(H/E, $\sigma_{\eta\eta}$), 
@@ -167,7 +167,7 @@ listed in Table~\ref{tab:trg_singlelepton}, can be used to also select
 trailing leptons be unbiased sample of leptons that covers wide range of 
 kinematic region that streches to the low \pt region.   
 
-In order to estimate backgrounds such as \wjets{} that have a non-prompt 
+In order to estimate backgrounds such as \Wjets{} that have a non-prompt 
 lepton that passes the full lepton selection, we use "fake rate" method.  
 The details of this method are discussed in~\ref{sec:wjets}. 
 In this method we define a looser selection and calculate the ratio of the 
@@ -249,6 +249,181 @@ These triggers give sufficient samples for systematic study on fake rate method.
 %\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{ Tracks }
+\label{sec:track}
+\textcolor{red}{This is for barrel only. 
+Ref : note005\_001.pdf chapter 2.
+need to check the endcap case.}
+
+When a charged particle($e^\pm, \mu^\pm, \pi^\pm, ... $) traverse in the tracker,
+it leaves hits in the silicon layers. By collecting the hits that 
+look like coming from the same particle, we can reconstruct the 
+trajectory of the particle, and eventually calculate its momemtum. 
+The life is not that easy though, because there are multiple 
+particles in an event and random combination can fake a particle track.  
+In addition, there are uncertainties to the sensors, that 
+can result in no hits in a silicon layers even though a charge 
+particle passed it. Therefore, we should consider these points 
+when reconstructing tracks from the hits in the tracker. 
+CMS used Combinatorial Track Finder(CTF) as a general tracking 
+algorithm.
+
+
+\subsubsection{Generation of seeds : finding starting points}
+
+The reconstruction of tracks starts with seeding, \textit{i.e.} 
+finding the initial values of track parameters. 
+The seeds can be obtained from the tracking system itself or from external systems.  
+The CMS takes the approach to obtain the seed for the innermost layer 
+of the tracker and find track candidates inside-out. 
+The most important reason for this choice is that the 
+charged particles have interactions as they fly out
+and the non-negligible amount of materials in the tracking system 
+that the particle should go through changes their initial trajectory.
+Therefore, in order to reduce the effect of materials as much as possible, 
+we start from the innermost layer for track finding. 
+This means that the seed needs to be obtained before the innermost 
+layer of the tracker. Most of the charged particles cross the 3 layers 
+\footnote{At least 3 hits or 2 hits plus a beam spot are needed to 
+fully determine the five track parameters(\textcolor{red}{trajectory curvarture,
+impact parameter, polar angle, azimuthal angle at the closest approach, 
+and z position at the closest approach}).}
+of pixel detector, so the seeds are obtained from the triplets of pixel measurements. 
+However, because of geometry of pixel detector and inefficiency of pixel readouts, 
+seeds are also obtained from combining information from pixel layers, 
+vertex/beam spot, and the hits in the strip layers \cite{cmstdr1}.   
+
+\subsubsection{Pattern recognition : finding track candidates}
+
+Using the obtained seeds, Kalman filter \cite{} is used to find tracks. 
+From the seed layer, the filter proceeds to the next layer using coarse 
+track parameters obtained from seeds. Starting from the seed, this is done 
+layer after layer updating the trajectory information after each layer. 
+At each layer, the filter is executed in the following steps. 
+
+First, with given trajectory state, 
+it is determined that which of the adjacent layers are expected 
+to be crossed by the extrapolated trajectory. Second, the detectors 
+that are compatible with the trajectory are determined. Third, 
+for each compatible detector, compatible measurements are searched 
+by calculating the drift of charge carriers inside the silicon 
+in order to improve position measurements. $\chi^2$ test is used 
+to select compatible hits. Fourth, if the measurement is compatible 
+with the trajectory, the track candidate includes this measurement 
+and the track parameters are updated. When there are multiple measurements
+compatible with the trajectory, the several new trajectories are 
+created. In addition, to account for the case where a charged particle 
+pass the layer without leaving any signature(invalid hit), one additional track is created
+without adding position measurements.  
+Due to an exponential increase of the number of track candidates, 
+the maximum number of track candiates at each step is limited 
+using $\chi^2$ and the number of valid and invalid hits. 
+
+This procedure is repeated to the next tracker layers until either the 
+outermost tracker layer is reached or the track does not satisfy the requirements
+on the number of added layers and uncertainty on the track parameters.
+As the iteration proceeds, the uncertainty on the position measurements 
+in the $r-\phi$ plane improves due to having larger lever arm 
+as the filter goes inside-out. But, the uncertainty in the $r-z$ 
+becomes larger due to the geometry of double-strip layers
+(longer overlap in the z direction) and absence of z measurements 
+in the single-strip layers where the length of the strip (10-20~cm) is 
+used to constrain the track. 
+%The uncertainty on the extrapolated 
+%trajectory affects the number of compatible measurements.    
+
+%Mention barrel-endcap transition (where exactly it is? in eta ) region issue 
+
+In case there are many hits, the probability that the same track is reconstructed 
+multiple times (duplicate tracks) from different seeds becomes high. 
+So, it is important to select only one track candidate among them 
+in order to avoid counting charged tracks multiple times. 
+Two tracks are considered duplicate if the fraction of the shared hits 
+($f_{shared}$) is greater than 50\%.  $f_{shared}$ is defined as 
+\begin{eqnarray} 
+f_{shared} = \frac{N_{shared}^{hits}}{min (N_1^{hits}, N_2^{hits}) }  
+\end{eqnarray}  
+where $N_{shared}$ is the number of shared hits, $N_{1(2)}^{hits}$ 
+is the number of hits for track candiate 1(2). If $f_{shared}$ is 
+greater than 50~\%, the track candidate with larger number of hits is selected. 
+In case there are same number of hits in both tracks, the track with higher $\chi^2$
+is selected. This cleaning continues until none of the track pairs share more than 
+50 \% of their hits.  
+
+
+\subsubsection{Track fit : filtering and smoothing}
+
+From the pattern recognition explained in the previous subsection, 
+for each trajectory we obtained a list of hits and track parameters 
+with associated covariance matrix. The track parameters can be baised 
+by the contraints imposed by seeding procedure, so the track is refitted 
+using combination of Kalman filter(inside-out) and smoother(outside-in). 
+
+The Kalman filter starts at the innermost layer with the trajectory 
+parameters obtained from seed, except for the covariance matrix scaled 
+by a large factor.  
+At a given layer, the track parameters and the covariance matrix are updated
+accounting for the energy loss and multiple scattering in the material.
+The procedure continues to the last hit.
+
+The smoother starts from the outermost hit and move backward to the center of the detector. 
+It uses the track parameters from the Kalman filter as the starting condition 
+except for the covariance matrix scaled by a large factor. 
+At a given hit, the updated parameters of smoother is combined (as a weighted mean) 
+with the predicted parameters of the Kalman filter(excluding the current hit, 
+the extrapolation starting from the innermost hit).
+\textcolor{red}{what is the defition of weight?} 
+
+\subsubsection{Track selection : rejecting bad guys }
+
+In the average LHC events with jets, the track finder procedure yields 
+a significant fraction of fake tracks, \textit{i.e.} random combination 
+of hits that results in a track. These are rejected by applying 
+quality cuts on track \Eta, \pt{}, $\chi^2$ per n.d.f., impact parameters,
+significance of impact parameters
+and the number of crossed layers \cite{cmsnotetrackfilter}. 
+
+\subsubsection{Iterative tracking}
+
+In order to attain high tracking efficiency and low fake rate, 
+CMS developed an iterative tracking procedure \cite{cmsnoteiterativetracking}. 
+The basic idea is to select the high quality tracks first and 
+to find tracks that do not make the high quality tracks 
+but still are good tracks that should be reconstructed. 
+There are 6 iterations in CMS and the main difference is 
+the initial seeding. For example, the zeroth interation uses 
+the triplet of pixel detector and the first iteratioin uses 
+pixel-pair seeding to recover tracks that failed to make 
+the pixel triplet requirment. In addtion, the track parameters 
+are different to maximize performance.
+
+
+
+
+%FIXME I am here 
+
+\textcolor{blue}{ 
+Using the obtained seeds, Kalman filter \cite{} is used to find tracks. 
+The Kalman filter generates a tree of track candidates ... 
+Staring from innermost strip layer, the filter continues all the way to the 
+outermost layer ... \textcolor{red}{fill me}.
+At each step of track finding, the track state vector, 
+the momementum, direction, position of at the given surface, is carried 
+with covaricance matrix to the state vector. 
+The filter is composed of propagation and update steps which proceed 
+alternatively at each layer. In the propagation step, the track state 
+at the current surface is propagated to the next surface with the covariace 
+matrix which used linear error propagation. The covariance matrix includes 
+the effects of materials that the track should cross to reach the next surface. 
+The effects of Multiple Coulomb scattering as well as \brem{} for electrons 
+are added to the covariance matrix. The momemtum is subtacted by the mean of energy 
+loss and the variance of the energy loss distribution is added to the the variance 
+of momentum.  In the update step, the propagated state from the previous surface 
+is combined with the measurement of the currect surface. 
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Event Primary Vertex }
 \begin{itemize}
 \item \textcolor{red}{Track reconstruction : Kalman Filter, ...}
@@ -259,9 +434,9 @@ These triggers give sufficient samples for systematic study on fake rate method.
 The primary vertices are reconstructed by Deterministic Annealing clustering of 
 tracks \cite{davertex}.
 
-The offline primary vertices are required to be within 24 cm from the center of the 
+The offline primary vertices are required to be within 24~cm from the center of the 
 detector\textcolor{red}{(or beamspot?)} in z direction. 
-It should be within 2 cm from the beamspot in the radial direction. 
+It should be within 2~cm from the beamspot in the radial direction. 
 The degrees of freedom of the vertex fit should be 4 or larger. 
 \textcolor{red}{what does this mean exactly?} 
 
@@ -284,9 +459,45 @@ The vertices of leptons are required to be very close to the event primary verte
 \item \textcolor{red}{ISO : list of variables to calculate the final cut variable, cut values  }
 \end{itemize}
 
-Electrons are reconstructed using tracks and energy deposit ECAL. 
-Since they bremsstrahlung in the tracker, this loss of energy should be taken 
-into account in the reconstruction. 
+Electrons are reconstructed using information from tracker and ECAL.
+To reconstruct an electron, ECAL clustering is done first to collect energy 
+spread due to \brem{} and then the track reconstrunction follows \cite{}.  
+ 
+The electrons form electromagnetic shower and make their energy deposit in ECAL. 
+A test beam result shows that for a single electron in barrel of an energy 120~\GeV{} \cite{}, 
+97 \%  of its energy is stored in a $5\times5$ crystal cluster. 
+But, when an electron travels in the tracker which is in a strong magnetic field, 
+the electron radiates photons by \brem{} and the energy deposit 
+in the ECAL has a spread in $\phi$. The size of the energy loss in the tracker 
+is very significant enough to be included for electron energy calculation. 
+For example, for elecrrons of energy 10, 30, 50~\GeV, about 35 \% of electrons 
+lose more than 70 \% of their initial energy via \brem{} and about 10 \% of them 
+loss more than 95 \% \cite{EPJC 49 1099-1116(2007)}. Therefore, in order to 
+obtain the initial electron energy, it is critical to collect all \brem{} photons.
+The algorithm for this purposed is called super-clustering algorithm 
+and CMS employs two algorithms, hybrid for barrel and island for endcap \cite{}. 
+\textcolor{red}{explain clustering algorithms ... } 
+
+Once the energy is collected, electron tracks are reconstructed. The first step is 
+to generate seeds to start the tracking algorithm. The energy-weighted mean 
+supercluster position is extrapolated to the interaction point(beam spot) 
+to find compatible hit in the pixel detector assuming both charge hypotheses. 
+The innermost layer is looked for first with loose $\Delta\phi$ and $\Delta z$ window. 
+If compatible hits are not found in the first layer, search goes on to the next layer. 
+If a compatible hit is found, the z coordiate of the primary vertex is calculated 
+and the predicted trajectory is used to find compatible hit(s) in the next pixel layer(s).  
+Using the selected seed, compatible hits in the next silicon layer are looked for  
+and extrapolation is done to the next layer using Beath-Heitler modeling of electron \brem{} \cite{} 
+and Gaussian Sum Filter(GSF) \cite{0954-3899-31-9-N01} which assumes that the pdf of 
+Bethe-Heitler model is a Gaussian mixture. 
+The Beath-Heitler modeling is ...  
+The GSF is ... 
+The procedure is continued to the last layer unless two consecutive hits are not found. 
+At each layer, trajectory state is updated using weighed mean of measurements 
+and prediction. In case of multiple compatible hits, the two most compatible ones 
+from $\chi^2$ test are kept. Finally, a track is created if there are at least five hits. 
+
+
 
 An electron candidate is reconstructed if there is a track and a supercluster energy deposit
 compatible with the track momentum. When there is a random combination of 
@@ -294,7 +505,7 @@ a track from $\pi^\pm$ and a supercluster energy deposit from $\pi^0$ that event
 decays to two photons, a fake electron candidate can be made. 
 In order to suppress them, we apply electron selection which is composed of 
 requirements on identification(track-to-supercluster matching, 
-track fit quality, shower shape, energy loss due to bremsstrahlung, ratio of hadronic energy
+track fit quality, shower shape, energy loss due to \brem{}, ratio of hadronic energy
 to electromagnetic energy), isolation, impact parameter.  
 Other source of fake electrons is a photon conversion to a pair of electron and a positron 
 in the material. If the conversion is asymmetric, \textit{i.e.} one particle carries 
@@ -328,7 +539,7 @@ The input variables to the MVA are the following.
 \item $\textrm{N}_\textrm{number of tracker layers}$  
 \item cluter-track matching (geometry) : $\Delta \phi_{in}$, $\Delta \eta_{in}$, $\Delta \eta_{out}$
 \item cluter-track matching (energy-momentum) : $E_{in}/p$, $E/p_{out}$, $1/E_\textrm{ECAL} - 1/p_{\textrm{GSF track}}$ 
-\item fraction of energy carried away by bremsstrahlung : $f_{brem}$ 
+\item fraction of energy carried away by \brem{} : $f_{brem}$ 
 \item ratio of hadronic energy to EM energy  : $H/E$ 
 \item impact parameter :  transverse and 3D impact parameters w.r.t. primary vertex
 \item $E_{\textrm{PS}}/E_{\textrm{SC}}$
@@ -350,6 +561,7 @@ between supercluster position and the track trajectory extrapolated from the int
 to the SC. $\Delta \eta_{out}$ is the distance in \Eta{} direction
 between the supercluster position and the track trajectory extrapolated 
 from the supercluster to the interaction point.
+\textcolor{red}{  !! fill this !!} 
 $E_{in}/p$ is the ratio of  ... 
 $E/p_{out}$ is the ratio of  ... 
 $1/E_\textrm{ECAL} - 1/p_{\textrm{GSF track}}$ is the difference between ... 
@@ -359,7 +571,7 @@ $1/E_\textrm{ECAL} - 1/p_{\textrm{GSF track}}$ is the difference between ...
 The $f_{brem}$ is the ratio of difference between the momemta measured 
 at the vertex and the outermost state to the momemtum measured at the 
 vertex. This variable shows what franction of the initial momentum  
-was lost by bremsstrahlung. 
+was lost by \brem{}. 
 H/E is the ratio of the energy deposit in the HCAL tower behind the electromagnetic 
 seed cluster to the energy of the seed cluster.
 $E_{\textrm{PS}}/E_{\textrm{SC}}$ is the ratio of the energy deposit in the preshower 
@@ -499,7 +711,7 @@ After that, all reconstructed tracks are fitted again without constraints on the
 beamspot using all hits used to reconstruct standalone muons and the hits 
 in the silicon strips. A fit is done again using the tracker hits and the 
 hits in the innermost muon station, and the fit quality is compared with 
-that of the tracker-only fit. This is to detect muon bremsstrahlung  or 
+that of the tracker-only fit. This is to detect muon \brem{}  or 
 any loss of energy before reaching the muon station.
 
 In summary, there are three approaches for muon reconstruction in CMS. 
@@ -645,6 +857,7 @@ for electrons from HWW 125 and \textcolor{red}{YY} \% for electrons from W+jets.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Jet }
+\label{sec:jetselection}
 \begin{itemize}
 \item \textcolor{red}{Jet reconstruction : anti-kT (dR = 0.5) }
 \item \textcolor{red}{Jet energy correction : L1Fastjet/L2/L3 (+ Residual correction in data) }
@@ -710,7 +923,14 @@ which correspond to the loose working point in Table~\ref{tab:jetidcut}.
 				these values to be counted as a jet.}
 	\label{tab:jetidcut}
 \end{table}
-
+Of the selected jets, the high \pt{} jets ($\pt>30~\GeV]$ and $|\Eta|<4.7$) are used for counting 
+the number of jets, and the low \pt{} jet ($10<\pt<30~\GeV]$ and $|\Eta|<4.7$) are used 
+for rejecting top events. 
+\textcolor{red}{Any plots to show? MVA values for real jet and PU jets? or JEC factorization? 
+look at the slides I made for jet MVA id, there's veto efficiency as a function of Nvtx.} 
+\begin{figure}[!hbtp]
+\includegraphics[width=.99\textwidth]{figures/jecfactoriztiontmp.png}
+\end{figure}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -721,8 +941,160 @@ which correspond to the loose working point in Table~\ref{tab:jetidcut}.
 \item \textcolor{red}{define projected MET (compare signal and bkgd, (ex) \ztt)}
 \item \textcolor{red}{cut values ($\textrm{minMET} > 20~\GeV$) }
 \end{itemize}
+There are some particles that do not interact with materials. One of them is neutrino.
+When neutrinos are produced at the collider, they do not leave any signature 
+in the detector, so they can not be reconstructed. However, we can infer 
+the existence of neutrino, or any weakly-interacting particles, by computing 
+the imbalance in the vector sum of transverse momenta of the reconstructed particles.
+The transverse momentum of the initial particles is zero 
+\footnote{It is not perfectly zero because partons have transverse movements 
+inside the proton. But, the energy of their motion is at most a few hundred \MeV{}
+which is much less than the resolution of measurements.}.
+By momentum convervation, the total momentum of the particles produced 
+after collision should be 0 as well. 
+So, if the transverse momenta of all particles in the final state are summed up, 
+the negative value of the vector sum should correspond to the transverse momentum 
+sum of neutrinos. Thus, we define ``Missing Transverse Energy(\met)", 
+\begin{eqnarray} 
+\overrightarrow{\met} = - \sum^{\textrm{All PF candidates}}_i \overrightarrow{\pt}(i).
+\end{eqnarray} 
+In this analysis, \met{} is calculated with particles reconstructed using PF algorithm.
+
+The $\phi$ distribution of true \met{} should be flat because of the rotational 
+symmetry of collisions with respect to the beam axis. However, possibly due to 
+anisotropic detector response, inactive calorimeter response, detector misalignments, 
+and displacement of the beam spot, the $\phi$ distributions of \met{} in both 
+MC and data are not flat, but a sinusoidal shape with a period $2\pi$. 
+Thus, we correct this by shifting the origin of the coordinates 
+in the transverse momentum plane for x and y components individually. 
+Since the size of the shift increases 
+linearly as a function of number of reconstructed primary vertices, 
+the form of correction is given by 
+\begin{eqnarray} 
+\alpha + \beta N_{\textrm{vertex}}
+\end{eqnarray} 
+where $\alpha$ and $\beta$ shown in Table~\ref{tab:metxycorrection} are constants 
+and $N_{\textrm{vertex}}$ is the number of primary vertices. 
+\begin{table}[htp] 
+\begin{center} 
+\begin{tabular}{c||c|c|c} 
+\hline 
+                       &                  & $\alpha$ &  $\beta$  \\
+\hline \hline 
+\multirow{2}{*}{MC}    & correction for X & $-3.00 \times 10^{-2}$ & $-6.62\times 10^{-2}$  \\
+                       & correction for Y & $3.71\times 10^{-1}$   & $-1.49\times 10^{-1}$  \\
+\hline 
+\multirow{2}{*}{Data}  & correction for X & $3.54\times 10^{-1}$   & $2.65\times 10^{-1}$   \\
+                       & correction for Y & $1.89\times 10^{-1}$   & $1.66\times 10^{-1}$   \\
+\hline 
+%    metx -= (+3.54233e-01 + 2.65299e-01*nvtx_);
+%    mety -= (+1.88923e-01 - 1.66425e-01*nvtx_);
+%    metx -= (-2.99576e-02 - 6.61932e-02*nvtx_);
+%    mety -= (+3.70819e-01 - 1.48617e-01*nvtx_);
+\end{tabular} 
+\caption{Parameters used for XY shift correction for \met.} 
+\label{tab:metxycorrection} 
+\end{center} 
+\end{table} 
+\textcolor{red}{optional : show the met distribution before/after the correction}
 
 
+The \met{} is used to reject processes which do not have true source of missing energy. 
+Target processes are QCD and \dyll{} where \met{} comes from primarily due to 
+mis-measurement of jet momentum. However, in case of \dytt{}, the \Tau{} can 
+decay into lepton and neutrinos, giving true missing momentum. Because of large 
+mass difference between Z and \Tau{}, \Tau{} is generally boosted significantly 
+with its decay products flying in the same direction of the \Tau momentum. 
+Therefore, the missing energy component perpendicular to the lepton momentum 
+is a better measure for true \met{} which is originated from \Tau{} decays. 
+To realize this we define ``projected \met " (\pmet) as 
+\begin{equation}
+\pmet 
+= 
+\begin{cases} \met & \text{if $\Delta\phi_{min}>\frac{\pi}{2}$,}
+\\
+\met\sin(\Delta\phi_{min}) & \text{if $\Delta\phi_{min}<\frac{\pi}{2}$}
+\end{cases}
+\end{equation}
+where  
+\begin{equation}
+\Delta\phi_{min} =  min(\Delta\phi(\ell_1,\met),\Delta\phi(\ell_2,\met)).
+\end{equation}
+The $\Delta\phi(\ell_i,\met)$ is the angle between \met{} and the lepton $i$ 
+on the transverse plane. Figure~\ref{fig:projmetscheme} shows the schematic 
+of \pmet. 
+\begin{figure}[htp] 
+\centering 
+\begin{tabular}{c} 
+\includegraphics[width=0.7\textwidth]{figures/projmet.pdf} 
+\end{tabular} 
+\caption{Schematic of \pmet.}
+\label{fig:projmetscheme} 
+\end{figure}  
+%
+\begin{figure}[htp] 
+\centering 
+\begin{tabular}{c} 
+\includegraphics[width=0.45\textwidth]{figures/pmet_met_ztt.pdf} 
+\includegraphics[width=0.45\textwidth]{figures/pmet_met_hww125.pdf} 
+\end{tabular} 
+\caption{\met(black) and \pmet(blue) in \dytt{}(left) and SM Higgs at \mHi=125~\GeV(right).}
+\label{fig:projmet} 
+\end{figure}  
+Figure~\ref{fig:projmet} shows the \met{} and the \pmet{} distributions 
+in black and red, repectively, in \dytt{} and SM Higgs at \mHi=125~\GeV 
+on left and right, repectively. We can see that \pmet is more squeezed to 
+the lower values in case of \dytt, giving better rejection power.  
+
+The performance of met reconstruction is degraded in high luminosity environment 
+because of random contribution from paricles from PileUp to the \met{} calculation. 
+So, we use another definition of \met{} which is calculated with only charged 
+PF candidates associated with the event primary vertex. Since particles from 
+other vertices that the event primary vertex are excluded in the \met{} calculation,
+the \met{} calculated using this method is independent of number of PileUps.  
+This \met{} definition is called ``\trkmet" and exact definition is
+\begin{eqnarray} 
+\overrightarrow{\trkmet} 
+= 
+- \overrightarrow{\pt} (\ell_1)  
+- \overrightarrow{\pt} (\ell_2)  
+- \sum^{\textrm{All charged PF candidates}}_i \overrightarrow{\pt}(i)
+\end{eqnarray} 
+where $\overrightarrow{\pt} (\ell_1)$ and $\overrightarrow{\pt} (\ell_2)$
+are the transverse momemta of the leptons. The charged PF candidates must 
+meet the following requirements.
+\begin{itemize}
+\item The longitudinal impact parameter of the track matched to the PF candidate 
+      with respect to the event primary vertex should be less than 0.1~cm. 
+\item $\Delta R$ between the track matched to the PF candidate and the leptons 
+      should be larger than 0.1 in order to avoid counting leptons twice. 
+\end{itemize}
+There is an issue of \trkmet{} which is that its tail is longer than \pfmet 
+in \dyll{} events. This is due to the imbalance of neutral and charged hardrons 
+in the jets. By isospin symmetry the average number of neutral particles($\pi^0$) should 
+be a half of charged particles($\pi^\pm$). If \textcolor{red}{..... finish the reasoning.....}  
+The the correlation between the two definitions is strong in the events with 
+true \met, and weak in the events with fake \met{} as shown in Fig.~\ref{fig:2dmet}. 
+To protect from neutral - charged imbalance and to enhance the signal vs. background 
+separation power, we used minimum of the the two projected \met{} definitions, 
+\minpmet, which is defined as 
+\begin{eqnarray} 
+\minpmet = min \left( \pmet, \ptrkmet \right). 
+\end{eqnarray} 
+
+We require \minpmet{} to be greater than 20~\GeV in all categories as a baseline selecion. 
+For further rejection of \dyll{} background, we apply MVA-based technique which will be 
+discussed in detail in section~\ref{sec:dybkg}. 
+
+%
+\begin{figure}[htp] 
+\centering 
+\begin{tabular}{c} 
+\includegraphics[width=0.99\textwidth]{figures/2dmet.pdf} 
+\end{tabular} 
+\caption{\pmet{} vs. \ptrkmet{} in \dyll{} and SM Higgs \mHi = 125~\GeV.}
+\label{fig:2dmet} 
+\end{figure}  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Top-tagging }
@@ -733,3 +1105,65 @@ which correspond to the loose working point in Table~\ref{tab:jetidcut}.
 \item \textcolor{red}{quote some performance plots }
 \item \textcolor{red}{soft-muon tagging requirement }
 \end{itemize}
+
+The presence of a bottom quark in the event is manifested by the presence a secondary vertex. 
+The bottom quark is hadronized to a B meson($\textrm{B}^0, \textrm{B}^\pm, ...$) and it 
+traverses for a measurable distance before decaying into other particles.
+Typically, the b-tagging algorithms use information of the impact parameter(IP) of 
+charged particles decayed from the B meson or the distance between the primary vertex 
+and the secondary vertex. 
+\begin{figure}[htp] 
+\centering 
+\begin{tabular}{c} 
+\includegraphics[width=0.99\textwidth]{figures/Btag.pdf} 
+\end{tabular} 
+\caption{A schematic of b-taging algorithm.}
+\label{fig:btag} 
+\end{figure} 
+The IP is calculated in 3D thanks to the good z resolution of the 
+pixel detector. The IP can be signed depending on the position of 
+the associated track. The sign is obtained from the sign of the scalar product of 
+IP vector from the primary vertex and the direction of the jet the track belongs to
+as shown in Fig.~\ref{fig:btag}.
+For the decays with sizable lifetime, the IP should be positive in theory, 
+but it is not always positive in case the real direction of the B meson 
+is different from the direction of the jet. But, they still tend to be positive. 
+For the decays with very short lifetiem or random tracks that happen to be 
+considered for btagging algorithm, the IP is symmetric around 0.   
+
+In b-tagging algorithm used in this analysis is so called ``TrkCountingHighEff(TCHE)" \cite{}.
+This algorithm uses the impact parameter significance, $S_{IP} = IP / \sigma_{IP}$ 
+where $\sigma_{IP}$ is the uncertainty of the IP measurement, 
+as a discribinating variable. The algorithm requires at least 2 tracks to have $S_{IP}$ 
+above a given threshold. Thus, the discriminator is the $S_{IP}$ of the second highest 
+significance. 
+If the b-tagging descriminator of a jet with $\pt>10~\GeV$ that passes the criteria described in
+section~\ref{sec:jetselection} is greater than 2.1, this jet is selected as a b-tagged jet. 
+Finally, to suppress \topbkg{} backgrounds, events with at least one b-tagged jets are rejected. 
+\textcolor{red}{show MC vs Data of the discriminating variable in the top control region?}
+
+We enhance the rejection of \topbkg{} backgrounds by rejecting events that contain 
+non-isolated soft muons from heavy flavor decays. The following requirements are imposed to 
+select soft muons. 
+\begin{itemize} 
+    \item $\pt > 3~\GeV$ 
+    \item The muon should be a tracker muon
+    \item The muon should have at least two muon segments one of which is 
+          in the outermost muon station are matched.
+    \item $N_{\textrm{track layers}}>5$ 
+    \item $|d_{0}| < 0.2$~cm;
+    \item $|d_{z}| <0.2$~cm;
+    \item ${\rm{Iso}_{\textrm{Total}}}/{\pt}>0.1$ if $\pt>20~\GeV$.
+\end{itemize} 
+where $N_{\textrm{track layers}}$ is the number of tracker layers where the muon track has hits, 
+$d_{0}$($d_{z}$) are the transverse(longitudinal) impact parameter with respect to 
+the event primary vertex, and $\rm{Iso}_{\textrm{Total}}$ is the sum of \Et{} inside of the cone 
+with $dR < 0.3$ in ECAL and HCAL, and \pt{} of tracker. Adding soft muon requirement 
+especially helps in the 0-jet category where the top rejection efficiency increases 
+about 50 \% compared to using b-tagging only.
+
+The total top rejection efficiency using both methods when applied to \topbkg{} MC 
+is about 50 \% in the 0-jet category and 80 \% in the 1-jet category. 
+
+
+

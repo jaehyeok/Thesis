@@ -98,6 +98,9 @@
 % defined by Jae
 \usepackage{color}
 \usepackage{multirow}
+\usepackage{array}
+\usepackage{rotating}
+
 \input{commands.tex}
 
 \begin{document}
@@ -121,42 +124,42 @@
 %
 \chapter{Higgs Boson in Standard Model}
 \label{ch:intro_higgs}
-\include{intro_higgs}
+%\include{intro_higgs}
 
 %
 \chapter{LHC and CMS Detector}
 \label{ch:lhc_cms}
-\include{lhc_cms}
+%\include{lhc_cms}
 
 %
 \chapter{Event Reconstruction and Selection}
 \label{ch:event_reconstruction_selection}
-\include{event_reconstruction_selection}
-
-%
-\chapter{Efficiency Measurements}
-\label{ch:efficiency_measurement}
-\include{efficiency_measurement}
+%\include{event_reconstruction_selection}
 
 %
 \chapter{Signal Extraction}
 \label{ch:signal_extraction}
-\include{signal_extraction}
+%\include{signal_extraction}
+
+%
+\chapter{Efficiency Measurements}
+\label{ch:efficiency_measurement}
+%\include{efficiency_measurement}
 
 %
 \chapter{Background Estimation}
 \label{ch:background_estimation}
-\include{background_estimation}
+%\include{background_estimation}
 
 %
 \chapter{Systematic Uncertainty}
 \label{ch:systematics}
-\include{systematics}
+%\include{systematics}
 
 %
 \chapter{Fit Validation}
 \label{ch:fit_validation}
-\include{fit_validation}
+%\include{fit_validation}
 
 %
 \chapter{Statistical Interpretation}
@@ -164,9 +167,14 @@
 \include{stat_interpret}
 
 %
+\chapter{Results}
+\label{ch:results}
+\include{results}
+
+%
 \chapter{Study on Spin-Parity of the New Boson}
 \label{ch:study_spin}
-\include{study_spin}
+%\include{study_spin}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%% APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,8 +184,12 @@
 %
 \chapter{Some Details on Statistical Procedure}
 \label{ch:app_stat}
-\include{app_stat}
+%\include{app_stat}
 
+%
+\chapter{More 2D templates}
+\label{ch:app_2dtemplates}
+%\include{app_2dtemplates}
 
 
 
