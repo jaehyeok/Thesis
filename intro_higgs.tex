@@ -5,18 +5,21 @@
 %and strong force. Gravity is described by general relativity. 
 Properties of elementary particles in nature and their interactions (forces)
 to each other are described by Standard Model (SM) in particle physics. It is 
-based on gauge symmetry and the group sturucture, 
-$SU(3)_c \times SU(2)_L \times U(1)_Y$, where  $SU(3)_c$, $SU(2)_L$, and $U(1)_Y$  
-describe color, weak isospin, and hyper charge, respectively. 
+based on the gauge symmetry and the group sturucture of 
+$\textrm{SU(3)}_\textrm{c} \otimes \textrm{SU(2)}_\textrm{L} 
+\otimes \textrm{U(1)}_\textrm{Y}$, where  $\textrm{SU(3)}_\textrm{c}$, 
+$\textrm{SU(2)}_\textrm{L}$ and $\textrm{U(1)}_\textrm{Y}$  
+describe color, weak isospin and hyper charge, respectively. 
 The gauge symmetry requires the weak gauge bosons to be massless,
-but we know that Weak gauge bosons, $W^\pm$ and $Z$ are massive. 
-The cure for this is the Higgs mechanism which breaks $SU(2)_L \times U(1)_Y$
-to $U(1)_{EM}$, thus giving mass to weak bosons but keeping photons massless. 
+but experimentally we know that Weak gauge bosons, $W^\pm$ and $Z$ are massive. 
+The cure for this is the Higgs mechanism~\cite{}
+based on the spontanesous symmetry breaking(SSB)
+which breaks $\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$
+to $\textrm{U(1)}_{\textrm{EM}}$, thus gives masses to weak bosons but keeps photon massless. 
 
-\newpage
 \subsection{How particles become massive : Higgs Mechanism}
-Since EW theory is based on $SU(2)$ symmetry, the Higgs field is 
-given as a $SU(2)$ doublet, 
+Since Electroweak(EWK) theory is based on SU(2) symmetry, the Higgs field is 
+given as a SU(2) doublet, 
 \begin{eqnarray} 
 \phi = \left(  \begin{array}{c} \phi^+ \\ \phi^0 \end{array} \right)
 \end{eqnarray} 
@@ -26,10 +29,13 @@ where each element is a complex field,
 \qquad \textrm{ and } \qquad  
 \phi^0 = \frac{\phi_3 + i\phi_4}{\sqrt{2}}.
 \end{eqnarray} 
-We start with the Higgs Lagrangian to understand the essence of SSB 
-before making the things more complicated. The full SM Lagrangian will be discussed after that.  
-The Higgs Lagrangian is composed of kinetic and potential terms. 
-\begin{eqnarray} 
+We start with the Higgs Lagrangian to understand the essence of 
+spontanesous symmetry breaking(SSB) before making the things more 
+complicated. The full SM Lagrangian will be discussed later.  
+The Higgs Lagrangian($\mathcal{L}_\phi$) is composed of the kinetic 
+and the potential terms. 
+\begin{eqnarray}
+\label{eq:lagHiggs}
 \mathcal{L}_\phi 
 =
 \underbrace{
@@ -41,61 +47,85 @@ The Higgs Lagrangian is composed of kinetic and potential terms.
 }_\text{potential} 
 \end{eqnarray} 
 where $\mu^2<0$ and $\lambda>0$.
-The potential $V\left( \phi^\dagger \phi \right)$ is invariant under 
-$SU(2)$ local gauge transformation, 
+The potential term which is a function of $ \phi^\dagger \phi$ is invariant under 
+SU(2) local gauge transformation, 
 \begin{eqnarray} 
 \phi(x) 
 \rightarrow 
-\phi(x)' = e^{i \vec{\alpha}(x) \cdot \frac{\vec{\sigma}}{2}} \phi(x)
+\phi(x)' = e^{i \vec{\alpha}(x) \cdot \frac{\vec{\sigma}}{2}} \phi(x),
 \end{eqnarray} 
 where $\vec{\alpha}(x)$ is a vector of parameters and  
-$\vec{\sigma}$ is a vector of Pauli matrices. 
-$V\left( \phi^\dagger \phi \right)$ has the minimum at 
-$\displaystyle  \phi^\dagger \phi = -\frac{\mu^2}{2\lambda} = \frac{v^2}{2}$ where 
+$\vec{\sigma}$ is a vector of Pauli matrice,  
+\begin{align*}
+\sigma_1 = \begin{pmatrix} 0 & 1\\
+                            1 & 0
+            \end{pmatrix}, 
+\quad 
+\sigma_2 = \begin{pmatrix} 0 & -i\\
+                            i & 0
+            \end{pmatrix}
+\quad 
+\textrm{and} 
+\quad 
+\sigma_3 = \begin{pmatrix} 1 & 0\\
+                            0 & -1
+            \end{pmatrix}.
+\end{align*}
+The potential has the minimum at 
+%$\displaystyle  \phi^\dagger \phi = -\frac{\mu^2}{2\lambda} = \frac{v^2}{2}$ where 
+$ \phi^\dagger \phi = -\mu^2/2\lambda = v^2/2$ where 
 $v$ is the vacuum expectation value of the Higgs field $\phi$.
-Due to the SU(2) symmetry the choice of vacuum state is not definite 
+Due to SU(2) symmetry, the choice of vacuum state is not definite 
 as seen in the following equation, 
 \begin{eqnarray} 
-\phi^\dagger \phi = \frac{1}{2} \left( \phi_1^2 + \phi_2^2 + \phi_3^2 + \phi_4^2\right) 
-\end{eqnarray} 
+\phi^\dagger \phi 
+= 
+\frac{1}{2} \left( \phi_1^2 + \phi_2^2 + \phi_3^2 + \phi_4^2\right) 
+=
+\frac{v^2}{2} 
+\end{eqnarray}
+where there are 4 real variables with only one contraint. 
 This leads to an appropriate choice of vacuum for the physics of interest. 
-We choose the vacuum state, $\phi_0$
+We choose the vacuum state, $\phi_0$, as 
 \begin{eqnarray} 
 \phi_0 = \frac{1}{\sqrt{2}} \left(  \begin{array}{c} 0 \\ v \end{array} \right)
 \end{eqnarray} 
 and expand around it by $H(x)$
 \begin{eqnarray} 
+\label{eq:HiggsfieldSSB}
 \phi(x) = \frac{1}{\sqrt{2}} \left(  \begin{array}{c} 0 \\ v + H(x) \end{array} \right)
 \end{eqnarray} 
 where $H(x)$ is the physical Higgs field.  
 In order to make the lagrangian invariant under SU(2) transformation,
 the derivative $\partial_\mu$ should be replaced by the covariant 
-derivative $\mathcal{D}_\mu$
+derivative $\mathcal{D}_\mu$,
 \begin{eqnarray} 
 \mathcal{D}_\mu 
 = 
-\partial_\mu - ig_1 \frac{Y}{2} B_\mu - ig_2 \frac{\vec{\sigma}}{2} \cdot \vec{W}_\mu. 
+\partial_\mu - ig_1 \frac{Y}{2} B_\mu - ig_2 \frac{\vec{\sigma}}{2} \cdot \overrightarrow{W}_\mu. 
 \end{eqnarray} 
-$B_\mu$ and $\vec{W}_\mu$ are the vector field(s) needed for U(1) and 
+$B_\mu$ and $\overrightarrow{W}_\mu$ are the vector fields needed for U(1) and 
 SU(2) gauge invariance, respectively. 
-$g_1$ and $g_2$ are the couplings that decide the strength of 
-interactions associated with $B_\mu$ and $\vec{W}_\mu$. 
-$Y$(weak hypercharge) and $\frac{\vec{\sigma}}{2}$ are the generators for U(1) and SU(2), respectively. 
-Putting this into the Lagrangian $\mathcal{L_\phi}$, the kinetic term becomes 
-\begin{eqnarray} 
-\left( \mathcal{D}_\mu \phi \right)^\dagger \left( \mathcal{D}^\mu \phi \right) 
-&=& ... +  
+The $g_1$ and $g_2$ are the couplings that decide the strength of the
+interactions associated with $B_\mu$ and $\overrightarrow{W}_\mu$. 
+$Y$(weak hypercharge) and $\vec{\sigma}/2$ are the generators for U(1) and SU(2), respectively. 
+Putting this into the Lagrangian $\mathcal{L_\phi}$, the kinetic term contains 
+\begin{eqnarray}
+\label{eq:kintermHiggsLag}
+%\left( \mathcal{D}_\mu \phi \right)^\dagger \left( \mathcal{D}^\mu \phi \right) 
+%= ... + 
 \phi^\dagger 
 \left[ - ig_1 \frac{Y}{2} B^\mu
-       - ig_2 \frac{\vec{\sigma}}{2} \cdot \vec{W}^\mu \right]^\dagger 
+       - ig_2 \frac{\vec{\sigma}}{2} \cdot \overrightarrow{W}^\mu \right]^\dagger 
 \left[ - ig_1 \frac{Y}{2} B^\mu
-       - ig_2 \frac{\vec{\sigma}}{2} \cdot \vec{W}^\mu \right] 
-\phi  
+       - ig_2 \frac{\vec{\sigma}}{2} \cdot \overrightarrow{W}^\mu \right] 
+\phi.  
 \end{eqnarray}
-In order to derive masses of W and Z boson, we use the vacuum state of Higgs field $\phi_0$
-because mass are present even without dynamical field.  
-With $Y=1$ and $\displaystyle \phi = \frac{1}{\sqrt{2}} \left(  \begin{array}{c} 0 \\ v \end{array} \right)$, 
-writing the explicitly in $2\times2$ matrices, 
+In order to derive the masses of W and Z bosons, we use the vacuum state of Higgs field $\phi_0$
+because masses are present even without dynamical fields.  
+With $Y=1$ and $\displaystyle \phi = \frac{1}{\sqrt{2}} 
+\left(  \begin{array}{c} 0 \\ v \end{array} \right)$, 
+and writing explicitly in $2\times2$ matrices, eq.~(\ref{eq:kintermHiggsLag}) becomes 
 \begin{eqnarray}
 \label{eq:WZmass}
 \begin{array}{ccc} \multicolumn{2}{c}{ \displaystyle \vspace{0.3cm}   
@@ -111,47 +141,54 @@ g_1 B_\mu - g_2 W_\mu^3
 & \multicolumn{2}{l}{\hspace{2cm}  \displaystyle   
 =   
 \frac{v^2 g_2^2}{8} \left[ \left( W_\mu^1 \right)^2  + \left( W_\mu^2 \right)^2 \right] 
-+ \frac{v^2}{8} \left( g_1 B_\mu - g_2 W_\mu^3 \right)^2
++ \frac{v^2}{8} \left( g_1 B_\mu - g_2 W_\mu^3 \right)^2.
 } \end{array}    
 \end{eqnarray} 
-The first term can be written converting $W^1$ and $W^2$ into 
-charge states $\displaystyle W^\pm = \frac{1}{\sqrt{2}} \left( W^1 \mp iW^2 \right)$, 
+The first term can be re-written using charge states, 
+$\displaystyle W^\pm = \frac{1}{\sqrt{2}} \left( W^1 \mp iW^2 \right)$, 
 \begin{eqnarray}
 \frac{1}{2} \left( \frac{v g_2}{2} \right)^2 
 \left[ \left( W_\mu^+ \right)^2  + \left( W_\mu^- \right)^2 \right]. 
 \end{eqnarray} 
 Thus, we have the mass of charged W boson $\displaystyle M_W = \frac{v g_2}{2}$.
-Now we know that the second term in \ref{eq:WZmass} should correspond 
-Z boson because that is the only remaining mass boson. Because the 
-mixed fields should have the same normalization, the physical field for 
-Z boson $Z_\mu$ is 
+Now we know that the second term in eq.~(\ref{eq:WZmass}) should correspond to 
+Z boson because that is the only remaining massive boson. Imposing the same 
+normalization to the mixed field as the unmixed fields, the physical field for 
+Z boson, $Z_\mu$, is given by
 \begin{eqnarray} 
 Z_\mu = \frac{\left( g_1 B_\mu - g_2 W_\mu^3 \right)}{\sqrt{g_1^2+g_2^2}}  
 \end{eqnarray} 
-which gives its mass $\displaystyle M_Z = \frac{v}{2} \sqrt{g_1^2+g_2^2}$. 
-We have an orthogonal field that is massless 
-(thus mass term does not appear in the Lagrangian), 
+which gives its mass, $\displaystyle M_Z = \frac{v}{2} \sqrt{g_1^2+g_2^2}$. 
+
+There is a massless field orthogonal to $Z_\mu$,  
 \begin{eqnarray} 
 A_\mu = \frac{\left( g_1 B_\mu + g_2 W_\mu^3 \right)}{\sqrt{g_1^2+g_2^2}}  
 \end{eqnarray}
+It does not appear in the Lagrangian because its mass therm is zero.
 This is the field that remains unbroken by SSB. So, it corresponds to photon. 
 %Using the definition of weak mixing angle, $\theta_W$, 
 %\begin{equation} 
 %\sin \theta_W = \frac{g_1}{\sqrt{g_1^2+g_2^2}}, \textrm{ and } 
 %\cos \theta_W = \frac{g_2}{\sqrt{g_1^2+g_2^2}}  
 %\end{equation} 
-Rewriting the Lagrangian using the physical weak boson states $W_\mu^\pm$ and $Z_\mu$,
+
+Re-writing the potential term in eq.~(\ref{eq:lagHiggs})
+using the physical weak boson states, $W_\mu^\pm$ and $Z_\mu$,
 and their masses, we have the following terms for interactions between Higgs and weak bosons,
-\begin{eqnarray} 
-2\frac{M_W^2}{v} H\left(x\right) \left( W^+_\mu \right)^2
-+ \frac{M_Z^2}{v} H\left(x\right) \left( Z_\mu \right)^2
-+ \frac{M_W^2}{v^2} H\left(x\right)^2 \left( W^+_\mu \right)^2
-+\frac{M_Z^2}{2v^2} H\left(x\right)^2 \left( Z_\mu \right)^2.
+\begin{eqnarray}
+\begin{array}{ccc} \multicolumn{2}{c}{\displaystyle 
+2\frac{M_W^2}{v} H(x) W^+_\mu W^-_\mu
++ \frac{M_Z^2}{v} H(x) \left( Z_\mu \right)^2
+} & \\ & \multicolumn{2}{c}{\hspace{2cm} \displaystyle
++ \frac{M_W^2}{v^2} H(x)^2 W^+_\mu W^-_\mu 
++\frac{M_Z^2}{2v^2} H(x)^2 \left( Z_\mu \right)^2.
+} \end{array}   
 \end{eqnarray} 
 For Higgs-Weak boson interactions, the couplings are proportional to the square 
 of weak boson mass.
 \begin{figure}[htp]
 \centering
+\vspace{1cm}
 \subfigure[H-VV interaction]{
 \centering
 \label{subfig:fd_HVV}
@@ -165,13 +202,15 @@ of weak boson mass.
 }
 \caption{ Feynman diagrams for (a) H-VV and (b) HH-VV interactions.
 }
+\vspace{0.5cm}
 \label{fig:fd_HVterm}
 \end{figure}
 The corresponding Feynman diagrams are shown in Fig~\ref{fig:fd_HVterm}. 
 Considering additional factorials due to identical particles, the 
 vertex factors can be written as $\displaystyle 2i \frac {M_V^2}{v}$ 
-and $\displaystyle 2i \frac{M_V^2}{v^2}$ for HVV and HHVV, respectively, 
+and $\displaystyle 2i \frac{M_V^2}{v^2}$ for H-VV and HH-VV vertices, respectively, 
 where V denotes W or Z. 
+
 After SSB, the Higss potential term,  
 $\mu^2 \phi^\dagger \phi + \lambda \left( \phi^\dagger \phi \right)^2 $,
 in the Lagrangian becomes 
@@ -185,21 +224,26 @@ in the Lagrangian becomes
 %\frac{\mu^2}{2} ( v^2 + H^2 + 2vH ) 
 %+ \frac{\lambda}{4} ( v^4 + H^4 + 4v^2H^2 + 2v^2H^2 + 4vH^3 + 4v^3H) \\ 
 &=& 
+\label{eq:HiggsPontential}
 ... - \mu^2 H^2 - \frac{\mu^2}{v} H^3  - \frac{\mu^2}{4v^2} H^4 
 \end{eqnarray} 
-where $H^0$ and $H^1$ terms are ignored in the last line. 
-\textcolor{red}{I remember that the first order term does not 
-affect the lagrangian, but do not remember the argument.}
-From the above eq., the Higgs mass is identified as $\mHi^2 =  -2\mu^2$. %= 2\lambda v^2$.
-Rewriting the eq, using this definition, we have  
+where $H^0$ and $H^1$ terms are ignored in the last line
+because they are irrelevant in S-matrix calculations. 
+%\textcolor{red}{I remember that the first order term does not 
+%affect the lagrangian, but do not remember the argument.}
+From eq.~(\ref{eq:HiggsPontential}), the Higgs mass is identified 
+as $\mHi^2 =  -2\mu^2$. %= 2\lambda v^2$.
+Using this definition, eq.~(\ref{eq:HiggsPontential}) becomes 
 \begin{eqnarray} 
 \mathcal{L}_{\textrm{Higgs Potential}}
 &=& 
 ... - \frac{1}{2} \mHi^2 H^2 - \frac{\mHi^2}{2v} H^3  - \frac{\mHi^2}{8v^2} H^4    
 \end{eqnarray}
-
+The corresponding Feynman diagrams are shown in Fig~\ref{fig:fd_Hselfterm}. 
+%
 \begin{figure}[htp]
 \centering
+\vspace{1cm}
 \subfigure[HHH interaction]{
 \centering
 \label{subfig:fd_HHH}
@@ -211,41 +255,41 @@ Rewriting the eq, using this definition, we have
 \label{subfig:fd_HHHH}
 \includegraphics[height=3.5cm]{figures/FD_HHHHterm.pdf}
 }
-\caption{ Feynman diagrams for (a) HHH and (b) HHHH interactions.
+\caption{ Feynman diagrams for (a) $\textrm{H}^3$ and (b) $\textrm{H}^4$ interactions.
 }
+\vspace{0.5cm}
 \label{fig:fd_Hselfterm}
 \end{figure}
 
-The corresponding Feynman diagrams are shown in Fig~\ref{fig:fd_Hselfterm}. 
-Now we see that the entire Higgs sector depends on \mHi and $v$.
+Now we see that the entire Higgs sector depends on only \mHi\ and $v$.
 The $v$ is calculated by $v = \left( \sqrt{2} \gf \right)^{-1/2} = 246~\GeV$  
 where $\gf$ is the Fermi contant which is extracted from measurement 
 of muon lifetime. 
 % \gf meausurement : http://www.sciencedirect.com/science/article/pii/S0168900201012839
 Thus, the SM Higgs sector is fully described by \mHi. 
-\mHi is a fuction of $\lambda$ and $v$,  $\mHi^2 = 2 \lambda v^2$
-and we we do not know the physical meaning of $\lambda$, 
+\mHi\ is a fuction of $\lambda$ and $v$($\mHi^2 = 2 \lambda v^2$)
+and we do not know the physical meaning of $\lambda$, so 
 the mass of Higgs boson is not predictable by theory.
-It's experimentalist's task to measure \mHi{} and 
+It's experimentalists' task to measure \mHi\ and 
 complete the Standard Model of particle physics.
 
 The introduced Higgs field had 4 degrees of freedom, $\phi_1, \phi_2, \phi_3$ 
-and $\phi_,4$. But, we chose the Higgs field to have only one degree of freedom, $H(x)$.  
-Where did the three go? 
-By breaking $SU(2)_L \times U(1)_Y$ to $U(1)_{EM}$, the three gauge 
-bosons acquired masses. This was done by adding longitudinal components 
-to the three bosons. Thus, now we have one physical Higgs field and 
-three massive and one massless gauge bosons instead of four unphysical 
+and $\phi_4$ before SSB. But, we chose the Higgs field to have only one degree 
+of freedom, $H(x)$.  Where did the three go? 
+By breaking $\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$ to $U(1)_{EM}$, 
+the three gauge bosons acquired masses. This was done by adding longitudinal components 
+to the three gauge bosons. As a result, we have only one physical Higgs field and 
+three massive and one massless gauge bosons, instead of four unphysical 
 Higgs fields and four massless gauge bosons.
 
-The fermions acquire mass by interaction with Higgs field. 
-Let's start with leptons whose case is simpler than quarks due to 
-absence of right-handed neutrinos, \textit{i.e.} neutrinos are massless.
-Below, e means leptons 
-We can add SU(2)-invariant terms to the Lagrangian. 
+The fermions acquire their masses by interacting with Higgs field. 
+Let's start a discusstion with leptons because the absence of right-handed neutrinos, 
+\textit{i.e.} neutrinos are massless, makes the case simpler than quarks which 
+have both right-handed and left-handed polarizations. 
+%We can add SU(2)-invariant terms to the Lagrangian. 
 \begin{table}[htb] 
 \centering
-\begin{tabular}{c c c  }
+\begin{tabular}{c c c}
 \hline 
       & $T_3$ & Y \\
 \hline \hline 
@@ -256,17 +300,20 @@ $\left(  \begin{array}{c} \phi_+  \\ \phi_0 \end{array} \right)$      & $\displa
 \hline 
 \end{tabular}
 \label{tab:su2Qnum}
-\caption{$SU(2) \times U(1)$ quantum numbers}
+\caption{$\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$ quantum numbers}
 \end{table}
-Table \ref{tab:su2Qnum} shows the quantum numbers for $SU(2) \times U(1)$. 
+Tab.~\ref{tab:su2Qnum} shows the quantum numbers of  
+$\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$
+for the left-handed electron doublet, right-handed neutrino, right-handed electron and 
+Higgs doublet. Electron can be replaced by muon or tau leptons. 
 From the table, one can see that the interaction such as 
 \begin{eqnarray} 
 e_R + \left(  \begin{array}{c} \phi_+  \\ \phi_0 \end{array} \right) 
 \rightarrow 
 \left(  \begin{array}{c} \nu_L \\ e_L \end{array} \right)
 \end{eqnarray} 
-conserves quantum numbers. Given the structure of the interaction, 
-we specify the strength with $g_e$. Including the hermitian conjugate 
+conserves quantum numbers. Now the structure of the interaction is given, and
+we specify its strength with $g_e$. Including the hermitian conjugate 
 to the Lagrangian, the lepton-Higgs interaction term becomes 
 \begin{eqnarray} 
 \mathcal{L}_{int, lepton} 
@@ -280,18 +327,18 @@ to the Lagrangian, the lepton-Higgs interaction term becomes
 \left(  \begin{array}{c} \nu_L \\ e_L \end{array} \right)
 \right].
 \end{eqnarray} 
-Using the Higgs field used in SSB 
-$\frac{1}{\sqrt{2}} \left(  \begin{array}{c} 0 \\ v + H(x) \end{array} \right)$, 
+Using the chosen Higgs field in eq.~(\ref{eq:HiggsfieldSSB}), 
+%$\frac{1}{\sqrt{2}} \left(  \begin{array}{c} 0 \\ v + H(x) \end{array} \right)$, 
 the Lagrangian is calculated to be 
 \begin{eqnarray} 
 \mathcal{L}_{int, lepton} 
 &=& 
 -\frac{g_e v}{\sqrt{2}}\left( \bar{e}_L e_R + \bar{e}_R e_L \right)  
--\frac{g_e H}{\sqrt{2}}\left( \bar{e}_L e_R + \bar{e}_R e_L \right)  
-\end{eqnarray} 
+-\frac{g_e H}{\sqrt{2}}\left( \bar{e}_L e_R + \bar{e}_R e_L \right). 
+\end{eqnarray}
 Since $\bar{e}e = \bar{e}(P_L^2+P_R^2)e = \bar{e}_L e_R + \bar{e}_R e_L$ where
-$P_L$ and $P_R$ are projection operators, the first term 
-$\displaystyle -\frac{g_e v}{\sqrt{2}} \bar{e}e$ corresponds to the mass term for lepton. 
+$P_L$ and $P_R$ are projection operators, the first term, 
+$\displaystyle -\frac{g_e v}{\sqrt{2}} \bar{e}e$, corresponds to the mass term for the electron. 
 Thus, the mass is identified to be 
 \begin{eqnarray} 
 m_e = \frac{g_e v}{\sqrt{2}}.
@@ -303,15 +350,17 @@ Rewriting the Lagrangian in terms of $m_e$ instead of an arbitary $g_e$, we get
 - m_e \bar{e}e  -\frac{m_e}{v} \bar{e}e H. 
 \end{eqnarray} 
 Since there isn't a physical motivation for $g_e$, $m_e$ is not calculable 
-by theory, but needs to be experimentally determined. The second term 
+by theory, but needs to be determined by experiments. The second term 
 corresponds to lepton-Higgs interaction. The size of the interaction 
-is proportional to the mass of lepton. Thus, light quarks have very 
-weak couplings to Higgs fields. For example, electron has 
-$\displaystyle \frac{m_e}{v} = \frac{0.5~\MeV}{246~\GeV} \sim \mathcal{O}\left(10^{-6}\right)$
-and muon has $\displaystyle \frac{106~\MeV}{246~\GeV} \sim \mathcal{O}\left(10^{-3}\right)$.
+is proportional to the mass of electrons. Thus, light leptons have very 
+weak couplings to the Higgs field. For example, electron has 
+%$\displaystyle \frac{m_e}{v} = \frac{0.5~\MeV}{246~\GeV} \sim \mathcal{O}\left(10^{-6}\right)$
+%and muon has $\displaystyle \frac{106~\MeV}{246~\GeV} \sim \mathcal{O}\left(10^{-3}\right)$.
+$\frac{m_e}{v} = 0.5~\MeV/246~\GeV \sim \mathcal{O}\left(10^{-6}\right)$
+and muon has $106~\MeV/246~\GeV \sim \mathcal{O}\left(10^{-3}\right)$.
 
-The case for quarks is more complicated due to presence of right-handed up-type 
-quarks opposite to lepton case. In order to generate masses for up-type 
+The case for quarks is more complicated due to the presence of right-handed up-type 
+quarks as opposed to the lepton case. In order to generate masses for up-type 
 quarks, we need a new Higgs doublet 
 \begin{eqnarray} 
 \phi_c 
@@ -319,17 +368,20 @@ quarks, we need a new Higgs doublet
 =  \left(  \begin{array}{c} \phi_0^* \\ -\phi_- \end{array} \right) 
 =  \frac{1}{\sqrt{2}} \left(  \begin{array}{c} v + H(x) \\ 0 \end{array} \right). 
 \end{eqnarray} 
-The new Higgs field is invariant under $SU(2)$ transformation and has Y = -1. 
+The new Higgs field is invariant under $\textrm{SU(2)}_\textrm{L}$ transformation and has Y = -1. 
 \begin{eqnarray} 
 \mathcal{L}_{int, quark} 
 &=& 
+\begin{array}{ccc} \multicolumn{2}{c}{\displaystyle 
 -g_{d} \left[ 
 \left(  \begin{array}{cc} \bar{u}_L & \bar{d}_L \end{array} \right)
 \left(  \begin{array}{c} \phi_+  \\ \phi_0 \end{array} \right) d_R  \right]
+} & \\ & \multicolumn{2}{c}{\hspace{2cm} \displaystyle
 -g_{u} \left[ 
 \left(  \begin{array}{cc} \bar{u}_L & \bar{d}_L \end{array} \right)
 \left(  \begin{array}{c} \phi_0^*  \\ -\phi_+ \end{array} \right) u_R  \right] 
-+ h.c. \\
++ h.c. 
+} \end{array}   \\ 
 %&=& 
 %-\frac{g_d v}{\sqrt{2}}\left( \bar{d}_L d_R + \bar{d}_R d_L \right)  
 %-\frac{g_d H}{\sqrt{2}}\left( \bar{d}_L d_R + \bar{d}_R d_L \right)  
@@ -342,21 +394,21 @@ The new Higgs field is invariant under $SU(2)$ transformation and has Y = -1.
 - m_d \bar{d}d  -\frac{m_d}{v} \bar{d}d H
 - m_u \bar{u}u  -\frac{m_u}{v} \bar{u}u H
 \end{eqnarray} 
-where 
+where $u$ and $d$ are up-type and down-type quarks, respectivley, and   
 \begin{eqnarray} 
 m_d = \frac{g_d v}{\sqrt{2}} \quad \textrm{ and } \quad   
 m_u = \frac{g_u v}{\sqrt{2}}
 \end{eqnarray} 
-is used as the lepton case. The strength of interaction depends on the 
-fermion mass, $m_f / v$. 
+are used as the lepton case. 
+
+As a result, the strength of interaction depends on the fermion mass, $m_f / v$. 
+Fig. \ref{fig:fd_HFFterm} shows Feynman diagram for Higgs - fermion interaction.    
 \begin{figure}[htp]
 \centering
 \includegraphics[height=3.5cm]{figures/FD_HFFterm.pdf}
 \caption{ Feynman diagram for Hff interaction.}
 \label{fig:fd_HFFterm}
 \end{figure}
-
-Fig. \ref{fig:fd_HFFterm} shows Feynman diagram for Higgs - fermion interaction.    
 
 
 

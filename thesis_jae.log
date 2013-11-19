@@ -1,0 +1,793 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2011.7.3)  19 NOV 2013 00:39
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**thesis_jae.tex
+(./thesis_jae.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+(./ucsd.cls
+Document Class: ucsd 2010/03/18 V3.6 University of California, San Diego, Disse
+rtation Class
+(./uct12.clo)
+\descriptionmargin=\dimen102
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\@chapterlength=\skip41
+\UCSD@toc@frontmatterLength=\skip42
+\UCSD@toc@backmatterLength=\skip43
+\@subsectionlength=\skip44
+\@subsubsectionlength=\skip45
+\@paragraphlength=\skip46
+\@subparagraphlength=\skip47
+\@figurelength=\skip48
+\@tablelength=\skip49
+\c@figure=\count86
+\c@table=\count87
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amscd.sty
+Package: amscd 1999/11/29 v1.2d
+\athelp@=\toks19
+\minaw@=\dimen112
+\bigaw@=\dimen113
+\minCDarrowwidth=\dimen114
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2009/07/02 v2.20.1
+\thm@style=\toks20
+\thm@bodyfont=\toks21
+\thm@headfont=\toks22
+\thm@notefont=\toks23
+\thm@headpunct=\toks24
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks25
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks26
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip56
+\subfigcapskip=\skip57
+\subfigcaptopadj=\dimen117
+\subfigbottomskip=\skip58
+\subfigcapmargin=\dimen118
+\subfiglabelskip=\skip59
+\c@subfigure=\count101
+\c@lofdepth=\count102
+\c@subtable=\count103
+\c@lotdepth=\count104
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2011/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip60
+\subfig@bottom=\skip61
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write3
+\openout3 = `thesis_jae.idx'.
+
+
+Writing index file thesis_jae.idx
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen119
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen120
+\extrarowheight=\dimen121
+\NC@list=\toks27
+\extratabsurround=\skip62
+\backup@length=\skip63
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count105
+\rotFPtop=\skip64
+\rotFPbot=\skip65
+\rot@float@box=\box28
+\rot@mess@toks=\toks28
+) (./commands.tex
+\c@myfootertablecounter=\count106
+) (./thesis_jae.aux (./template_frontmatter.aux) (./intro_higgs.aux))
+\openout1 = `thesis_jae.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 106.
+LaTeX Font Info:    ... okay on input line 106.
+
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count107
+\scratchdimen=\dimen122
+\scratchbox=\box29
+\nofMPsegments=\count108
+\nofMParguments=\count109
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen123
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
+\everyMPtoPDFconversion=\toks30
+) (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Managing graphics extensions (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Defining keys (HO)
+))
+(/usr/local/texlive/2011/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/12/23 v3.10 Keyval support for LaTeX options (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2011/04/07 v1.13 Key value parser (HO)
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\openout2 = `template_frontmatter.aux'.
+
+
+(./template_frontmatter.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 50.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 50.
+
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
+
+ []
+
+[1
+
+
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2] [3] [4] [5] (./thesis_jae.toc [6])
+\tf@toc=\write4
+\openout4 = `thesis_jae.toc'.
+
+ [7] [8] [9] [10])
+Chapter 1.
+[1
+
+
+]
+\openout2 = `intro_higgs.aux'.
+
+ (./intro_higgs.tex [2
+
+] [3] [4]
+<figures/FD_HVVterm.pdf, id=58, 275.0275pt x 153.57375pt>
+File: figures/FD_HVVterm.pdf Graphic file (type pdf)
+
+<use figures/FD_HVVterm.pdf>
+Package pdftex.def Info: figures/FD_HVVterm.pdf used on input line 196.
+(pdftex.def)             Requested size: 178.34189pt x 99.58464pt.
+
+<figures/FD_HHVVterm.pdf, id=59, 253.94875pt x 153.57375pt>
+File: figures/FD_HHVVterm.pdf Graphic file (type pdf)
+
+<use figures/FD_HHVVterm.pdf>
+Package pdftex.def Info: figures/FD_HHVVterm.pdf used on input line 202.
+(pdftex.def)             Requested size: 164.67336pt x 99.58464pt.
+
+<figures/FD_HHHterm.pdf, id=60, 214.8025pt x 147.55125pt>
+File: figures/FD_HHHterm.pdf Graphic file (type pdf)
+
+<use figures/FD_HHHterm.pdf>
+Package pdftex.def Info: figures/FD_HHHterm.pdf used on input line 251.
+(pdftex.def)             Requested size: 144.97559pt x 99.58464pt.
+
+<figures/FD_HHHHterm.pdf, id=61, 193.72375pt x 147.55125pt>
+File: figures/FD_HHHHterm.pdf Graphic file (type pdf)
+
+<use figures/FD_HHHHterm.pdf>
+Package pdftex.def Info: figures/FD_HHHHterm.pdf used on input line 257.
+(pdftex.def)             Requested size: 130.74901pt x 99.58464pt.
+ [5 <./figures/FD_HVVterm.pdf> <./figures/FD_HHVVterm.pdf>] [6 <./figures/FD_HH
+Hterm.pdf> <./figures/FD_HHHHterm.pdf>] [7]
+<figures/FD_HFFterm.pdf, id=154, 210.7875pt x 156.585pt>
+File: figures/FD_HFFterm.pdf Graphic file (type pdf)
+
+<use figures/FD_HFFterm.pdf>
+Package pdftex.def Info: figures/FD_HFFterm.pdf used on input line 408.
+(pdftex.def)             Requested size: 134.06085pt x 99.58464pt.
+ [8]
+Package epstopdf Info: Source file: <figures/Higgs_XS_8TeV_LM200.eps>
+(epstopdf)                    date: 2013-09-12 10:12:57
+(epstopdf)                    size: 35705 bytes
+(epstopdf)             Output file: <figures/Higgs_XS_8TeV_LM200-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2013-09-12 10:12:57
+(epstopdf)                    size: 19422 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/Higgs_XS_8TeV_LM20
+0-eps-converted-to.pdf figures/Higgs_XS_8TeV_LM200.eps>
+(epstopdf)             \includegraphics on input line 433.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/Higgs_XS_8TeV_LM200-eps-converted-to.pdf, id=159, 569.12625pt x 546.04
+pt>
+File: figures/Higgs_XS_8TeV_LM200-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/Higgs_XS_8TeV_LM200-eps-converted-to.pdf>
+Package pdftex.def Info: figures/Higgs_XS_8TeV_LM200-eps-converted-to.pdf used 
+on input line 433.
+(pdftex.def)             Requested size: 335.33424pt x 321.74422pt.
+
+
+LaTeX Warning: Citation `Dittmaier:2012vm' on page 9 undefined on input line 47
+1.
+
+[9 <./figures/FD_HFFterm.pdf>] [10 <./figures/Higgs_XS_8TeV_LM200-eps-converted
+-to.pdf>] [11]
+
+LaTeX Warning: Citation `PhysRevD.49.79' on page 12 undefined on input line 525
+.
+
+[12]
+
+LaTeX Warning: Citation `PhysRevD.49.79' on page 13 undefined on input line 569
+.
+
+
+LaTeX Warning: Citation `PhysRevD.49.79' on page 13 undefined on input line 577
+.
+
+<figures/HVV_polarization_ratio.pdf, id=203, 242.66759pt x 191.22658pt>
+File: figures/HVV_polarization_ratio.pdf Graphic file (type pdf)
+
+<use figures/HVV_polarization_ratio.pdf>
+Package pdftex.def Info: figures/HVV_polarization_ratio.pdf used on input line 
+590.
+(pdftex.def)             Requested size: 251.50227pt x 198.19691pt.
+
+
+LaTeX Warning: Citation `PhysRevD.49.79' on page 13 undefined on input line 592
+.
+
+
+LaTeX Warning: Citation `PhysRevD.49.79' on page 13 undefined on input line 592
+.
+
+Package epstopdf Info: Source file: <figures/YRHXS2_BR_Fig1.eps>
+(epstopdf)                    date: 2013-09-12 10:12:57
+(epstopdf)                    size: 32239 bytes
+(epstopdf)             Output file: <figures/YRHXS2_BR_Fig1-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2013-09-12 10:12:57
+(epstopdf)                    size: 19639 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/YRHXS2_BR_Fig1-eps
+-converted-to.pdf figures/YRHXS2_BR_Fig1.eps>
+(epstopdf)             \includegraphics on input line 606.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/YRHXS2_BR_Fig1-eps-converted-to.pdf, id=204, 569.12625pt x 408.52625pt
+>
+File: figures/YRHXS2_BR_Fig1-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/YRHXS2_BR_Fig1-eps-converted-to.pdf>
+Package pdftex.def Info: figures/YRHXS2_BR_Fig1-eps-converted-to.pdf used on in
+put line 606.
+(pdftex.def)             Requested size: 188.6235pt x 135.40004pt.
+Package epstopdf Info: Source file: <figures/YRHXS_BR_fig2.eps>
+(epstopdf)                    date: 2013-09-12 10:12:57
+(epstopdf)                    size: 9100 bytes
+(epstopdf)             Output file: <figures/YRHXS_BR_fig2-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2013-09-12 10:12:57
+(epstopdf)                    size: 9468 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/YRHXS_BR_fig2-eps-
+converted-to.pdf figures/YRHXS_BR_fig2.eps>
+(epstopdf)             \includegraphics on input line 607.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/YRHXS_BR_fig2-eps-converted-to.pdf, id=205, 569.12625pt x 546.04pt>
+File: figures/YRHXS_BR_fig2-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/YRHXS_BR_fig2-eps-converted-to.pdf>
+Package pdftex.def Info: figures/YRHXS_BR_fig2-eps-converted-to.pdf used on inp
+ut line 607.
+(pdftex.def)             Requested size: 188.6235pt x 180.97694pt.
+Package epstopdf Info: Source file: <figures/XSBR_8TeV_SM_LM.eps>
+(epstopdf)                    date: 2013-09-12 10:12:57
+(epstopdf)                    size: 29126 bytes
+(epstopdf)             Output file: <figures/XSBR_8TeV_SM_LM-eps-converted-to.p
+df>
+(epstopdf)                    date: 2013-09-12 10:12:57
+(epstopdf)                    size: 17895 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/XSBR_8TeV_SM_LM-ep
+s-converted-to.pdf figures/XSBR_8TeV_SM_LM.eps>
+(epstopdf)             \includegraphics on input line 618.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/XSBR_8TeV_SM_LM-eps-converted-to.pdf, id=206, 569.12625pt x 549.05125p
+t>
+File: figures/XSBR_8TeV_SM_LM-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/XSBR_8TeV_SM_LM-eps-converted-to.pdf>
+Package pdftex.def Info: figures/XSBR_8TeV_SM_LM-eps-converted-to.pdf used on i
+nput line 618.
+(pdftex.def)             Requested size: 251.50227pt x 242.63052pt.
+ [13 <./figures/HVV_polarization_ratio.pdf>] [14 <./figures/YRHXS2_BR_Fig1-eps-
+converted-to.pdf> <./figures/YRHXS_BR_fig2-eps-converted-to.pdf>]
+<figures/WWscat0.pdf, id=249, 214.8025pt x 152.57pt>
+File: figures/WWscat0.pdf Graphic file (type pdf)
+ <use figures/WWscat0.pdf>
+Package pdftex.def Info: figures/WWscat0.pdf used on input line 642.
+(pdftex.def)             Requested size: 104.79155pt x 74.4317pt.
+
+<figures/WWscat_tchZ.pdf, id=250, 214.8025pt x 152.57pt>
+File: figures/WWscat_tchZ.pdf Graphic file (type pdf)
+
+<use figures/WWscat_tchZ.pdf>
+Package pdftex.def Info: figures/WWscat_tchZ.pdf used on input line 647.
+(pdftex.def)             Requested size: 104.79155pt x 74.4317pt.
+
+<figures/WWscat_schZ.pdf, id=251, 214.8025pt x 152.57pt>
+File: figures/WWscat_schZ.pdf Graphic file (type pdf)
+
+<use figures/WWscat_schZ.pdf>
+Package pdftex.def Info: figures/WWscat_schZ.pdf used on input line 652.
+(pdftex.def)             Requested size: 104.79155pt x 74.4317pt.
+
+<figures/WWscat_tchH.pdf, id=252, 214.8025pt x 152.57pt>
+File: figures/WWscat_tchH.pdf Graphic file (type pdf)
+
+<use figures/WWscat_tchH.pdf>
+Package pdftex.def Info: figures/WWscat_tchH.pdf used on input line 658.
+(pdftex.def)             Requested size: 104.79155pt x 74.4317pt.
+
+<figures/WWscat_schH.pdf, id=253, 214.8025pt x 152.57pt>
+File: figures/WWscat_schH.pdf Graphic file (type pdf)
+
+<use figures/WWscat_schH.pdf>
+Package pdftex.def Info: figures/WWscat_schH.pdf used on input line 663.
+(pdftex.def)             Requested size: 104.79155pt x 74.4317pt.
+
+
+LaTeX Warning: Citation `Djouadi20081' on page 15 undefined on input line 668.
+
+
+LaTeX Warning: Citation `31-33' on page 15 undefined on input line 676.
+
+[15 <./figures/XSBR_8TeV_SM_LM-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `optical' on page 16 undefined on input line 691.
+
+[16 <./figures/WWscat0.pdf> <./figures/WWscat_tchZ.pdf> <./figures/WWscat_schZ.
+pdf> <./figures/WWscat_tchH.pdf> <./figures/WWscat_schH.pdf>]
+
+LaTeX Warning: Citation `Djouadi20081' on page 17 undefined on input line 730.
+
+<figures/FD_HHHHtree.pdf, id=352, 146.5475pt x 110.4125pt>
+File: figures/FD_HHHHtree.pdf Graphic file (type pdf)
+
+<use figures/FD_HHHHtree.pdf>
+Package pdftex.def Info: figures/FD_HHHHtree.pdf used on input line 752.
+(pdftex.def)             Requested size: 83.83195pt x 63.15984pt.
+
+<figures/FD_HHHH1loop1.pdf, id=353, 146.5475pt x 110.4125pt>
+File: figures/FD_HHHH1loop1.pdf Graphic file (type pdf)
+
+<use figures/FD_HHHH1loop1.pdf>
+Package pdftex.def Info: figures/FD_HHHH1loop1.pdf used on input line 757.
+(pdftex.def)             Requested size: 83.83195pt x 63.15984pt.
+
+<figures/FD_HHHH1loop2.pdf, id=354, 140.525pt x 110.4125pt>
+File: figures/FD_HHHH1loop2.pdf Graphic file (type pdf)
+
+<use figures/FD_HHHH1loop2.pdf>
+Package pdftex.def Info: figures/FD_HHHH1loop2.pdf used on input line 761.
+(pdftex.def)             Requested size: 83.83195pt x 65.86725pt.
+
+<figures/FD_HHHH1loop3.pdf, id=355, 140.525pt x 110.4125pt>
+File: figures/FD_HHHH1loop3.pdf Graphic file (type pdf)
+
+<use figures/FD_HHHH1loop3.pdf>
+Package pdftex.def Info: figures/FD_HHHH1loop3.pdf used on input line 765.
+(pdftex.def)             Requested size: 83.83195pt x 65.86725pt.
+
+
+LaTeX Warning: Citation `Djouadi20081' on page 17 undefined on input line 772.
+
+[17]
+
+LaTeX Warning: Citation `Djouadi20081' on page 18 undefined on input line 808.
+
+[18 <./figures/FD_HHHHtree.pdf> <./figures/FD_HHHH1loop1.pdf> <./figures/FD_HHH
+H1loop2.pdf> <./figures/FD_HHHH1loop3.pdf>]
+<figures/trivial_vacstab.pdf, id=394, 671.50874pt x 561.09625pt>
+File: figures/trivial_vacstab.pdf Graphic file (type pdf)
+
+<use figures/trivial_vacstab.pdf>
+Package pdftex.def Info: figures/trivial_vacstab.pdf used on input line 845.
+(pdftex.def)             Requested size: 335.33424pt x 280.19641pt.
+
+
+LaTeX Warning: Citation `Djouadi20081' on page 19 undefined on input line 859.
+
+
+LaTeX Warning: Citation `Kolda:2000wi' on page 19 undefined on input line 873.
+
+<figures/finetuning.pdf, id=395, 546.04pt x 500.87125pt>
+File: figures/finetuning.pdf Graphic file (type pdf)
+
+<use figures/finetuning.pdf>
+Package pdftex.def Info: figures/finetuning.pdf used on input line 887.
+(pdftex.def)             Requested size: 335.33424pt x 307.59453pt.
+
+
+LaTeX Warning: Citation `Kolda:2000wi' on page 19 undefined on input line 891.
+
+[19] [20 <./figures/trivial_vacstab.pdf>]
+<figures/FD_Wmass_Hloop.pdf, id=412, 182.6825pt x 107.40125pt>
+File: figures/FD_Wmass_Hloop.pdf Graphic file (type pdf)
+
+<use figures/FD_Wmass_Hloop.pdf>
+Package pdftex.def Info: figures/FD_Wmass_Hloop.pdf used on input line 910.
+(pdftex.def)             Requested size: 125.75113pt x 73.92993pt.
+
+
+LaTeX Warning: Citation `LEP-2' on page 21 undefined on input line 933.
+
+
+LaTeX Warning: Citation `LEP-2' on page 21 undefined on input line 936.
+
+Package epstopdf Info: Source file: <figures/w12_blueband.eps>
+(epstopdf)                    date: 2013-09-16 18:03:28
+(epstopdf)                    size: 17622 bytes
+(epstopdf)             Output file: <figures/w12_blueband-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2013-09-16 18:05:55
+(epstopdf)                    size: 17122 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/w12_blueband-eps-c
+onverted-to.pdf figures/w12_blueband.eps>
+(epstopdf)             \includegraphics on input line 940.
+Package epstopdf Info: Output file is already uptodate.
+<figures/w12_blueband-eps-converted-to.pdf, id=413, 569.12625pt x 626.34pt>
+File: figures/w12_blueband-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/w12_blueband-eps-converted-to.pdf>
+Package pdftex.def Info: figures/w12_blueband-eps-converted-to.pdf used on inpu
+t line 940.
+(pdftex.def)             Requested size: 283.60716pt x 312.10896pt.
+
+
+LaTeX Warning: Citation `LEP-2' on page 21 undefined on input line 947.
+
+[21 <./figures/finetuning.pdf>]
+
+LaTeX Warning: Citation `Beringer:1900zz' on page 22 undefined on input line 95
+6.
+
+
+LaTeX Warning: Citation `Beringer:1900zz' on page 22 undefined on input line 95
+8.
+
+
+LaTeX Warning: Citation `Chatrchyan201226' on page 22 undefined on input line 9
+60.
+
+
+LaTeX Warning: Citation `Aad201249' on page 22 undefined on input line 960.
+
+<figures/cls_comb_zoom.pdf, id=428, 825.0825pt x 569.12625pt>
+File: figures/cls_comb_zoom.pdf Graphic file (type pdf)
+
+<use figures/cls_comb_zoom.pdf>
+Package pdftex.def Info: figures/cls_comb_zoom.pdf used on input line 963.
+(pdftex.def)             Requested size: 188.6235pt x 130.10602pt.
+Package epstopdf Info: Source file: <figures/fig_05b.eps>
+(epstopdf)                    date: 2013-09-16 23:32:53
+(epstopdf)                    size: 14301 bytes
+(epstopdf)             Output file: <figures/fig_05b-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-09-16 23:44:27
+(epstopdf)                    size: 15282 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/fig_05b-eps-conver
+ted-to.pdf figures/fig_05b.eps>
+(epstopdf)             \includegraphics on input line 964.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/fig_05b-eps-converted-to.pdf, id=429, 569.12625pt x 412.54124pt>
+File: figures/fig_05b-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/fig_05b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/fig_05b-eps-converted-to.pdf used on input lin
+e 964.
+(pdftex.def)             Requested size: 188.6235pt x 136.73074pt.
+ [22 <./figures/FD_Wmass_Hloop.pdf>]
+[23 <./figures/w12_blueband-eps-converted-to.pdf>]
+<figures/HiggsSpin.pdf, id=457, 1027.84pt x 770.88pt>
+File: figures/HiggsSpin.pdf Graphic file (type pdf)
+
+<use figures/HiggsSpin.pdf>
+Package pdftex.def Info: figures/HiggsSpin.pdf used on input line 1023.
+(pdftex.def)             Requested size: 293.41507pt x 220.05597pt.
+ [24 <./figures/cls_comb_zoom.pdf, page is rotated 90 degrees> <./figures/fig_0
+5b-eps-converted-to.pdf>]
+<figures/hww_gen_all.pdf, id=516, 505.89pt x 739.76375pt>
+File: figures/hww_gen_all.pdf Graphic file (type pdf)
+
+<use figures/hww_gen_all.pdf>
+Package pdftex.def Info: figures/hww_gen_all.pdf used on input line 1056.
+(pdftex.def)             Requested size: 377.24702pt x 551.66084pt.
+ [25 <./figures/HiggsSpin.pdf>] [26 <./figures/hww_gen_all.pdf>]
+
+LaTeX Warning: Citation `Chatrchyan201291' on page 27 undefined on input line 1
+092.
+
+<figures/limits_nj_shape.pdf, id=636, 569.12625pt x 408.52625pt>
+File: figures/limits_nj_shape.pdf Graphic file (type pdf)
+
+<use figures/limits_nj_shape.pdf>
+Package pdftex.def Info: figures/limits_nj_shape.pdf used on input line 1095.
+(pdftex.def)             Requested size: 377.24702pt x 270.8063pt.
+) [27 <./figures/limits_nj_shape.pdf, page is rotated 90 degrees>]
+Chapter 2.
+[28
+
+
+]
+Chapter 3.
+[29
+
+]
+Chapter 4.
+[30
+
+]
+Chapter 5.
+[31
+
+]
+Chapter 6.
+[32
+
+]
+Chapter 7.
+[33
+
+]
+Chapter 8.
+[34
+
+]
+Chapter 9.
+[35
+
+]
+Chapter 10.
+[36
+
+]
+Chapter 11.
+[37
+
+]
+Appendix A.
+[38
+
+]
+Appendix B.
+No file thesis_jae.ind.
+(./thesis_jae.bbl [39
+
+]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+) [40
+
+] (./thesis_jae.aux (./template_frontmatter.aux)
+(./intro_higgs.aux))
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3314 strings out of 493633
+ 45192 string characters out of 3143378
+ 107584 words of memory out of 3000000
+ 6488 multiletter control sequences out of 15000+200000
+ 12411 words of font info for 47 fonts, out of 3000000 for 9000
+ 831 hyphenation exceptions out of 8191
+ 38i,19n,26p,502b,282s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/201
+1/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2011
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2011/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2011/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on thesis_jae.pdf (50 pages, 1316579 bytes).
+PDF statistics:
+ 772 PDF objects out of 1000 (max. 8388607)
+ 522 compressed objects within 6 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+

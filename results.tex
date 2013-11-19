@@ -306,7 +306,7 @@ At \mHi=125~\GeV, the observed/expected significance
 is $4.0\sigma/5.1\sigma$ when all channels are combined.
 
 Fig.~\ref{fig:significane_mH} shows the observed and expected 
-significance for low Higgs mass hypotheses. 
+significance for low Higgs mass hypotheses($\mHi\le200~\GeV$). 
 The solid black line represents the significance assuming \mHi = 125~\GeV\ signal. 
 The green and yellow bands respresent $1\sigma$/$2\sigma$ uncertainty 
 estimated by pseudo data. The dotted line represents the significance 
@@ -352,9 +352,9 @@ Higgs Mass(\GeV) & Observed & Expected & Observed & Expected  \\
 600 & 0.0 & 0.9 & 0.0 & 0.8 \\
 \hline \hline
 \end{tabular}
-\caption{Observed and expected significances in $\intlumiSevenTeV$ at 7 TeV.  
-Cut-based analysis is used in SF final states. Table shows result of all channels combined 
-when 2D or cut-based analysis is used in \DF\ 0/1-jet catetories} 
+\caption{Observed and expected significances in 7~\TeV.   
+Cut-based analysis is used in \SF\ final states 
+and shape-based analysis is used in \DF\ finale states} 
 \label{tab:significance_7tev}
 \end{center}
 \end{table} 
@@ -391,9 +391,9 @@ Higgs Mass(\GeV) & Observed & Expected & Observed & Expected  \\
 600 & 0.0 & 1.8 & 0.0 & 1.3 \\
 \hline \hline
 \end{tabular}
-\caption{Observed and expected significances in $\intlumiEightTeV$ at 8 TeV.  
-Cut-based analysis is used in SF final states. Table shows result of all channels combined 
-when 2D or cut-based analysis is used in \DF\ 0/1-jet catetories} 
+\caption{Observed and expected significances in 8~\TeV.   
+Cut-based analysis is used in \SF\ final states 
+and shape-based analysis is used in \DF\ finale states} 
 \label{tab:significance_8tev}
 \end{center}
 \end{table} 
@@ -431,10 +431,9 @@ Higgs Mass(\GeV) & Observed & Expected & Observed & Expected  \\
 600 & 0.0 & 2.0 & 0.0 & 1.4 \\
 \hline \hline
 \end{tabular}
-\caption{Observed and expected significances in $\intlumiSevenTeV$ 
-at 7 TeV and $\intlumiEightTeV$ at 8 TeV.  
-Cut-based analysis is used in SF final states. Table shows result of all channels combined 
-when 2D or cut-based analysis is used in \DF\ 0/1-jet catetories} 
+\caption{Observed and expected significances combining 7~\TeV\ and 8~\TeV\ results.  
+Cut-based analysis is used in \SF\ final states 
+and shape-based analysis is used in \DF\ finale states} 
 \label{tab:significance_78tev}
 \end{center}
 \end{table} 
@@ -446,7 +445,7 @@ when 2D or cut-based analysis is used in \DF\ 0/1-jet catetories}
 \includegraphics[width=0.8\textwidth]{figures/signif_allcomb_inj125_data_zoom.pdf} 
 \end{tabular} 
 \caption{Observed and expected significance as a function of \mHi\ for 
-the low Higgs mass hypotheses. 
+the low Higgs mass hypotheses($\mHi\le200~\GeV$). 
 The solid black line represents the significance assuming \mHi = 125~\GeV\ signal. 
 The green and yellow bands respresent $1\sigma$/$2\sigma$ uncertainty 
 estimated by pseudo data. The dotted line represents the significance 
@@ -479,17 +478,48 @@ of default generator.}
 
 \section{Signal Strength}
 
+As mentioned before, we measure the signal strength at the 
+measured Higgs mass. The mass measurement comes from 
+$H\rightarrow ZZ\rightarrow4l$ and $H\rightarrow \gamma\gamma$, 
+and it turned out to be around 125~\GeV. 
+For the results shown in this section,   
+the cut-based analysis is used in \SF\ final states 
+and shape-based analysis is used in \DF\ finale states. 
 
+Fig.~\ref{fig:mu_mH} shows the best fit signal strength 
+as a function of \mHi\ for the low Higgs mass hypotheses($\mHi\le200~\GeV$).
+All channels in 7~\TeV\ and 8~\TeV\ are combined. 
+The green band shows $1\sigma$ error of the fit. 
+The signal strength is within $1\sigma$ of SM Higgs assumption 
+in \mHi = 118 - 125~\GeV.  
 
-%
-\begin{figure}[htp] 
-\centering 
-\begin{tabular}{c} 
-\includegraphics[width=0.8\textwidth]{figures/mu_allchannels.pdf}
-\end{tabular} 
-\caption{ Signal strength($\mu$) for individual final states.} 
-\label{fig:mu_allchannels} 
-\end{figure} 
+Fig.~\ref{fig:mu_scan} shows the  $- 2\Delta\ln \textrm{L}$ scan of $\mu$. 
+The black curve represents the case where systematic and statistical 
+uncertainties are taken into account, while blue curve represents the case 
+where only statistical uncertainty is considered. For latter,  
+all nuisances are fixed to the post-fit values, and fitted again.  
+The uncertainty for the blue curve comes solely from statistics of data. 
+The red lines represent the $1\sigma$ unceratinty band for each curve. 
+The measured signal strength is $0.76 \pm 0.21$.  
+One can extract the contribution of systematic uncertainties to the signal strength
+by subtracting uncertainty in blue from the uncertainty in black.
+Separating the systematic and statistical uncertainties, 
+the measured signal strength is $0.76 \pm 0.16(syst.) \pm 0.13(stat.)$.  
+
+Fig.~\ref{fig:mu_allchannels} shows the fitted signal strength($\mu$) 
+for individual channels for \mHi=125~\GeV.
+The dotted vertical line and the green band are 
+the central value and uncertainty band of the signal strength 
+obtained from combination of all channels. 
+The figure shows that all channels are consistent each other
+within the uncertainties.
+
+Tab.~\ref{tab:mu_diffgenerator} shows the signal strengths 
+using different generators for the \qqww\ process. Alternative generators,
+MC@NLO and Powheg, were used replacing the default generator, Madgraph.
+The result shows that the signal strength is insensitive to the choice
+of default generator. 
+
 
 %
 \begin{figure}[htp] 
@@ -497,7 +527,11 @@ of default generator.}
 \begin{tabular}{c} 
 \includegraphics[width=0.8\textwidth]{figures/mlf7p8TeV_zoomed.pdf}
 \end{tabular} 
-\caption{ Signal strength($\mu$) as a function of \mHi.} 
+\caption{The best fit signal strength($\mu$) as a function of \mHi\ for low Higgs 
+mass hypotheses($\mHi\le200~\GeV$).
+All channels are combined. 
+Cut-based analysis is used in \SF\ final states 
+and shape-based analysis is used in \DF\ finale states} 
 \label{fig:mu_mH} 
 \end{figure} 
 
@@ -510,9 +544,27 @@ of default generator.}
 \caption{ $- 2\Delta\ln \textrm{L}$ scan of $\mu$ with(black) 
 and without(blue) systematic uncertainty.
 The uncertainty for the blue curve comes solely from statistics of data.
+The red lines represent the $1\sigma$ unceratinty band for each curve. 
 One can extract the contribution of systematic uncertainties to the signal strength
 by subtracting uncertainty in blue from the uncertainty in black.} 
 \label{fig:mu_scan} 
+\end{figure} 
+
+%
+\begin{figure}[htp] 
+\centering 
+\begin{tabular}{c} 
+\includegraphics[width=0.8\textwidth]{figures/mu_allchannels.pdf}
+\end{tabular} 
+\caption{ Signal strength($\mu$) for individual channels for \mHi=125~\GeV.
+Cut-based analysis is used in \SF\ final states 
+and shape-based analysis is used in \DF\ finale states. 
+The dotted vertical line and the green band are 
+the central value and uncertainty band of the signal strength 
+obtained from combination of all channels. 
+All channels are consistent to each other.
+} 
+\label{fig:mu_allchannels} 
 \end{figure} 
 
 %
