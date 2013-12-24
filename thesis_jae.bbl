@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{cmstdr1}
 {CMS} Collaboration.
@@ -7,42 +7,62 @@
 \newblock Technical Design Report CMS. CERN, Geneva, 2006.
 \newblock There is an error on cover due to a technical problem for some items.
 
-\bibitem{Anghel2009277}
-Ioana Anghel.
-\newblock Status of the {CMS} silicon strip tracker and commissioning results.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment},
-  604(1–2):277 -- 280, 2009.
+\bibitem{Fruhwirth1996189}
+R.~Frühwirth, P.~Kubinec, W.~Mitaroff, and M.~Regler.
+\newblock Vertex reconstruction and track bundling at the {LEP} collider using
+  robust algorithms.
+\newblock {\em Computer Physics Communications}, 96(2–3):189 -- 208, 1996.
 
-\bibitem{Abbaneo2004331}
-D.~Abbaneo.
-\newblock Layout and performance of the {CMS} silicon strip tracker.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment},
-  518(1–2):331 -- 335, 2004.
+\bibitem{cmsnotetrackfilter}
+P.~Azzurri and B.~Mangano.
+\newblock Optimal filtering of fake tracks.
+\newblock {\em CMS Internal Note}, (2008/017), 2008.
 
-\bibitem{Chatrchyan:2009hw}
-S~Chatrchyan et~al.
-\newblock Performance of {CMS} hadron calorimeter timing and synchronization
-  using test beam, cosmic ray, and lhc beam data.
-\newblock {\em JINST}, 5:T03013, 2010.
+\bibitem{cmsnoteiterativetracking}
+M.~Pioppi.
+\newblock Iterative tracking.
+\newblock {\em CMS Internal Note}, (2007/065), 2008.
 
-\bibitem{Kim:2012ix}
-Min~Suk Kim et~al.
-\newblock {CMS} reconstruction improvement for the muon tracking by the rpc
-  chambers.
-\newblock {\em PoS}, RPC2012:045, 2012.
+\bibitem{DAclustering}
+W.~Erdmann.
+\newblock Offline primary vertex reconstruction with deterministic annealing
+  clustering.
+\newblock {\em {CMS Note}}, IN-2011/014, 2011.
 
-\bibitem{Maselli:1196170}
-Silvia Maselli.
-\newblock Calibration of the barrel muon drift tubes system in {CMS}.
-\newblock Technical Report CMS-CR-2009-100, CERN, Geneva, May 2009.
+\bibitem{AdaptiveVertexFit}
+W.~Waltenberger R.~Fruewirth and P.~Vanlaer.
+\newblock Adaptive vertex fitting.
+\newblock {\em {CMS Note}}, NOTE-2007/008, 2007.
 
-\bibitem{Lenzi:2013xpa}
-Thomas Lenzi.
-\newblock Development and study of different muon track reconstruction
-  algorithms for the level-1 trigger for the {CMS} muon upgrade with gem
-  detectors.
-\newblock 2013.
+\bibitem{Baffioni:2006cd}
+S.~Baffioni, C.~Charlot, F.~Ferri, D.~Futyan, P.~Meridiani, et~al.
+\newblock Electron reconstruction in {CMS}.
+\newblock {\em Eur.Phys.J.}, C49:1099--1116, 2007.
+
+\bibitem{BetheHeitler}
+H.~Bethe and W.~Heitler.
+\newblock On the stopping of fast particles and on the creation of positive
+  electrons.
+\newblock {\em Proceedings of the Royal Society of London. Series A, Containing
+  Papers of a Mathematical and Physical Character}, 146(856):pp. 83--112, 1934.
+
+\bibitem{0954-3899-31-9-N01}
+W~Adam, R~Frühwirth, A~Strandlie, and T~Todorov.
+\newblock Reconstruction of electrons with the gaussian-sum filter in the cms
+  tracker at the lhc.
+\newblock {\em Journal of Physics G: Nuclear and Particle Physics}, 31(9):N9,
+  2005.
+
+\bibitem{PAS-HIG-13-002}
+{CMS} Collaboration.
+\newblock Properties of the higgs-like boson in the decay $h \rightarrow zz
+  \rightarrow 4l$ in pp collisions at $\sqrt{s}=7 \textrm{ and }
+  8~\textrm{TeV}$.
+\newblock {\em Physics Analysis Summary}, HIG-13-002, 2013.
+
+\bibitem{Cacciari:2008gp}
+Matteo Cacciari, Gavin~P. Salam, and Gregory Soyez.
+\newblock {The Anti-k(t) jet clustering algorithm}.
+\newblock {\em JHEP}, 0804:063, 2008.
 
 \end{thebibliography}

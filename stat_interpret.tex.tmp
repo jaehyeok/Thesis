@@ -129,18 +129,15 @@ machineries.
 
 %FIXME
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Construction of likelihood and probability density function} 
+\section{Exclusion of the Standard Model Higgs Boson} 
 \label{sec:stat_exclusion}
 
-The procedure of constructing likelihood and probability density function 
-which is agreed between ALTAS anc CMS collaboration is
-described in detail in the reference~\cite{combination_stat}.
+The procedure of calculating observed limit is described in this section.
+The detailed description can be found in \cite{combination_stat}.
 
-%\begin{itemize}
+\begin{itemize}
 %
-%\item{\textbf{Step 1 : Construct likelihood function based on Poisson statistics} } \\
-The first step for \textit{pdf} construction is to define a likelihood function, $\mathcal{L}$. 
-
+\item{\textbf{Step 1 : Construct likelihood function based on Poisson statistics} } \\
 \begin{eqnarray} 
 \mathcal{L} ( X | \mu, \theta) 
 \, = \,
@@ -159,9 +156,10 @@ yields, respectively, in the $i^{th}$ measurement(bin).
 $p\left( \tilde{\theta_j} | \theta_j \right)$ is the \textit{pdf} for 
 $\theta_j$ which is constructed from auxiliary measurements or some  
 assumptions. $\theta_j$ is the measured or assumed value of $\theta$. 
-
+\textcolor{red}{need more explanation on the prior. 
+especailly why its frequentist approach}  
 %
-%\item{\textbf{Step 2 : Construct a test static, $\tilde{q}_\mu$} }  \\
+\item{\textbf{Step 2 : Construct a test static, $\tilde{q}_\mu$} }  \\
 By Neyman-Pearson lemma [ref], the ratio of two likelihoods, 
 \textit{i.e. signal+backgrond} and \textit{background-only}, 
 is the most powerful discriminator. 
@@ -191,7 +189,7 @@ is not tested for setting upper limits.
 %For example, if $\hat{\mu}=1$ then we do not test for $\mu=0.5$ 
 %because $\mu=0.5$ is not less compatible than  
 %
-%\item{\textbf{Step 3 : Find the observed values}}  \\
+\item{\textbf{Step 3 : Find the observed values}}  \\
 Find the observed values of the test static ($\tilde{q}_\mu^{obs}$), and 
 nuisance parameters ($\hat{\theta}_\mu^{obs}$ and $\hat{\theta}_0^{obs}$)
 that maximize the likelihoods. 
@@ -201,8 +199,8 @@ hypothesis with the given signal strength modifier, $\mu$,
 and $\mathcal{L} ( X | 0, \hat{\theta}_0)$ is used to get $\hat{\theta}_0^{obs}$
 for \textit{background-only} hypothesis.    
 %
-%\item{\textbf{Step 4 : Construct \textit{pdf}s for \textit{signal + background} 
-%       and \textit{background-only} hypotheses} } \\
+\item{\textbf{Step 4 : Construct \textit{pdf}s for \textit{signal + background} 
+       and \textit{background-only} hypotheses} } \\
 Using the profiled nuisance parameters, $\hat{\theta}_\mu^{obs}$ and $\hat{\theta}_0^{obs}$, 
 Monte-Carlo toys are generated to construct \textit{pdf}s for \textit{signal + background}
 and \textit{background-only} hypotheses, 
@@ -239,10 +237,8 @@ $f\left( \tilde{q}_\mu | 0 \right)$, can be obtained
 using the same technique. The two $pdf$s are used to construct 
 a measure for hypothesis test.
 
-\section{Exclusion of SM Higgs boson}
-\label{sec:stat_significance}
 %
-%\item{\textbf{Step 5 : Calculated statistical significance of observation }}  \\
+\item{\textbf{Step 5 : Calculated statistical significance of observation }}  \\
 For the measurement X, the test static,$\tilde{q}_\mu^{obs}$, can be used to 
 test significance of the observation. At LEP, modified frequentist method 
 ($\textrm{CL}_\textrm{s}$) 
@@ -291,7 +287,7 @@ assuming \textit{background-only} hypothesis ($\mu'=0$) are given by
 where $\Phi$ is a cumulative distribution of standard normal distribution.
 \textcolor{red}{Why is equation different in \cite{combination_stat}? 
 Where is $\Phi(N)$ from? Real results have asym bands. How can explain this?}
-%\end{itemize}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discovery of a New Boson}
@@ -309,7 +305,7 @@ q_0
 \left\{ \begin{array}{l l}
 \displaystyle
 -2 \ln \frac{\mathcal{L}( X | 0, \hat{\theta}_0)}
-            {\mathcal{L}( X | \hat{\mu}, \hat{\theta}_\mu)} 
+            {\mathcal{L}( X | \mu, \hat{\theta}_\mu)} 
              & \qquad \textrm{ with } \hat{\mu} \ge 0 \\   
 0 
              & \qquad \textrm{ with } \hat{\mu} < 0    
