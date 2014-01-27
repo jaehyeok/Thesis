@@ -1,68 +1,83 @@
 \begin{thebibliography}{10}
 
-\bibitem{cmstdr1}
-{CMS} Collaboration.
-\newblock {\em CMS Physics: Technical Design Report Volume 1: Detector
-  Performance and Software}.
-\newblock Technical Design Report CMS. CERN, Geneva, 2006.
-\newblock There is an error on cover due to a technical problem for some items.
+\bibitem{combination_stat}
+CMS~Collaborations The~ATLAS and the LHC Higgs Combination~Group.
+\newblock \textit{Procedure for the LHC Higgs boson search combination in
+  summer 2011}.
+\newblock {\em ATL-PHYS-PUB-2011-11, CMS-NOTE-2011-005}, 2011.
 
-\bibitem{Fruhwirth1996189}
-R.~Frühwirth, P.~Kubinec, W.~Mitaroff, and M.~Regler.
-\newblock Vertex reconstruction and track bundling at the {LEP} collider using
-  robust algorithms.
-\newblock {\em Computer Physics Communications}, 96(2–3):189 -- 208, 1996.
+\bibitem{2011arXiv1103.0354C}
+J.~S. {Conway}.
+\newblock Incorporating nuisance parameters in likelihoods for multisource
+  spectra.
+\newblock {\em ArXiv e-prints}, March 2011.
 
-\bibitem{cmsnotetrackfilter}
-P.~Azzurri and B.~Mangano.
-\newblock Optimal filtering of fake tracks.
-\newblock {\em CMS Internal Note}, (2008/017), 2008.
+\bibitem{Botje:2011sn}
+Michiel Botje, Jon Butterworth, Amanda Cooper-Sarkar, Albert de~Roeck, Joel
+  Feltesse, et~al.
+\newblock {The PDF4LHC Working Group Interim Recommendations}.
+\newblock 2011.
 
-\bibitem{cmsnoteiterativetracking}
-M.~Pioppi.
-\newblock Iterative tracking.
-\newblock {\em CMS Internal Note}, (2007/065), 2008.
+\bibitem{pdfAN}
+et~al G.~Bauer.
+\newblock Acceptance uncertainties for the inclusive w and z cross section
+  measurements.
+\newblock {\em CMS}, (AN-2011/055), 2011.
 
-\bibitem{DAclustering}
-W.~Erdmann.
-\newblock Offline primary vertex reconstruction with deterministic annealing
-  clustering.
-\newblock {\em {CMS Note}}, IN-2011/014, 2011.
+\bibitem{Dittmaier:1318996}
+S~Dittmaier, C~Mariotti, G~Passarino, R~Tanaka, J~Baglio, P~Bolzoni,
+  R~Boughezal, O~Brein, C~Collins-Tooth, S~Dawson, S~Dean, A~Denner,
+  S~Farrington, M~Felcini, M~Flechl, D~de~Florian, S~Forte, M~Grazzini,
+  C~Hackstein, T~Hahn, R~Harlander, T~Hartonen, S~Heinemeyer, J~Huston,
+  A~Kalinowski, M~Krämer, F~Krauss, J~S Lee, S~Lehti, F~Maltoni, K~Mazumdar,
+  S-O Moch, A~Mück, M~Mühlleitner, P~Nason, C~Neu, C~Oleari, J~Olsen,
+  S~Palmer, F~Petriello, G~Piacquadio, A~Pilaftsis, C~T Potter, I~Puljak,
+  J~Qian, D~Rebuzzi, L~Reina, H~Rzehak, M~Schumacher, P~Slavich, M~Spira,
+  F~Stöckli, R~S Thorne, M~Vazquez~Acosta, T~Vickey, A~Vicini, D~Wackeroth,
+  M~Warsinsky, M~Weber, G~Weiglein, C~Weydert, J~Yu, M~Zaro, and T~Zirke.
+\newblock {\em Handbook of LHC Higgs Cross Sections: 1. Inclusive Observables}.
+\newblock CERN, Geneva, 2011.
+\newblock Comments: 153 pages, 43 figures, to be submitted to CERN Report.
+  Working Group web page:
+  https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CrossSections.
 
-\bibitem{AdaptiveVertexFit}
-W.~Waltenberger R.~Fruewirth and P.~Vanlaer.
-\newblock Adaptive vertex fitting.
-\newblock {\em {CMS Note}}, NOTE-2007/008, 2007.
+\bibitem{Frixione:2002ik}
+Stefano Frixione and Bryan~R. Webber.
+\newblock {Matching NLO QCD computations and parton shower simulations}.
+\newblock {\em JHEP}, 0206:029, 2002.
 
-\bibitem{Baffioni:2006cd}
-S.~Baffioni, C.~Charlot, F.~Ferri, D.~Futyan, P.~Meridiani, et~al.
-\newblock Electron reconstruction in {CMS}.
-\newblock {\em Eur.Phys.J.}, C49:1099--1116, 2007.
+\bibitem{Madgraph5p1}
+Johan Alwall, Michel Herquet, Fabio Maltoni, Olivier Mattelaer, and Tim
+  Stelzer.
+\newblock Madgraph 5: going beyond.
+\newblock {\em Journal of High Energy Physics}, 2011(6):1--40, 2011.
 
-\bibitem{BetheHeitler}
-H.~Bethe and W.~Heitler.
-\newblock On the stopping of fast particles and on the creation of positive
-  electrons.
-\newblock {\em Proceedings of the Royal Society of London. Series A, Containing
-  Papers of a Mathematical and Physical Character}, 146(856):pp. 83--112, 1934.
+\bibitem{Corcella:2000bw}
+G.~Corcella, I.G. Knowles, G.~Marchesini, S.~Moretti, K.~Odagiri, et~al.
+\newblock {HERWIG 6: An Event generator for hadron emission reactions with
+  interfering gluons (including supersymmetric processes)}.
+\newblock {\em JHEP}, 0101:010, 2001.
 
-\bibitem{0954-3899-31-9-N01}
-W~Adam, R~Frühwirth, A~Strandlie, and T~Todorov.
-\newblock Reconstruction of electrons with the gaussian-sum filter in the cms
-  tracker at the lhc.
-\newblock {\em Journal of Physics G: Nuclear and Particle Physics}, 31(9):N9,
-  2005.
+\bibitem{Sjostrand:2006za}
+Torbjorn Sjostrand, Stephen Mrenna, and Peter~Z. Skands.
+\newblock {PYTHIA 6.4 Physics and Manual}.
+\newblock {\em JHEP}, 0605:026, 2006.
 
-\bibitem{PAS-HIG-13-002}
-{CMS} Collaboration.
-\newblock Properties of the higgs-like boson in the decay $h \rightarrow zz
-  \rightarrow 4l$ in pp collisions at $\sqrt{s}=7 \textrm{ and }
-  8~\textrm{TeV}$.
-\newblock {\em Physics Analysis Summary}, HIG-13-002, 2013.
+\bibitem{Frixione:2007vw}
+Stefano Frixione, Paolo Nason, and Carlo Oleari.
+\newblock {Matching NLO QCD computations with Parton Shower simulations: the
+  POWHEG method}.
+\newblock {\em JHEP}, 0711:070, 2007.
 
-\bibitem{Cacciari:2008gp}
-Matteo Cacciari, Gavin~P. Salam, and Gregory Soyez.
-\newblock {The Anti-k(t) jet clustering algorithm}.
-\newblock {\em JHEP}, 0804:063, 2008.
+\bibitem{CMS-PAS-LUM-13-001}
+The~CMS collaboration.
+\newblock Cms luminosity based on pixel cluster counting - summer 2013 update.
+\newblock {\em Physics Analysis Summary}, (CMS-PAS-LUM-13-001).
+
+\bibitem{Chatrchyan:2011ds}
+Serguei Chatrchyan et~al.
+\newblock {Determination of Jet Energy Calibration and Transverse Momentum
+  Resolution in CMS}.
+\newblock {\em JINST}, 6:P11002, 2011.
 
 \end{thebibliography}

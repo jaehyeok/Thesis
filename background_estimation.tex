@@ -1,51 +1,15 @@
 Even after applying WW selection and the \mHi-dependent selection to suppress 
 backgrounds, there are events that survive these selections. In order to extract 
-the signal component from data, precise estimation of these residual backgrounds 
+the signal component from data, a precise estimation of these residual backgrounds 
 along with their uncertainty is essential. 
 
-Figure~\ref{fig:bkgcomposition} shows the background composition in the cut-based 
-analysis on the top and in the shape-based analysis on the bottom. 
-The total background yield is normalized to 1, so the plots show only relative 
-contribution of each background. To have a sense of the size of the signal, 
-\mHi=125~\GeV\ contribution(red) is overlaid. The yields are after
-applying all selections; \mHi-depedent selection on top of WW selection for 
-the cut-based plot and $60<\mT<280~\GeV$ and $12<\mll<200~\GeV$ cuts on top of 
-WW selection for the shape-based plot. All final states are shown for the
-cut-based plot while only are shown \DF\ 0-jet and 1-jet final states  
-for the shape-based plots where the method is applied. 
-In the 0-jet category, \ww\ is the dominant process in both \DF\ and \SF\ 
-categories, and \Wjets\ and \dyll\ follow in the \DF\ and \SF\ categories,
-repectively. 
-In the 1-jet category, \ww\ and \topbkg are almost equally dominant both \DF\ and \SF\
-categories, and \Wjets\ and \dyll\ follow in the \DF\ and \SF\ categories,
-repectively.
-%
-\begin{figure}[htp] 
-\centering 
-\begin{tabular}{c} 
-\includegraphics[width=0.9\textwidth]{figures/Bkgcomposition_cutbased.pdf} 
-\\
-\\
-\includegraphics[width=0.9\textwidth]{figures/Bkgcomposition_2d.pdf} 
-\end{tabular} 
-\caption{Background composition for cut-based(top) and shape-based analyses(bottom) 
-for the \mHi=125~\GeV\ hypothesis. Signal contribution is overlaid. 
-For the cut-based plot the \mHi\ selection on top of 
-WW selection is applied and the plot shows all final states. 
-For the shape-based plot \mT\ and \mll\ cuts to construct templates are applied 
-on top of WW selection and the plot shows \DF\ 0-jet and 1-jet final states 
-where the shape-based method is applied. 
-} 
-\label{fig:bkgcomposition} 
-\end{figure} 
-
 The methods to estimate the contribution of each background depend on the process. 
-The best way to do it is to measure it using data control samples, which is 
-called ``data-driven method" which will be discussed more in the next paragraph. 
+The best way is to measure it using data control samples. This method is 
+called the ``data-driven method" which will be discussed in more detail in the next paragraph. 
 For most of the main backgrounds, we do data-driven estimations using dedicated
-data control samples. For the rest of the process, we take it from MC.
-Table~\ref{tab:overview_bkgest} shows which background is estimated by 
-data-driven methods and which is taken from MC. 
+data control samples. For the rest of the process, we take it from simulation.
+Table~\ref{tab:overview_bkgest} shows which background is estimated by the
+data-driven methods and which is taken from simulation. 
 
 %
 \begin{table}[htp] 
@@ -68,7 +32,7 @@ Method         & data & data & data & data & data \\
 Background     & \ggww & \wgamma & \vv \\
 \hline 
 \hline 
-Method         & MC & MC & MC \\ 
+Method         & simulation & simulation & simulation \\ 
 \hline 
 \end{tabular} 
 
@@ -82,16 +46,25 @@ from simulation.}
 \end{center} 
 \end{table} 
 
-The basic idea of data-driven method is to measure the ratio($\epsilon$) of the number of events  
-passing the final selection($N_{SR}^{independent}$) to the number of events passing an inverted 
-selection($N_{CR}^{independent}$) using data samples which is independent of the data samples 
-used to extract signal events. The SR and CR in the subscript stand for signal region 
-which corresponds to the final selection for signal extraction 
-and control region which is the region where one or more requirements are inverted. 
-The independent sample can be either data or MC. Then, we apply the ratio($\epsilon$)
-to the number of events in the control sample passing the inverted selection($N_{CR}^{control}$).
-Note that the control region is where some of the selections are inverted. 
-All this can be written as an equation, 
+
+The basic idea of the data-driven method is the following : 
+\begin{itemize}
+\item define a control region which is obtained by inverting or loosening 
+      a subset of the requirements in the final selection(WW or Higgs selection).
+      The phase space selected by the final selection is called ``signal region(SR)" 
+      and the inverted or loosened selection is called ``control region(CR)". 
+\item measure the ratio($\epsilon$) of the number of events passing the 
+      final selection($N_{SR}^{independent}$) to the number of events 
+      passing the control region requirement($N_{CR}^{independent}$) 
+      using a data sample independent of the data sample 
+      used to extract the signal events. 
+      The independent sample can be either data or MC. 
+\item apply the ratio($\epsilon$) to the number of events in the control sample 
+      passing the control region selection($N_{CR}^{control}$). The control sample 
+      is obtained by simply applying the control region selection 
+      to the data sample used to extract signal events. 
+\end{itemize}
+This procedure can be written as an equation, 
 \begin{eqnarray} 
 N_{SR} = \epsilon \times N_{CR}^{control}.
 \end{eqnarray} 
@@ -100,35 +73,35 @@ When measuring $\epsilon$ or $N_{CR}^{control}$, we need to subtract
 the contributions from other processes to measure only process we 
 are interested in. This results in dependencies between estimations 
 of the backgrouns processes. Fig.~\ref{fig:bkgest_dependency} shows 
-the dependency of data-driven background estimation. 
-The \dyll\ and \Wjets\ do not depend on the other data-driven estimations. 
+the dependency of the data-driven background estimation. 
+The \dyll\ and \Wjets\ do not depend on the other data-driven estimations.
 The estimation of \wgammastar\ depends on the estimation of \Wjets. 
 The estimation of \topbkg\ depends on \wgammastar, \dyll\ and \Wjets. 
 The estimation of \qqww\ depends on \wgammastar, \dyll,  \Wjets\ and \topbkg. 
 These dependencies natually decide in which order background processes
 need to estimated. The \dyll\ and \Wjets\ are done first, 
-and \wgammastar, \topbkg\ and \qqww\ follow. This chapter will discuss 
+and \wgammastar, \topbkg\ and \qqww\ follow. This chapter discusses 
 the details following the above order. 
 \begin{figure}[ht!] 
 \centering 
 \includegraphics[width=0.99\textwidth]{figures/bkgest_schematic.pdf} 
-\caption{Dependency of data-driven estimations.} 
+\caption{Dependency of the data-driven estimations.} 
 \label{fig:bkgest_dependency} 
 \end{figure} 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ \dyll }
 
-\dyll\ is one of the main backgrounds in the \SF\ category.   
-\dyll\ events do not have intrinsic \met. But, any mis-measurements can 
-lead to fake(instrumental) \met, of which mis-measurement of jet momentum dominates.  
-The expected contribution of \dyll\ in the signal region is estimated by 
+The \dyll\ is one of the main backgrounds in the \SF\ category.   
+The \dyll\ events do not have an intrinsic \met. But, any mis-measurements can 
+lead to a fake(instrumental) \met, of which the mis-measurement of jet momentum dominates.  
+The expected contribution of the \dyll\ in the signal region is estimated by 
 counting events near the Z mass ($|\mll - m_Z| < 7.5~\GeV$
 \footnote{Tighter mass window than Z veto requirement in the WW selection is chosen
 to reduce other background contributions}) in data, subtracting 
-the contribution from other processes, and scaling it by the ratio (\routin) 
+the contributions from other processes, and scaling it by the ratio(\routin) 
 which is defined as the ratio of events outside of Z peak to the events inside
-of Z peak with looser DY MVA requirement. In equation, this can be written by 
+of Z peak with looser BDT score. In equation, this can be written by 
 \begin{eqnarray} 
 N(ll)^{DY}_{SR} 
 = 
@@ -151,61 +124,64 @@ where
       $\displaystyle k_{\mu\mu} = \sqrt{\frac{N(\mu\mu)_{in}^{loose}}{N(ee)_{in}^{loose}}}$,
       measured with loose selection ($\minpmet > 20~\GeV$) 
 \item $N_{CR}^{\vv, MC}$ : contribution from \vv\ events estimated in MC
-\item $R(ll)_{out/in}$ : \routin\ value measured in data with looser DY MVA selection
+\item $R(ll)_{out/in}$ : \routin\ value measured in data with looser BDT score
 \end{itemize}
+
 The number of events in the CR($N(ll)_{CR}^{data}$) is corrected by subtracting
-\vv\ and $e\mu$ contribution($N(e\mu)_{CR}^{data}$) which is dominated by \topbkg\ with 
-efficiency correction between \SF\ and $e\mu$. The lepton efficiency does not depend 
-on the DY MVA requirement, so we can measure it without DY MVA requirement 
+\vv\ and $e\mu$ contribution($N(e\mu)_{CR}^{data}$) which is dominated by \topbkg, 
+with an efficiency correction between \SF\ and \DF. The lepton efficiency does not depend 
+on the BDT score, so we can measure it without the BDT score requirement 
 to get more statistics. The statistical uncertainty on the lepton efficiency 
-measured with the events under the Z peak is at the level of \textcolor{red}{XX} \%,
-much smaller than the dominant systematic uncertainty. 
+measured with the events under the Z peak is
+much smaller($< 1~\%$) than the dominant systematic uncertainty. 
 The \vv\ contribution is taken from MC because they have real \met, 
 and real \met\ is well-modelled by simulation.
-\textcolor{blue}{The reason why \vv\ is considered separately from \dyll
-is that the extrapolation from CR to SR can be different for the two 
-processes once the full selection is applied.}  
+%\textcolor{blue}{The reason why \vv\ is considered separately from \dyll
+%is that the extrapolation from CR to SR can be different for the two 
+%processes once the full selection is applied.}  
 For the \vv\ contribution in the CR, we assign 10 \% of systematic uncertainty.  
-\textcolor{red}{where does this 10\% come from?} 
+%\textcolor{red}{where does this 10\% come from?} 
 
-The $R(ll)_{out/in}$ value is measured in data with looser DY MVA requirement. 
-The assumption is that the \routin value does not change as a function of 
-DY MVA, which is expected because DY MVA is dominantly dependent on \met\ 
-and \met\ in \dyll\ events mostly comes from jet momentum mismeasurement, 
+The \routin\ is measured in data with a looser BDT score. 
+The assumption is that the \routin\ does not change as a function of 
+the BDT score, which is expected because the BDT score is dominantly dependent on \met,
+and \met\ in \dyll\ events mostly comes from the jet momentum mi-smeasurement, 
 which is weakly correlated to the lepton energy/momentum from which 
-\mll\ is calculated. So, we divide the DY MVA output into 4 bins
+\mll\ is calculated. So, we divide the BDT score into 4 bins
 ([-0.9,-0.85], [-0.85,-0.60], [-0.60,WP], [WP,1.0]) where WP 
-is 0.88 for 0-jet and 0.84 for 1-jet and measure the 
-\routin using the bin closest to the signal region in order to get the 
+is 0.88 for 0-jet and 0.84 for 1-jet, and measure the 
+\routin\ using the bin closest to the signal region in order to get the 
 sample with similar kinematics as the signal region events.  
 \begin{figure}[ht!] 
 \centering 
 \includegraphics[width=0.5\textwidth]{figures/Routin_0Jet_mH125_19467pb_dy.pdf} 
 \includegraphics[width=0.5\textwidth]{figures/Routin_1Jet_mH125_19467pb_dy.pdf} 
-\caption{\routin\ values as a function of DY MVA output for 0-jet and 1-jet categories
+\caption{\routin\ values as a function of BDT score for 0-jet and 1-jet categories
 for \mHi=125~\GeV\ analysis. 
 The black is from data subtracting \vv\ contribution and the red is from MC. 
 The vertical dotted lines show the cut for signal region.} 
 \label{fig:routin_mh125} 
 \end{figure} 
-Fig.~\ref{fig:routin_mh125} shows \routin\ divided by 4 bins for 0-jet and 1-jet for 
+Fig.~\ref{fig:routin_mh125} shows \routin\ divided in 4 bins for 0-jet and 1-jet for 
 \mHi = 125~\GeV\ analysis. The fourth bin, located after the vertical dotted lines, 
-corresponds to the signal region. The results using data subtracting \vv\ component 
-and using MC are drawn as black and red. The both results show that \routin\ is almost 
-flat as a function of DY MVA output. 
+corresponds to the signal region. The results using data subtracting \vv\ component, 
+and using MC are drawn as black and red, repectively. 
+The both results show that \routin\ is almost flat as a function of the BDT score. 
 
 The systematic uncertainty comes from the ``unflatness" of the \routin, 
 the largest difference between the third bin and the other bins.
-\textcolor{red}{how large is this?} In addition, 
-there is an alternate method to estimate \dyll\ using $\gamma$ + jets data sample. 
+%\textcolor{red}{how large is this?} 
+In addition, there is an alternate method to estimate \dyll\ 
+using the $\gamma$ + jets data sample. 
 The difference between this method and \routin\ method in 
 the extrapolation from CR to SR is about 30 \%. 
-We take the maximum of the two as the final systematics of the estimation. 
+We take the maximum of the unflatness and the 30~\% 
+as the final systematics of the estimation. 
 
 At the end we merge $ee$ and $\mu\mu$ to get more statistics. 
-The tab.~\ref{tab:dy_wwlevel} shows the final estimation at WW level.
-The tab.~\ref{tab:dy} 
-shows the final estimation of \dyll\ at all \mHi\ hypotheses up to 300 \GeV. 
+The table~\ref{tab:dy_wwlevel} shows the final estimation at WW level.
+The table~\ref{tab:dy} shows the final estimation of \dyll\ at all 
+\mHi\ hypotheses up to 300 \GeV. 
 After 300 \GeV, the $N_{out}(data)/N_{out}(MC)$ scale factor for WW selection 
 is applied. 
 
@@ -221,7 +197,7 @@ is applied.
 1 & $350.69\pm38.00$ & $0.25\pm0.01\pm0.08$ & $89.20\pm9.83\pm26.76$ & $21.05\pm7.16$ \\
 \hline
 \end{tabular}
-\caption{The Drell-Yan estimation in the same flavor final state at WW selection level, using the DYMVA.}
+\caption{The Drell-Yan estimation in the same flavor final state at WW selection level.}
 \label{tab:dy_wwlevel}
 \end{center}
 \end{table}
@@ -283,23 +259,12 @@ mass & $N_{in}$(data)        & $R_{out/in}$        & $N_{out}$(data)  & $N_{out}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{ Jet-induced backgrounds : \Wjets\ and QCD} 
+\section{ Jet-induced backgrounds : \Wjets} 
 \label{sec:wjets}
 
-Jets can fake leptons(electron or muon) in a various ways.
-A charged pion can convert into neutral pion in ECAL through 
-charge-exchange scattering($\pi^-p\rightarrow \pi^0n$ where p is a proton and n is a neutron) 
-which immediately converts to two photons. The result in the detector is 
-a clean track from the charged pion and the compatible energy deposit in ECAL by the two 
-photons from the neutral pion. This is the signature for an electron to be 
-reconstructed. In addition, a random combination of a track from a charged 
-particle with a compatible ECAL energy deposit can lead to an electron.  
-Another source of fakes is the leptonic decays of heavy quarks
-which is the main source of muon fakes. Since the source of fakes 
-is different for electon and muon, we estimate electron and muon fakes 
-separately. 
-
-Jet-induced background(\Wjets\ and QCD) is the second largest background in the most 
+As discussed in chapter~\ref{ch:event_selection}, 
+jets can fake leptons(electron or muon) in a various ways, 
+and result in that \Wjets\ is the second largest background in the most 
 sensitive channel, 0-jet \DF\ channel. 
 Most of the jet-induced background comes from \Wjets\ where one jet fakes a lepton(single fake)
 and a small contribution comes from QCD events where two jets fake two leptons(double fakes).  
@@ -311,21 +276,22 @@ so the contribution is suppressed dramatically by the tight \met\ requirement.
 In the end, the contribution of the double fakes is negligible compared to the 
 systematic uncertainty of the method, so it is not explicilty taken into account in this analysis. 
 
-The estimation of the jet-induced background starts from measuring the rate, ``fake rate(FR)",
+The estimation of the jet-induced background starts from measuring the ``fake rate(FR)"
 that is defined as the probability for a lepton with loose selection to pass the full selection. 
 The leptons that pass the loose selection is called ``fakable object(FO)". The fake rate is 
-measured in the data events that is dominated by QCD di-jet events. 
-The measured FR is applied to the data sample where full selection but the lepton selection 
-of one of the leptons loosened. The detailes will be discussed in the following subsections.
+measured in the data events that is dominated by QCD di-jet events collected 
+by prescaled low \pt\ single-lepton triggers. 
+The measured FR is applied to the data sample where the lepton selection 
+of one of the leptons loosened. The details will be discussed in the following subsections.
 
 \subsubsection{Definiation of fakable objects}
 
-The definiation of FO is limited by the analysis triggers used to collect signal events. 
+The definiation of FO is limited by the analysis triggers used to collect the signal events. 
 We can not define FO to be looser than the trigger requirement because FR can be 
-biased due to tighter FO selection caused by trigger requirement. Therefore, the 
-loosest seletion what we can afford is the trigger requirement. For electrion,  
+biased due to tighter FO selection caused by the trigger requirement. Therefore, the 
+loosest seletion that we can afford is the trigger requirement. For electron,  
 we use the following definition which is basically offline version of the trigger selection
-with conversion rejection added. 
+with conversion rejection added : 
 \begin{itemize}
   \item $\pt>10~\GeV$ and $|\eta| < 2.5$
   \item $\sigma_{i\eta i\eta} < 0.01/0.03$ (barrel/endcap)
@@ -338,38 +304,37 @@ with conversion rejection added.
   \item conversion rejection 
 \end{itemize}
 The background caused by photon conversions 
-can have different FR, so it is estimated by a dedicated method.  
-By excluding the contribution from conversion rejection, we construct 
-a sample of FO with similar sources. 
+can have different FR, so it is not estimated by this method. 
+By excluding the contribution from the conversion rejection, 
+we construct a sample of FO with similar sources. 
 
-The definition muon FO is given by relaxing the transverse impact parameter and 
-the isolation requirements as follows. 
+The definition of muon FO is given by relaxing the transverse impact parameter and 
+the isolation requirements :  
 \begin{itemize}
     \item $\left|d_0\right| < 0.2$~cm
     \item Isolation MVA output $>$ -0.6
 \end{itemize}
-The definition for muon is simpler because of loose trigger requirement. 
+The definition for muon is simpler because of the loose trigger requirement. 
 
 \subsubsection{Measurement of fake rate}
 
-The FR is measured in the data events dominated by QCD di-jet events. 
-These events are selected using single-lepton triggers in Tab.~\ref{tab:triggers_util}.
+The FR is measured in data dominated by QCD di-jet events. 
+These events are collected by single-lepton triggers listed in Tab.~\ref{tab:triggers_util}.
 The events selected by these triggers are dominated by leptons that 
-were originated from partons. Though the sample is dominated by QCD di-jet 
+originate from quarks and gluons. 
+
+Though the sample is dominated by QCD 
 events, there are contributions from Electroweak processes such as \Wjets\ and \dyll. 
-
-In order to suppress 
-\Wjets\ contribution, $\met>20~\GeV$ and $\mT<15~\GeV$ are required. 
-The residual contribution is estimated using MC normalized by data/MC scale factor 
+In order to suppress \Wjets\ contribution, $\met>20~\GeV$ and $\mT<15~\GeV$ are required. 
+The residual contribution is estimated using simulation normalized by a data/MC scale factor 
 calculated using the bulk of \Wjets\ events defined as $\met>30~\GeV$, $60<\mT<90~\GeV$ 
-and the full lepton selection. The deviation of scale factors from unity 
-is taken as a systematic uncertainty for FR measurement due to the \Wjets\ contribution .
+and the full lepton selection. The deviation of scale factor from unity 
+is taken as a systematic uncertainty for FR measurement due to the \Wjets\ contribution.
 %The scale factor is 0.81 and 1.06 in the muon and electron
-
 The \dyll\ contribution is suppressed by rejecting events 
 that contain an additional lepton that makes a opposite-sign lepton pair 
-having the dilepton mass within 15~\GeV\ of the Z mass.  
-The residual contribution if esimatd using MC normalized by data/MC scale factor
+having the di-lepton mass within 15~\GeV\ of the Z mass.  
+The residual contribution is estimated using simulation normalized by a data/MC scale factor
 calculated using the bulk of \dyll\ events that makes a opposite-sign lepton 
 pair with dilepton mass within 15~\GeV\ of the Z mass.
 The deviation of scale factors from unity
@@ -378,10 +343,10 @@ is taken as a systematic uncertainty for FR measurement due to the \dyll\ contri
 
 Another EWK contribution comes di-electron events when the second electron 
 is outside of the tracker acceptance. This electron is not recontructed 
-as an electron because it does not have track, but can be rescontructed 
+as an electron because it does not have a track, but can be rescontructed 
 as a jet. The result is an event with one lepton and low \met, which 
 can fall into the FO selection. In order to suppress this, the $\left| \eta \right|$ 
-of away jet is required to be less than 2.5. For di-muon events 
+of the away jet is required to be less than 2.5. For di-muon events 
 this does not happen because if a muon is outside of tracker acceptance, 
 it is not reconstructed as muon, giving a large \met\ in the event. 
 This event is not selected for FO because of high \met. 
@@ -401,24 +366,26 @@ and FR would be higher if EWK contribution were not subtracted
 because FR of EWK sample is higher than the FR of QCD di-jet sample.  }
 \label{fig:Num_Den_pt_EWK} 
 \end{figure} 
-Figure~\ref{fig:Num_Den_pt_EWK} shows the \pt\ distributions of denominator and the 
+
+Figure~\ref{fig:Num_Den_pt_EWK} shows the \pt\ distributions of the denominator and the 
 numerator of electron and muon FO. The data is shown with black dots and 
 the EWK contributions from \dyll\ and \Wjets\ are shown in green 
-and grey, respectively. At higher FO \pt\ the EWK contribution 
+and grey, respectively. At higher \pt\ the relative EWK contribution 
 is larger. Because FR is higher in \Wjets\ events than the QCD di-jet 
 events, if EWK contribution were not subtracted, the FR would be 
-measured higher than it should be. The subtaction of EWK contribution 
+measured higher than it should be. The subtaction of the EWK contribution 
 reduces FR in the last \pt\ bins by up to 30 \%.
 
-The lepton fakes originate from a parton and the fake rates have strong 
+A fake lepton originates from a parton, and the fake rates have strong 
 correlation with the \pt\ of the parton from which a fake lepton originates.
-So, it is very important to use the same kinematic region used to measure FR 
-is similar with the region where the FR is applied. The best handle is the 
+So, it is very important to use similar kinematic region when measuring FR 
+with that of the region where the FR is applied. The best handle to select 
+a relevant kinematic region is the 
 \pt\ of the pre-genetor parton, but this information is not available in data.   
-We use the \pt\ of the jet which is separated by $\Delta \textrm{R(FO, leading jet)} > 1.0$.  
+So, we use the \pt\ of the jet which is separated by $\Delta \textrm{R(FO, leading jet)} > 1.0$.  
 Given that the FR is measured with the sample dominated by QCD di-jet events, 
 the FO and the leading jet tend to be back-to-back in the $r-\phi$ plane.
-There for by gauging the \pt\ of the away jet, we can gauge the \pt\ 
+Therefore, by gauging the \pt\ of the away jet, we can gauge the \pt\ 
 of the pre-genetor of the FO. Ideally this works, but reality is more 
 complicated because the \pt\ of the away jet does not necessarily represent 
 the \pt\ of the pre-genetor of the FO. The away jet \pt\ can be mis-measured 
@@ -427,21 +394,32 @@ Therefore, it is not straightforward to decide the \pt\ of the away jet.
 
 We use the same-sign events to make sure that we select the 
 relevant kinematic range of the pre-genetor for the \Wjets\ sample. 
-These events are dominated by \Wjets\ and $\wgamma(^*)$. Since we control $\wgamma(^*)$
+These events are dominated by \Wjets\ and $\wgamma(^*)$. 
+Since we can control $\wgamma(^*)$
 relatively well, we can use these events to confirm that the measured 
 FR predicts the data correctly. 
 But, even though the prediction is consistent with observation, 
 we can not conclusively claim that the measured FR is correct 
-because the composition of fakes can be different in the SS and OS events. 
-For example, same-sign events can not come from W+q events, 
+because the composition of the fakes can be different in the same-sign 
+and the opposite-sign events. 
+For example, same-sign events can not originate from W+q events, 
 which result in an opposite-sign lepton pair\footnote{If W has (+1) charge, 
 q has (-1/3) charge which makes up a (-1) charge meson, and it subsequently decays 
-to a (-) charge lepton. The ratio of OS to SS measured in \Wjets\ MC 
-is 6:4}. Therefore, the result using SS events can 
-give a guess, and we can not conclusively decide the away jet \pt. 
-Using away jet \pt\ thresholds, 35~\GeV\ for electrons and 
-30~\GeV\ for muons, the expected SS events in the 0-jet bin 
-is $794\pm18(stat.)$ while the number of observed data events is 752. 
+to a (-) charge lepton. The ratio of the opposite-sign to the same-sign events 
+measured in \Wjets\ MC is 6:4}. Therefore, the result using the same-sign events can 
+give a rough idea, but we can not conclusively decide the away jet \pt from them. 
+
+The away jet \pt\ thresholds are determined based on multiple information.  
+The first information is the comparison in simulation 
+of the \pt\ spectrum of the jets in the \Wjets\ 
+sample and the jets in the QCD sample that envelop the FO. The other information 
+is the comparison of the isolation variable of FO in the QCD events and the \Wjets\ 
+events in data. These show that the best match is attained when  
+using 35~\GeV\ for electrons and 30~\GeV\ for muons. 
+Figure~\ref{fig:2DFR} shows the FR for muons and electrons using these thresholds. 
+The expected same-sign events in the 0-jet category  
+is $794\pm18(stat.)$ while the number of observed data events is 752 which 
+is consistent with the expectation.
 \begin{figure}[htp] 
 \centering 
 \begin{tabular}{c} 
@@ -453,20 +431,19 @@ is $794\pm18(stat.)$ while the number of observed data events is 752.
 measured with the away jet $\pt>30~\GeV$.  
 Bottom shows electron fake rate as a function of FO \pt\ and \Eta,
 measured with the away jet $\pt>35~\GeV$.
-The errors are statistics only.
-}
+The errors are only statistical.}
 \label{fig:2DFR} 
 \end{figure} 
 
 
 \subsubsection{Application of fake rate}
 
-The measured FR as a function of FO \pt\ and \Eta\ is used to predict the 
+The measured FR as a function of \pt\ and \Eta\ of the FO is used to predict the 
 contribution of \Wjets\ in the signal region. In data we first select events 
 in which one lepton passes the full lepton selection while the other lepton 
-passes the FO selection but the full selection (Tight+Loose sample). 
+passes the FO selection but not the full selection(Tight+Loose sample). 
 The contribution from other 
-background processes are subtracted in order to get the pure \Wjets\ sample. 
+background processes are subtracted in order to get a pure \Wjets\ sample. 
 \begin{figure}[htp] 
 \centering 
 \begin{tabular}{c} 
@@ -480,9 +457,9 @@ They have consistent shapes giving confidence that the selected data sample
 is dominated by \Wjets\ process. } 
 \label{fig:FOpT} 
 \end{figure} 
-Figure~\ref{fig:FOpT} shows the \pt\ distribution of muon and electron FO
+Figure~\ref{fig:FOpT} shows the \pt\ distribution of the muon and electron FO
 on left and right, respectively. The plots are normalized to the unit area.
-The data with other backgrounds subtracted amd the \Wjets\ MC show good
+The data with other backgrounds subtracted and the \Wjets\ simulation show good
 agreement in shape giving confidence that the selected data sample
 is dominated by \Wjets\ process. Now we use the measured FR as a weight to the 
 Tight+Loose sample in the following way.   
@@ -509,66 +486,76 @@ different away jet \pt\ thresholds, 15, 30(default) and 50~\GeV.}
 \label{fig:FR_jetpt_variation} 
 \end{figure} 
 As mentioned before, the away jet \pt\ is a handle for the QCD di-jet events 
-to give relevant kinematic range for FO in \Wjets, and it is decided based on the SS events 
-result which is not conclusive. We, therefore, assign systematic uncertainty 
-to account for our ignorance on the controlling the pre-genetor \pt\ 
+to give relevant kinematic range for FO in \Wjets.  
+But, it has a limited control of the kinematics of the parton
+from which the FO originates. 
+We, therefore, assign a systematic uncertainty 
+to account for our limitation of controlling the pre-genetor \pt\ 
 by varying the away jet \pt\ threshold
 to cover the relevant kinematic range of the \Wjets\ sample.
 Fig.~\ref{fig:FR_jetpt_variation} shows the dependence of FR on the 
 away jet \pt\ thresholds. Left plots shows the dependence of electron 
-FR and the right plot shows the dependence of muon FR. 
-The alternative away jet \pt\ thresholds are 20~\GeV\ for electrons 
-and 15~\GeV\ for muons. The prediction using the alternative \pt\ thresholds
+FR, and the right plot shows the dependence of muon FR. 
+The alternative away jet \pt\ thresholds are 20 and 50~\GeV\ for electrons 
+and 15 and 50~\GeV\ for muons. The prediction using the alternative \pt\ thresholds
 differ by 30 \% compared to the nominal results, and this difference 
 is taken as systematic uncertainty. 
+The dependence on the jet \pt\ is larger for muons than electrons. 
+This is because of difference in the FO definition. The electron FR is a
+dominated by ID requirement which has small dependence on the away jet \pt, 
+while the muon FR is dominated by ISO requirement which has strong dependence 
+on the away jet \pt.
 % WW level 0-jet 
 % Ele : 380 ==> 395 : 5 % up
 % Mu  : 415 ==> 638 : 50 % up
-In addition, composition of the sample can be different in QCD di-jet sample, 
-and \Wjets\ sample. So, we do MC closure test assuming that the parton composition 
-is well-modeled by MC. The result shows that the difference between 
-prediction and observation is $\sim$ 20 \% for both electrons and muons.
+In addition, the composition of the sample can be different in the QCD di-jet sample 
+and the \Wjets\ sample. So, we do a closure test in simulation 
+assuming that the parton composition is well-modelled by simulation. 
+The result shows that the difference between 
+the prediction and the observation is $\sim$ 20 \% for both electrons and muons.
 The two systematic uncertainties are combined in quadrature, resulting 
 36 \% total systematic uncertainty for both electrons and muons. 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ \topbkg }
 
 The backgrounds induced by top quarks come from \topbkg\ processes where 
-the W's decayed from top quarks decay leptonically. These processes 
-result in two isolated leptons with considerable \met, which is 
+the W boson decayed from a top quark decays leptonically. These processes 
+result in two isolated leptons with considerable a \met, which is 
 same as the signature of signal events, and b-tagged jets which
-is used to suppress this background. However, in case the b-jet 
+can be used to suppress this background. However, in case the b-jet 
 goes out of the tracker coverage or it is not tagged as a b-jet, 
-these events can fall survive the signal selection. We use 
-data-driven methods applied to 0-jet and 1-jet separately.
+these events can survive the signal selection. To estimate its 
+contribution, We use a data-driven method applied to 0-jet and 1-jet separately.
 
-The top background is estimated after WW selection and a common 
-data/MC scale factor for \topbkg\ is calculated in 0-jet and 1-jet 
-categories. Then, MC is normalized with the measured scale factor 
-to be used for the shape-based analysis. The basic idea of the 
-top estimation is to reweight the Top-tagged region using the 
-top-tagging efficiency obtained from an indepdent sample. This 
-can be expressed as the following formula, 
+The top background is estimated after the WW selection and a common 
+data/simulation scale factor for \topbkg\ is calculated in 0-jet and 1-jet 
+categories. Then, the simulation is normalized by the measured scale factor. 
+The basic idea of the top estimation is to reweight the top-tagged control region 
+using the top-tagging efficiency obtained from an indepdent sample. This 
+can be expressed as the following equation, 
 \begin{eqnarray} 
 N_\textrm{top-veto} 
 = 
 N_{\textrm{top-tagged}} \times
 \frac{1 - \epsilon_{top-tagging}}{\epsilon_{top-tagging}}   
 \end{eqnarray} 
-where $N_\textrm{top-veto}$ is the prediction for top-vetoed events 
+where $N_\textrm{top-veto}$ is the prediction for the top-vetoed events 
 in the signal region, $N_{\textrm{top-tagged}}$ is the number of 
-top-tagged events which can be obtained by inverting the top-veto requirement, 
+the top-tagged events which can be obtained by inverting the top-veto requirement, 
 and $\epsilon_{top-tagging}$ is the top-tagging efficiency 
-measured in an independent sample. The top-taggeing efficiency 
-is measured in a different way in the 0-jet and 1-jet categories.
+measured in an independent data sample. The top-taggeing efficiency 
+is measured in a different way in the 0-jet and the 1-jet categories.
+Table~\ref{tab:topbkgest} shows the definition of the control region 
+and the tagging effciency in the 0-jet and the 1-jet categories.
 
 \begin{table}[!h]
 \begin{center}
-\small
+\footnotesize
 \begin{tabular} {|c|c|c|c|c|}
 \hline
-jet bin & top veto & top tag & $\epsilon_{tag}$ denominator & $\epsilon_{tag}$ numerator \\ 
+jet bin & signal region & control region & \multicolumn{2}{c|}{$\epsilon_{tag}$}  \\  
+        \cline{4-2} \cline{5-2} 
+        & (top veto)    & (top tag)      & denominator & numerator \\ 
 \hline
 0       & no soft muon,      & either a soft muon  & 1-jet bin, leading & denom. + \\
         & no low \pt\ b-jets & or a low \pt\ b-jet & jet is btagged     & top tag  \\
@@ -578,29 +565,31 @@ jet bin & top veto & top tag & $\epsilon_{tag}$ denominator & $\epsilon_{tag}$ n
 \hline
 \end{tabular}
 \caption{Summary of selection and control region definitions used 
-in top estimation in the different jet bin.}
+in top estimation in the different jet bins.}
 \label{tab:topbkgest}
 \end{center}
 \end{table}
 
 \subsubsection{0-jet category method}
 
-We start with measuring ``per-leg" tagging efficiency.
-In the \ttbar\ events, there are two b-quarks in the final states, 
-so we can explore the second b-quark after requireing that the first b-quark be tagged. 
+We start with measuring the ``per-leg" tagging efficiency, 
+which is the probability for a b quark to be tagged.
+In the \ttbar\ events, there are two b quarks in the final states, 
+so we can explore the second b quark after requireing that the first b quark be tagged. 
 A caveat is that the \tw\ contribution should be subtracted because
-those events have only one b-quark in the final state, and the second 
-jet is from FSR or ISR regardless of jet flavor. 
-Some of the FSR or ISR jets can be b-tagged as well and this 
+those events have only one b quark in the final state, and the second 
+jet is from FSR or ISR regardless of jet flavors. 
+Some of the FSR or ISR jets can be b-tagged as well, and this 
 makes \tw\ indistinguishable from \ttbar. Therefore, this should 
-be accounted for when calculating top-tagging efficiency. 
+be accounted for when calculating the ``per-event" top-tagging efficiency. 
 
-The denominator is defined by requiring exactly one b-tagged jet with $\pt>30~\GeV$. 
+The denominator the ``per-leg" efficiency is defined 
+by requiring exactly one b-tagged jet with $\pt>30~\GeV$. 
 This requirement to select a sample dominated by \topbkg.  
 Of the selected events, a subset of events containing at least one b-tagged jet
-with $10<\pt<30~\GeV$ or one soft-muon becomes numerator. 
-The ratio of the yields in numberator to denominator after subtracting contributions 
-from other backgrounds as well as \tw\ is the top-tagging efficiency for one leg, 
+with $10<\pt<30~\GeV$ or one soft-muon becomes the numerator. 
+The ratio of the yields in the numberator to the denominator after subtracting contributions 
+from other backgrounds as well as \tw\ is the ``per-leg" top-tagging efficiency, 
 $\epsilon_{per-leg}^{data}$. 
 
 The ``per-event" top-tagging efficiency is then calculated by the following equation, 
@@ -630,7 +619,7 @@ The contributions from other backgrounds are subtracted so that the
 measured top-tagging efficiency is applied to only \topbkg\ events. 
 The left plot in fig.~\ref{fig:TCHE_topCR} shows the level agreement between 
 data and MC in the top control region for 0-jet category.  
-They show good agreement and we conclude that the data subtracted by other backgrounds 
+They show good agreement, and we conclude that the data subtracted by other backgrounds 
 will give \topbkg\ events with high purity. 
 The prediction of \topbkg\ events in the signal region is calculated by 
 \begin{eqnarray} 
@@ -652,7 +641,7 @@ background process in the top CR.
 The systematic uncertainty to the top estimation in the 0-jet category 
 is dominated by the uncertainty to the parameter $x$. The uncertainties
 for the \ttbar\ and \tw\ cross sections are about 7 \% and 15 \%~\cite{Kidonakis:2012rm}, 
-and these make the uncertainty of $x$ 17\%. 
+and these make the uncertainty of $x$ become 17\%. 
 
 \subsubsection{1-jet category method}
 
@@ -661,7 +650,8 @@ based on the fact the b-tagging efficiency of the most energetic jet
 in 1-jet and 2-jet categories is approximatley same. The efficiencies 
 measured in \ttbar\ MC after WW selection is 66 \% and 67 \% in 1-jet 
 and 2-jet categories, respectively. Therefore, we measure the b-tagging 
-efficiency of the most energetic jet in the the events containing 2-jets
+efficiency($\epsilon_{\textrm{top-tag, per-event}}^{\textrm{data}}$) 
+of the most energetic jet in the the events containing 2-jets,
 and apply this to the control region in the 1-jet category.  
 The definition of control region is different from an inversion of 
 the top-veto requirement in this case because the b-tagging efficiency 
@@ -670,9 +660,9 @@ So, the control region is defined without soft-muon requirement,
 and this definition is consistently applied for the top-tagged region, 
 top-vetoed region and the top-tagging efficiency measurement.
 The right plot in fig.~\ref{fig:TCHE_topCR} shows the level agreement between 
-data and MC in the top control region for 1-jet category.  
-They show good agreement and we conclude that the data subtracted by other backgrounds 
-will give \topbkg\ events with high purity. 
+data and MC in the top control region in the 1-jet category.  
+They show a good agreement, and we conclude that the data subtracted by other backgrounds 
+gives \topbkg\ events with high purity. 
 
 Then, the top contribution in WW region is calculated using the measured
 top-tagging efficiency($\epsilon_{\textrm{top-tag, per-event}}^{\textrm{data}}$) 
@@ -704,8 +694,8 @@ about 2\%.
 
 \subsubsection{Result}
 
-Tab.~\ref{tab:ttbar_est} show the result of data-driven estimation for \topbkg. 
-The data/MC scale factors are consistent to unity in both 0-jet and 1-jet categories. 
+Table~\ref{tab:ttbar_est} shows the result of the data-driven estimation for \topbkg. 
+The data/simulation scale factors are consistent to unity in both 0-jet and 1-jet categories. 
 The uncertainty is large in the 0-jet category due to the large cross section uncertainty 
 of the \tw\ process. The calculated scale factors are applied to the MC counts 
 in the signal region.
@@ -726,8 +716,10 @@ Data/simulation scale factor            & 1.06 $\pm$  0.20  & 1.07 $\pm$  0.03  
 
 \hline
 \end{tabular}
-\caption{Monte Carlo to data scale factor for the top background contribution for $\intlumiEightTeV$. 
-In the 1-jet bin, the scale factor is derived in a region that is slightly different from the signal region.}
+\caption{Monte Carlo to data scale factor for the top background contribution 
+for $\intlumiEightTeV$.} 
+%In the 1-jet bin, the scale factor is derived in a region 
+%that is slightly different from the signal region.}
 \label{tab:ttbar_est}
 \end{center}
 \end{table}
@@ -745,34 +737,37 @@ is marked with a blue line.}
 \label{fig:WW_mll} 
 \end{figure}  
 
-The non-resonant \WW\ background in the signal region is estimated from data using \mll\ distribution
-for 0-jet and 1-jet categories separately. 
-Fig.~\ref{fig:WW_mll} shows \mll\ distributions in 0-jet \DF\ channel for various signal events,
-\mHi=125, 200 and 400~\GeV\ and WW after WW selection. For \mHi\ hypotheses below 200~\GeV, 
-there is negligible contribution of signal in the $\mll>100~\GeV$ region. 
+The non-resonant \WW\ background is the main background in the most sensitive 
+category(0-jet \DF)and estimated for 0-jet and 1-jet categories separately 
+using the \mll\ distribution.
+Fig.~\ref{fig:WW_mll} shows the \mll\ distributions in 0-jet \DF\ 
+category for various \mHi\ points, 125, 200 and 400~\GeV, and WW after WW selection. 
+For \mHi\ hypotheses below 200~\GeV, 
+there is a negligible contribution from signal in the $\mll>100~\GeV$ region. 
 Therefore, this region can be used as a WW control region.  
-But, \mHi\ hypotheses above 100~\GeV\ have significant contamination of signal, 
-and this region can not be used as a control region. So, we rely on simulation
-to estimate WW contribution in the signal region for high \mHi\ hypotheses($\mHi>200~\GeV$). 
-For the estimation of WW background in the signal region for low \mHi\ hypotheses($\mHi\le200~\GeV$), 
-we have different approaches for shape-based and cut-based analyses. 
+But, \mHi\ hypotheses above 200~\GeV\ give a significant contamination in that region,
+and it can not be used as a control region. So, we rely on simulation
+to estimate WW contribution in the signal region for the high \mHi\ hypotheses($\mHi>200~\GeV$). 
+For the estimation of WW background in the signal region 
+for low \mHi\ hypotheses($\mHi\le200~\GeV$), 
+we have different approaches for the shape-based and the cut-based methods. 
 
-For shape-based analysis, we measure the ratio of data subtracting other backgrounds to WW MC  
-after WW selection and use it to scale MC prediction. 
-The \mll\ and \mT\ ranges for the template definition are imposed.  
-In the shape-based analysis we expect that fit can constrain the WW component using 
-the WW sideband region, \textit{i.e.,} high \mT\ and high \mll\ region. Therefore,   
-the measured data/MC scale factor is used to set the initial point for the fit to start. 
-The prior for the WW normaliztion in the fit is a flat function, 
-so its value and the uncertainty is entirely determined by fit. 
+For the shape-based method, we measure the ratio of data subtracting other backgrounds 
+to WW simulation using the template selection, and use it as a data/simulation scale factor. 
+In the shape-based method we expect that fit can constrain the WW component using 
+the WW sideband region, \textit{i.e.,} high \mT\ and/or high \mll\ region. Therefore,   
+the measured scale factor is used to set the initial point for the fit to start. 
+The \textit{pdf} for the WW normaliztion in the fit model is a flat function, 
+so its value and the uncertainty are entirely determined by fit. 
 
-For the cut-based analysis, we define a control region in the \mll\ space where 
+For the cut-based method, we define a control region in the \mll\ space where 
 negligigle signal events are expected, and extrapolate the control region yield 
 to the signal region using the ratio of signal region to control region calculated 
-in MC($R_{\textrm{SR/CR}}$). 
-At each \mHi\ hypothesis, the \pt\ requirements for the leading and the trailing leptons 
-are applied on top of $\mll>100~\GeV$. The following equation summarizes 
-how the estimation is done, 
+in simulaton($R_{\textrm{SR/CR}}$). 
+At each \mHi\ hypothesis, the control region is defined with the \pt\ requirements 
+on the leading and the trailing leptons on top of $\mll>100~\GeV$. 
+
+The following equation summarizes how the estimation is done, 
 \begin{eqnarray} 
 N_{\textrm{WW}}^{\textrm{SR}} 
 &=&  
@@ -780,18 +775,18 @@ N_{\textrm{WW}}^{\textrm{SR}}
      - N_{\textrm{CR}}^{\textrm{other bkg}}\right) \times R_\textrm{SR/CR}^{\textrm{MC}}.  
 \end{eqnarray} 
 We first measure the ratio($R_\textrm{SR/CR}^{\textrm{MC}}$) of events in the signal region 
-to the control region using MC.  
+to the control region using simulation.  
 Then, we obtain the yield($N_{\textrm{CR}}^{\textrm{data}}$) in the 
-control region($\mll>100~\GeV$) in data and subtract the contribution from other 
-background processes such as \topbkg, \Wjets\ and \dyll.  
+control region($\mll>100~\GeV$) in data, and subtract the contribution from other 
+backgrounds($N_{\textrm{CR}}^{\textrm{other bkg}}$) such as \topbkg, \Wjets\ and \dyll.  
 The data-driven estimation described in the previous sections are used for 
 these backgrounds. Other small backgrounds are taken from simulation. 
 We multiply the extrapolation factor to the data yield in the CR 
 to get the prediction of WW in the signal region($N_{\textrm{WW}}^{\textrm{SR}}$).
-The same data/MC scale factor is used for \qqww\ and \ggww\ to scale 
-the MC prediction. 
+The same data/simulation scale factor is used for \qqww\ and \ggww\ to scale 
+the prediction by simulation. 
 
-The uncertainty on the data/MC scale factor comes from the statistics in data control region
+The uncertainty on the scale factor comes from the statistics in data control region
 and the systematic uncertainty of the other background in the control region. These two sources
 contribute almost equally to the final uncertainty. Tab.~\ref{tab:WWest} shows the result 
 of the data-driven estimation of WW background. 
@@ -822,7 +817,7 @@ of the data-driven estimation of WW background.
 All masses & 1.19  $\pm$  0.06  &  1.09  $\pm$  0.10 \\
 \hline
 \end{tabular}
-\caption{WW background estimation for cut-based and shape-based analyses.}
+\caption{The result WW background estimation for cut-based and shape-based analyses.}
 \label{tab:WWest}
 \end{center}
 \end{table}
@@ -831,31 +826,34 @@ All masses & 1.19  $\pm$  0.06  &  1.09  $\pm$  0.10 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ \wgammastar }
 
-The \wz\ MC is supposed to cover the \wgammastar\ as a part of it, 
+
+In the \wgammastar\ events, the leptons decayed from $\gamma^*$ tend to have 
+a small opening angle and a small invariant mass, and at least one of them 
+has average \pt\ of 5~\GeV. 
+In case of $l^\pm e^+ e^-$ where $l$ is from W, and $ee$ is from $\gamma^*$, 
+it fakes signal by a 
+photon conversion in the material close to the interaction point.
+In case of $l^\pm\mu^+\mu^-$, the low \pt\ of the softest muon does not allow 
+it to reach the muon station, and it is missing in the reconstruction. 
+
+The \wz\ simulation is supposed to cover the \wgammastar\ as a part of it, 
 but the low $m_{\gamma^*}$ region is not covered appropriately due to the generator 
 level cut $m_{\gamma^*}>12~\GeV$. The problem is that there is a significant 
 contribution from that region of phase space to the signal region.
-We have a dedicated MC sample that was generated in LO to cover this region.
-It is important to validate the sample by measuring the cross-section 
-so that the k-factor can be used outside of the region 
-where the cross section is measured. 
+So, we have a dedicated MC sample that was generated in LO to cover this region.
+Because it was generated in LO, it is important to measure the k-factor 
+to obtain a correct normalization. The k-factor also would tell about the 
+valiation of the sample. For example, if k-factor is 10, this would indicate 
+that the sample is not correctly generated.
 
-We consider separately 
+When measuring the k-factor, we consider separately 
 the cases where the $\gamma^*$ decays to a pair of electrons or muons. 
-The leptons decayed from $\gamma^*$ tend to have small opening angle 
-and small invariant mass, and at least one of them has average \pt\ of 5~\GeV.
-In case of $l^\pm e^+ e^-$ where $l$ is from W and $ee$ is from $\gamma^*$, 
-it fakes signals in the same way \wgamma\ does, \textit{i.e.}, 
-photon conversion in the material close to the interaction point.
-In case of $l^\pm\mu^+\mu^-$, the low \pt\ of the softest muon does not allow 
-it to reach the muon station and it is missing in the reconstruction. 
-
-In order to measure the cross section in data, we use only $l^\pm\mu^+\mu^-$ final state 
-because of the uncontrollable QCD backgrounds in $l^\pm e^+ e^-$ final state. 
-We first chose a region of phase space dominated by \wgammastar. 
-The following requirements are imposed to define the control region. 
+We use only $l^\pm\mu^+\mu^-$ final state 
+because of the uncontrollable QCD backgrounds in the $l^\pm e^+ e^-$ final state. 
+We first define a control region dominated by the \wgammastar\ events. 
+The following requirements are imposed to define the control region :  
 \begin{itemize} 
-\item The muon pair should have opposite charge. In case of $\mu^\pm\mu^+\mu^-$ final states, 
+\item The muon pair should have opposite charges. In case of $\mu^\pm\mu^+\mu^-$ final states, 
       the pair with lowest $m_{\mu\mu}$ is considered coming from $\gamma^*$.
 \item The muon isolation is redefined such that it does not include muons in the isolation 
       energy calculation in order to reconstruct $\gamma^*$ from a muon pair very close each other 
@@ -867,17 +865,17 @@ The following requirements are imposed to define the control region.
       $\left| m_{\mu\mu} - m_{\textrm{J}/\psi}\right| > 0.1~\GeV$ is applied
 \item To avoid interference with $\wz^*$, $m_{\mu\mu} < 12~\GeV$ is applied
 \end{itemize} 
-The residual contributions of other background processes mostly come from \Wjets\ 
+The residual contributions of other background processes mostly come from \Wjets, 
 and it is estimated by the data-driven method described in secton~\ref{sec:wjets}.
 
-The measured k-factor is 1.5 which is consistent with k-factors of other EWK processes. 
-Fig.~\ref{fig:wg3l} shows the di-muon mass distribution in the \wgammastar\ control region.
-The \wgammastar\ component is scaled using the measured k-factor. 
+The measured k-factor is 1.5 which is consistent with the k-factors of other EWK processes. 
+Figure~\ref{fig:wg3l} shows the di-muon mass distribution in the \wgammastar\ control region.
+The \wgammastar\ component is scaled up using the measured k-factor. 
 There is a disagreement in the $m_{\mu\mu}$ shape, and this is due to the mismodelling 
 of reconstruction efficiency of the close-by muons at very low \pt. 
 In order to take this into account, the k-factor is measured in two $m_{\mu\mu}$ regions, 
 $m_{\mu\mu}<2~\GeV$ and $2<m_{\mu\mu}<12~\GeV$ in  $\mu^\pm\mu^+\mu^-$ and $e^\pm\mu^+\mu^-$ 
-final states. The average spread of the four measurements is taken as a systematic uncertainty
+final states. The average spread of the four measurements is taken as a systematic uncertainty,
 and the resultant k-factor is $1.5 \pm 0.5$.
 
 \begin{figure}[htp] 
@@ -890,8 +888,6 @@ The \wgammastar\ is normalized to match the data.}
 \label{fig:wg3l} 
 \end{figure} 
 
-%FIXME : I am here 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{ Other backgrounds } 
 
@@ -899,19 +895,19 @@ The \wgammastar\ is normalized to match the data.}
 \subsection{\wgamma}
 
 \wgamma\ can fake signal when the photon converts to a pair of electrons asymmetrically, 
-giving a large fraction of its momentum to one electron. The is difficult to measure 
+giving a large fraction of its momentum to one of the electrons. 
+This is difficult to be measured 
 in data, so we rely on simulation after data corrections such as trigger/lepton selection 
-efficiencies and PileUp.
+efficiencies and pileup.
 
-For the shape-based analysis, the templates for \wgamma\ suffer from low statistics 
-if the full lepton selection is applied for both leptons. So, we take the shape of the 
+For the shape-based method, the templates for \wgamma\ suffer from low statistics 
+if the full lepton selection is applied to both leptons. So, we take the shape of the 
 templates from \wgamma\ events before the photon converts to leptons, and apply 
 photon-to-electron conversion probability($P(\gamma \rightarrow e)$) as a function of \Eta. 
 The conversion 
 factor is measured in simulation and shown in fig.~\ref{fig:photon_electron_ratio}.  
 The function is parametrized with \Eta\ because conversion probability has strong 
-correlation with the amount of materials that the photon goes through
-and it depends on \Eta. 
+correlation with the amount of materials that the photon goes through.
 \begin{figure}[htp] 
 \centering 
 \begin{tabular}{c} 
@@ -944,23 +940,25 @@ with the conversion probability applied. }
 %%%%%
 \subsection{\ztt}
 
-The \ztt\ background contributes in the \DF\ category in case that 
-each of taus decays to a lepton and neutrinos. Typically, the natural source 
-of \met\ in \ztt\ gives soft \met\ and met modest \met\ selection can  
-reduce this background. But, in the environment of large number of PileUp, 
-instrumental contribution to \met\ becomes larger and this leads to large 
-\met\ values. The cross section of \ztt\ process is large, so we need to make 
-sure that this background is controllable.The simulation does not reproduce 
+The \ztt\ background contributes in the \DF\ category in case where 
+each of taus decays to $e$ or $\mu$ and neutrinos. Typically, the natural source 
+of \met\ in \ztt\ gives soft \met, and a modest \met\ selection can  
+reduce this background. But, in the environment of large number of pileup, 
+the instrumental contribution to \met\ becomes larger, and it leads to large 
+\met\ values. The cross section of the \ztt\ process is large, so we need to make 
+sure that this background is under control. The simulation does not reproduce 
 the instrumental \met properly, and we need a data-driven method to 
-accurately estimate \ztt\ background. 
+accurately estimate the \ztt\ background. 
 
-The data-driven method for the estimation of \ztt\ background is done by 
-``tau embedding" technique~\cite{}. In this method, we select \dymm\ events in data
+The data-driven method for the estimation of \ztt\ background is done by the 
+``tau embedding" technique~\cite{Chatrchyan:2014nva}. 
+In this method, we select \dymm\ events in data
 from the whole run range, 
-and replace each muon with a simulated tau decay, $\tau \rightarrow l\bar{\nu}_l\nu_\tau$. 
+and replace each muon with a simulated tau decay, 
+$\tau \rightarrow l\bar{\nu}_l\nu_\tau$~\cite{}. 
 Then, the \met\ is re-calculated adding the neutrinos from the tau decays. 
 Advantage of this method is that the event environment is taken from the real data, 
-and the modeling of PileUp, UE, jets and thus \met\ can be done consistently 
+and the modeling of pileup, UE, jets and thus \met\ can be done consistently 
 with real data. This sample is normalized to the inclusive \ztt\ MC 
 at the level of requiring two leptons with lepton efficiency correction
 and the branching fraction.
@@ -972,7 +970,7 @@ The 10 \% of systematic uncertainty of the method is assigned based on the MC cl
 
 \vv\ backgrounds where the bosons decay leptonically are well-modelled by simulation.
 In addition, the contribution of these backgrounds is small. Therefore, to estimate these 
-background, we rely on MC after data corrections.  
+background, we rely on simulation after data corrections.  
 
 
 
@@ -1009,13 +1007,9 @@ Data            & 2728                  & 6361                & 1477            
 \end{tabular}
   \caption{Expected number of signal and background events from the data-driven methods for 
   an integrated luminosity of \intlumiEightTeV after applying the $\WW$ selection requirements. 
-  Only statistical uncertainties on the processes are reported.
-  $\WW$ yield is from simulation.}
+  Only statistical uncertainties are reported.}
 \label{tab:wwselection_all}
 \end{center}
 \end{table}
 
-
-
-and the distributions of relevant kinematic variables. 
-
+\textcolor{red}{!! WW plots? !!} 

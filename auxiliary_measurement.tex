@@ -1,67 +1,103 @@
-%\textcolor{red}{\textbf{!! CAUTION : Efficiency numbers look old. Numbers in AN do not agree with
-%/smurf/dlevans/Efficiencies/V00-02-09/HWW\_Electron\_V00-02-09\_Moriond\_V1\_NM1Eff\_ID/summary.txt, 
-%but they are from Moriond\_V0. Should replace them. !!}}  
 
+Due to the rapid rise in the instantaneous luminosity at LHC, 
+the data taking conditions have changed rapidly. 
+In particular it is difficult to exactly reproduce the number of pileup 
+between data and simulation, and thus there will be differences in the 
+number of reconstructed primary vertices. 
+We correct this disagreement by reweighting the simulation 
+to match the number of pileup events in data.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Lepton Efficiency}
-
-In collisions events are recorded when the two leptons pass trigger requirements. 
+When the collisions happen, 
+events are recorded when the they pass the trigger requirements. 
 Thus, per event trigger efficiency needs to be measured using data. 
 To select identified and isolated leptons from Higgs events, we require 
 that each lepton meet strict offline criteria. To account for the possible difference
 of offline selection efficiencies in simulation and data, we need to measure it 
-in simultion and data separately and apply a scale factors
-($\epsilon_{data}/\epsilon_{simulation}$) to simulation. 
+in simultion and data, and apply corrections to the simulation. 
 
-The efficiencies are measured using Tag-And-Probe method [ref]. We use 
+The analysis is optimized in the different categories of number of jets. 
+But, jet counting efficiency which is defined as the fraction 
+of events in the certain category
+%$\displaystyle  \epsilon_{0/1} = \frac{N_{njet=0/1}}{N_{njet\geq0}}$ 
+can be different in simulation and data.  
+This is important for the signal because we rely on the simulation 
+to calculate the jet counting efficiency. 
+So, we correct the efficiency of \hww\ in simulation by a data/simulation scale 
+factor measured in simulation and data using \dyll~events.  
+
+This chapter describes these auxiliary measurements. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pileup Re-weighting}
+
+The target pileup distribution for data is generated using the instantaneous luminosity 
+per bunch crossing for each luminosity section, and the total pp inelastic cross section 
+of 69.4~mb, integrated over the full data-taking period. The source distribution is taken 
+from \dyll\ simulation without applying any cuts. 
+
+\begin{figure}[htp] 
+\centering 
+\begin{tabular}{c} 
+\includegraphics[width=0.8\textwidth]{figures/nvtx.pdf} 
+\end{tabular} 
+\caption{Number of reconstructed primary vertices for data and simulation 
+after the re-weighting procedure for the 2012 dataset.}
+\label{fig:nvtx} 
+\end{figure} 
+
+Figure~\ref{fig:nvtx} shows the the number of reconstructed primary vertices 
+from \dyll\ events in data and simulation after this re`weighting procedure. 
+The residual differences reflect the size of the systematic uncertainty in the 
+determination of the amount of pileup present in the data. 
+Since the dependence of the efficiencies for selecting signal and background events 
+on pileup are small, this systematic uncertainty due to the pileup is small when 
+propagated to the final result.
+
+\section{Lepton Efficiency}
+
+The lepton selection efficiencies are measured using the Tag-And-Probe 
+method~\cite{Abulencia:2005ix}. It uses 
 $Z/\gamma^* \rightarrow e^+e^-$ or $Z/\gamma^* \rightarrow \mu^+\mu^-$ events 
-passing single-lepton trigger to select unbiased, identified and isolated prompt leptons.  
-One lepton which is called "tag" is required to pass the single lepton trigger 
-requirement and the full offlince selection. By requiring full selection on the tag, 
+that pass the single-lepton trigger to select a unbiased sample of prompt leptons.  
+One lepton which is called ``tag" is required to pass the single lepton trigger 
+and the full offline selection. By requiring the full selection on the tag, 
 we can enhance the purity of the sample. The other lepton which is called 
-"probe" is required to pass a set of selection criteria that enhances the purity 
-of sample while leaving the crieteria under study unbiased. The fact that tag 
-passed sigle-lepton trigger guarantees that the probe is not biased by trigger. 
-Both legs can be used as a tag in offline efficiency measurement while only 
-can one of them be in trigger efficiency measurement due to the correlation 
-between two offlie lepton objects in double-lepton triggers. 
+``probe" is required to pass a set of selection criteria that enhances the purity 
+of the sample while leaving the crieteria under study unbiased. The fact that the tag 
+passed single-lepton trigger guarantees that the probe is not biased by triggers. 
+Both legs can be used as a tag in the offline lepton selection efficiency measurement 
+while only can one of them be used in trigger efficiency measurement due to the correlation 
+between the two onlie lepton objects in the double-lepton triggers. 
 
 The offline selection efficiency is composed of identification(ID) and isolation(ISO) parts. 
-We use N-1 method where ID and ISO efficiencies are measured with respect to the other 
-and multiplied afterwards. When measuring efficiency of ID part ($\epsilon_{ID}$) 
-probe is required to pass full isolation requirement and when measuring efficiency of 
-ISO part ($\epsilon_{ISO}$) probe is required to pass full identification requirement. 
-\textcolor{red}{mention that eff is measured as a function of pT and eta of lepton}   
-The possible bias due to correlation of the two measurements 
-is estimated by comparing efficiencies measured by N-1 method and combined measurement 
-of ID+ISO  efficiency in simulation. The difference which ranges from xx to yy depending 
-on the kinemtic bins of a lepton is assigned as systematic uncertainty of the method. 
-\textcolor{red}{What are the other systematics? For electron, systematics to 
-electron reconstruction efficiency(prob for a SC to be matched to a ECAL-driven 
-GSF electron), 100 +/- 2\% (measured with 2011 data). In the code, there are 
-2 \% and 1.5 \% for electron and muon, repectively. Are they from 
-reconstruction efficiency and other ones are negligible compared to these values?} 
+We use the N-1 method where ID and ISO efficiencies are measured with respect to the other, 
+and multiplied afterwards. When measuring the efficiency of the ID part ($\epsilon_{ID}$) 
+the probe is required to pass the full isolation requirement, and when measuring 
+the efficiency of the ISO part ($\epsilon_{ISO}$) the probe is required to pass 
+the full identification requirement. The efficiency is measured in the bins of 
+\pt\ and \Eta\ in order to account for the dependences on the kinematics and 
+the material budget of the detector. 
 
-Requiring tight selections to tag and using N-1 method gives high-purity sample 
+Requiring tight selections to the tag, and using the N-1 method gives a high-purity sample 
 of $Z/\gamma^*$ events in data. However, there are residual contributions from 
 non-prompt leptons from W+jets and QCD events especially at low $p_T$ bins. 
 Thus, we extract yields by fitting the \mll~distribution of the tag and probe pair
-with Gaussian $+$ exponential $\times$ error function. The Gaussian function which 
-is for $Z/\gamma^*$ invariant mass peak is modeled by simulation and 
-gaussian smearing is applied to account for difference in lepton momentum resolutions
+with ``Gaussian $\oplus$ (exponential $\oplus$ error function)". 
+The Gaussian function which is to describe the 
+$Z/\gamma^*$ invariant mass peak is modeled by simulation, and 
+gaussian smearings are applied to account for the difference in lepton momentum resolutions
 between data and simulation. 
-\textcolor{red}{I don't believe this is true. Looking at the plots with fitted shapes, 
-it seems that there are more than one fit function. need to check in the code.}
-The exponential $\times$ error function is for backgrounds.
-To allow enough sidebands for backgrounds, \mll~range is chosen to be 
+%\textcolor{red}{I don't believe this is true. Looking at the plots with fitted shapes, 
+%it seems that there are more than one fit function. need to check in the code.}
+The (exponential $\oplus$ error function) is for the backgrounds.
+To allow enough sidebands for estimating backgrounds, the \mll~range is chosen to be 
 $60~\GeV < \mll < 120~\GeV$. In case of simulation, efficiencies are calculated by 
-counting events in $81~\GeV < \mll < 101~\GeV$. In simulation, to select  
-leptons from $Z/\gamma^*$ only (=to remove mis-recontructed leptons), the dR between 
-probe and the closest, same flavor, generator-level lepton after final-state-radiation(FSR)
+counting events in $81~\GeV < \mll < 101~\GeV$. In addition, in order to select  
+the leptons from $Z/\gamma^*$ only, the dR between 
+the probe and the closest, same flavor, generator-level lepton after final-state-radiation(FSR)
 is required to be within 0.2.
 
-The data/simulation efficiency scale factors per event are then calculated by 
+The data/simulation scale factors per event are then calculated by 
 multiplying per lepton efficiencies measured in data and simulation, 
 \begin{equation} 
 \epsilon_{offline}^{event} 
@@ -70,31 +106,40 @@ multiplying per lepton efficiencies measured in data and simulation,
 \times \epsilon_{ID}^{lepton2} \times \epsilon_{ISO}^{lepton2}.   
 \end{equation} 
 The trigger efficiency($\epsilon_{trigger}$) is measured with respect to the full 
-offline selection. Finally, simulation events are corrected by applying the 
-offline selection scale factor and trigger efficiency, 
+offline selection. Finally, the simulation is corrected by applying the 
+offline selection scale factor and the trigger efficiency, 
 \begin{equation} 
-\frac{\epsilon_{offline, MC}^{event}}{\epsilon_{offline, MC}^{event}} 
+\frac{\epsilon_{offline, data}^{event}}{\epsilon_{offline, simulation}^{event}} 
 \times \epsilon_{trigger}. 
 \end{equation} 
 
+In the N-1 method, a possible bias due to the correlation between 
+the ID and the ISO requirements is estimated by comparing efficiencies 
+measured by N-1 method and combined measurement of ID+ISO efficiency in simulation. 
+The difference which ranges from 0 to 8~\% depending 
+on the kinemtic bins of the probe is assigned as systematic uncertainty of the method.  
+In addition, the uncertainty of lepton reconstruction efficiency is taken 
+as a systmetic sourse. 
 
 
 %%%%%%%%%%
 \subsection{Electron Selection Efficiency}
 \label{sec:electroneff}
 
-Electron efficiency is composed of two factors, recontruction efficiency and 
-selection efficiency. The reconstruction efficiency is the probability for a 
+The electron efficiency is composed of two factors, the recontruction efficiency and 
+the selection efficiency. The reconstruction efficiency is the probability for a 
 super-cluster energy deposit to be matched to a reconstructed ECAL-driven 
-GSF electron. For thie analysis, we use the result measured with 2011 data   
-because new measurement has not made with the full 2012 data sample[ref]. 
-\textcolor{red}{Really no new study?}. The efficency is measured as a function 
+GSF electron. In this analysis, we use the result measured with 2010 
+data~\cite{Khachatryan:2010xn}  
+because new measurement has not made with the full 2012 data sample. 
+The efficency is measured as a function 
 of \pt~and \Eta~of a lepton. From the study, we assume that the reconstruction 
-efficiency for an electron is unity with uncertainty at the level of 2 \%.
+efficiency for an electron is unity with an uncertainty at the level of 2 \%.
 
 %
 \begin{table}[!htp]
-\begin{center}
+\begin{center} 
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $ 0 < |\eta| < 0.8$ & $ 0.8 < |\eta| < 1.479$ & $ 1.479 < |\eta| < 2 $ & $ 2 < |\eta| < 2.5 $  \\
 \hline
@@ -116,7 +161,7 @@ $ 30 < p_T <  40$ & $0.8492 \pm 0.0005$ & $0.8797 \pm 0.0005$ & $0.7215 \pm 0.00
 $ 40 < p_T <  50$ & $0.8774 \pm 0.0004$ & $0.9091 \pm 0.0004$ & $0.7843 \pm 0.0007$ & $0.6915 \pm 0.0010$  \\
 $ 50 < p_T < 7000$ & $0.8893 \pm 0.0007$ & $0.9169 \pm 0.0007$ & $0.8039 \pm 0.0013$ & $0.7149 \pm 0.0017$  \\
 \hline
-\multicolumn{5}{c} {Simulation-to-data scale factors} \\
+\multicolumn{5}{c} {data/simulation scale factors} \\
 \hline
 $ 10 < p_T <  15$ & $0.7177 \pm 0.0138$ & $0.8053 \pm 0.0117$ & $0.6842 \pm 0.0249$ & $0.5602 \pm 0.0214$  \\
 $ 15 < p_T <  20$ & $0.8966 \pm 0.0056$ & $0.8882 \pm 0.0055$ & $0.8045 \pm 0.0126$ & $0.6943 \pm 0.0128$  \\
@@ -124,14 +169,16 @@ $ 20 < p_T <  30$ & $0.9491 \pm 0.0017$ & $0.9388 \pm 0.0019$ & $0.8933 \pm 0.00
 $ 30 < p_T <  40$ & $0.9766 \pm 0.0006$ & $0.9641 \pm 0.0007$ & $0.9396 \pm 0.0024$ & $0.9477 \pm 0.0030$  \\
 $ 40 < p_T <  50$ & $0.9828 \pm 0.0006$ & $0.9724 \pm 0.0007$ & $0.9637 \pm 0.0013$ & $0.9507 \pm 0.0018$  \\
 $ 50 < p_T < 7000$ & $0.9834 \pm 0.0009$ & $0.9746 \pm 0.0009$ & $0.9776 \pm 0.0021$ & $0.9639 \pm 0.0032$  \\
+\hline
 \end{tabular}
-\caption{HWW Electron V00-02-09 Moriond jae NM1Eff ID}
+\caption{Electron ID efficiency in data and simulation, and the data/simulation scale factors.}
 \label{tab:eff_electron_id}
 \end{center}
 \end{table}
 
 \begin{table}[!htp]
 \begin{center}
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $ 0 < |\eta| < 0.8$ & $ 0.8 < |\eta| < 1.479$ & $ 1.479 < |\eta| < 2 $ & $ 2 < |\eta| < 2.5 $  \\
 \hline
@@ -153,7 +200,7 @@ $ 30 < p_T <  40$ & $0.9464 \pm 0.0003$ & $0.9473 \pm 0.0003$ & $0.9360 \pm 0.00
 $ 40 < p_T <  50$ & $0.9757 \pm 0.0002$ & $0.9768 \pm 0.0002$ & $0.9708 \pm 0.0003$ & $0.9720 \pm 0.0004$  \\
 $ 50 < p_T < 7000$ & $0.9843 \pm 0.0003$ & $0.9842 \pm 0.0003$ & $0.9827 \pm 0.0005$ & $0.9809 \pm 0.0006$  \\
 \hline
-\multicolumn{5}{c} {Simulation-to-data scale factors} \\
+\multicolumn{5}{c} {data/simulation scale factors} \\
 \hline
 $ 10 < p_T <  15$ & $1.0133 \pm 0.0096$ & $0.9948 \pm 0.0074$ & $1.0195 \pm 0.0290$ & $1.0036 \pm 0.0183$  \\
 $ 15 < p_T <  20$ & $0.9943 \pm 0.0034$ & $0.9999 \pm 0.0053$ & $0.9930 \pm 0.0188$ & $1.0017 \pm 0.0076$  \\
@@ -161,17 +208,19 @@ $ 20 < p_T <  30$ & $0.9941 \pm 0.0016$ & $0.9898 \pm 0.0013$ & $1.0021 \pm 0.00
 $ 30 < p_T <  40$ & $0.9923 \pm 0.0003$ & $0.9921 \pm 0.0008$ & $0.9976 \pm 0.0009$ & $1.0121 \pm 0.0008$  \\
 $ 40 < p_T <  50$ & $0.9951 \pm 0.0002$ & $0.9952 \pm 0.0003$ & $0.9996 \pm 0.0004$ & $1.0084 \pm 0.0005$  \\
 $ 50 < p_T < 7000$ & $0.9973 \pm 0.0003$ & $0.9973 \pm 0.0008$ & $0.9988 \pm 0.0005$ & $1.0065 \pm 0.0008$  \\
+\hline
 \end{tabular}
-\caption{HWW Electron V00-02-09 Moriond jae NM1Eff Iso}
+\caption{Electron ISO efficiency in data and simulation, and the data/simulation scale factors.}
 \label{tab:eff_electron_iso}
 \end{center}
 \end{table}
 
 
-Table \ref{tab:eff_electron_id} and \ref{tab:eff_electron_iso} show electron N-1 efficiencies in 
-data and simulation, and data-to-simulation scale factors for ID and ISO selections, respectively. 
-The scale factors are close to unity except for the low \pt~bins for ID efficiency. 
-\textcolor{red}{What is the cause of this?}
+Table \ref{tab:eff_electron_id} and \ref{tab:eff_electron_iso} show 
+the electron N-1 efficiencies in data and simulation, and data/simulation scale factors 
+for ID and ISO selections, respectively. 
+The scale factors are close to unity except the low \pt~bins for ID efficiency. 
+%\textcolor{red}{What is the cause of this?}
 
 %
 \begin{table}[!htp]
@@ -187,30 +236,31 @@ $ 40 < p_T <  50$ &    0.000  &     0.000  &     0.000  &     0.001  \\
 $ 50 < p_T $ &   0.000  &     0.000  &     0.000  &     0.000  \\
 \hline
 \end{tabular}
-\caption{The additional systematic uncertainty $\delta_{\rm{SF}}$ on the simulation-to-data scale factor 
+\caption{The additional systematic uncertainty $\delta_{\rm{SF}}$ on the data/simulation scale factor 
 for the electron selection due to the N-1 factorisation scheme.}
 \label{tab:eff_electron_nmsyst}
 \end{center}
 \end{table}
 
-Table \ref{tab:eff_electron_nmsyst} shows systematic uncertainty due to use of N-1 method. 
+Table \ref{tab:eff_electron_nmsyst} shows the systematic uncertainty of the N-1 method. 
 The uncertainty is estimated by comparing measured efficienicies using N-1 method and 
 the measuring the full (ID and ISO) efficiency at the same time in simulation. 
-\textcolor{red}{Why it is high at low \pt? More correlation between ID and ISO at 
-low pT?}
+%\textcolor{red}{Why it is high at low \pt? More correlation between ID and ISO at 
+%low pT?}
 
 %%%%%%%%%%
 \subsection{Muon Selection Efficiency}
 
 As in the electron case, muon efficiency is composed of two factors, 
-recontruction efficiency and selection efficiency. 
+the recontruction efficiency and the selection efficiency. 
 The reconstruction efficiency is the probability for a 
-well-reconstructed track in muon chamber to be matched to a reconstructed track 
-in the inner tracker. For this analysis, we use the result measured with 2011 data   
-because new measurement has not made with the full 2012 data sample[ref]. 
+well-reconstructed track in the muon chamber to be matched to a reconstructed track 
+in the inner tracker. In this analysis, we use the result measured with 2010 
+data~\cite{Khachatryan:2010xn}   
+because new measurement has not made with the full 2012 data sample. 
 The efficency is measured as a function 
 of \pt~and \Eta~of a lepton. From the study, we assume that the reconstruction 
-efficiency for an electron is unity with uncertainty at the level of 1.5 \%.
+efficiency for a muon is unity with uncertainty at the level of 1.5 \%.
 
 %
 \begin{table}[!htp]
@@ -236,7 +286,7 @@ $ 30 < p_T <  40$ & $0.9844 \pm 0.0001$ & $0.9766 \pm 0.0003$ & $0.9659 \pm 0.00
 $ 40 < p_T <  50$ & $0.9849 \pm 0.0001$ & $0.9778 \pm 0.0002$ & $0.9696 \pm 0.0002$  \\
 $ 50 < p_T < 7000$ & $0.9819 \pm 0.0002$ & $0.9715 \pm 0.0004$ & $0.9493 \pm 0.0004$  \\
 \hline
-\multicolumn{4}{c} {Simulation-to-data scale factors} \\
+\multicolumn{4}{c} {data/simulation scale factors} \\
 \hline
 $ 10 < p_T <  15$ & $0.9872 \pm 0.0028$ & $0.9821 \pm 0.0031$ & $0.9806 \pm 0.0021$  \\
 $ 15 < p_T <  20$ & $0.9841 \pm 0.0009$ & $0.9755 \pm 0.0021$ & $0.9801 \pm 0.0013$  \\
@@ -244,8 +294,9 @@ $ 20 < p_T <  30$ & $0.9857 \pm 0.0005$ & $0.9821 \pm 0.0008$ & $0.9868 \pm 0.00
 $ 30 < p_T <  40$ & $0.9874 \pm 0.0002$ & $0.9841 \pm 0.0007$ & $0.9873 \pm 0.0026$  \\
 $ 40 < p_T <  50$ & $0.9881 \pm 0.0002$ & $0.9859 \pm 0.0004$ & $0.9899 \pm 0.0005$  \\
 $ 50 < p_T < 7000$ & $0.9854 \pm 0.0005$ & $0.9826 \pm 0.0008$ & $0.9829 \pm 0.0005$  \\
+\hline
 \end{tabular}
-\caption{HWW Muon V00-02-09 Moriond jae NM1Eff ID}
+\caption{Muon ID efficiency in data and simulation, and the data/simulation scale factors.}
 \label{tab:eff_muon_id}
 \end{center}
 \end{table}
@@ -273,7 +324,7 @@ $ 30 < p_T <  40$ & $0.9642 \pm 0.0002$ & $0.9664 \pm 0.0003$ & $0.9584 \pm 0.00
 $ 40 < p_T <  50$ & $0.9857 \pm 0.0001$ & $0.9878 \pm 0.0002$ & $0.9872 \pm 0.0001$  \\
 $ 50 < p_T < 7000$ & $0.9885 \pm 0.0002$ & $0.9902 \pm 0.0003$ & $0.9899 \pm 0.0002$  \\
 \hline
-\multicolumn{4}{c} {Simulation-to-data scale factors} \\
+\multicolumn{4}{c} {data/simulation scale factors} \\
 \hline
 $ 10 < p_T <  15$ & $1.0209 \pm 0.0081$ & $0.9917 \pm 0.0092$ & $1.0365 \pm 0.0044$  \\
 $ 15 < p_T <  20$ & $0.9904 \pm 0.0038$ & $0.9901 \pm 0.0055$ & $1.0256 \pm 0.0021$  \\
@@ -281,77 +332,65 @@ $ 20 < p_T <  30$ & $0.9944 \pm 0.0011$ & $0.9966 \pm 0.0012$ & $1.0222 \pm 0.00
 $ 30 < p_T <  40$ & $0.9962 \pm 0.0007$ & $0.9971 \pm 0.0008$ & $1.0078 \pm 0.0003$  \\
 $ 40 < p_T <  50$ & $0.9980 \pm 0.0001$ & $0.9977 \pm 0.0002$ & $1.0014 \pm 0.0002$  \\
 $ 50 < p_T < 7000$ & $0.9990 \pm 0.0003$ & $0.9977 \pm 0.0003$ & $1.0011 \pm 0.0002$  \\
+\hline
 \end{tabular}
-\caption{HWW Muon V00-02-09 Moriond jae NM1Eff Iso}
+\caption{Muon ISO efficiency in data and simulation, and the data/simulation scale factors.}
 \label{tab:eff_muon_iso}
 \end{center}
 \end{table}
 
-Table \ref{tab:eff_muon_id} and \ref{tab:eff_muon_iso} show muon N-1 efficiencies in 
+Table \ref{tab:eff_muon_id} and \ref{tab:eff_muon_iso} show the muon N-1 efficiencies in 
 data and simulation, and data-to-simulation scale factors for ID and ISO selections, respectively. 
 The scale factors are close to unity in all bins. 
 
 In case of muon, the systematic uncertainty due to N-1 method is negligible($<0.2~\%$)
-compared to recontruction efficiency which is at the level of $1.5~\%$. 
+compared to the recontruction efficiency which is at the level of $1.5~\%$. 
 
 %%%%%%%%%%
 \subsection{Trigger Efficiency}
 \label{subsec:trg_eff}
-\textcolor{red}{!! FIX CAPTION of the tables !!} \\ \\   
-\textcolor{red}{Tow things to completley understand: (1) randomization of probe leg 
-(2) formula for per event trg eff. => got it, but the formula in AN2012-386 does not 
-seem right, especially the dZ part. Maybe just mention that inefficiency due to dZ 
-is very low and ignored in the actual calculation. This is the actual calculation : 
-%http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/UserCode/Smurf/Core/LeptonScaleLookup.cc?revision=1.9&pathrev=MAIN
-}
-\begin{verbatim}
-evt_eff = 
-1 - ( (1-eff_dbl_1_leadingleg)*(1-eff_dbl_2_leadingleg) + 
-        eff_dbl_1_leadingleg*(1-eff_dbl_2_trailingleg) + 
-        eff_dbl_2_leadingleg*(1-eff_dbl_1_trailingleg))
-+ eff_sgl_2*(1-eff_dbl_1_trailingleg)
-+ eff_sgl_1*(1-eff_dbl_2_trailingleg)
-\end{verbatim}
-The analysis uses a combination of single-lepton and double-lepton triggers.
-For double-lepton trigger there is a requirement on dZ, the longditudinal distance 
+
+The analysis uses a combination of the single-lepton and the double-lepton triggers.
+For the double-lepton triggers, there is a requirement on dZ, the longditudinal distance 
 between two lepton vertices, on top of the requirement on each leg. 
-This requirement is imposed to select events from hard interactions not 
+This requirement is imposed to select events from hard interactions, not 
 from pileup events.
 Only are events that pass both requirements recorded in the data sample under study. 
 Thus, there is 100 \% correlation between the two leptons, \textit{i.e.} 
 if one lepton passed the per lepton requirement, the other lepton passed it as well, 
-otherwise trigger objects have not been stored at all in the data samples under study.  
-This introduces a slight change in the Tag-And-Probe method that only is one 
-tag selected in an event and we do it by selecting a tag randomly.
+otherwise trigger objects have not been stored at all in the data samples.  
+This introduces a slight change in the Tag-And-Probe method such that only is one 
+tag selected in an event, and we do it by selecting the tag randomly.
 
 The dZ requirement for the double-lepton triggers is designed to be highly efficient. 
 However, in the early part of data in 2012 there was a techinical issue that 
-caused inefficiency of dZ requirement for double-muon triggers at the level of 15 \%.   
+caused inefficiency of dZ requirement for the double-muon triggers at the level of 15 \%.   
 The inefficiency is absorbed by using single-lepton triggers to a negligible level. 
 Thus, in the per event trigger efficiency calculation we assume dZ efficiency is 100 \%.
 
-The efficiency of each leg of double-lepton triggers is measured separately 
+The efficiency of the each leg of the double-lepton triggers is measured separately 
 because there are different requirements imposed to them. For $e\mu$ triggers, 
 we assume that the efficiency of both legs can be modelled by measurements 
-of per leg efficiency of double-electon and double-muon triggers.[\textcolor{red}{ref?}] 
+of per leg efficiency of double-electon and double-muon triggers.%[\textcolor{red}{ref?}] 
 This assumption was validated by measuring $e\mu$ trigger efficiency 
-using \Top\Atop~events with MET $>$ 20 GeV. In order to avoid possible bias
-the muon leg efficiency was measured using events passing single-electron trigger
-and the electron leg efficiency was measured using events passing single-muon trigger.
+using \Top\Atop~events with MET $>$ 20 GeV. In order to avoid possible bias,
+the muon leg efficiency was measured using events passing single-electron triggers
+and the electron leg efficiency was measured using events passing single-muon triggers.
 The result turned out to be consistent with our model using per leg efficiency
-from measurements of double-lepton trigger within the statistical uncertainties. 
+from measurements of double-lepton trigger within statistical uncertainties. 
 
-Given the per leg efficiencies of double-lepton triggers and single-lepton trigger 
-efficiency, the per event trigger efficiency is calculated. The requirement of the 
+Using the per leg efficiency of the double-lepton triggers and the single-lepton triggers, 
+the per event trigger efficiency is calculated. The requirement of the 
 single-lepton trigger is tighter than the requirements applied to each leg in 
 double-lepton trigger. 
-So, there are only three cases that an event passes trigger requirements. 
+So, there are only three cases where an event passes the trigger requirements. 
 \begin{enumerate}
-\item Both leptons pass the requirement on each leg in double-lepton trigger and dZ 
-\item Both leptons pass the requirement on each leg in double-lepton trigger, but failed dZ. 
-      At least one of the leptons pass single-lepton trigger 
-\item One of the leptons fail double-lepton trigger requirements, but the 
-      other lepton passes single-lepton trigger
+\item Both leptons pass the requirement on each leg in the double-lepton trigger and dZ 
+\item Both leptons pass the requirement on each leg in the double-lepton trigger, 
+      but failed dZ. 
+      At least one of the leptons pass the single-lepton trigger.
+\item One of the leptons fails the double-lepton trigger requirements, 
+      but the other lepton passes the single-lepton trigger.
 \end{enumerate}
 As mentioned above, dZ efficiency is assumed to be 100 \% in our calculation, 
 so (2) is not included in the per event efficiency calculation.  
@@ -409,15 +448,14 @@ Shade means that the correponding offline lepton falls into that online requirem
 %\end{tabular}
 %\end{center}
 %\end{table}
-Figure \ref{fig:trg_eff_diagram} shows the failing cases of double-lepton trigger. 
-There are three online cases for each lepton, which are passing leading leg requirement(L), 
-passing trailing lepton requirement(T), and passing none of them(F). Shaded boxes 
-show that each lepton falls into that category of offline requirement.   
+Figure \ref{fig:trg_eff_diagram} shows the failing cases of the double-lepton trigger. 
+Online, there are three cases for each lepton : passing leading leg requirement(L), 
+passing trailing lepton requirement(T), and passing none of them(F). 
 There are 9($3\times3$) possible combinations in total, of which there are 6 cases 
-that the trigger fails. Category 1(4 combinations) is the case where none of the 
-two leptons pass leading leg requirement. Category 2 and 3 are the cases where one 
-lepton passes leading leg requirement but the other leg fails trailing leg requirement.  
-Converting this into equations, we have 
+where the trigger fails. The category 1(4 combinations) is the case where none of the 
+two leptons pass the leading leg requirement. The category 2 and 3 are the cases where one 
+lepton passes the leading leg requirement, but the other leg fails the trailing leg 
+requirement. Converting this into an equation, we have 
 \begin{eqnarray} 
 \label{eq:doubletrgeff}
 \epsilon_{double-lepton} \left( p_{T1},\eta_1,p_{T2},\eta_2 \right)
@@ -439,13 +477,13 @@ Converting this into equations, we have
 \,\, \Big]
 \end{eqnarray} 
 where $p_{T1(2)} \textrm{ and } \eta_{1(2)}$ are \pt~and \Eta~of offline leptons, 
-$\epsilon_{DL}$ is the efficiency for the leading leg of double-lepton trigger, 
-and $\epsilon_{DT}$ is the efficiency for the trailng leg of double-lepton trigger. 
+$\epsilon_{DL}$($\epsilon_{DT}$) is the efficiency for the leading(trailing) leg 
+of the double-lepton trigger. 
 Each term corresponds to the 3 categories in Figure \ref{fig:trg_eff_diagram}.
 In case the double-lepton trigger fails because one of the legs fails, the other leg 
-which passed double-lepton trigger requirement might pass single lepton trigger. 
-This way, inefficiency of double-lepton trigger can be recovered by single-lepton trigger.
-The recovery of efficiency by single-lepton trigger is  
+which passed double-lepton trigger requirement might pass the single lepton trigger. 
+This way, inefficiency of double-lepton trigger can be recovered by the single-lepton trigger.
+The recovery of efficiency by the single-lepton trigger is  
 \begin{eqnarray} 
 \label{eq:singletrgeff}
 \epsilon_{single-lepton} \left( p_{T1},\eta_1,p_{T2},\eta_2 \right)
@@ -460,7 +498,7 @@ The recovery of efficiency by single-lepton trigger is
 \epsilon_{S}\left(p_{T1}, \eta_1\right)  
 }_\text{catetory 5} 
 \end{eqnarray}
-where $\epsilon_{S}$ is the efficiency of single-lepton trigger. 
+where $\epsilon_{S}$ is the efficiency of the single-lepton trigger. 
 Therefore, the total per-event trigger efficiency is given by 
 \begin{eqnarray} 
 \label{eq:doubletrgeff}
@@ -485,6 +523,7 @@ Therefore, the total per-event trigger efficiency is given by
 %%%% 
 \begin{table}[!htp]
 \begin{center}
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.479$ & $1.479 < |\eta| < 2$ & $2 < |\eta| < 2.5$  \\
 \hline
@@ -502,13 +541,14 @@ $ 40 < p_T <  50$ & $0.9997 \pm 0.0000$ & $0.9990 \pm 0.0000$ & $0.9973 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9997 \pm 0.0000$ & $0.9992 \pm 0.0001$ & $0.9978 \pm 0.0002$ & $0.9922 \pm 0.0005$  \\
 \hline
 \end{tabular}
-\caption{HWW Electron V00-02-09 Moriond jae NM1Eff TrigDzDbl}
+\caption{Efficiency of dZ requirement of the double-electron trigger.}
 \label{tab:trg_electron_dzdbl}
 \end{center}
 \end{table}
 %
 \begin{table}[!htp]
 \begin{center}
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.479$ & $1.479 < |\eta| < 2$ & $2 < |\eta| < 2.5$  \\
 \hline
@@ -526,7 +566,7 @@ $ 40 < p_T <  50$ & $0.9900 \pm 0.0001$ & $0.9903 \pm 0.0001$ & $0.9945 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9910 \pm 0.0002$ & $0.9925 \pm 0.0002$ & $0.9958 \pm 0.0003$ & $0.9911 \pm 0.0005$  \\
 \hline
 \end{tabular}
-\caption{HWW Electron V00-02-09 Moriond jae NM1Eff TrigLeadDbl}
+\caption{Efficiency of the leading leg of the double-electron trigger.}
 \label{tab:trg_electron_leaddbl}
 \end{center}
 \end{table}
@@ -534,6 +574,7 @@ $ 50 < p_T < 7000$ & $0.9910 \pm 0.0002$ & $0.9925 \pm 0.0002$ & $0.9958 \pm 0.0
 %
 \begin{table}[!htp]
 \begin{center}
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.479$ & $1.479 < |\eta| < 2$ & $2 < |\eta| < 2.5$  \\
 \hline
@@ -551,7 +592,7 @@ $ 40 < p_T <  50$ & $0.9870 \pm 0.0001$ & $0.9874 \pm 0.0002$ & $0.9883 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9882 \pm 0.0003$ & $0.9893 \pm 0.0003$ & $0.9900 \pm 0.0004$ & $0.9888 \pm 0.0006$  \\
 \hline
 \end{tabular}
-\caption{HWW Electron V00-02-09 Moriond jae NM1Eff TrigTrailDbl}
+\caption{Efficiency of the trailing leg of the double-electron trigger.}
 \label{tab:trg_electron_traildbl}
 \end{center}
 \end{table}
@@ -559,6 +600,7 @@ $ 50 < p_T < 7000$ & $0.9882 \pm 0.0003$ & $0.9893 \pm 0.0003$ & $0.9900 \pm 0.0
 %
 \begin{table}[!htp]
 \begin{center}
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.479$ & $1.479 < |\eta| < 2$ & $2 < |\eta| < 2.5$  \\
 \hline
@@ -576,18 +618,19 @@ $ 40 < p_T <  50$ & $0.9361 \pm 0.0002$ & $0.9239 \pm 0.0003$ & $0.7618 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9471 \pm 0.0004$ & $0.9402 \pm 0.0005$ & $0.7808 \pm 0.0012$ & $0.7374 \pm 0.0017$  \\
 \hline
 \end{tabular}
-\caption{HWW Electron V00-02-09 Moriond jae NM1Eff TrigSgl}
+\caption{Efficiency of the single-electron trigger.}
 \label{tab:trg_electron_sgl}
 \end{center}
 \end{table}
 
 The efficiency of dZ, leading and trailing leg requirements for double-electron triggers is shown in 
 Table \ref{tab:trg_electron_dzdbl} - \ref{tab:trg_electron_traildbl}. 
-The efficiency of single-electron trigger is shown in \ref{tab:trg_electron_sgl}. 
+The efficiency of the single-electron trigger is shown in Table~\ref{tab:trg_electron_sgl}. 
 
 %
 \begin{table}[!htp]
 \begin{center}
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.2$ & $1.2 < |\eta| < 2.1$ & $2.1 < |\eta| < 2.4$  \\
 \hline
@@ -605,13 +648,14 @@ $ 40 < p_T <  50$ & $0.9934 \pm 0.0001$ & $0.9855 \pm 0.0002$ & $0.9767 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9937 \pm 0.0002$ & $0.9855 \pm 0.0003$ & $0.9747 \pm 0.0004$ & $0.9799 \pm 0.0009$  \\
 \hline
 \end{tabular}
-\caption{HWW Muon V00-02-09 Moriond jae NM1Eff TrigDzDbl}
+\caption{Efficiency of dZ requirement of the double-muon trigger.}
 \label{tab:trg_muon_dzdbl}
 \end{center}
 \end{table}
 
 \begin{table}[!htp]
 \begin{center}
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.2$ & $1.2 < |\eta| < 2.1$ & $2.1 < |\eta| < 2.4$  \\
 \hline
@@ -629,37 +673,14 @@ $ 40 < p_T <  50$ & $0.9726 \pm 0.0002$ & $0.9320 \pm 0.0004$ & $0.9215 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9725 \pm 0.0003$ & $0.9337 \pm 0.0007$ & $0.9216 \pm 0.0006$ & $0.9016 \pm 0.0018$  \\
 \hline
 \end{tabular}
-\caption{HWW Muon V00-02-09 Moriond jae NM1Eff TrigLeadDbl}
+\caption{Efficiency of the leading leg of the double-muon trigger.}
 \label{tab:trg_muon_leaddbl}
 \end{center}
 \end{table}
 
 \begin{table}[!htp]
 \begin{center}
-\begin{tabular}{c|c|c|c|c}
-\hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.2$ & $1.2 < |\eta| < 2.1$ & $2.1 < |\eta| < 2.4$  \\
-\hline
-$ 10 < p_T < 12.5$ & $0.0000 \pm 0.0005$ & $0.0000 \pm 0.0005$ & $0.0001 \pm 0.0002$ & $0.0000 \pm 0.0004$  \\
-$12.5 < p_T <  15$ & $0.0000 \pm 0.0002$ & $0.0001 \pm 0.0003$ & $0.0002 \pm 0.0002$ & $0.0000 \pm 0.0003$  \\
-$ 15 < p_T < 17.5$ & $0.0000 \pm 0.0001$ & $0.0004 \pm 0.0003$ & $0.0001 \pm 0.0001$ & $0.0000 \pm 0.0002$  \\
-$17.5 < p_T <  20$ & $0.0000 \pm 0.0001$ & $0.0015 \pm 0.0004$ & $0.0004 \pm 0.0001$ & $0.0000 \pm 0.0002$  \\
-$ 20 < p_T < 22.5$ & $0.0004 \pm 0.0001$ & $0.0030 \pm 0.0004$ & $0.0028 \pm 0.0003$ & $0.0000 \pm 0.0001$  \\
-$22.5 < p_T <  25$ & $0.4031 \pm 0.0018$ & $0.3699 \pm 0.0027$ & $0.3912 \pm 0.0019$ & $0.0000 \pm 0.0001$  \\
-$ 25 < p_T < 27.5$ & $0.8847 \pm 0.0010$ & $0.8076 \pm 0.0018$ & $0.7733 \pm 0.0014$ & $0.0001 \pm 0.0001$  \\
-$27.5 < p_T <  30$ & $0.8955 \pm 0.0008$ & $0.8172 \pm 0.0015$ & $0.7881 \pm 0.0011$ & $0.0002 \pm 0.0001$  \\
-$ 30 < p_T <  35$ & $0.9100 \pm 0.0004$ & $0.8267 \pm 0.0008$ & $0.7968 \pm 0.0006$ & $0.0001 \pm 0.0000$  \\
-$ 35 < p_T <  40$ & $0.9230 \pm 0.0003$ & $0.8368 \pm 0.0006$ & $0.8048 \pm 0.0005$ & $0.0001 \pm 0.0000$  \\
-$ 40 < p_T <  50$ & $0.9350 \pm 0.0002$ & $0.8480 \pm 0.0004$ & $0.8161 \pm 0.0003$ & $0.0001 \pm 0.0000$  \\
-$ 50 < p_T < 7000$ & $0.9408 \pm 0.0003$ & $0.8526 \pm 0.0007$ & $0.8207 \pm 0.0006$ & $0.0002 \pm 0.0001$  \\
-\hline
-\end{tabular}
-\caption{HWW Muon V00-02-09 Moriond jae NM1Eff TrigSgl}
-\label{tab:trg_muon_sgl}
-\end{center}
-\end{table}
-
-\begin{table}[!htp]
-\begin{center}
+\footnotesize
 \begin{tabular}{c|c|c|c|c}
 \hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.2$ & $1.2 < |\eta| < 2.1$ & $2.1 < |\eta| < 2.4$  \\
 \hline
@@ -677,35 +698,61 @@ $ 40 < p_T <  50$ & $0.9846 \pm 0.0001$ & $0.9800 \pm 0.0002$ & $0.9831 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9851 \pm 0.0002$ & $0.9804 \pm 0.0004$ & $0.9829 \pm 0.0003$ & $0.9563 \pm 0.0013$  \\
 \hline
 \end{tabular}
-\caption{HWW Muon V00-02-09 Moriond jae NM1Eff TrigTrailDbl}
+\caption{Efficiency of the trailing leg of the double-muon trigger.}
 \label{tab:trg_muon_traildbl}
+\end{center}
+\end{table}
+
+\begin{table}[!htp]
+\begin{center}
+\footnotesize
+\begin{tabular}{c|c|c|c|c}
+\hline & $0 < |\eta| < 0.8$ & $0.8 < |\eta| < 1.2$ & $1.2 < |\eta| < 2.1$ & $2.1 < |\eta| < 2.4$  \\
+\hline
+$ 10 < p_T < 12.5$ & $0.0000 \pm 0.0005$ & $0.0000 \pm 0.0005$ & $0.0001 \pm 0.0002$ & $0.0000 \pm 0.0004$  \\
+$12.5 < p_T <  15$ & $0.0000 \pm 0.0002$ & $0.0001 \pm 0.0003$ & $0.0002 \pm 0.0002$ & $0.0000 \pm 0.0003$  \\
+$ 15 < p_T < 17.5$ & $0.0000 \pm 0.0001$ & $0.0004 \pm 0.0003$ & $0.0001 \pm 0.0001$ & $0.0000 \pm 0.0002$  \\
+$17.5 < p_T <  20$ & $0.0000 \pm 0.0001$ & $0.0015 \pm 0.0004$ & $0.0004 \pm 0.0001$ & $0.0000 \pm 0.0002$  \\
+$ 20 < p_T < 22.5$ & $0.0004 \pm 0.0001$ & $0.0030 \pm 0.0004$ & $0.0028 \pm 0.0003$ & $0.0000 \pm 0.0001$  \\
+$22.5 < p_T <  25$ & $0.4031 \pm 0.0018$ & $0.3699 \pm 0.0027$ & $0.3912 \pm 0.0019$ & $0.0000 \pm 0.0001$  \\
+$ 25 < p_T < 27.5$ & $0.8847 \pm 0.0010$ & $0.8076 \pm 0.0018$ & $0.7733 \pm 0.0014$ & $0.0001 \pm 0.0001$  \\
+$27.5 < p_T <  30$ & $0.8955 \pm 0.0008$ & $0.8172 \pm 0.0015$ & $0.7881 \pm 0.0011$ & $0.0002 \pm 0.0001$  \\
+$ 30 < p_T <  35$ & $0.9100 \pm 0.0004$ & $0.8267 \pm 0.0008$ & $0.7968 \pm 0.0006$ & $0.0001 \pm 0.0000$  \\
+$ 35 < p_T <  40$ & $0.9230 \pm 0.0003$ & $0.8368 \pm 0.0006$ & $0.8048 \pm 0.0005$ & $0.0001 \pm 0.0000$  \\
+$ 40 < p_T <  50$ & $0.9350 \pm 0.0002$ & $0.8480 \pm 0.0004$ & $0.8161 \pm 0.0003$ & $0.0001 \pm 0.0000$  \\
+$ 50 < p_T < 7000$ & $0.9408 \pm 0.0003$ & $0.8526 \pm 0.0007$ & $0.8207 \pm 0.0006$ & $0.0002 \pm 0.0001$  \\
+\hline
+\end{tabular}
+\caption{Efficiency of the single-muon trigger.}
+\label{tab:trg_muon_sgl}
 \end{center}
 \end{table}
 
 The efficiency of dZ, leading and trailing leg requirements for double-muon triggers is shown in 
 Table \ref{tab:trg_muon_dzdbl} - \ref{tab:trg_muon_traildbl}. 
-The efficiency of single-muon trigger is shown in \ref{tab:trg_muon_sgl}. 
+The efficiency of the single-muon trigger is shown in Table~\ref{tab:trg_muon_sgl}. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Jet Counting Efficiency} 
 
-The analysis is optimized for different categories of number of jets. 
-But, jet counting efficiency which is defined as 
-$\displaystyle  \epsilon_{0/1} = \frac{N_{njet=0/1}}{N_{njet\geq0}}$ 
-can be different in simulation and data.  
-So, we correct the efficiency of \hww~in MC by a data-to-MC scale 
-factor measured in MC and data using \dyll~events.  
-The jet counting efficiency of \hww~events,$\epsilon_{\hww}$, 
+%The analysis is optimized for different categories of number of jets. 
+%But, jet counting efficiency which is defined as 
+%$\displaystyle  \epsilon_{0/1} = \frac{N_{njet=0/1}}{N_{njet\geq0}}$ 
+%can be different in simulation and data.  
+%So, we correct the efficiency of \hww~in MC by a data-to-MC scale 
+%factor measured in MC and data using \dyll~events.  
+
+The jet counting efficiency of \hww~events($\epsilon_{\hww}$) 
 is calculated by 
 \begin{eqnarray} 
 \epsilon_{\hww} 
 = \epsilon_{\hww}^{MC} \times \frac{\epsilon_{\dyll}^{Data}}{\epsilon_{\dyll}^{MC}}  
 \end{eqnarray} 
-where $\epsilon_{\hww}^{MC}$ is jet counting efficiency of \hww~in simulation, 
+where $\epsilon_{\hww}^{MC}$ is the jet counting efficiency of \hww~in simulation, 
 and $\frac{\epsilon_{\dyll}^{Data}}{\epsilon_{\dyll}^{MC}}$
-is a data-to-simulation scale factor measured using \dyll~events.
+is the data/simulation scale factor measured using \dyll~events.
 The efficiencies of \dyll~events are evaluated using Drell-Yan events with  
 dilepton mass within 7.5 GeV of the Z peak. 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -734,24 +781,21 @@ as a function of the number of vertices, comparing data (red solid dot) and MC (
 \label{fig:jetfrac_z}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%
+Figure \ref{fig:znjets} shows the distribution of the number of jets for data and MC. 
+In all bins a good agreement with difference less than 1~\% is observed. 
 
-Figure \ref{fig:znjets} shows distribution of number of jets for data and MC. 
-In all bins good agreement with difference less than 1\% is shown. 
-The systematic uncertainty to jet counting efficiency comes from statistics 
-when measuring data-to-MC scale factor and theoretical uncertainty of jet 
-counting in \hww~simulation. The former is less than 1\% being negligible 
-compared to theoretical uncertainty which is at the level of 15\%. 
-This uncertainty will be discussed in the chapter for Systematic Uncertainty \ref{ch:systematics}. 
+The systematic uncertainty to jet counting efficiency comes from the statistics 
+when measuring the data/simulation scale factor and the theoretical uncertainty of jet 
+counting in imulation. The former is less than 1~\% being negligible 
+compared to the theoretical uncertainty which is at the level of 15~\%. 
+This uncertainty will be discussed in detail in chapter~\ref{ch:systematics}. 
 
-Figure \ref{fig:jetveto_z} shows \pt~distribution of leading jet (left) 
-and jet veto effciency as a function of leading jet \pt(right)
-With the jet \pt~threshold 30 \GeV, agreement between data and MC is very good. 
-Figure \ref{fig:jetfrac_z} shows fraction of events with 0 jet and 
-1 jet as a function of number of recontructed vertexes(Nvtx). 
+Figure \ref{fig:jetveto_z} shows the \pt~distribution of the leading jet(left) 
+and the jet veto effciency as a function of the leading jet \pt(right).
+With the jet \pt~threshold 30 \GeV, the agreement between data and MC is very good. 
+Figure \ref{fig:jetfrac_z} shows fraction of events with 0-jet and 
+1-jet as a function of the number of recontructed vertexes($N_{vtx}$). 
 Data and MC show very good agreement.
-Dependence of efficiencies on Nvtx is small in both data and MC.
-Thus, with the chosen jet idenfication, jet counting efficiency 
-is not affected by reweighting by number of Pile-Up events. 
-\textcolor{red}{(fix this sentence to read better)} 
-
-
+The dependence on $N_{vtx}$ is small in both data and simulation.
+Thus, with the chosen jet idenfication, the jet counting efficiency 
+is not affected by the pileup correction. 
