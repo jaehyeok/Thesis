@@ -2,62 +2,97 @@ This is BibTeX, Version 0.99d (TeX Live 2011)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis_jae.aux
 A level-1 auxiliary file: template_frontmatter.aux
+A level-1 auxiliary file: intro_higgs.aux
+A level-1 auxiliary file: lhc_cms.aux
+A level-1 auxiliary file: event_reconstruction.aux
+A level-1 auxiliary file: event_selection.aux
+A level-1 auxiliary file: analysis_strategy.aux
+A level-1 auxiliary file: auxiliary_measurement.aux
+A level-1 auxiliary file: background_estimation.aux
 A level-1 auxiliary file: systematics.aux
+A level-1 auxiliary file: fit_validation.aux
+A level-1 auxiliary file: stat_interpret.aux
+A level-1 auxiliary file: results.aux
+A level-1 auxiliary file: spin.aux
+A level-1 auxiliary file: conclusion.aux
 A level-1 auxiliary file: listofimprovements.aux
 The style file: unsrt.bst
 Database file #1: reference.bib
-I was expecting a `,' or a `}'---line 629 of file reference.bib
+I was expecting a `,' or a `}'---line 817 of file reference.bib
  :       
  :       title         = "{Identification of b-quark jets with the CMS experiment}",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `{' or a `('---line 813 of file reference.bib
+I was expecting a `{' or a `('---line 1018 of file reference.bib
  : % MC@nlo 
  :          4.0
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "optical"
+Warning--I didn't find a database entry for "MuonRingIso"
+Warning--empty journal in Dittmaier:2012vm
+Warning--empty journal in LEP-2
+Warning--empty journal in Lenzi:2013xpa
+Warning--there's a number but no volume in cmsnotetrackfilter
+Warning--there's a number but no volume in cmsnoteiterativetracking
+Name 1 in "R. Fruewirth, W. Waltenberger, and P. Vanlaer" has a comma at the end for entry AdaptiveVertexFit
+while executing---line 944 of file unsrt.bst
+Warning--empty author in CMS-PAS-JME-12-002
+Warning--empty title in Chatrchyan:1494669
+Warning--empty journal in Chatrchyan:1494669
+Warning--empty year in Chatrchyan:1494669
+Warning--there's a number but no volume in CMS-PAS-HIG-12-038
+Warning--empty year in CMS-PAS-HIG-12-038
+Warning--empty journal in Kidonakis:2012rm
+Warning--empty journal in Chatrchyan:2014nva
 Warning--empty journal in Botje:2011sn
 Warning--there's a number but no volume in pdfAN
 Warning--there's a number but no volume in CMS-PAS-LUM-13-001
-Warning--empty year in CMS-PAS-LUM-13-001
-You've used 12 entries,
+Name 1 in "G. Cowan, K. Cranmer, E. Gross, and O. Vitells" has a comma at the end for entry cowan_asimov
+while executing---line 944 of file unsrt.bst
+Warning--empty journal in Read:451614
+Warning--there's a number but no volume in Read:451614
+Warning--empty author in CMS-PAS-HIG-13-001
+Warning--empty author in CMS-PAS-HIG-13-005
+You've used 81 entries,
             1791 wiz_defined-function locations,
-            523 strings with 6646 characters,
-and the built_in function-call counts, 3036 in all, are:
-= -- 174
-> -- 309
-< -- 0
-+ -- 108
-- -- 96
-* -- 267
-:= -- 587
-add.period$ -- 37
-call.type$ -- 12
-change.case$ -- 11
+            944 strings with 17290 characters,
+and the built_in function-call counts, 16118 in all, are:
+= -- 1331
+> -- 799
+< -- 5
++ -- 307
+- -- 226
+* -- 1101
+:= -- 2784
+add.period$ -- 242
+call.type$ -- 81
+change.case$ -- 78
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 104
-empty$ -- 211
-format.name$ -- 96
-if$ -- 600
+cite$ -- 101
+duplicate$ -- 696
+empty$ -- 1546
+format.name$ -- 226
+if$ -- 3475
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 13
-newline$ -- 64
-num.names$ -- 12
-pop$ -- 27
+int.to.str$ -- 81
+missing$ -- 78
+newline$ -- 406
+num.names$ -- 78
+pop$ -- 138
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 35
+skip$ -- 256
 stack$ -- 0
-substring$ -- 66
-swap$ -- 11
-text.length$ -- 0
+substring$ -- 897
+swap$ -- 73
+text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 4
-while$ -- 18
-width$ -- 14
-write$ -- 131
-(There were 2 error messages)
+warning$ -- 20
+while$ -- 130
+width$ -- 83
+write$ -- 874
+(There were 4 error messages)

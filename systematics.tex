@@ -16,6 +16,7 @@ how they are estimated, and the result of the estimations.
  
 %%%
 \subsubsection{Choice of probability density function(\textit{pdf})}
+
 The systematic uncertainties on the signal and the background yields are 
 treated by nuisance parameters. Each nuisance parameter is assumed to follow 
 a Probability Density Function(\textit{pdf}).
@@ -58,7 +59,7 @@ and we can avoid negative values. This is a big advantage that we can avoid
 the problems such as truncation of \textit{pdf} at 0 as it happens with Gaussian \textit{pdf}.    
 
 There are two nuisance parameters we do not use log-normal as a pdf, 
-the signal stregth and the normalization of \qqww\ in the shape-based analysis. 
+the signal stregth and the normalization of \qqww\ in the shape-based method. 
 Both nuisance parameters use a flat(=constant) function as a \textit{pdf}.  
 The rationale behind this is that there is no a priori knowledge on those 
 nuisances. The nuisance parameter for \qqww\ normalization is chosen 
@@ -101,8 +102,6 @@ and \mT\ and \mll\ projections of the up/down/central shapes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theoretical systematic uncertainties}
 
-%\textcolor{red}{add WW extrapolation syst.}  
-
 When data-driven estimation is not applicable, we should rely on the theoreical 
 calculation, and it depends on various sources : The PDF and the $\alpha_s$,  
 missing higher order corrections, parton shower and underlying events 
@@ -126,7 +125,7 @@ The uncertainty for \ggH\ ranges from 7~\% to 12~\%,
 and the uncertainty for other signal processes is 5~\%.
 All other processes, \ggww, \qqww, \vv, \wgamma\ and \wgammastar\  has 4~\% of uncertainty.
 
-In the shape-based analysis, the PDF+$\alpha_s$ shape uncertainty 
+In the shape-based method, the PDF+$\alpha_s$ shape uncertainty 
 is considered for \qqww\ and \ggww.  
 Following the method described in~\cite{pdfAN}, we take an envelop of different PDF 
 sets(NNPDF2.0, CT10(CTEQ) and MSTW2008), and measure variation with respect to the default 
@@ -143,7 +142,7 @@ is less than 1~\% to the expected significance.
 \begin{tabular}{c} 
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_PDFqqWW_0j_zoom.pdf} 
 \end{tabular} 
-\caption{ \qqww\ PDF+$\alpha_s$ in 0-jet}
+\caption{ \qqww\ PDF+$\alpha_s$ in the 0-jet category}
 \label{fig:alter_pdfqqww} 
 \end{figure} 
 %
@@ -152,17 +151,17 @@ is less than 1~\% to the expected significance.
 \begin{tabular}{c} 
 \includegraphics[width=0.8\textwidth]{figures/histo_ggWW_CMS_hww_PDFggWW_0j_zoom.pdf} 
 \end{tabular} 
-\caption{ \ggww\ PDF+$\alpha_s$ in 0-jet}
+\caption{ \ggww\ PDF+$\alpha_s$ in the 0-jet category.}
 \label{fig:alter_pdfggww} 
 \end{figure} 
 
 %\subsubsection{QCD Renormalization and factorization scale variation} 
-\subsubsection{Missing higher order corrections} 
+\subsection{Missing higher order corrections} 
 
 The cross section of a paricular process is calculated by a pertubation expansion, 
 where the first few orders are considered due to complication of calculation 
 with higher order terms. In case of SM Higgs production, the cross sections is calculated 
-up to NNLO in QCD as shown in tab.~\ref{tab:Higgs_XS_8TeV_order}. Missing higher orders 
+up to NNLO in QCD as shown in Table~\ref{tab:Higgs_XS_8TeV_order}. Missing higher orders 
 in the calculation should be accounted for in some way, and this is done by 
 varying the renormalization scale(\mR) and the factorization scale(\mF) 
 by a factor of 2 or 1/2~\cite{Dittmaier:1318996}. 
@@ -172,7 +171,7 @@ this effect is expressed in terms of uncertainty to the
 exclusive jet bins and will be discussed in detail in section~\ref{sec:jetbinfrac}. 
 For other process, the uncertainty due to QCD scale variation ranges from 1 - 4~\%.   
 
-In the shape-based analysis, the effect of the \mR\ and \mF\ variations to shapes 
+In the shape-based method, the effect of the \mR\ and \mF\ variations to shapes 
 is considered for \qqww. The MC@NLO 4.0~\cite{Frixione:2002ik} is used for the matrix element calculation 
 with different choice of scales. The up variation corresponds to $\mR=0.5\mu$ and $\mR=2.0\mu$,
 and the down variation corresponds to $\mR=2.0\mu$ and $\mR=0.5\mu$ where $\mu$ is the nominal 
@@ -205,7 +204,7 @@ Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVAWWNLOBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{ \qqww\ QCD scale variation in 0-jet}
+\caption{ \qqww\ QCD scale variation in the 0-jet category.}
 \label{fig:alter_qqwwnlo}
 \end{figure}
 %
@@ -214,7 +213,7 @@ Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVAWWBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{ \qqww\ Madgraph vs. MC@NLO in 0-jet}
+\caption{ \qqww\ Madgraph vs. MC@NLO in the 0-jet category.}
 \label{fig:alter_qqww}
 \end{figure}
 %
@@ -223,22 +222,24 @@ Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_Top_CMS_hww_MVATopBounding_1j_zoom.pdf}
 \end{tabular}
-\caption{ \topbkg\ Powheg vs. Madgraph in 1-jet}
+\caption{ \topbkg\ Powheg vs. Madgraph in 1-jet category.}
 \label{fig:alter_top}
 \end{figure}
 
 %%%
-\subsubsection{Parton shower and underlying events}
-%fixme 
+\subsection{Parton shower and underlying events}
+
 % how UE is estimated?
-The effect of uncertainty in modeling of parton shower(PS) and underlying events(UE) 
+The systematic uncertainty on modeling of parton shower(PS) and 
+underlying events(UE)~\cite{Chatrchyan:2011id,Chatrchyan:2012tb}
 is evaluated by comparing different generators using different PS and UE models.
-In this analysis, simultions that use Powheg for ME calculation interfaced with Pythia 6.4 for PS 
-that use MC@NLO 4.0 for ME calculation interfaced with Herwig for PS. 
-\textcolor{red}{what about the UE models? How are they different?}
+A simulation chain that uses Powheg for ME calculation interfaced with Pythia 6.4 for PS 
+is compared with a simulation chain that uses MC@NLO 4.0 for ME calculation 
+interfaced with Herwig++ for PS. 
+%\textcolor{red}{what about the UE models? How are they different?}
 In order to exclude the effect of using different ME calculators, 
 the Higgs \pt\ is normalized to the reference distribution~\cite{Dittmaier:1318996}.
-The tab.~\ref{tab:UEPS} shows the $\kappa$ values of the PS/UE uncertainty 
+The Table~\ref{tab:UEPS} shows the $\kappa$ values of the PS/UE uncertainty 
 for a given \mHi. 
 %
 \begin{table}[htp] 
@@ -274,22 +275,23 @@ for a given \mHi.
 
 
 %%%
-\subsubsection{Jet Bin Fractions}
+\subsection{Jet Bin Fractions}
 \label{sec:jetbinfrac}
 
-The analysis is optimized by the number of jets and the jets are counted with the requirement that  
+The analysis is optimized in the different jet categories, 
+and the jets are counted with the requirement that  
 its transverse momentum is greater than 30~\GeV. For the processes that the yields in the 
-different jet bins are estimated by data-driven methods, there is not related uncertainty 
-because the fraction of events in the different jet bins comes from data. On the other hand, 
-the processes taken from simulation, for example, \qqH or \qqww\ at $\mHi>200~\GeV$, 
-we need to account for this effect.    
-The fraction of events that fall into a particular jet bin is affected by the kinematics of events 
-and the kinematics of events is affected by missing higher order terms. 
+different jet categories are estimated by data-driven methods, there is not related uncertainty 
+because the fraction of events in the different jet categories comes from data. 
+On the other hand, for the processes taken from simulation we need to account for this effect.    
+The fraction of events that falls into a particular jet category is 
+affected by the kinematics of events, and the kinematics of events is affected 
+by missing higher order terms. 
 In order to account for this effect, we evaluate the relevant uncertainty by varying 
-QCD scales without any additional selection cuts on the signal.
+QCD scales without any additional selection cuts.
 
-We first get the fraction of jet bins, $f_\textrm{0-jet}$ for $\textrm{0-jet}$, 
-$f_\textrm{1-jet}$ for $\textrm{1-jet}$ 
+We first get the fraction of events in the difference jet categories, 
+$f_\textrm{0-jet}$ for $\textrm{0-jet}$, $f_\textrm{1-jet}$ for $\textrm{1-jet}$ 
 and $f_\textrm{2-jet}$ for $\ge\textrm{2-jet}$ where the fractions are defined as 
 \begin{eqnarray} 
 f_\textrm{0-jet} 
@@ -300,8 +302,11 @@ f_\textrm{1-jet}
 \frac{\sigma_{\ge\textrm{1-jet}} - \sigma_{\ge\textrm{2-jet}}}{\sigma_{\ge\textrm{0-jet}}} \\
 f_\textrm{2-jet} 
 &=&  
-\frac{\sigma_{\ge\textrm{2-jet}}}{\sigma_{\ge\textrm{0-jet}}} 
+\frac{\sigma_{\ge\textrm{2-jet}}}{\sigma_{\ge\textrm{0-jet}}}.
 \end{eqnarray}  
+where $\sigma_{\ge\textrm{0/1/2-jet}}$ is the inclusive cross section 
+with number of jets $\ge 0/1/2$.
+
 The systematic uncertainties on the inclusive cross sections, 
 $\sigma_{\ge\textrm{0-jet}}$, $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$ are 
 manifested by $\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ and $\kappa_{\ge\textrm{2-jet}}$, repectively.
@@ -309,26 +314,28 @@ The central values of the inclusive cross sections are calculated
 using MSTW2008 NLO PDF at the QCD scales, $\mR=\mF=\mHi/2$.
 The uncertainty on the $\sigma_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{0-jet}}$, is taken from the 
 CERN Yellow Report~\cite{Dittmaier:1318996}, and the uncertainties 
-on $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ and $\kappa_{\ge\textrm{2-jet}}$, are 
-calculated by the following QCD scale variations using MCFM~\cite{}: 
+on $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$, 
+$\kappa_{\ge\textrm{1-jet}}$ and $\kappa_{\ge\textrm{2-jet}}$, are 
+calculated by the following QCD scale variations using MCFM~\cite{Campbell:2010ff} : 
 \begin{itemize}
-\item $\mF = \mHi $, $\mR = \mHi$,
-\item $\mF = \mHi / 4$, $\mR = \mHi / 4$,
-\item $\mF = \mHi $, $\mR = \mHi / 2$,
-\item $\mF = \mHi / 2$, $\mR= \mHi $,
+\item $\mF = \mHi $, $\mR = \mHi$
+\item $\mF = \mHi / 4$, $\mR = \mHi / 4$
+\item $\mF = \mHi $, $\mR = \mHi / 2$
+\item $\mF = \mHi / 2$, $\mR= \mHi$.
 \end{itemize}
-\textcolor{red}{Is this a recommendation by Higgs Cross Section WG?} 
+following the recommendation by Higgs Cross Section WG~\cite{Dittmaier:2012vm}. 
 The largest positive($\Delta_{+}$) and negative($\Delta_{-}$) uncertainties 
-to $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$ are taken 
-and they are symmetrized to be expressed in terme of $\kappa$. 
+to $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$ are taken,
+and they are symmetrized to be expressed in terms of $\kappa$. 
 The symmetrization is done by 
 \begin{eqnarray} 
   \kappa_{\mathrm{symmetrized}} = \sqrt{e^{\Delta_{+}} \times e^{\Delta_{-}}} ,
 \end{eqnarray} 
 where the $\kappa_{\mathrm{symmetrized}}$ is the resultant $\kappa$
 for the asymmetric uncertainties, $\Delta_{+}$ and $\Delta_{-}$.
-Using the values in tab~\ref{tab:jetbinincl}, we can convert the inclusive jet bin 
-uncertainties to exclusive jet bin uncertainties by the formulae shown in tab.~\ref{tab:jetbinexcl}~\cite{}.
+Using the values in Table~\ref{tab:jetbinincl}, we can convert the inclusive jet bin 
+uncertainties to the exclusive jet bin uncertainties by the formulae shown in 
+Table~\ref{tab:jetbinexcl}~\cite{Dittmaier:2012vm}.
 \begin{table}[!htbp]
 \begin{center}
 \begin{tabular}{c|ccc}
@@ -354,8 +361,8 @@ $f_{\textrm{0-jet}}$, $f_{\textrm{1-jet}}$ and $f_{\textrm{2-jet}}$.
 \end{center}
 \end{table}
 
-For \ggH process, the numerical values of $\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ 
-and $\kappa_{\ge\textrm{2-jet}}$ are summurized in tab.~\ref{tab:jetbinincl}.
+For \ggH\ process, the numerical values of $\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ 
+and $\kappa_{\ge\textrm{2-jet}}$ are summurized in Table~\ref{tab:jetbinincl}.
 %
 \begin{table}[!htbp]
 \begin{center}
@@ -393,8 +400,8 @@ and $\kappa_{\ge\textrm{2-jet}}$, respectively.
 \label{tab:jetbinincl}
 \end{center}
 \end{table}
-Combining information in tab.~\ref{tab:jetbinincl} and tab.~\ref{tab:jetbinformula} 
-we obtain the final $\kappa$'s for \ggH\ process as shown in tab.~\ref{tab:jetbinexcl}.
+Combining information in Table~\ref{tab:jetbinincl} and Table~\ref{tab:jetbinformula} 
+we obtain the final $\kappa$'s for \ggH\ process as shown in Table~\ref{tab:jetbinexcl}.
 %
 \begin{table}[!htbp]
 \begin{center}
@@ -438,17 +445,18 @@ cross section. }
 \end{table}
 
 For \qqww\ process, the inclusive cross sections, $\sigma_{\ge\textrm{0-jet}}$,
-$\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$ are evaluated using MC@NLO~\cite{} 
+$\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$ are evaluated using 
+MC@NLO 4.0~\cite{Frixione:2002ik} 
 and the corresponding uncertainties are estimated by combination of  
-QCD scale variation and comparison with ALPGEN~\cite{}. 
+QCD scale variation and the comparison with ALPGEN~\cite{Mangano:2002ea}. 
 The uncertainties to the above inclusive cross sections are 3~\%,  6~\% and 42~\% for  
-$\sigma_{\ge\textrm{0-jet}}$, $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$,
-respectively.  
+$\sigma_{\ge\textrm{0-jet}}$, $\sigma_{\ge\textrm{1-jet}}$ 
+and $\sigma_{\ge\textrm{2-jet}}$, respectively~\cite{Dittmaier:2012vm}.  
 The jet bin fractions calculated using the inclusive cross sections are 
 $f_{\textrm{0-jet}}=0.70$, $f_{\textrm{1-jet}}=0.22$ and $f_{\textrm{2-jet}}=0.08$.
-Inserting these numbers into the formulae in tab~\ref{tab:jetbinformula}, 
-we obtain the $\kappa$'s of the jet bin fraction uncertainties for \qqww\ process
-as shown in tab.~\ref{tab:jetbinexcl_ww}. 
+Inserting these numbers into the formulae in Table~\ref{tab:jetbinformula}, 
+we obtain the $\kappa$'s for the jet bin fraction uncertainties for \qqww\ process
+as shown in Table~\ref{tab:jetbinexcl_ww}. 
 %
 \begin{table}[!htbp]
 \begin{center}
@@ -470,66 +478,69 @@ cross section. }
 \end{center}
 \end{table}
 
+%\subsection{Theoretial extrapolation uncertainty for WW}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Instrumental Systematic Uncertainties} 
-\begin{itemize} 
-\item Luminosity : for 8 TeV which luminosity uncertainty to quote? %4.4\% of 2.6\%? 
-      How is the uncertainty estimated?
-\item PU : ~1\% so neglected    
-\item Lepton momentum scale and resolution (shape for 2D) 
-      How is the uncertainty estimated?
-\item Lepton efficiency (shape for 2D)    
-      How is the uncertainty estimated?
-\item MET resolution (shape for 2D)    
-      How is the uncertainty estimated?
-\item Jet energy scale (shape for 2D)     
-      How is the uncertainty estimated? for shape $\pm5\%$ for jet bin migration 
-\item  MC statistics shape uncertainty : mention bin-by-bin treatment gives consistent result  
-\end{itemize} 
+%\begin{itemize} 
+%\item Luminosity : for 8 TeV which luminosity uncertainty to quote? %4.4\% of 2.6\%? 
+%      How is the uncertainty estimated?
+%\item PU : ~1\% so neglected    
+%\item Lepton momentum scale and resolution (shape for 2D) 
+%      How is the uncertainty estimated?
+%\item Lepton efficiency (shape for 2D)    
+%      How is the uncertainty estimated?
+%\item MET resolution (shape for 2D)    
+%      How is the uncertainty estimated?
+%\item Jet energy scale (shape for 2D)     
+%      How is the uncertainty estimated? for shape $\pm5\%$ for jet bin migration 
+%\item  MC statistics shape uncertainty : mention bin-by-bin treatment gives consistent result  
+%\end{itemize} 
 
 
 %%%
 \subsubsection{Luminosity}
 
-The luminosity at CMS is measured by Hadronic Forward calorimeter(HF)
-and silicon pixel detector. Thanks to small dependence on experimental 
+The luminosity at CMS is measured by the hadronic forward calorimeter(HF)
+and the silicon pixel detector. Thanks to small dependence on experimental 
 conditions such as pileup, the counting of the pixel clusters is chosen 
 for the precision luminosity measurement~\cite{CMS-PAS-LUM-13-001}. 
-The measured luminosity is calibrated by Van Der Meer Scans at the ISR~\cite{CMS-PAS-LUM-13-001}.
+The measured luminosity is calibrated by Van Der Meer Scans at the 
+ISR~\cite{CMS-PAS-LUM-13-001}.
 The dominant source of uncertainty is the choice of fit function 
-to model bunch shapes.  
+to model the bunch shapes.  
 
 The total estimated uncertainties are 2.6~\%~\cite{CMS-PAS-LUM-13-001} at 8~\TeV\ 
-and 2.2~\% at 7~\TeV~\cite{}.  
+and 2.2~\% at 7~\TeV~\cite{Chatrchyan:2013oda}.  
 
 %%%
 \subsubsection{Lepton momentum scale and resolution}
 
-The lepton momentum scale and resolution can affect selection efficiency 
-fot the cuts applied on lepton momentum or variables constructed from 
-lepton momenta. The size of uncertianties of both sources is estimated 
-by comparing Z invariant mass shape between simulation and data in \SF\ 
+The lepton momentum scale and resolution can affect the selection efficiency 
+fot the cuts applied on lepton momentum or variables constructed using 
+lepton momenta. The size of the uncertianties of both sources is estimated 
+by comparing Z invariant mass shape between simulation and data in the \SF\ 
 final state. The momentum scale is responsible for the location of the 
 invariant mass peak, and the momentum resolution is reposible for the width 
 of the distribution. 
 
 The measured uncertainties are 1.5~\%(3~\%) for electrons in barrel(endcap)  
-and 1.0~\%(1.7~\%) for muons in barrel(endcap). For the cut-based analysis
-we use the average of bareel and endcap, 2~\% for electron and 1.5~\% for muon. 
-For the shape-based analysis, new \mT\ and \mll\ are calculated using the 
+and 1.0~\%(1.7~\%) for muons in barrel(endcap). For the cut-based method 
+we use the average over barrel and endcap, 2~\% for electron and 1.5~\% for muon. 
+For the shape-based method, new \mT\ and \mll\ are calculated using the 
 lepton momenta scaled by the measured resolutions.
-The up shape is made by adding the smeared momentum resolution to both leptons
+The up shape is made by adding the smeared momentum resolution to both leptons,
 and the down shape is made by subtracting the smeared momentum resolution to both leptons.
-Fig.~\ref{fig:alter_lepres} shows the corresponding up/down alternate shapes. 
+Fig.~\ref{fig:alter_lepres} shows the corresponding up/down alternate shapes 
+for \qqww\ in the 0-jet \DF\ category. 
 %
 \begin{figure}[htp]
 \centering
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVALepResBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for lepton momentum scale and resolution.}
+\caption{Alternate shapes for lepton momentum scale and resolution for \qqww\ in the 0-jet \DF\ category.}
 \label{fig:alter_lepres}
 \end{figure}
 
@@ -537,21 +548,23 @@ Fig.~\ref{fig:alter_lepres} shows the corresponding up/down alternate shapes.
 %%%
 \subsubsection{Lepton efficiency} 
 
-The lepton selection and trigger efficiencies are measured by Tag-and-Probe method
-as described in chapter~\ref{ch:efficiency_measurement}. The uncertainty comes from 
-the determination of backgrounds and the modeling of the signal 
-and background in the likelihood fit. Additional uncertainty which is 
+The lepton selection and trigger efficiencies are measured by the Tag-and-Probe method
+as described in chapter~\ref{ch:efficiency_measurement}. In this method, uncertainties come from 
+the determination of the background contribution and the modeling of the signal 
+and background shapes in the likelihood fit. An additional uncertainty which is 
 prominent in the low \pt\ region in the electron case 
-comes from the possible bias by use of N-1 technique. 
+comes from the possible bias by using the N-1 technique. 
 This is described in section~\ref{sec:electroneff} as well as the corresponding 
-unceratinties in tab.~\ref{tab:eff_electron_nmsyst}.
+unceratinties in Table~\ref{tab:eff_electron_nmsyst}.
 
-The estimated uncertainties are 3~\% for muons and 4~\% for electrons 
-which are used by the cut-based analysis. 
-For the shape-based analysis, alternate shapes are constructed by
-scaling up/down the event weights using the systematics sources
+The estimated uncertainties are 1.5~\% for muons and 2~\% for electrons, 
+and we use 3~\% and 4~\% for \mumu\ and \ee\ events, respectively, 
+in the cut-based method. 
+For the shape-based method, alternate shapes are constructed by
+scaling up/down the lepton efficiencies using the systematics sources
 as a function of lepton \pt\ and \Eta.
-Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes. 
+Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes
+for \qqww\ in the 0-jet \DF\ category. 
 
 %
 \begin{figure}[htp]
@@ -559,7 +572,8 @@ Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVALepEffBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for lepton efficiency. \textcolor{red}{looks too small at low \mT\ and \mll.}}
+\caption{Alternate shapes for lepton efficiency for \qqww\ in the 0-jet \DF\ category. }
+%\textcolor{red}{looks too small at low \mT\ and \mll.}}
 \label{fig:alter_lepeff}
 \end{figure}
 
@@ -567,20 +581,22 @@ Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes.
 %%%
 \subsubsection{MET resolution} 
 
-The mis-modeling of \met\ by simulation can introduce systematic uncertainty 
-as we select events that pass \met\ selections. The uncertainty is measured 
+The mis-modeling of \met\ by simulation can introduce a systematic uncertainty 
+as we select events that pass \met\ and \met-related selections. 
+The uncertainty is measured 
 by comparing data and simulation using \dyll\ events. To account for the 
-difference between data and simulation, additional Gaussian smearing for 
+difference between data and simulation, an additional Gaussian smearing for 
 the individual x and y compoments of \met\ are needed. 
-For PF \met, the size of Gaussian smearing is 3.2 and 3.6~\GeV %and 4.3 
+For PF \met, the size of Gaussian smearing is 3.2 and 3.6~\GeV\ %and 4.3 
 for 0-jet and 1-jet categories, respectively.  
-For \trkmet, the size of Gaussian smearing is 1.0 and 4.5~\GeV %and 6.0 
+For \trkmet, the size of Gaussian smearing is 1.0 and 4.5~\GeV\ %and 6.0 
 for 0-jet and 1-jet categories, respectively.  
 
-For the cut-based analysis, the resultant effect of smearing is around 2~\%. 
-For the shape-based analysis, the up/down alternate shapes are constructed 
-by new \mT\ calculated using the smeared x and y components of \met.
-Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes. 
+For the cut-based method, the resultant effect of smearing to yields is around 2~\%. 
+For the shape-based method, the up/down alternate shapes are constructed 
+with the new \mT\ calculated using the smeared x and y components of \met.
+Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes
+for \qqww\ in the 0-jet \DF\ category. 
 
 %
 \begin{figure}[htp]
@@ -588,28 +604,26 @@ Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVAMETResBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for \met\ resolution.}
+\caption{Alternate shapes for \met\ resolution for \qqww\ in the 0-jet \DF\ category.}
 \label{fig:alter_metres}
 \end{figure}
 
 %%%
 \subsubsection{Jet energy scale} 
 
-This analysis is optimized in jet bins and the jet selection is done by 
+The analysis is optimized in jet categories, and the jet selection is done by 
 requiring \pt\ to be greater than 30~\GeV. Thus, uncertainty on the 
-energy of jets can lead to biased results. From the studies on the PF jet 
-energy resolution are done in \cite{Chatrchyan:2011ds}, the jet energy 
-resolution ranges from 3~\% to 5~\% as \Eta\ of jets increase. We take 
-5 \% for whole \Eta\ range as a conservative choice.   
+energy of jets can lead to migration between different jet categories.  
+From the studies on the PF jet energy resolution done in~\cite{Chatrchyan:2011ds}, 
+the jet energy resolution ranges from 3~\% to 5~\% as the \Eta\ of jets increase. 
+We take 5 \% for whole \Eta\ range as a conservative choice.   
 
-For the cut-based analysis, resultant effect of 5~\% of jet energy resolution 
-is around 2~\%. 
-For the shape-based analysis, the up/down alternate shapes are constructed
-by scaling jet transverse momentum by $\pm 5$~\%.
-Fig.~\ref{fig:alter_jes} shows the corresponding up/down alternate shapes. 
-
-
-%FIXME :  I am here
+For the cut-based method, the resultant effect of 5~\% of jet energy resolution 
+to yields is around 2~\%. 
+For the shape-based method, the up/down alternate shapes are constructed
+by scaling the jet transverse momentum by $\pm 5$~\%.
+Fig.~\ref{fig:alter_jes} shows the corresponding up/down alternate shapes
+for \qqww\ in the 0-jet \DF\ category. 
 
 %
 \begin{figure}[htp]
@@ -617,34 +631,35 @@ Fig.~\ref{fig:alter_jes} shows the corresponding up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVAJESBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for jet energy resolution.}
+\caption{Alternate shapes for jet energy resolution for \qqww\ in the 0-jet \DF\ category.}
 \label{fig:alter_jes}
 \end{figure}
 
 %%%
-\subsubsection{MC statistics shape uncertainty} 
+\subsubsection{Statistics of simulated samples} 
 
-The limited statistics of the avaliable MC samples should be taken 
+The limited statistics of the avaliable simulation samples should be taken 
 into account as a source of systematic uncertainty. 
-For the cut-based analysis, overall statistical unceratianty of the sample 
+For the cut-based method, overall statistical unceratianty of the sample 
 after the final selection is taken into account. 
-Fot the shape-based analysis, the up/down alternate shapes are constructed 
+For the shape-based method, the up/down alternate shapes are constructed 
 by adding/subtracting the size of statistical uncertainty in each bin. 
 This does not allow bin-by-bin fluctuation in the statistical mechinary 
 because all bins are either up or down by the statistical uncertainties 
 in each bin. The ideal method should be considering each bin independently,
-but this requires an extensive cpu time which is not in a realistic
-time scale. We checked expected and observed significances of both methods 
-and found that the results are compatible withn a few \%.  
+but this requires an extensive CPU comsumption. 
+We checked the expected and the observed significances using both approaches,
+and found that the results are compatible within a few \%. 
+Thus, we use the former approach. 
 Fig.~\ref{fig:alter_stat} shows the corresponding up/down alternate shapes
-\ggww\ process in the 0-jet category. 
+for \ggww\ in the 0-jet category. 
 %
 \begin{figure}[htp]
 \centering
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_ggWW_CMS_hww_of_0j_MVAggWWStatBounding_8TeV_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for MC statistics. \ggww }
+\caption{Alternate shapes for MC statistics for \ggww\ in the 0-jet \DF\ category }
 \label{fig:alter_stat}
 \end{figure}
 
@@ -657,16 +672,16 @@ The expected background contributions in the signal region are estimated by
 data-driven methods or taken from simulation after some data corrections.  
 All procedures and the source of systematic uncertainties are discussed 
 in chapter~\ref{ch:background_estimation}. These uncertainties are related 
-to the normalizaion of each background. But, there is a shape systematics 
-that can cause variation of shape. 
+to the normalizaion of each background. But, there is a shape systematic uncertainty 
+that can cause a variation of shapes. 
 
 \subsubsection{\Wjets\ alternate shapes} 
 
 As described in section~\ref{sec:wjets}, the \Wjets\ background is estimated 
-by a data-driven method which measures the fake rate in QCD di-jet sample. 
-One of the systematic sources is the variation of the away jet \pt
-and the uncertainty of 30 \% is assigned to take this account. 
-In the shape-based analysis, the affect of the varying the away jet \pt\ 
+by a data-driven method which measures the fake rate in the QCD di-jet sample. 
+One of the systematic sources is the variation of the away jet \pt,
+and the uncertainty of 30~\% is assigned to take this account. 
+In the shape-based method, the affect of the varying the away jet \pt\ 
 to the shape is considered as well. 
 The alternate up shape is constructed using alternate jet \pt\ thresholds, 
 15~\GeV for muons and 20~\GeV for electrons, and the relative difference 

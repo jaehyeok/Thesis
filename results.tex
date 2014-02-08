@@ -1,14 +1,26 @@
-Putting all things together, result on the SM Higgs search will be discussed in this chapter. 
+The question we have is wheter the SM Higgs boson exists or not.  
+This chapter discusses the interpretation of data to answer this question.
 
-\section{Cut-based analysis results}  
+For the cut-based method, the table of yields and the distributions 
+of \mT\ and \mll\ after Higgs selection are shown. 
+For the shape-based method, the 2-dimensional and the $\frac{S}{S+B}$-weighted 1-dimensional
+data - backgrounds plots are shown to see by eye to check the 
+compatibility of data with the \mHi=125~\GeV\ hypothesis. 
+Then, the exclusion limit and the significance are shown combining 
+shape-based and cut-based results in \DF\ and \SF\ categories, respectivley, 
+using 7 and 8~\TeV\ data. Finally, the measurement on the 
+production rate in terms of the signal strength is discussed. 
+
+
+\section{Cut-based Method results}  
 %%%%% cut-based result %%%%%
 
-Fig.~\ref{fig:cutbased125_0jet} and \ref{fig:cutbased125_0jet} show 
-\mT\ and \mll\ distributions for \mHi=125~\GeV\ analysis in 0-jet and 1-jet categories, 
-respectively. 
-All lepton final states are shown, \DF, \SF and inclusive channel starting from the top. 
-Tab.~\ref{tab:cut7tev} and \ref{tab:cut8tev} show the yields of each process in 7 and 8~\TeV, 
-repectively.
+Figure~\ref{fig:cutbased125_0jet} and \ref{fig:cutbased125_1jet} show the
+\mT\ and \mll\ distributions with the \mHi=125~\GeV\ selection 
+in the 0-jet and 1-jet categories, respectively. 
+All lepton final states, \DF, \SF and inclusive category from the top, are shown. 
+Table~\ref{tab:cut7tev} and \ref{tab:cut8tev} show the yields of each process 
+in 7 and 8~\TeV, repectively.
 The data shows a good agreement with the assumption of \mHi=125~\GeV\ Higgs boson. 
 
 \begin{figure}[htp] 
@@ -160,26 +172,42 @@ The data shows good agreement bewteen prediction assmuing \mHi=125~\GeV\ Higgs b
 \end{sidewaystable}
 
 
-\section{Shape-based analysis results}  
+\section{Shape-based method results}  
 
-Fig.~\ref{fig:post2D} shows the 2-dimensional templates for post-fit signal, 
-data subtracted by post-fit backgrounds in 0-jet and 1-jet final states. 
-The plots show only region where signal is populated defined by 
-$60<\mt<120~\GeV$ and $12<\mll<100~\GeV$.  
+Figure~\ref{fig:post2D} shows the 2-dimensional templates of the post-fit signal
+and the data subtracted by the post-fit backgrounds in the 0-jet and 1-jet categories. 
+The plots show only the region where signal is 
+populated($60<\mt<120~\GeV$ and $12<\mll<100~\GeV$).  
 The data - background plots in 0-jet show good agreement with the \mHi=125~\GeV\
-plot. The 0-jet plots do not have enough data to draw any conclusions.  
+plot. The 1-jet plot do not have enough data to draw any conclusions.  
 
-Fig.~\ref{fig:post1Dprojection_st} shows the stack \mT(top) and \mll(bottom) distributions 
-using post-fit results of shape-based analysis in \DF\ final states combining 7 and 8~\TeV.
-In combining channels, we try to mimic how likelihood works, 
-\textit{i.e.} to give more weights to more sensitive channels, by weighting each bin of 2D 
-templates with S/(S+B) of the corresponding bin. The final normalization is done such 
-that the signal has the same yields as before reweighting.
-The uncertainty band is obtained generating pseudo-data sets constructed by post-fit nuisances. 
-Fig.~\ref{fig:post1Dprojection_dmb} shows signal and data subtracted by backgrounds 
-using the result in fig.~\ref{fig:post1Dprojection_st}. Both \mT\ and \mll\ plots 
-show good agreements between data and SM Higgs at 125~\GeV.  
-
+Figure~\ref{fig:post1Dprojection_1dweight} shows the stacked and data - backgrounds  
+\mT(top) and \mll(bottom) distributions using the post-fit results of 
+shape-based method in \DF\ final states combining 7 and 8~\TeV.
+Before projected to \mll\ and \mT\, each bin of 2-dimensional templates 
+is weighted by $\frac{S}{S+B}$ using the variable which is not plotted. 
+Mathematically, when projecting to x axis,
+the weight applied to each 2-dimensional bin is defined as 
+\begin{eqnarray} 
+w_{ij} 
+= 
+\frac{\displaystyle \sum_{i=1}^{N_{bin}} s_{ij}}
+     {\displaystyle \sum_{i=1}^{N_{bin}} s_{ij} + b_{ij}}.   
+\end{eqnarray}
+Because the bins are summed in the x direction, 
+the x information is not used when constructing the weight. 
+So, if x and y variables are independent, the projected 
+distribution is not biased by the weight.  
+This is the case of \mll\ and \mT, which are weakly correlated.
+Therefore, the projected \mll\ and \mT\ plots are 
+unbiased by the weight.
+After applying the weight, the plots are normalized such that 
+the signal yield is same with the one before applying the weight.
+The hatched area is the post-fit background uncertainty 
+estimated by toys generated using the post-fit nuisance parameters.  
+The data - backgrounds plots show a clear excess on top of backgrounds 
+and a good agreement with \mHi=125~\GeV\ 
+hypothesis in terms of normalization and shape. 
 
 
 % 2D
@@ -200,39 +228,45 @@ In 1-jet category(top), data is not enough to draw a definitive conclusion. }
 \end{figure} 
 
 
-% 1D projection : stack
+% 1D projection : 1D weight 
 \begin{figure}[htp] 
 \centering 
 \begin{tabular}{c} 
-\includegraphics[width=0.7\textwidth]{figures/st_mt.pdf}
+\includegraphics[width=0.49\textwidth]{figures/st_mT_1dweight.pdf}
+\includegraphics[width=0.49\textwidth]{figures/dataminusbkg_mT_1dweight.pdf} 
 \\
-\includegraphics[width=0.7\textwidth]{figures/st_mll.pdf}
+\includegraphics[width=0.49\textwidth]{figures/st_mll_1dweight.pdf}
+\includegraphics[width=0.49\textwidth]{figures/dataminusbkg_mll_1dweight.pdf} 
 \end{tabular} 
-\caption{Stacked \mT(top) and \mll(bottom) distributions using post-fit results 
+\caption{Stacked and data - backgrounds 
+\mT(top) and \mll(bottom) distributions using post-fit results 
 of shape-based analysis
 in \DF\ final states combining 7 and 8~\TeV.
-In order to give more weights to sensitivie channels, each bin of 2D 
+In order to give more weights to sensitivie categories, each bin of 2D 
 template is weighted by S/(S+B) and the total yield is normalized using the signal yield. 
 Both normalization and shape of data show a very good agreement with SM Higgs at 125~\GeV.
 The uncertainty is post-fit uncertainty.} 
-\label{fig:post1Dprojection_st} 
+\label{fig:post1Dprojection_1dweight} 
 \end{figure} 
-%
-\begin{figure}[htp] 
-\centering 
-\begin{tabular}{c} 
-\includegraphics[width=0.7\textwidth]{figures/dataminusbkg_mt.pdf} 
-\\
-\includegraphics[width=0.7\textwidth]{figures/dataminusbkg_mll.pdf} 
-\end{tabular} 
-\caption{\mT(top) and \mll(bottom) distributions using post-fit results 
-of shape-based analysis in \DF\ final states combining 7 and 8~\TeV.
-The signal and data subtracted by backgrounds are compared. 
-In order to give more weights to sensitivie channels, each bin of 2D 
-template is weighted by S/(S+B) and the total yield is normalized using the signal yield. 
-Both normalization and shape of data show a very good agreement with SM Higgs at 125~\GeV. } 
-\label{fig:post1Dprojection_dmb} 
-\end{figure} 
+
+% 1D projection : 2D weight 
+%\begin{figure}[htp] 
+%\centering 
+%\begin{tabular}{c} 
+%\includegraphics[width=0.49\textwidth]{figures/st_mT_2dweight.pdf}
+%\includegraphics[width=0.49\textwidth]{figures/dataminusbkg_mT_2dweight.pdf} 
+%\\
+%\includegraphics[width=0.49\textwidth]{figures/st_mll_2dweight.pdf}
+%\includegraphics[width=0.49\textwidth]{figures/dataminusbkg_mll_2dweight.pdf} 
+%\end{tabular} 
+%\caption{\mT(top) and \mll(bottom) distributions using post-fit results 
+%of shape-based analysis in \DF\ final states combining 7 and 8~\TeV.
+%The signal and data subtracted by backgrounds are compared. 
+%In order to give more weights to sensitivie category, each bin of 2D 
+%template is weighted by S/(S+B) and the total yield is normalized using the signal yield. 
+%Both normalization and shape of data show a very good agreement with SM Higgs at 125~\GeV. } 
+%\label{fig:post1Dprojection_1dweight} 
+%\end{figure} 
 
 %%%%%%
 \section{Exclusion limit of SM Higgs boson}  
@@ -243,21 +277,22 @@ the ratio of observed signal yield to the expected signal yield
 at a given Higgs mass. The expected median limit and its $1\sigma$/$2\sigma$ uncertainty
 bands are shown in yellow and green, respectively, along with the observed limit. 
 
-Fig.~\ref{fig:limit78} shows the exclusion limits of SM Higgs boson combining 
-all channels in 7 and 8~\TeV. 
-The top is the result of cut-based analysis in all channels.
-The observed(expected) exclusion of SM boson at \CLs = 95 \% is 
-132-212,310-550~\GeV(120-480~\GeV). 
-The bottom is the result of the cut-based analysis in \SF\ channels 
-and the shape-based analysis in \DF\ channels.
-The observed(expected) exclusion of SM boson at \CLs = 95 \% is 128-600~\GeV(115-575~\GeV). 
+Figure~\ref{fig:limit78} shows the exclusion limits of SM Higgs boson combining 
+all categories in 7 and 8~\TeV. 
+The top is the result using only cut-based results in all categories. 
+The observed and expected exclusions of SM boson at \CLs = 95 \% are 
+132 - 212 and 310 - 550~\GeV, and 120 - 480~\GeV, respectively. 
+The bottom is the result of the cut-based method in the \SF\ category 
+and the shape-based method in the \DF\ category.
+The observed and expected exclusions of SM boson at \CLs = 95 \% are 
+128-600~\GeV\ and 115-575~\GeV, respectively. 
 
-Fig.~\ref{fig:limit78_secondhiggs} shows
-the exclusion limit of the second SM-Higgs-like boson considering SM Higgs as a backgound.
-The cut-based analysis is used in \SF\ channels and the shape-based analysis is used in 
-\DF\ channels.
-The observed(expected) exclusion of the second SM-Higgs-like boson at \CLs = 95 \% 
-is 118-600~\GeV(115-600~\GeV). 
+Figure~\ref{fig:limit78_secondhiggs} shows the exclusion limit of 
+the second SM-Higgs-like boson considering a SM Higgs at \mHi=125~\GeV\ as a backgound.
+The cut-based result is used in \SF\ category 
+and the shape-based result is used in \DF\ category.
+The observed and expected exclusions of the second SM-Higgs-like boson at \CLs = 95 \% 
+are 118-600~\GeV\ and 115-600~\GeV, respectively. 
 
 \begin{figure}[htp] 
 \centering 
@@ -265,12 +300,14 @@ is 118-600~\GeV(115-600~\GeV).
 \includegraphics[width=0.9\textwidth]{figures/table_limits_nj_cut_78TeV_log.pdf} \\
 \includegraphics[width=0.9\textwidth]{figures/table_limits_nj_78TeV_log.pdf} 
 \end{tabular} 
-\caption{Exclusion limits of SM Higgs boson combining all channels in 7 and 8~\TeV. 
-The top is the result of cut-based analysis in all channels.
-The observed(expected) exclusion of SM boson at \CLs = 95 \% is 132-212~\GeV(120-480~\GeV). 
-The bottom is the result of the cut-based analysis in \SF\ channels 
-and the shape-based analysis in \DF\ channels.
-The observed(expected) exclusion of SM boson at \CLs = 95 \% is 128-600~\GeV(115-575~\GeV).} 
+\caption{Exclusion limits of SM Higgs boson combining all categories in 7 and 8~\TeV. 
+The top is the result of the cut-based method in all categories.
+The observed and expected exclusions of SM boson at \CLs = 95 \% are 
+132-212~\GeV\ and 120-480~\GeV, respectively. 
+The bottom is the result of the cut-based method in \SF\ category 
+and the shape-based method in \DF\ category.
+The observed and expected exclusions of SM boson at \CLs = 95 \% are 
+128-600~\GeV\ and 115-575~\GeV, respectively.} 
 \label{fig:limit78} 
 \end{figure} 
 
@@ -279,46 +316,53 @@ The observed(expected) exclusion of SM boson at \CLs = 95 \% is 128-600~\GeV(115
 \begin{tabular}{c} 
 \includegraphics[width=0.9\textwidth]{figures/ana_Moriond13_2D_SMH_7p8TeV_bdt_from110to600_logx1_logy1.pdf} 
 \end{tabular} 
-\caption{Exclusion limit of the second SM-Higgs-like boson considering SM Higgs as a backgound.
-The cut-based analysis is used in \SF\ channels and the shape-based analysis is used in 
-\DF\ channels.
-The observed(expected) exclusion of the second SM-Higgs-like boson at \CLs = 95 \% 
-is 118-600~\GeV(115-600~\GeV).} 
+\caption{Exclusion limit of the second SM-Higgs-like boson considering the 
+SM Higgs at \mHi=125~\GeV\ as a backgound.
+The cut-based method is used in \SF\ category and the shape-based method 
+is used in \DF\ category.
+The observed and expected exclusions of the second SM-Higgs-like boson at \CLs = 95 \% 
+are 118-600~\GeV\ and 115-600~\GeV, respectively.} 
 \label{fig:limit78_secondhiggs} 
 \end{figure} 
 
 
 
 
-\section{Significance}
+\section{Discovery of a new boson}
 
 Following the procedure described in section~\ref{sec:stat_significance}, 
-we calculate the compatibility of data with background-only hypothesis. 
-The measure is expressed as significance. 
-The expected and observed significance are shown. 
+we study the compatibility of data with the background-only hypothesis. 
+The measure is expressed as significance. A Large deviation indicates 
+that there is additional contribution on top of backgrounds. 
+In this section, the expected and observed significances are shown
+for selective mass points, $\mHi = 125, 160, 200, 400 \textrm{ and } 600~\GeV$.  
 
-Tabs.~\ref{tab:significance_7tev} - \ref{tab:significance_78tev}  
-show observed and expected significances at some selected \mHi, 
+Tables~\ref{tab:significance_7tev} - \ref{tab:significance_78tev}  
+show observed and expected significances at the selected \mHi, 
 for 7~\TeV, 8~\TeV and combination of 7 and 8~\TeV.
-The cut-based analysis is used in \SF\ channels 
-and the shape-based analysis is used in \DF\ channels.
-At \mHi=125~\GeV, the observed/expected significance
-is $4.0\sigma/5.1\sigma$ when all channels are combined.
+The cut-based method is used in \SF\ category 
+and the shape-based method is used in \DF\ category.
+At \mHi=125~\GeV, the observed and expected significances
+are $4.0\sigma$ and $5.2\sigma$, respectively, 
+when all categories are combined.
 
-Fig.~\ref{fig:significane_mH} shows the observed and expected 
+Figure~\ref{fig:significane_mH} shows the observed and expected 
 significance for low Higgs mass hypotheses($\mHi\le200~\GeV$). 
-The solid black line represents the significance assuming \mHi = 125~\GeV\ signal. 
-The green and yellow bands respresent $1\sigma$/$2\sigma$ uncertainty 
-estimated by pseudo data. The dotted line represents the significance 
+The solid black line represents the expected significance assuming 
+\mHi = 125~\GeV\ signal. 
+The green and yellow bands respresent the $1\sigma$/$2\sigma$ uncertainty 
+band of the expected significance sestimated by pseudo data. 
+The dotted line represents the significance 
 assuming existence of SM Higgs at the given mass. 
-The observed data is within $1\sigma$ of expected significance 
-assuming existence of SM Higgs boson at \mHi = 125~\GeV.
+The blue line is the observed significance. 
+The observed data is within $1\sigma$ of the expected significance 
+assuming the existence of SM Higgs boson at \mHi = 125~\GeV.
 
-Tab.~\ref{tab:sig_diffgenerator} shows the observed and expected significances 
+Table~\ref{tab:sig_diffgenerator} shows the observed and expected significances 
 using different generators for the \qqww\ process. Alternative generators, 
 MC@NLO and Powheg, were used replacing the default generator, Madgraph.
 The result shows that the significance is insensitive to the choice 
-of default generator.  
+of the default generator, \textit{i.e.}, central shape of the \qqww\ background.  
 
 
 %%%%%%%%
@@ -411,7 +455,7 @@ Higgs Mass(\GeV) & Observed & Expected & Observed & Expected  \\
 %110 & 3.7 & 1.1 & 2.1 & 0.6 \\
 %115 & 3.8 & 2.0 & 2.1 & 1.2 \\
 %120 & 3.8 & 3.3 & 1.9 & 1.8 \\
-125 & 4.0 & 5.1 & 2.1 & 2.7 \\
+125 & 4.0 & 5.2 & 2.1 & 2.7 \\
 %130 & 4.3 & 7.2 & 2.3 & 3.5 \\
 %135 & 4.5 & 9.2 & 2.5 & 4.4 \\
 %140 & 4.6 & 11.2 & 2.4 & 5.2 \\
@@ -450,6 +494,7 @@ The solid black line represents the significance assuming \mHi = 125~\GeV\ signa
 The green and yellow bands respresent $1\sigma$/$2\sigma$ uncertainty 
 estimated by pseudo data. The dotted line represents the significance 
 assuming existence of SM Higgs at the given mass. 
+The blue line is the observed significance. 
 } 
 \label{fig:significane_mH} 
 \end{figure} 
@@ -463,7 +508,7 @@ assuming existence of SM Higgs at the given mass.
 \hline \hline 
 Observed & Expected & Observed & Expected &  Observed & Expected \\ 
 \hline 
-4.2 & 5.3 & 3.9 & 5.1 & 4.0 & 5.1 \\
+4.2 & 5.3 & 3.9 & 5.1 & 4.0 & 5.2 \\
 \hline 
 \end{tabular} 
 \caption{The observed and expected significances
@@ -476,29 +521,32 @@ of default generator.}
 \end{table} 
 
 
-\section{Signal Strength}
+\section{Meausrement of Production rate($\sigma \times BR$)}
 
 As mentioned before, we measure the signal strength at the 
 measured Higgs mass. The mass measurement comes from 
 $H\rightarrow ZZ\rightarrow4l$ and $H\rightarrow \gamma\gamma$, 
-and it turned out to be around 125~\GeV. 
+and it turned out to be around 125~\GeV~\cite{Chatrchyan:1637951, CMS-PAS-HIG-13-001}. 
 For the results shown in this section,   
 the cut-based analysis is used in \SF\ final states 
 and shape-based analysis is used in \DF\ finale states. 
 
-Fig.~\ref{fig:mu_mH} shows the best fit signal strength 
-as a function of \mHi\ for the low Higgs mass hypotheses($\mHi\le200~\GeV$).
-All channels in 7~\TeV\ and 8~\TeV\ are combined. 
-The green band shows $1\sigma$ error of the fit. 
-The signal strength is within $1\sigma$ of SM Higgs assumption 
-in \mHi = 118 - 125~\GeV. 
-The variance of the signal strength by changing \mHi\ by 1~\GeV\
-is 0.82 and 0.72 for \mHi=126~\GeV\ and \mHi=124~\GeV.  
+%fixme 
+Figure~\ref{fig:mu_mH} shows the best fit signal strength 
+as a function of \mHi\ for the low Higgs mass hypotheses($\mHi\le200~\GeV$)
+using all categories in 7~\TeV\ and 8~\TeV. 
+The green band shows $1\sigma$ error of the global fit. 
+The signal strength is within $1\sigma$ of SM Higgs production rate 
+in the range \mHi = 118 - 125~\GeV. 
+Since the exact measured \mHi\ is $125.6~\GeV$~\cite{Chatrchyan:1637951}, 
+we need to know how the signal strength is sensitive to the 
+variation of \mHi\ around 125~\GeV. 
+The signal strength at \mHi=126~\GeV\ and \mHi=124~\GeV\ are 0.82 and 0.72, respectively.
 
-Fig.~\ref{fig:mu_scan} shows the  $- 2\Delta\ln \textrm{L}$ scan of $\mu$. 
-The black curve represents the case where systematic and statistical 
-uncertainties are taken into account, while blue curve represents the case 
-where only statistical uncertainty is considered. For latter,  
+Figure~\ref{fig:mu_scan} shows the  $- 2\Delta\ln \mathcal{L}$ scan of $\mu$. 
+The black curve represents the case where both systematic and statistical 
+uncertainties are taken into account, while the blue curve represents the case 
+where only statistical uncertainty is considered. To obtain the latter,  
 all nuisances are fixed to the post-fit values, and fitted again.  
 The uncertainty for the blue curve comes solely from statistics of data. 
 The red lines represent the $1\sigma$ unceratinty band for each curve. 
@@ -508,17 +556,17 @@ by subtracting uncertainty in blue from the uncertainty in black.
 Separating the systematic and statistical uncertainties, 
 the measured signal strength is $0.76 \pm 0.16(syst.) \pm 0.13(stat.)$.  
 
-Fig.~\ref{fig:mu_allchannels} shows the fitted signal strength($\mu$) 
-for individual channels for \mHi=125~\GeV.
+Figure~\ref{fig:mu_allchannels} shows the fitted signal strength($\mu$) 
+for \mHi=125~\GeV in the individual category. 
 The dotted vertical line and the green band are 
-the central value and uncertainty band of the signal strength 
-obtained from combination of all channels. 
-The figure shows that all channels are consistent each other
+the central value and the uncertainty band of the signal strength, respectively, 
+obtained from the combination of all categories. 
+The figure shows that all categories are consistent with each other
 within the uncertainties.
 
-Tab.~\ref{tab:mu_diffgenerator} shows the signal strengths 
+Table~\ref{tab:mu_diffgenerator} shows the signal strengths 
 using different generators for the \qqww\ process. Alternative generators,
-MC@NLO and Powheg, were used replacing the default generator, Madgraph.
+MC@NLO and Powheg, are used replacing the default generator, Madgraph.
 The result shows that the signal strength is insensitive to the choice
 of default generator. 
 
@@ -531,7 +579,7 @@ of default generator.
 \end{tabular} 
 \caption{The best fit signal strength($\mu$) as a function of \mHi\ for low Higgs 
 mass hypotheses($\mHi\le200~\GeV$).
-All channels are combined. 
+all categories are combined. 
 Cut-based analysis is used in \SF\ final states 
 and shape-based analysis is used in \DF\ finale states} 
 \label{fig:mu_mH} 
@@ -556,15 +604,15 @@ by subtracting uncertainty in blue from the uncertainty in black.}
 \begin{figure}[htp] 
 \centering 
 \begin{tabular}{c} 
-\includegraphics[width=0.8\textwidth]{figures/mu_allchannels.pdf}
+\includegraphics[width=0.99\textwidth]{figures/mu_allchannels.pdf}
 \end{tabular} 
-\caption{ Signal strength($\mu$) for individual channels for \mHi=125~\GeV.
+\caption{ Signal strength($\mu$) for individual category for \mHi=125~\GeV.
 Cut-based analysis is used in \SF\ final states 
 and shape-based analysis is used in \DF\ finale states. 
 The dotted vertical line and the green band are 
 the central value and uncertainty band of the signal strength 
-obtained from combination of all channels. 
-All channels are consistent to each other.
+obtained from combination of all categories. 
+all categories are consistent to each other.
 } 
 \label{fig:mu_allchannels} 
 \end{figure} 
