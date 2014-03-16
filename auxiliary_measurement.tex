@@ -8,7 +8,7 @@ We correct this disagreement by reweighting the simulation
 to match the number of pileup events in data.
 
 When the collisions happen, 
-events are recorded when the they pass the trigger requirements. 
+events are recorded when they pass the trigger requirements. 
 Thus, per event trigger efficiency needs to be measured using data. 
 To select identified and isolated leptons from Higgs events, we require 
 that each lepton meet strict offline criteria. To account for the possible difference
@@ -45,7 +45,7 @@ after the re-weighting procedure for the 2012 dataset.}
 \label{fig:nvtx} 
 \end{figure} 
 
-Figure~\ref{fig:nvtx} shows the the number of reconstructed primary vertices 
+Figure~\ref{fig:nvtx} shows the number of reconstructed primary vertices 
 from \dyll\ events in data and simulation after this re`weighting procedure. 
 The residual differences reflect the size of the systematic uncertainty in the 
 determination of the amount of pileup present in the data. 
@@ -54,38 +54,39 @@ on pileup are small, this systematic uncertainty due to the pileup is small when
 propagated to the final result.
 
 \section{Lepton Efficiency}
+\label{sec:lepeff}
 
 The lepton selection efficiencies are measured using the Tag-And-Probe 
 method~\cite{Abulencia:2005ix}. It uses 
 $Z/\gamma^* \rightarrow e^+e^-$ or $Z/\gamma^* \rightarrow \mu^+\mu^-$ events 
-that pass the single-lepton trigger to select a unbiased sample of prompt leptons.  
+that pass the single-lepton trigger to select an unbiased sample of prompt leptons.  
 One lepton which is called ``tag" is required to pass the single lepton trigger 
 and the full offline selection. By requiring the full selection on the tag, 
 we can enhance the purity of the sample. The other lepton which is called 
 ``probe" is required to pass a set of selection criteria that enhances the purity 
-of the sample while leaving the crieteria under study unbiased. The fact that the tag 
+of the sample while leaving the criteria under study unbiased. The fact that the tag 
 passed single-lepton trigger guarantees that the probe is not biased by triggers. 
 Both legs can be used as a tag in the offline lepton selection efficiency measurement 
-while only can one of them be used in trigger efficiency measurement due to the correlation 
-between the two onlie lepton objects in the double-lepton triggers. 
+while only one of them can be used in trigger efficiency measurement due to the correlation 
+between the two online lepton objects in the double-lepton triggers. 
 
 The offline selection efficiency is composed of identification(ID) and isolation(ISO) parts. 
 We use the N-1 method where ID and ISO efficiencies are measured with respect to the other, 
 and multiplied afterwards. When measuring the efficiency of the ID part ($\epsilon_{ID}$) 
 the probe is required to pass the full isolation requirement, and when measuring 
 the efficiency of the ISO part ($\epsilon_{ISO}$) the probe is required to pass 
-the full identification requirement. The efficiency is measured in the bins of 
+the full identification requirement. The efficiency is measured in bins of 
 \pt\ and \Eta\ in order to account for the dependences on the kinematics and 
 the material budget of the detector. 
 
 Requiring tight selections to the tag, and using the N-1 method gives a high-purity sample 
 of $Z/\gamma^*$ events in data. However, there are residual contributions from 
-non-prompt leptons from W+jets and QCD events especially at low $p_T$ bins. 
+non-prompt leptons from W+jets and QCD events especially at low $p_T$. 
 Thus, we extract yields by fitting the \mll~distribution of the tag and probe pair
 with ``Gaussian $\oplus$ (exponential $\oplus$ error function)". 
 The Gaussian function which is to describe the 
 $Z/\gamma^*$ invariant mass peak is modeled by simulation, and 
-gaussian smearings are applied to account for the difference in lepton momentum resolutions
+Gaussian smearing is applied to account for the difference in lepton momentum resolutions
 between data and simulation. 
 %\textcolor{red}{I don't believe this is true. Looking at the plots with fitted shapes, 
 %it seems that there are more than one fit function. need to check in the code.}
@@ -117,24 +118,62 @@ In the N-1 method, a possible bias due to the correlation between
 the ID and the ISO requirements is estimated by comparing efficiencies 
 measured by N-1 method and combined measurement of ID+ISO efficiency in simulation. 
 The difference which ranges from 0 to 8~\% depending 
-on the kinemtic bins of the probe is assigned as systematic uncertainty of the method.  
+on the kinematic bins of the probe is assigned as systematic uncertainty of the method.  
 In addition, the uncertainty of lepton reconstruction efficiency is taken 
-as a systmetic sourse. 
+as a systematic uncertainty. 
 
 
 %%%%%%%%%%
 \subsection{Electron Selection Efficiency}
 \label{sec:electroneff}
 
-The electron efficiency is composed of two factors, the recontruction efficiency and 
+The electron efficiency is composed of two factors, the reconstruction efficiency and 
 the selection efficiency. The reconstruction efficiency is the probability for a 
 super-cluster energy deposit to be matched to a reconstructed ECAL-driven 
 GSF electron. In this analysis, we use the result measured with 2010 
-data~\cite{Khachatryan:2010xn}  
-because new measurement has not made with the full 2012 data sample. 
-The efficency is measured as a function 
+data~\cite{Khachatryan:2010xn}.  
+The efficiency is measured as a function 
 of \pt~and \Eta~of a lepton. From the study, we assume that the reconstruction 
 efficiency for an electron is unity with an uncertainty at the level of 2 \%.
+Some representative plots of di-lepton mass distribution are shown in 
+Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5} and \ref{fig:ideff_pt30to40_eta0p8to1p5}. 
+%
+\begin{figure}[htp] 
+\centering 
+\begin{tabular}{cc} 
+\includegraphics[width=0.45\textwidth]{figures/passetapt_data_1.png} 
+\includegraphics[width=0.45\textwidth]{figures/failetapt_data_1.png}  \\
+\includegraphics[width=0.45\textwidth]{figures/passetapt_mc_1.png} 
+\includegraphics[width=0.45\textwidth]{figures/failetapt_mc_1.png} 
+\end{tabular} 
+\caption{Di-lepton mass distributions for data(top) and MC(bottom) 
+         in $0.8<|\Eta|<1.5$ and $10 < \pt < 15~\GeV$ for events 
+         where the probe passes and fails ID selection on left and right, 
+         respectively. In data, there is a considerable contribution from backgrounds, 
+         particularly in the failing case(right). This is accounted in the fit. 
+         The blue and red lines in the data plots are for signal and background, respectively.} 
+\label{fig:ideff_pt10to15_eta0p8to1p5} 
+\end{figure} 
+%
+\begin{figure}[htp] 
+\centering 
+\begin{tabular}{cc} 
+\includegraphics[width=0.45\textwidth]{figures/passetapt_data_13.png} 
+\includegraphics[width=0.45\textwidth]{figures/failetapt_data_13.png}  \\
+\includegraphics[width=0.45\textwidth]{figures/passetapt_mc_13.png} 
+\includegraphics[width=0.45\textwidth]{figures/failetapt_mc_13.png} 
+\end{tabular} 
+\caption{Di-lepton mass distributions for data(top) and MC(bottom) 
+         in $0.8<|\Eta|<1.5$ and $30 < \pt < 40~\GeV$ for events 
+         where the probe passes and fails ID selection on left and right, 
+         respectively. The blue and red lines in the data plots 
+         are for signal and background, respectively. Apart from 
+         the low \pt\ case in Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5}, 
+         the there is negligible contribution from backgrounds.} 
+\label{fig:ideff_pt30to40_eta0p8to1p5} 
+\end{figure} 
+
+
 
 %
 \begin{table}[!htp]
@@ -215,8 +254,7 @@ $ 50 < p_T < 7000$ & $0.9973 \pm 0.0003$ & $0.9973 \pm 0.0008$ & $0.9988 \pm 0.0
 \end{center}
 \end{table}
 
-
-Table \ref{tab:eff_electron_id} and \ref{tab:eff_electron_iso} show 
+Table~\ref{tab:eff_electron_id} and \ref{tab:eff_electron_iso} show 
 the electron N-1 efficiencies in data and simulation, and data/simulation scale factors 
 for ID and ISO selections, respectively. 
 The scale factors are close to unity except the low \pt~bins for ID efficiency. 
@@ -243,7 +281,7 @@ for the electron selection due to the N-1 factorisation scheme.}
 \end{table}
 
 Table \ref{tab:eff_electron_nmsyst} shows the systematic uncertainty of the N-1 method. 
-The uncertainty is estimated by comparing measured efficienicies using N-1 method and 
+The uncertainty is estimated by comparing measured efficiencies using N-1 method and 
 the measuring the full (ID and ISO) efficiency at the same time in simulation. 
 %\textcolor{red}{Why it is high at low \pt? More correlation between ID and ISO at 
 %low pT?}
@@ -252,13 +290,12 @@ the measuring the full (ID and ISO) efficiency at the same time in simulation.
 \subsection{Muon Selection Efficiency}
 
 As in the electron case, muon efficiency is composed of two factors, 
-the recontruction efficiency and the selection efficiency. 
+the reconstruction efficiency and the selection efficiency. 
 The reconstruction efficiency is the probability for a 
 well-reconstructed track in the muon chamber to be matched to a reconstructed track 
 in the inner tracker. In this analysis, we use the result measured with 2010 
-data~\cite{Khachatryan:2010xn}   
-because new measurement has not made with the full 2012 data sample. 
-The efficency is measured as a function 
+data~\cite{Khachatryan:2010xn}.   
+The efficiency is measured as a function 
 of \pt~and \Eta~of a lepton. From the study, we assume that the reconstruction 
 efficiency for a muon is unity with uncertainty at the level of 1.5 \%.
 
@@ -344,26 +381,26 @@ data and simulation, and data-to-simulation scale factors for ID and ISO selecti
 The scale factors are close to unity in all bins. 
 
 In case of muon, the systematic uncertainty due to N-1 method is negligible($<0.2~\%$)
-compared to the recontruction efficiency which is at the level of $1.5~\%$. 
+compared to the reconstruction efficiency which is at the level of $1.5~\%$. 
 
 %%%%%%%%%%
 \subsection{Trigger Efficiency}
 \label{subsec:trg_eff}
 
 The analysis uses a combination of the single-lepton and the double-lepton triggers.
-For the double-lepton triggers, there is a requirement on dZ, the longditudinal distance 
+For the double-lepton triggers, there is a requirement on dZ, the longitudinal distance 
 between two lepton vertices, on top of the requirement on each leg. 
 This requirement is imposed to select events from hard interactions, not 
 from pileup events.
-Only are events that pass both requirements recorded in the data sample under study. 
+Only events that pass both requirements are recorded in the data sample under study. 
 Thus, there is 100 \% correlation between the two leptons, \textit{i.e.} 
 if one lepton passed the per lepton requirement, the other lepton passed it as well, 
 otherwise trigger objects have not been stored at all in the data samples.  
-This introduces a slight change in the Tag-And-Probe method such that only is one 
-tag selected in an event, and we do it by selecting the tag randomly.
+This introduces a slight change in the Tag-And-Probe method such that only one 
+tag is selected in an event, and we do it by selecting the tag randomly.
 
 The dZ requirement for the double-lepton triggers is designed to be highly efficient. 
-However, in the early part of data in 2012 there was a techinical issue that 
+However, in the early part of data in 2012 there was a technical issue that 
 caused inefficiency of dZ requirement for the double-muon triggers at the level of 15 \%.   
 The inefficiency is absorbed by using single-lepton triggers to a negligible level. 
 Thus, in the per event trigger efficiency calculation we assume dZ efficiency is 100 \%.
@@ -371,9 +408,9 @@ Thus, in the per event trigger efficiency calculation we assume dZ efficiency is
 The efficiency of the each leg of the double-lepton triggers is measured separately 
 because there are different requirements imposed to them. For $e\mu$ triggers, 
 we assume that the efficiency of both legs can be modelled by measurements 
-of per leg efficiency of double-electon and double-muon triggers.%[\textcolor{red}{ref?}] 
+of per leg efficiency of double-electron and double-muon triggers.%[\textcolor{red}{ref?}] 
 This assumption was validated by measuring $e\mu$ trigger efficiency 
-using \Top\Atop~events with MET $>$ 20 GeV. In order to avoid possible bias,
+using \Top\Atop~events with MET $>$ 20~\GeV. In order to avoid possible bias,
 the muon leg efficiency was measured using events passing single-electron triggers
 and the electron leg efficiency was measured using events passing single-muon triggers.
 The result turned out to be consistent with our model using per leg efficiency
@@ -400,8 +437,8 @@ so (2) is not included in the per event efficiency calculation.
 \caption{ Diagrams for the cases where double-lepton triggers fail. Lepton1(2) 
 denotes offline leptons. L means leading leg requirement of double-lepton trigger. 
 T means trailing leg requirement of double-lepton trigger. F means failing of 
-trailing lepton requirement, thus leading lepton requirmement,of double-lepton trigger.
-Shade means that the correponding offline lepton falls into that online requirement.}
+trailing lepton requirement, thus leading lepton requirement,of double-lepton trigger.
+Shade means that the corresponding offline lepton falls into that online requirement.}
 \label{fig:trg_eff_diagram}
 \end{figure*}
 % Table version of the figure, figures/TriggerEfficiencyDiagram.pdf
@@ -465,15 +502,15 @@ requirement. Converting this into an equation, we have
 \underbrace{
 \left(1 - \epsilon_{DL}\left(p_{T1}, \eta_1\right)\right)
 \left(1 - \epsilon_{DL}\left(p_{T2}, \eta_2\right)\right)  
-}_\text{catetory 1} \\
+}_\text{category 1} \\
 & & 
 + \underbrace{
 \epsilon_{DL}\left(p_{T2}, \eta_2\right)\left(1 - \epsilon_{DT}\left(p_{T1}, \eta_1\right)\right)
-}_\text{catetory 2} \\
+}_\text{category 2} \\
 & &
 + \underbrace{
 \epsilon_{DL}\left(p_{T1}, \eta_1\right)\left(1 - \epsilon_{DT}\left(p_{T2}, \eta_2\right)\right) 
-}_\text{catetory 3}
+}_\text{category 3}
 \,\, \Big]
 \end{eqnarray} 
 where $p_{T1(2)} \textrm{ and } \eta_{1(2)}$ are \pt~and \Eta~of offline leptons, 
@@ -491,12 +528,12 @@ The recovery of efficiency by the single-lepton trigger is
 \underbrace{
 \left(1 - \epsilon_{DT}\left(p_{T1}, \eta_1\right)\right)
 \epsilon_{S}\left(p_{T2}, \eta_2\right)  
-}_\text{catetory 4} \\
+}_\text{category 4} \\
 & & 
 + \underbrace{
 \left(1 - \epsilon_{DT}\left(p_{T2}, \eta_2\right)\right)
 \epsilon_{S}\left(p_{T1}, \eta_1\right)  
-}_\text{catetory 5} 
+}_\text{category 5} 
 \end{eqnarray}
 where $\epsilon_{S}$ is the efficiency of the single-lepton trigger. 
 Therefore, the total per-event trigger efficiency is given by 
@@ -754,7 +791,7 @@ where $\epsilon_{\hww}^{MC}$ is the jet counting efficiency of \hww~in simulatio
 and $\frac{\epsilon_{\dyll}^{Data}}{\epsilon_{\dyll}^{MC}}$
 is the data/simulation scale factor measured using \dyll~events.
 The efficiencies of \dyll~events are evaluated using Drell-Yan events with  
-dilepton mass within 7.5 GeV of the Z peak. 
+di-lepton mass within 7.5~\GeV\ of the Z peak. 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[!hbtp]
 \centering
@@ -767,8 +804,8 @@ dilepton mass within 7.5 GeV of the Z peak.
 \centering
 \includegraphics[width=.45\textwidth]{figures/ZjetpT.pdf}
 \includegraphics[width=.45\textwidth]{figures/Zjetvetoeff.pdf}
-\caption{The leading jet $pT$ \subref{subfig:jetpt_z} and the jet veto efficiency as a function 
-of the leading jet $p_T$ \subref{subfig:jetveto_z} in data (red solid dot) and MC (black line) for the Z events. }
+\caption{The leading jet \pt(left) and the jet veto efficiency as a function 
+of the leading jet \pt(right) in data(red solid dot) and MC(black line) for the Z events. }
 \label{fig:jetveto_z}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -776,8 +813,9 @@ of the leading jet $p_T$ \subref{subfig:jetveto_z} in data (red solid dot) and M
 \centering
 \includegraphics[width=.45\textwidth]{figures/Zjetvetoeff_vs_nvtx.pdf}
 \includegraphics[width=.45\textwidth]{figures/Zonejeteff_vs_nvtx.pdf}
-\caption{The fraction of events with 0 Jet \subref{subfig:zerojetfrac_z} and 1 Jet \subref{subfig:onejetfrac_z} 
-as a function of the number of vertices, comparing data (red solid dot) and MC (black solid square) for the Z events. }
+\caption{The fraction of events with 0-jet(left) and 1-jet(right) events 
+as a function of the number of vertices, comparing data (red solid dot) 
+and MC (black solid square) for the Z events. }
 \label{fig:jetfrac_z}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -786,16 +824,16 @@ In all bins a good agreement with difference less than 1~\% is observed.
 
 The systematic uncertainty to jet counting efficiency comes from the statistics 
 when measuring the data/simulation scale factor and the theoretical uncertainty of jet 
-counting in imulation. The former is less than 1~\% being negligible 
+counting in simulation. The former is less than 1~\% being negligible 
 compared to the theoretical uncertainty which is at the level of 15~\%. 
 This uncertainty will be discussed in detail in chapter~\ref{ch:systematics}. 
 
 Figure \ref{fig:jetveto_z} shows the \pt~distribution of the leading jet(left) 
-and the jet veto effciency as a function of the leading jet \pt(right).
+and the jet veto efficiency as a function of the leading jet \pt(right).
 With the jet \pt~threshold 30 \GeV, the agreement between data and MC is very good. 
 Figure \ref{fig:jetfrac_z} shows fraction of events with 0-jet and 
-1-jet as a function of the number of recontructed vertexes($N_{vtx}$). 
+1-jet as a function of the number of reconstructed vertices($N_{vtx}$). 
 Data and MC show very good agreement.
 The dependence on $N_{vtx}$ is small in both data and simulation.
-Thus, with the chosen jet idenfication, the jet counting efficiency 
+Thus, with the chosen jet identification, the jet counting efficiency 
 is not affected by the pileup correction. 

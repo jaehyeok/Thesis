@@ -14,12 +14,12 @@ This chapter discusses how these objects are reconstructed.
 %\textcolor{red}{This is for barrel only. 
 %Ref : note005\_001.pdf chapter 2. need to check the endcap case.}
 
-When a charged particle($e^\pm, \mu^\pm, \pi^\pm, ... $) traverses in the tracker,
+When charged particles($e^\pm, \mu^\pm, \pi^\pm, ... $) traverse in the tracker,
 it leaves hits in the pixel and the silicon layers. By collecting those hits
 that are consistent with each other, we can reconstruct the 
-trajectory of the particle, and eventually calculate its momemtum. 
+trajectory of the particle, and eventually calculate its momentum. 
 The reality is not that simple though, because there are multiple 
-particles in an event, and a random combination can fake a particle track.  
+particles in an event, and a random combination of hits can fake a particle track.  
 Interactions with the material in the tracker can change the 
 direction and the magnitude of the momentum of particles. 
 In addition, there are uncertainties to the sensors that 
@@ -27,7 +27,7 @@ can result in no hits in a silicon layer even though a charge
 particle passed it. Therefore, we should consider these points 
 when reconstructing tracks from the hits in the tracker. 
 
-The CMS uses the Combinatorial Track Finder(CTF)~\cite{} as a general tracking 
+CMS uses the Combinatorial Track Finder(CTF)~\cite{Adam:934067} as a general tracking 
 algorithm, and this section describes the procedure in detail.
 
 
@@ -36,7 +36,7 @@ algorithm, and this section describes the procedure in detail.
 The reconstruction of a track starts with seeding, \textit{i.e.} 
 finding the initial values of the track parameters. 
 The seeds can be obtained from the tracking system itself or from external systems.  
-The CMS takes an approach to obtain the seed from the innermost layer 
+CMS takes an approach to obtain the seed from the innermost layer 
 of the tracker, and find track candidates starting from inside to outside. 
 The most important reason for this choice is that the 
 charged particles have interactions as they fly out,
@@ -68,21 +68,22 @@ layer after layer updating the trajectory information after each layer.
 At each layer, the filter is executed in the following steps. 
 
 First, with given the trajectory state, 
-it is determined that which of the adjacent layers are expected 
+it is determined which of the adjacent layers are expected 
 to be crossed by extrapolating the trajectory. Second, the detectors 
 that are compatible with the trajectory are determined. Third, 
 for each compatible detector, compatible measurements are searched 
-by calculating the drift of charge carriers inside the silicon 
-in order to improve position measurements. $\chi^2$ test is used 
-to select compatible hits. Fourth, if the measurement is compatible 
+according to the expected trajectory of a charged particle in the magnetic field, 
+considering multiple scattering and energy loss in the tracker material.
+%$\chi^2$ test is used to select compatible hits. 
+Fourth, if the measurement is compatible 
 with the trajectory, the track candidate includes this measurement, 
 and the track parameters are updated. When there are multiple measurements
-compatible with the trajectory, the several new trajectories are 
+compatible with the trajectory, several new trajectories are 
 created. In addition, to account for the case where a charged particle 
 passes the layer without leaving any hits(invalid hit), 
 one additional track is created without adding position measurements.  
 Due to an exponential increase of the number of track candidates, 
-the maximum number of track candiates at each step is limited 
+the maximum number of track candidates at each step is limited 
 using $\chi^2$, and the number of valid and invalid hits. 
 
 This procedure is repeated to the next tracker layer until either the 
@@ -90,7 +91,7 @@ outermost tracker layer is reached or the track does not satisfy the requirement
 on the number of added layers and uncertainty on the track parameters.
 As the iteration proceeds, the uncertainty on the position measurements 
 in the $r-\phi$ plane improves due to having larger lever arm 
-as the filter goes inside-out. But, the uncertainty in the $r-z$ 
+as the filter goes inside-out. But, the uncertainty in the $r-z$ plane
 becomes larger due to the geometry of double-strip layers
 (longer overlap in the z direction) and absence of z measurements 
 in the single-strip layers where the length of the strip (10-20~cm) is 
@@ -111,7 +112,7 @@ Two tracks are considered duplicate if the fraction of the shared hits
 f_{shared} = \frac{N_{shared}^{hits}}{min (N_1^{hits}, N_2^{hits}) }  
 \end{eqnarray}  
 where $N_{shared}$ is the number of shared hits and $N_{1(2)}^{hits}$ 
-is the number of hits for track candiate 1(2). If $f_{shared}$ is 
+is the number of hits for track candidate 1(2). If $f_{shared}$ is 
 greater than 0.5, the track candidate with larger number of hits is selected. 
 In case there are same number of hits in both tracks, the track with higher $\chi^2$
 is selected. This cleaning continues until none of the track pairs share more than 
@@ -124,7 +125,7 @@ From the pattern recognition explained in the previous subsection,
 we obtained a list of hits and track parameters 
 with associated covariance matrix for each trajectory. 
 Because the track parameters can be biased 
-by the contraints imposed at the seeding stage, the track is refitted 
+by the constraints imposed at the seeding stage, the track is refitted 
 using a combination of the Kalman filter and the smoother
 which work inside-out and outside-in, respectively. 
 
@@ -156,17 +157,24 @@ and the number of crossed layers \cite{cmsnotetrackfilter}.
 \subsubsection{Iterative tracking}
 
 In order to attain a high tracking efficiency and a low fake rate, 
-the CMS developed an iterative tracking procedure \cite{cmsnoteiterativetracking}. 
+CMS developed an iterative tracking procedure \cite{cmsnoteiterativetracking}. 
 The basic idea is to select the high quality tracks first and 
 to find tracks that do not make the high quality tracks 
 but still are good tracks that should be reconstructed. 
 There are 6 iterations in CMS, and the main difference is 
-the initial seeding. For example, the zeroth interation uses 
-the triplet of pixel detector, and the first iteratioin uses 
+the initial seeding. For example, the zeroth iteration uses 
+the triplet of pixel detector, and the first iteration uses 
 pixel-pair seeding to recover tracks that failed to make 
-the pixel triplet requirment. In addtion, the track parameters 
+the pixel triplet requirement. In addition, the track parameters 
 are different to maximize the performance.
 
+\subsubsection{Performance}
+
+Figure~\ref{fig:TrackingEffMC} shows the tracking efficiency 
+measured in single muon and single pion simulations as a function 
+of \pt\ and \Eta. The tracking efficiency of muons is close to 1 
+for $\pt>1~\GeV$ in all \Eta\ regions. The tracking efficiency 
+of pions is lower because they decay in flight. 
 
 \begin{figure}[htp] 
 \centering 
@@ -198,16 +206,17 @@ because pions decay in flight($\pi^+\to\mu^+\nu_\mu$).
 \label{fig:TrackingEffMC} 
 \end{figure} 
 
-\begin{figure}[htp] 
-\centering 
-\begin{tabular}{c} 
-\includegraphics[width=0.9\textwidth]{figures/MuonTagAndProbeEfficiency.png} 
-\end{tabular} 
-\caption{Muon tracking efficiency in data and MC as a function of 
-\Eta(left) and the number of reconstructed vertices(right)~\cite{muonTrkPerform}. 
-The agreement between data and MC is at the level of a few permille.} 
-\label{fig:TrackingEffData} 
-\end{figure} 
+%
+%\begin{figure}[htp] 
+%\centering 
+%\begin{tabular}{c} 
+%\includegraphics[width=0.9\textwidth]{figures/MuonTagAndProbeEfficiency.png} 
+%\end{tabular} 
+%\caption{Muon tracking efficiency in data and MC as a function of 
+%\Eta(left) and the number of reconstructed vertices(right)~\cite{muonTrkPerform}. 
+%The agreement between data and MC is at the level of a few permille.} 
+%\label{fig:TrackingEffData} 
+%\end{figure} 
 
 
 
@@ -239,15 +248,15 @@ is reconstructed using the reconstructed tracks described in the previous sectio
 The tracks are selected based on 
 \begin{itemize}
 \item compatibility with interaction region : the transverse impact parameter 
-      significance with respect to the beamline should be less than 5, 
+      significance with respect to the beam line should be less than 5, 
 \item number of hits in the tracker : more than 4(2) hits should be 
       in the silicon strips(pixel detector) 
 \item track fit quality : $\chi^2/\textrm{ndof}$ should be less than 20.
 \end{itemize}
 The selected tracks are clustered using the Deterministic Annealing 
 algorithm~\cite{DAclustering}.
-At first, only is used the z information at the point of the closest approach(PCA) with 
-respect to the beem line. 
+At first, only z information is used at the point of the closest approach(PCA) with 
+respect to the beam line. 
 % look at http://cmssw.cvs.cern.ch/cgi-bin/cmssw.cgi/CMSSW/RecoVertex/PrimaryVertexProducer/python/OfflinePrimaryVerticesDA_cfi.py?revision=1.8&view=markup
 % It says : distance of closest approach < 5sig, #hits >=5(2) for silicon(pixel), chi2/ndf < 5
 Then, an adaptive vertex fit~\cite{AdaptiveVertexFit} is performed using the clustered tracks 
@@ -263,9 +272,9 @@ of number of tracks($N_{track}$) for data and simulation,
 and the transverse in the x direction and the longitudinal vertex resolution 
 as a function of $N_{track}$ in the jet-enriched data and the min-bias data. 
 %https://twiki.cern.ch/twiki/pub/CMSPublic/PhysicsResultsTRK/20120911_TRKPOG_Plots_Vertex2012.pdf
-The recontruction efficiency is close to 100~\% with  
-$N_{track}>2$. The transverse and londitudinal resolutions measured with 
-the min-bias data are less than 30 and 40~\um, repectively, with $N_{track}=30$.
+The reconstruction efficiency is close to 100~\% with  
+$N_{track}>2$. The transverse and longitudinal resolutions measured with 
+the min-bias data are less than 30 and 40~\um, respectively, with $N_{track}=30$.
 %For the \mHi=125~\GeV\ events, the average number of tracks per reconstructed 
 %vertex is about 30, and about 100~\% of events have more than 10 tracks for 
 %a vertex. So, for the signal events, the vertex reconstruction efficiency 
@@ -281,7 +290,7 @@ the min-bias data are less than 30 and 40~\um, repectively, with $N_{track}=30$.
 \end{tabular} 
 \caption{The vertex resolution in x and z directions as a function of associated tracks
 for data and Simulation at the top 
-and the vertex reconstuction efficiency as a function of number of associated tracks
+and the vertex reconstruction efficiency as a function of number of associated tracks
 for jet-enriched data and min-bias data at the bottom~\cite{muonTrkPerform}. }
 \label{fig:VtxEff} 
 \end{figure} 
@@ -315,13 +324,13 @@ lose more than 95 \%~\cite{Baffioni:2006cd}. Therefore, in order to
 obtain the initial electron energy, it is critical to collect all \brem\ photons.
 The algorithm for this purpose is called super-clustering algorithm~\cite{Baffioni:2006cd}.
 
-The CMS employs two algorithms, hybrid for barrel region 
+CMS employs two algorithms, hybrid for barrel region 
 and island for endcap region~\cite{Baffioni:2006cd}. 
-The hybrid algorithm forms a domino of 3 or 5 crytals in \Eta, and
+The hybrid algorithm forms a domino of 3 or 5 crystals in \Eta, and
 dynamically searches for dominos in $\phi$ separated by a domino with energy less 
 than 100~\MeV.
 The island algorithm starts with making a cluster from a seed crystal with energy deposit 
-above a cerntain threshold, and collect crystals around it 
+above a certain threshold, and collect crystals around it 
 in $\phi$ and then $\eta$ direction. 
 The resultant clusters in narrow $\eta$-window and wider $\phi$-window 
 are then used to construct a supercluster.
@@ -347,10 +356,10 @@ supercluster position is extrapolated to the interaction point(beam spot)
 to find compatible hits in the pixel detector assuming both charge hypotheses. 
 The innermost layer is looked for first with loose $\Delta\phi$ and $\Delta z$ window. 
 If compatible hits are not found in the first layer, search goes on to the next layer. 
-If a compatible hit is found, the z coordiate of the primary vertex is calculated,
+If a compatible hit is found, the z coordinate of the primary vertex is calculated,
 and the predicted trajectory is used to find compatible hit(s) in the next pixel layer(s).  
 Using the selected seed, compatible hits in the next silicon layer are looked for,  
-and extrapolation is done to the next layer using Beath-Heitler modeling of electron 
+and extrapolation is done to the next layer using Bethe-Heitler modeling of electron 
 \brem~\cite{BetheHeitler} 
 and Gaussian Sum Filter(GSF) \cite{0954-3899-31-9-N01} which assumes that the \textit{pdf} 
 of the Bethe-Heitler model is a Gaussian mixture. 
@@ -362,12 +371,12 @@ from $\chi^2$ test are kept. Finally, a track is created if there are at least f
 Fig.~\ref{fig:ElectronEnergyResMC} shows the resolution of reconstructed electron energy 
 as a function of the true electron energy measured with simulation~\cite{PAS-HIG-13-002}.   
 As shown in the figure, precision is dominated by the information 
-from the tracker(blue reverse trianle) and the ECAL(green upright triangle) 
+from the tracker(blue reverse triangle) and the ECAL(green upright triangle) 
 at low and high energy, respectively. 
 The final resolution comes from the combination of the information weighted by 
 their errors(red star). These errors are evaluated by the half minimum width that 
 contains 68.3\%(Gaussian 1$\sigma$ width) in the energy distribution. 
-The red circle corresponds to the width of the Guassian fit in the core of the 
+The red circle corresponds to the width of the Gaussian fit in the core of the 
 energy distribution. 
 
 \begin{figure}[htp] 
@@ -380,7 +389,7 @@ of generated electron energy from different information
 in simulation~\cite{PAS-HIG-13-002}. 
 Blue reverse triangle is measured using only tracker information 
 and green upright triangle is measured using only ECAL information. 
-The red star is a combination of the tracker and ECAL measurments. 
+The red star is a combination of the tracker and ECAL measurements. 
 The resolution is estimated the half minimum width that
 contains 68.3\%(Gaussian 1$\sigma$ width) in the energy distribution
 as denoted as effective resolution. The red circle corresponds to the 
@@ -394,7 +403,7 @@ width of Guassian fit in the core of the energy distribution.
 \label{sec:muon_reco}
 
 In CMS there are three types of muons depending on the information used in the 
-reconstruction~\cite{cmstdr1}. They are standalone, traker and global muons.   
+reconstruction~\cite{cmstdr1}. They are standalone, tracker and global muons.   
 
 The \textit{Standalone} muon reconstruction uses information from 
 the muon system(DT, CSC and RPC), \textit{i.e.} the inner tracker information is not used. 
@@ -411,7 +420,7 @@ effects such as multiple scattering and energy loss in the material.
 The procedure goes until the outermost station, updating the track parameters 
 at each step. Then, the Kalman-filter is applied from the outermost to 
 the innermost station, and the track parameters are defined at the innermost 
-station. Finally, the measured muon track is extaploated to the interaction 
+station. Finally, the measured muon track is extrapolated to the interaction 
 point and a vertex-constrained fit is performed to obtain the final track parameters. 
 
 The \textit{Tracker} muon reconstruction uses information from  
@@ -424,7 +433,7 @@ such as magnetic field, multiple scattering and energy loss in the material.
 If there is at least one muon segment matched to the 
 extrapolated track, this muon is considered as a Tracker muon. 
 The tracker muon gives good momentum measurement and identification 
-for the low \pt\ muons which are hard to be reconsructed by the muon system
+for the low \pt\ muons which are hard to be reconstructed by the muon system
 because they do not leave enough track segments in the muon system. 
 
 The \textit{Global} muon reconstruction uses information from both the tracker 
@@ -434,7 +443,7 @@ The muon track at the innermost station is extrapolated to the last layer
 of the tracker considering the expected detector effects.
 If the matching is successful, the Kalman-filter is used to reconstruct the tracks. 
 After that, all reconstructed tracks are fitted again without constraints on the 
-beamspot, using the hits associated with the standalone muons and the hits 
+beam spot, using the hits associated with the standalone muons and the hits 
 in the silicon strips. A fit is done again using the tracker hits and the 
 hits in the innermost muon station, and the fit quality is compared with 
 that of the tracker-only fit. This is to detect muon \brem\  or 
@@ -452,14 +461,14 @@ Red, blue and green are global, standalone and tracker muons,
 respectively~\cite{cmstdr1}.} 
 \label{fig:muon_res}
 \end{figure}
-Fig.~\ref{fig:muon_res} shows the momentum resolution of difference muon 
+Fig.~\ref{fig:muon_res} shows the momentum resolution of different muon 
 reconstruction algorithms as a function of muon \pt\ 
 in the barrel(left) and endcap(right)~\cite{cmstdr1}. 
-The resolution of standalone muons is dominated by mutiple scattering in the material 
+The resolution of standalone muons is dominated by multiple scattering in the material 
 before the muon station at $\pt<200~\GeV$  and by the spacial resolution 
 of the muon chambers at $\pt>200~\GeV$. The tracker muons give much better 
 resolution at low \pt\, but the resolution goes up to the same level 
-with the stanalone muons at very high \pt. For muons with $\pt<200~\GeV$, 
+as the standalone muons at very high \pt. For muons with $\pt<200~\GeV$, 
 the resolution is better than 3~\%.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -470,47 +479,79 @@ the resolution is better than 3~\%.
 %\item \textcolor{red}{Jet energy correction : L1Fastjet/L2/L3 (+ Residual correction in data) }
 %\end{itemize}
 
-The existence of gluons and quarks in the event is manifested as a hadronic shower, 
-``jets", which leaves an energy deposit primarily in the HCAL. 
-Thanks to the fine granuality of the caloremeters and high precision of tracking in CMS, 
+The existence of gluons and quarks in the event is manifested as a spray of 
+hadrons, ``jet". The initial gluons and quarks are hadronized to hadrons, 
+the hadrons decay to another hadrons. This process continues until 
+there is not enough energy to decay to other hadrons. These hadrons in the 
+shower make energy deposit primarily in HCAL. 
+Thanks to the fine granularity of the calorimeters and high precision of tracking in CMS, 
 individual stable particles(electron, muon, photon, charged and neutral hadron) 
 can be reconstructed by Particle-Flow(PF) algorithm~\cite{PFalgo}. 
 This algorithm uses all available information from sub-detectors 
 to optimally determine the type of particles, momenta and energies. 
-The reconstructed particles, PF candidates, are used to construct higher-level 
-objects such as \met, jets, and b-tagging, etc.
+These particles are used to reconstruct jets. 
 
 The jets are reconstructed by clustering individual particles
-that come from the same parton. The algorithm works 
-such that the two distances are defined,
+that are considered to originate from the same quark/gluon.  
+There are multiple jet reconstruction algorithms, but they 
+can be classified to two categories, cone-based and sequential algorithms. 
+The cone-based algorithms(Midpoint cone~\cite{Blazey:2000qt}, 
+Iterative cone~\cite{PhysRevD.45.1448,PhysRevD.53.6000}, 
+SIS(Seedless Infrared-Safe) cone~\cite{Salam:2007xv}) 
+start with a seed cone\footnote{As the name says, 
+SIS cone algorithm does not start with a seed cone, but tests all possible cones.} 
+to start the algorithm and calculate the energy 
+and the momentum sum of the particles inside the cone. 
+Then, it continuously merge other particles outside of the cone,
+recalculate the energy and momentum. The algorithm continues 
+until the direction of the cone does not change, i.e. the cone becomes stable. 
+These algorithms(except SIS cone) have problems that the stable cone 
+changes, \textit{e.g.} two cones are merged or an existing cone disappears,   
+by adding an extra-soft particle(Infrared safety) 
+or splitting a particle into multiple particles(collinear safety). 
+
+The sequential algorithms are designed to be insensitive 
+to these problems. The algorithms define a distance between 
+particles(which does not necessarily have to be a geometrical distance), 
+and repeatedly combine the closest pair until some stopping conditions 
+are satisfied. The algorithms start with defining two distances,
 the distance between particle i and j($d_{ij}$) 
-and the distance between particle i and the beam line($d_{iB}$). 
-If the minimum of $d_{ij}$ and $d_{iB}$ is $d_{ij}$ then the two particles are merged,
-and if the minimum is $d_{iB}$ then the paritle i is removed from 
-the list of paricles because it is considered as a radiation from the beam. 
-CMS uses anti-$\textrm{k}_\textrm{T}$ algorithm~\cite{Cacciari:2008gp}. 
-In this algorithm, the distances are defined as 
+and the distance between particle i and the beam($d_{iB}$). 
+If the minimum of $d_{ij}$ and $d_{iB}$ is $d_{ij}$ then the two particles 
+are combined and used as a new particle to be paired in the next iteration, 
+and if the minimum is $d_{iB}$ then the particle i is called a jet and removed from 
+the list of particles because it is considered as a radiation from the beam. 
+The algorithms continue combining particles until all particles are 
+clustered into jets. The distances are defined as 
 \begin{eqnarray} 
 d_{ij} 
 &=&   
-min \left( \frac{1}{k_{Ti}^2}, \frac{1}{k_{Tj}^2} \right) 
+min \left( k_{ti}^{2p}, k_{tj}^{2p} \right) 
 \frac{\Delta_{ij}^2}{R^2}, \\ 
 d_{iB} 
 &=&  
-\frac{1}{k_{Ti}^2}
+k_{ti}^{2p}
 \end{eqnarray} 
-where $k_{Ti}$ is the transverse momentum of particle $i$, 
+where $k_{ti}$ is the transverse momentum of particle $i$, 
 $\Delta_{ij}^2 = \left( y_i - y_j \right)^2 + \left( \phi_i - \phi_j \right)^2$ 
 with $y_i$ and $\phi_i$ being the rapidity and the azimuthal angle of particle $i$,
-repectively, and $R$ is the scale that determines the distance of the reconstructed jets.   
-CMS used $R = 0.5$ for the jet reconstruction. 
+respectively, and the parameter $R$ is the scale that determines the distance 
+of the reconstructed jets. 
+The parameter $p$ controls the relative weight 
+between the energy($k_{t}$) and the geometrical scales($\Delta_{ij}$), and 
+this is the parameter that distinguishes three different algorithms, 
+$k_t$($p=2$)~\cite{Ellis:1993tq},
+Cambridge-Aachen($p=0$)~\cite{Dokshitzer:1997in} and 
+anti-$k_t$($p=-2$)~\cite{Cacciari:2008gp}.
 The clustering uses FastJet algorithm~\cite{Cacciari:2005hq} which
 significantly improves the timing of calculation, and provides  
-the jet area used for subtraction of contribution from PU. 
+the jet area used for subtraction of contribution from pileup. 
+The jets used in this analysis are reconstructed using anti-$k_t$ algorithm
+with $R = 0.5$. 
 
 Due to the non-linear calorimeter response of the CMS detector, 
 the measured jet energy can be different from the energy of the true parton which 
-initiated the jet. The CMS employs a jet energy correction(JEC) 
+initiated the jet. CMS employs a jet energy correction(JEC) 
 method~\cite{Chatrchyan:1369486} factorized into multiple levels, 
 the L1, L2, L3 and the residual L2L3 corrections for data as shown in fig.~\ref{fig:jec}. 
 \begin{figure}[!hbtp]
@@ -527,7 +568,7 @@ C_{L1} = 1 - \frac{\left( \rho - \left<\rho_{UE+noise}\right>\right) \cdot A_{je
 where $\rho$ is the per-event energy density, 
 $\left<\rho_{UE+noise}\right>$ is the average energy density 
 of Underlying Event(UE) and noise which is measured using events that contain only one 
-reconstructed vertex, \textit{i.e.}, no PU, 
+reconstructed vertex, \textit{i.e.}, no pileup, 
 $A_{jet}$ is the jet area
 and $p_T^{raw}$ is the uncorrected transverse momentum of the jet. 
 The L2 correction is to make the jet energy response flat in \Eta.  
@@ -536,14 +577,14 @@ with the central region, $|\Eta|<1.3$. So, it is a relative correction.
 The correction factors are derived either from MC or using data-driven method
 (di-jet balance technique~\cite{Chatrchyan:1369486}).
 The L3 correction is to make the jet energy response flat in \pt.  
-The central region, $|\Eta|<1.3$, is used as a referece for the correction. 
+The central region, $|\Eta|<1.3$, is used as a reference for the correction. 
 Apart from the L2 correction, L3 correction is an absolute correction 
 such that the corrected jet \pt\ is same as the \pt\ of the parton that 
 initiated the jet. The correction factors are derived either from MC 
 or using data-driven method($Z/\gamma^*$+jet balance technique~\cite{Chatrchyan:1369486}). 
 For L2 and L3 corrections, 
 %the corrections based on MC truth is done for MC and 
-residual corrections are applied to data in order to to account for the small differences 
+residual corrections are applied to data in order to account for the small differences 
 between data and MC. 
 % http://arxiv.org/pdf/1107.4277.pdf
 
@@ -562,7 +603,7 @@ The uncertainty becomes larger in the forward region,
 \includegraphics[width=.45\textwidth]{figures/JECUncert_Fall12_DATA_AK5PF_Eta27.pdf} 
 %\includegraphics[width=.3\textwidth]{figures/JECUncert_Fall12_DATA_AK5PF_Pt30.pdf}
 %\includegraphics[width=.3\textwidth]{figures/JECUncert_Fall12_DATA_AK5PF_Pt100.pdf}
-\caption{JEC uncertainty meausred in data of $\intlumi=11~\ifb$~\cite{DPS-2013-011}.}
+\caption{JEC uncertainty measured in data of $\intlumi=11~\ifb$~\cite{DPS-2013-011}.}
 \label{fig:jecuncert}
 \end{figure}
 
@@ -579,12 +620,12 @@ The transverse momentum of the initial particles is zero
 \footnote{It is not perfectly zero because partons have transverse movements 
 inside the proton. But, the energy of their motion is at most a few hundred \MeV\
 which is much less than the resolution of measurements.}.
-By momentum convervation, the total momentum of the particles produced 
+By momentum conservation, the total momentum of the particles produced 
 after collisions should be 0 as well. 
 So, if the transverse momenta of all particles in the final state are summed up, 
 the negative value of the vector sum should correspond to the transverse momentum 
 sum of neutrinos. Thus, we define ``Missing Transverse Energy(\met)"
-as the negative value of the sum of all PF candiates momenta, 
+as the negative value of the sum of all PF candidates momenta, 
 \begin{eqnarray} 
 \overrightarrow{\met} = - \sum^{\textrm{All PF candidates}}_i \overrightarrow{\pt}(i).
 \end{eqnarray} 
@@ -593,14 +634,14 @@ The $\phi$ distribution of true \met\ should be flat because of the rotational
 symmetry of collisions with respect to the beam axis. However, possibly due to 
 the anisotropic detector response, inactive calorimeter response, detector misalignments, 
 and displacement of the beam spot, the $\phi$ distributions of \met\ in both 
-MC and data are not flat, but a sinusoidal shape with a period $2\pi$. 
+MC and data are not a flat, but a sinusoidal shape with a period $2\pi$. 
 Thus, we correct this by shifting the origin of the coordinates 
 in the transverse momentum plane for x and y components individually. 
 Since the size of the shift increases 
 linearly as a function of number of reconstructed primary vertices, 
 the form of correction is given by 
 \begin{eqnarray} 
-\alpha + \beta N_{\textrm{vertex}}
+\alpha + \beta N_{\textrm{vertex}} \textrm{ (\GeV)}
 \end{eqnarray} 
 where $\alpha$ and $\beta$ shown in Table~\ref{tab:metxycorrection} are constants 
 and $N_{\textrm{vertex}}$ is the number of primary vertices. 
@@ -608,7 +649,7 @@ and $N_{\textrm{vertex}}$ is the number of primary vertices.
 \begin{center} 
 \begin{tabular}{c||c|c|c} 
 \hline 
-                       &                  & $\alpha$ &  $\beta$  \\
+                       &                  & $\alpha$(\GeV) &  $\beta$(\GeV)  \\
 \hline \hline 
 \multirow{2}{*}{MC}    & correction for X & $-3.00 \times 10^{-2}$ & $-6.62\times 10^{-2}$  \\
                        & correction for Y & $3.71\times 10^{-1}$   & $-1.49\times 10^{-1}$  \\
@@ -645,9 +686,9 @@ Fig.~\ref{fig:metres} shows the resolution of parallel and perpendicular compone
 the hadronic recoil in the data events with Z or photon as a function of reconstructed 
 vertices~\cite{CMS-PAS-JME-12-002}. These events do not have genuine source of 
 \met, \textit{i.e.} no neutrinos in the final state, so \met\ originates from 
-the mis-measurement of objects. Since electons, muons 
+the mis-measurement of objects. Since electrons, muons 
 and photons are well-measured, the dominant contribution comes from the momentum 
-mis-measurement of the recoling jets. The plots clearly show that the resolution 
+mis-measurement of the recoiling jets. The plots clearly show that the resolution 
 of the recoiling jet momentum increases as the number of vertices increases.   
 So, we use another definition of \met\ which is calculated with only charged 
 PF candidates associated with the event primary vertex. Because the particles from 
@@ -662,7 +703,7 @@ This \met\ definition is called ``\trkmet" and the exact definition is
 - \sum^{\textrm{All charged PF candidates}}_i \overrightarrow{\pt}(i)
 \end{eqnarray} 
 where $\overrightarrow{\pt} (\ell_1)$ and $\overrightarrow{\pt} (\ell_2)$
-are the transverse momemta of the leptons. The charged PF candidates must 
+are the transverse momenta of the leptons. The charged PF candidates must 
 meet the following requirements.
 \begin{itemize}
 \item The longitudinal impact parameter of the track matched to the PF candidate 
@@ -712,9 +753,10 @@ greater than 20(blue) and less than 5(red) are drawn separately.}
 
 The presence of a bottom quark in an event is manifested by the presence 
 a displaced secondary vertex. 
-The bottom quark is hadronized to a B meson($\textrm{B}^0, \textrm{B}^\pm, ...$), 
+The bottom quark is hadronized to a 
+b-hadron($\textrm{B}^0, \textrm{B}^\pm, \Lambda_b^0, ...$), 
 and traverses over a measurable distance($c\tau \approx 500~\um$) before decaying into 
-another particles. Therefore, some b-tagging algorithms use 
+other particles. Therefore, some b-tagging algorithms use 
 the distance between the primary vertex and the secondary vertex. 
 In addition, using the fact that the impact parameter of the displaced 
 tracks with respect to the primary vertex is larger than the one 
@@ -727,7 +769,7 @@ uses the IP information.
 \begin{tabular}{c} 
 \includegraphics[width=0.99\textwidth]{figures/Btag.pdf} 
 \end{tabular} 
-\caption{A schematic of b-taging algorithm.}
+\caption{A schematic of b-tagging algorithm.}
 \label{fig:btag} 
 \end{figure} 
 The IP is calculated in 3D thanks to the good resolution of the 
@@ -735,19 +777,19 @@ pixel detector in z direction. The IP can be signed($+$ or $-$)
 depending on the position of the associated track. 
 The sign is obtained from the sign of the scalar product of 
 IP vector from the primary vertex and the direction vector of the jet 
-to which the track belongs as shown in Fig.~\ref{fig:btag}.
+to which the track belongs as shown in Figure~\ref{fig:btag}.
 Ideally, for the decays with a sizable lifetime the IP should be large and positive, 
 but it is not always positive in case the real direction of the B meson 
 is different from the direction of the jet. But, they still tend to be positive. 
-For the decays with very short lifetiem or random tracks, 
+For the decays with very short lifetime or random tracks, 
 the IP is small and symmetric around 0.   
-These are well shown in the left plot of fig~\ref{fig:btagperformance}.
+These are well shown in the left plot of Figure~\ref{fig:btagperformance}.
 
 The b-tagging algorithm used in this analysis is 
-``TrkCountingHighEff(TCHE)~\cite{Chatrchyan:1494669}".
+``Track Counting High Efficiency(TCHE)~\cite{Chatrchyan:1494669}".
 This algorithm uses the impact parameter significance, $S_{IP} = IP / \sigma_{IP}$ 
 where $\sigma_{IP}$ is the uncertainty of the IP measurement, 
-as a discribinating variable. The algorithm requires at least 2 tracks to have $S_{IP}$ 
+as a discriminating variable. The algorithm requires at least 2 tracks to have $S_{IP}$ 
 above a given threshold. Thus, the discriminator is the $S_{IP}$ of the jet 
 which has the second highest $\sigma_{IP}$. 
 
@@ -763,7 +805,7 @@ The b-tagging efficiency(x-axis) and mis-tag rate of udsg jets(y-axis)
 are shown on the right.}
 \label{fig:btagperformance} 
 \end{figure} 
-Fig~\ref{fig:btagperformance} shows the distribution of the discriminator of the 
+Figure~\ref{fig:btagperformance} shows the distribution of the discriminator of the 
 TCHE algorithm in MC and data, and 
 the b-tagging efficiency(x-axis) and mis-tag rate of udsg jets(y-axis). 
 The tagging efficiency of TCHE at the same mis-tag rate is not the best as 

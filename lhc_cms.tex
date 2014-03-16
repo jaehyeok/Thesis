@@ -12,9 +12,9 @@ the chapter 1 of CMS Technical Design Report(TDR) volume 1~\cite{cmstdr1}.
 %  \item Determination of luminosity and its uncertainty 
 %\end{itemize}
 
-In order to answer to the key question in the particle physics, 
+In order to answer the key question in particle physics, 
 the origin of mass, physicists constructed a high-energy 
-proton-proton(hadrons) collider at CERN. The circumference of the accelator 
+proton-proton(hadrons) collider at CERN. The circumference of the accelerator 
 is about 27~km, which is large. Thus, the collider is called 
 ``Large Hadron collider(LHC)". 
 
@@ -25,20 +25,22 @@ The protons are made by applying electric field to hydrogen gas
 (Hydrogen atom is composed of one proton and one electron) 
 in a metal cylinder. Then, the protons and electrons that constituted 
 hydrogen atoms are separated. The separated protons leave 
-the metal cylinder at the energy 90~\keV to be 
+the metal cylinder at the energy 90~\keV\ to be 
 sent to Radio Frequency Quadrupole(QRF). QRF not only accelerates 
 the protons to 750~\keV, but also provides a transverse focusing 
-of the beam. The next destination is a linear accelarator(LINAC2) 
+of the beam. The next destination is a linear accelerator(LINAC2) 
 where the protons gain energy up to 50~\MeV($v=0.3c$).
-The protons are then Proton Synchrotron Booster (PSB) which has 
+The protons are then injected to Proton Synchrotron Booster(PSB) which has 
 157~m circumference. The PSB accelerates the protons to 1.4~\GeV\
 before sending them to Proton Synchrotron (PS) of 628~m circumference.
-PS is responsible for making 81 proton bunches with 25~ns spacing and energy of 25~\GeV($v=0.87c$),  
-and send them to Super Proton Synchrotron (SPS) of which circumference is 7~km. 
-SPS accelerates the proton bunches to 450~\GeV\ and finally inject them 
-to LHC, and they are accelerated to the desired collision energy($v=0.999999c$). 
-The lifetime of beams in LHC is around 10 hours and after that 
-the protons are dumped to prepare for the next proton fill. 
+PS is responsible for making 81 proton bunches with 25~ns spacing 
+and energy of 25~\GeV($v=0.87c$),  
+and send them to Super Proton Synchrotron(SPS) with a circumference of 7~\km. 
+The SPS accelerates the proton bunches to 450~\GeV\ and finally injects them 
+to the LHC, and they are accelerated to the desired collision energy($v=0.999999c$). 
+The beam lifetime which is the time interval during which the intensity of 
+the beam becomes 1/e is around 10 hours, and after that 
+the protons are dumped to prepare for the next proton fill~\cite{LHCbeamlifetime}. 
 
 %
 \begin{figure}[ht!] 
@@ -49,17 +51,17 @@ the protons are dumped to prepare for the next proton fill.
 \end{figure} 
 
 %Though LHC is a circular accelerator, it is not a perfect circle, 
-%but consists of eight 2.45 km arcs and eight 545 m straight insersions. 
+%but consists of eight 2.45 km arcs and eight 545 m straight insertions. 
 %Each arc contains 154 dipole magnets where protons are bent. 
 
-To reach very high collision energy with a fixed size of accelerator, 
+To reach very high collision energy with a fixed-size accelerator, 
 the magnetic field that bends the protons should be very high. 
 In order to operate at the design proton energy of LHC (7~\TeV), 
 the magnetic field should be 8.33~T. This magnetic field is too high, 
-LHC uses dipole magnets using electromagnets. For an electronmagnet 
+LHC uses dipole magnets using electromagnets. For an electromagnet 
 to have a high magnetic field, the current that runs in the rounding coil 
 should be high. But, practically this is not easy because the coils will burn 
-at high current due to its resistence. LHC dipole magnets use 
+at high current due to its resistance. LHC dipole magnets use 
 niobium-titanium(NbTi) cables with a current 11850~A at the temperature 1.9~K.
 The extremely low temperature, 1.9~K, at which the coil becomes a superconductor
 is achieved using superfluid helium.  
@@ -94,12 +96,12 @@ $\beta^*$ the amplitude function at the interaction point,
 and $F$ is the reduction factor due to the crossing angle.
 The left figure in fig.~\ref{fig:intlumi} shows the integrated luminosity 
 delivered by LHC in 2010, 2011 and 2012 as a function of time each year. 
-The delivered intgrated luminosity is 6.1~\ifb\ at $\sqrt{s}=7~\TeV$ in 2011
+The delivered integrated luminosity is 6.1~\ifb\ at $\sqrt{s}=7~\TeV$ in 2011
 and 23.3~\ifb\ at $\sqrt{s}=8~\TeV$ in 2012. 
 
-While a perfect detector can record the delivered luminostiy 
+While a perfect detector can record the delivered luminosity 
 with 100~\% efficiency, in reality there are lost collisions 
-due data aquisition system being busy and temparary unavailability 
+due data acquisition system being busy and temporary unavailability 
 of detector subsystems.  
 The right figure in fig.~\ref{fig:intlumi} shows the delivered and the recorded luminosity 
 integrated in the 2012 run period. Of the 23.30~\ifb of the delivered luminosity,  
@@ -117,20 +119,20 @@ Integrated luminosity delivered by LHC and recored by CMS in 2012 on right.}
 
 As the proton beams are very squeezed in a proton bunch, there are multiple 
 proton-to-proton interactions in one bunch crossing. This multiple interaction 
-is called PileUp. The PileUp can be calculated by 
+is called pileup. The pileup can be calculated by 
 \begin{eqnarray} 
 N_\textrm{{PU}} 
 = 
 \sigma_{\textrm{min bias}} \times \mathcal{L}_{\textrm{bunch crossing}} 
 \end{eqnarray} 
-where $N_{PU}$ is the number of PileUp events, 
+where $N_{PU}$ is the number of pileup events, 
 $\sigma_{\textrm{min bias}}$ is the inelastic p-p cross section, 
 and $\mathcal{L}_{bunch crossing}$ is the luminosity per bunch crossing.
 In 2011 and 2012 the proton bunches crossed every 50~ns 
-and the pick instantaneous luminosity is $7.7\times 10^{33} ~\cm^{-2}\textrm{s}^{-1}$. 
-Fig.~\ref{fig:pileup2012} shows the PileUp distribution 
+and the peak instantaneous luminosity is $7.7\times 10^{33} ~\cm^{-2}\textrm{s}^{-1}$. 
+Fig.~\ref{fig:pileup2012} shows the pileup distribution 
 of the data recored by CMS detector in 2012 run period. 
-The average PileUp is 21. 
+The average pileup is 21. 
 
 
 %
@@ -152,24 +154,26 @@ The average PileUp is 21.
 
 There are two multi-purpose detectors built at the points where 
 the two beams collide. Compact Muon Solenoid(CMS) detector~\cite{cmstdr1} is one of them. 
-The design of the CMS detector is based on the the detection of SM Higgs boson
+The design of the CMS detector is based on the detection of SM Higgs boson
 in the wide mass range, especially, $H \rightarrow \gamma\gamma$ in the low \mHi\ range 
 and $H \rightarrow ZZ \rightarrow 4l$ in the medium \mHi\ range. 
-To achieve this the detector need to have good muon identification and momentum resolution, 
-good charged particle momeumtum resolution and reconstruction efficiency, 
-good electromagnetic energy resolution, and good \met\ and di-jet mass resolution. 
-The design of the CMS detector described in the following secions 
+To achieve this the detector needs to have a good muon identification and momentum resolution, 
+good charged particle momentum resolution and reconstruction efficiency, 
+good electromagnetic energy resolution, and good \met\ and di-jet mass resolution
+where \met\ is the transverse momentum imbalance due to non-interacting particles 
+such as neutrinos and jet is a collimated spray of particles originated from quarks and gluons. 
+The design of the CMS detector described in the following sections 
 is to meet these requirements. 
 
 The momentum and location of physics objects is expressed with respect to the origin 
 centered at the collision point in the detector. The x-axis points to the center 
 of the collider, the y-axis points upward, and the z-axis goes clock-wise along the 
-beam line. CMS uses cylinderical coordinate system due to its cylinderical shape. 
+beam line. CMS uses cylindrical coordinate system due to its cylindrical shape. 
 The azimuthal angle, $\phi$, is the angle in the x-y plane 
 and the polar angle, $\theta$, is measured with respect to the z-axis. 
-Pseudorapidity is defined as $\eta = - \ln \tan(\theta/2)$. 
-Advantage of pseudorapidity is that its difference is Lorentz invariant 
-under longitidinal boost \footnote[1]{  
+Pseudo-rapidity is defined as $\eta = - \ln \tan(\theta/2)$. 
+Advantage of pseudo-rapidity is that its difference is Lorentz invariant 
+under longitudinal boost \footnote[1]{  
 In frame O, 
 \begin{equation} 
 y_1 = \frac{1}{2} \ln \frac{E_1+p_{1L}}{E_1-p_{1L}} \textrm{ and } 
@@ -213,7 +217,7 @@ The rapidity difference is invariant under Lorentz boost along the beam axis.
 Because the initial momentum in z direction is not known due to movement of 
 partons inside a proton, and momentum x and y direction is almost zero, 
 the momentum and energy of an object is expressed in terms of 
-transverse quantitites, \pt\ and $E_T$, calculated in the transverse plane using 
+transverse quantities, \pt\ and $E_T$, calculated in the transverse plane using 
 only x and y components.
 
 The overall layout of the CMS detector is as follows. 
@@ -223,7 +227,7 @@ Electromagnetic calorimeter(ECAL) that covers  $|\eta|<3.0$,
 Hadronic calorimeter(HCAL) that covers  $|\eta|<5.0$, the magnet system, 
 and the muon system that covers  $|\eta|<2.4$. 
 %\textcolor{red}{... make this paragraph richer ... } 
-The details of the each sub-detector system are described in the following sections. 
+The details of each sub-detector system are described in the following sections. 
 
 
 
@@ -234,29 +238,30 @@ The details of the each sub-detector system are described in the following secti
 
 \subsection{Tracker}
 
-The purpose of tracker is to measure momentum of charged particles. 
+The purpose of the tracker is to measure momentum of charged particles. 
 Based on the charged particle flux, the tracker volume can be divided 
 into 3 regions in radial direction. The first region is $r<20~\cm$, closest 
-to the interaction vertex. Due to highest particle flux, pixel detectors 
-each of which has size of $100 \times 150~\um^2$ are installed. 
-The occupancy is about $0.01$ \% per pixel per crossing. 
-The second region is $20<r<55~\cm$ and the particle flux is low so that silicon 
-microstrip detectors can be used. Minimum size of cell is $10~\cm \times 80~\um$.
-The occupancy is about $2-3$ \% per pixel per crossing. 
-The third region is $55<r<110~\cm$ and larger-pitch silicon microstrips
-are used. The maximum size of a cell is $25~\cm \times 180~\um$.
-The occupancy is about $1$ \% per pixel per crossing. 
+to the interaction vertex. Due to highest particle flux, the pixel detectors 
+each of which has a size of $100 \times 150~\um^2$ are installed. 
+The occupancy is about $0.01$ \% per pixel per bunch crossing. 
+The second region is $20<r<55~\cm$ where particle flux is low enough 
+for silicon micro-strip detectors to be able used. 
+The minimum size of a strip is $10~\cm \times 80~\um$.
+The occupancy is about $2-3$~\% per bunch crossing. 
+The third region is $55<r<110~\cm$ where larger-pitch silicon micro-strips
+are used. The maximum size of a strip is $25~\cm \times 180~\um$.
+The occupancy is about $1$~\% per crossing. 
 
 The layout of the tracker is shown in fig.~\ref{fig:trackerlayout}. 
 The total size is 1.1~m in radius and 5.4~m in length. 
 In the barrel region, there 3 layers of hybrid pixel detectors
-at r = 4.4, 7.3 and 10.2~\cm. The silicon microstrips are 
+at r = 4.4, 7.3 and 10.2~\cm. The silicon micro-strips are 
 placed in $20<r<110~\cm$. The barrel region is further separated 
 into Inner Barrel(TIB) with 4 layers and Outer Barrel(TOB) with 6 layers. 
-In TIB there 3 Inner Disks(TID) in the transition region 
-to avoid to small track crossing angle. 
-In endcap region, there are 2 pixel and 9 microstrip layers. 
-The tracker provides coverage, $|\eta|<2.5$.
+In the endcap region, there are 2 pixel layers, Tracker Inner Disks(TID)
+with 3 layers and Tracker End Cap(TEC) with 9 layers. 
+The TID is installed to fill the gap between TIB and TEC.
+The tracker system provides a coverage up to $|\eta| = 2.5$.
 %
 \begin{figure}[htp] 
 \centering 
@@ -268,10 +273,9 @@ The tracker provides coverage, $|\eta|<2.5$.
 \end{figure} 
 
 The pixel tracker is composed of 3 layers in barrel and 2 disks in both 
-endcap region. The barrel layers are placed at r = 4.4, 7.3 and 10.2~\cm
-and each of them has length 53~\cm. The endcap disks cover $6<r<15~\cm$
-and located at $|z|=34.5~\cm$ and $46.5~\cm$. The dimension of each 
-pixel is $100~\um$ in $r$ and $\phi$, and $150~\um^2$ in $z$.  
+endcap regions. The barrel layers have a length of 53~\cm and the 
+endcap disks are located at $|z|=34.5~\cm$ and $46.5~\cm$. 
+The dimension of each pixel is $100~\um$ in $r$ and $\phi$, and $150~\um^2$ in $z$.  
 The size is chosen to take into account Lorentz drift  
 % look at 1.2.1 of http://people.web.psi.ch/kotlinski/CMS/Varia/cmspixel.pdf
 \footnote{
@@ -294,7 +298,8 @@ first and the second layers of TOB are made with stereo modules
 with angle 100~mrad providing single-point resolution of 35-52~\um\
 in the $r-\phi$ direction and 530~\um\ in z direction.
 In the endcap region, the first and the second layers of TID, and the first, 
-second and the fifth layers of TEC are stereo modules that provide. 
+second and the fifth layers of TEC are stereo modules that provide 
+3-dimensional measurements from $r-\phi$ and $r-z$ measurements. 
 %
 \begin{table}[htp] 
 \begin{center} 
@@ -326,9 +331,9 @@ Ideal tracker would have no energy loss of charged particles
 while they cross the tracker so that they deposit their initial 
 energies in calorimeter. However, real trackers can not be made 
 that way due to materials used to build the tracker such as 
-electrical cables, cooling servies, support structures, 
+electrical cables, cooling services, support structures, 
 electronics and beam-pipe. Fig.~\ref{fig:trackermaterial} shows 
-the materal budget of tracker in the units of radiation length($X_0$) 
+the material budget of tracker in the units of radiation length($X_0$) 
 and interaction length($\lambda_0$). 
 %
 \begin{figure}[ht!] 
@@ -351,15 +356,15 @@ and interaction length($\lambda_0$)~\cite{Abbaneo2004331}.}
 
 The Electromagnetic Calorimeter(ECAL) is crucial to measure the energy 
 of electrons and photons. The CMS ECAL is composed of 61200 and 7324 
-lead tunstate($\textrm{PbWO}_4$) scintilating crystals in barrel and 
-endcap regions, repectively. $\textrm{PbWO}_4$ crystals have short 
-radination length(0.89~\cm) and small Molirere radius(2.2~\cm). 
-It is fast in emitting lights and radiation resistant. 
+lead tungstate($\textrm{PbWO}_4$) scintillating crystals in barrel and 
+endcap regions, respectively. $\textrm{PbWO}_4$ crystals have short 
+radiation length(0.89~\cm) and small Moliere radius(2.2~\cm). 
+It is fast in emitting light and radiation-resistant. 
 But, it produces relatively low light yields, which requires amplification 
-of light signal using photodetectors. Silicon avalanche photodiondes(APD)
-are used in barrel and vacuum pohtontriodes(VPT) are used in endcap.
-The crystals and APDs are sensitivie with temperature, so the stability
-of temperautre is required for operation of ECAL. 
+of light signal using photo-detectors. Silicon avalanche photo-diodes(APD)
+are used in barrel and vacuum photon triodes(VPT) are used in endcap.
+The crystals and APDs are sensitive with temperature, so the stability
+of temperature is required for operation of ECAL. 
 
 In the barrel region(EB), there are 36 supermodules and each covers 
 the region, $0 < |\eta| < 1.479$. 
@@ -373,21 +378,20 @@ The length of a crystal is 230~\mm\ which corresponds to $25.8X_0$.
 %http://zitogiuseppe.com/oldf/pguide.html
 
 In the endcap region(EE) as shown in fig.~\ref{fig:ecal_EE}, 
-the basic unit is supercrystal which is a collection of $5 \times 5$ crystals. 
-Each endcap regions is covered 
-by two D-shape structred by supercrystals. 
-One crystal has the front face size of $28.6 \times 28.6~\mm^2$ 
+the basic unit is ``supercrystal" which is a collection of $5 \times 5$ crystals. 
+Each endcap region is covered by two D-shape structures that consist of 
+the supercrystals. One crystal has the front face size of $28.6 \times 28.6~\mm^2$ 
 and length of 220~\mm($24.7X_0$).
 Each crystal is off-pointing the nominal vertex as the barrel crystals.  
-In the endcap region, the angle between the decayed photons 
-is smaller than the barrel region, so an additional deviced is 
-needed to distinguish the converted photons from genuine photons.
-In order to do this, a preshower device is placed in front of the endcap crystals. 
-The preshower device is made of 2 planes of silicon strip detectors with a pitch of 1.9~\mm\
-behind disks of lead absorber of depth 2$X_0$ and 3$X_0$.
+In the endcap region, the granularity of the ECAL is not good enough 
+to distinguish two photons when they are very close in space.  
+Therefore, a preshower device is placed in front of the endcap crystals. 
+It is made of 2 planes of silicon strip detectors with a pitch of 1.9~\mm\ 
+located behind the disks of lead absorber of depth 2$X_0$ and 3$X_0$.
 Due to its finer structure, it provides better spacial resolution 
 that enables to reject false photons.  
 % preshower : http://cms.web.cern.ch/news/ecal-preshower
+%           : http://cms-ecal.web.cern.ch/cms-ecal/preshower/FAQ_english.html
 
 %
 \begin{figure}[h] 
@@ -425,10 +429,10 @@ that enables to reject false photons.
 %\end{figure} 
 
 The performance of the supermodule in the barrel region is measured 
-using a test beam. The electrons in the test beam were indicient on 
+using a test beam. The electrons in the test beam were incident on 
 the central crystal of $3\times 3$ crystals.
 Fig.~\ref{fig:ecal_res} shows its energy resolution($\sigma(E)/E$)
-as a function of beam energy(E). The eneryg resolution of calorimeters is 
+as a function of beam energy(E). The energy resolution of calorimeters is 
 parametrized by 
 \begin{eqnarray}
 \left( \frac{\sigma}{E} \right)^2 
@@ -437,7 +441,7 @@ parametrized by
 \end{eqnarray} 
 where S is the stochastic term that reflects the fact that the development of showers is    
 a statistical process, N is to account for instrumental effects such as noise and pedestals, 
-and C is the constant term for calibration errors such as non-uniformitity of detectors.  
+and C is the constant term for calibration errors such as non-uniformity of detectors.  
 The figure shows corresponding values for two curves that use different trigger 
 conditions. 
 
@@ -460,19 +464,21 @@ conditions.
 
 The hadronic calorimeter(HCAL) is made to measure energy of jets.
 For the design of HCAL it is important to minimize the Gaussian tails in the energy 
-resolution, and to achieve good containment of energy desposit and 
+resolution, and to achieve good containment of energy deposit and 
 hermeticity for \met\ calculation. CMS HCAL is a sampling detector 
 that is composed of alternating layers of an absorber and a scintillator. 
 As a hadronic particle hits an absorber plate, interactions occur to produce 
-secondary particles, and the these produced particles interact with 
+secondary particles, and these produced particles interact with 
 the material in the next layer of absorber, resulting in a shower of 
 hadronic particles. When these particles cross the active scintillating  
-layers, they cause them to emit lights which can be detected by 
-optic devices. The choice of strong magnetic field made most of the 
-HCAL built inside of the magnetic coils. This constrained to choose 
-a material with short interaction length. For this reason, brass 
-is chosen as the HCAL material. The CMS HCAL is organized to 
-Hadron Barrel(HB), Hadron Outer(HO), Hadron Endcap(HE) and Hadron Forward(HF).  
+layers, they cause them to emit light which can be detected by 
+optical devices. 
+The design of HCAL is influenced by the magnet parameters because 
+the most of the calorimeter system in CMS is located in the solenoid.
+This motivated to choose a material with short interaction length,
+and brass is chosen as the HCAL material for this reason. 
+The HCAL is organized by Hadron Barrel(HB), Hadron Outer(HO), Hadron Endcap(HE) 
+and Hadron Forward(HF).  
 Fig.~\ref{fig:hcal_layout} shows the layout of CMS HCAL where HF is not shown. 
 %
 \begin{figure}[h] 
@@ -488,7 +494,7 @@ Fig.~\ref{fig:hcal_layout} shows the layout of CMS HCAL where HF is not shown.
 \label{fig:hcal_layout} 
 \end{figure} 
 
-HB consists of 2304($32 \times 72$ in $\eta \times \phi$) towers of size 
+The HB consists of 2304($32 \times 72$ in $\eta \times \phi$) towers of size 
 $\Delta \phi \times \Delta \eta = 0.087 \times 0.087$. One HCAL tower 
 has the same $\Delta \phi \times \Delta \eta$ coverage as $5\times5$
 ECAL crystals. There are 15 brass plates with thickness 5~\cm\ and 
@@ -508,27 +514,27 @@ The central ring has two layers of scintillator placed at $r=3.85~\textrm{m}$ an
 $r=4.097~\textrm{m}$ with an iron absorber of thickness 18~\cm\ between them. 
 The other rings have one scintillator layer at $r=4.097~\textrm{m}$.
 
-HE is composed of 2304 towers covering $1.3 < |\eta| < 3.0$. 
-As shown in left figure of fig.~\ref{fig:hcal_HEHF}, the 5 othermost towers have 
+The HE is composed of 2304 towers covering $1.3 < |\eta| < 3.0$. 
+As shown in left figure of fig.~\ref{fig:hcal_HEHF}, the 5 outermost towers have 
 $\phi$ segmentation of 5~\dg\ and $\eta$ segmentation of 0.087. 
 The 8 innermost towers have 
 $\phi$ segmentation of 10~\dg\ and varying $\eta$ segmentations of 0.09 - 0.35. 
 
-HF is located at $z = \pm 11.2~\textrm{m}$ covering $3.0 < |\eta| < 5.0$. 
+The HF is located at $z = \pm 11.2~\textrm{m}$ covering $3.0 < |\eta| < 5.0$. 
 It provides improvement in measurement of \met\ 
 and reconstruction of forward jets which can be used to identify very interesting 
-processes such as Vectro Boson Fusion(VBF).%~\cite{}. 
+processes such as Vector Boson Fusion(VBF).%~\cite{}. 
 Because HF receive the bulk of particle energy of the collision, 
-the material should be resitive to radition. 
-HF moduels are made of steel blocks with quartz fibers.
+the material should be resistive to radiation. 
+HF modules are made of steel blocks with quartz fibers.
 The particles crossing the fibers emit Cherenkov lights 
 and the lights are collected by photomultipliers connected to 
 the fibers. The right figure of fig.~\ref{fig:hcal_HEHF} shows 
 a $\Delta \phi=20~\dg$ wedge of HF.  
 The $\phi$ segmentation is 10~\dg\ for all towers except for the 
-the two innersmost towers which have $\Delta \phi=$20~\dg. 
+the two innermost towers which have $\Delta \phi=$20~\dg. 
 The $\eta$ segmentation is 0.175 except for the innermost 
-and the outermost towers which have $\Delta \eta=$ 0.3 and 0.1, respectivley. 
+and the outermost towers which have $\Delta \eta=$ 0.3 and 0.1, respectively. 
 %
 \begin{figure}[h] 
 \vspace{1cm}
@@ -543,24 +549,24 @@ and the outermost towers which have $\Delta \eta=$ 0.3 and 0.1, respectivley.
 \label{fig:hcal_HEHF} 
 \end{figure} 
 
-Fig.~\ref{fig:hcal_res} shows resolution of jet transverse energy 
-in 3 different $|\eta|$ ranges(0-1.4, 1.4-3.0, 3.0-5.0). 
-The resolution is measured using QCD dijet events generated by PYTHIA (version 6.226)
-and matching to generator level jet reconstructed stable particles is done by $\Delta R < 0.2$. 
-Jets are reconstructed using iterative cone algorithm with a cone size R = 0.5~\cite{}. 
+%Figure~\ref{fig:hcal_res} shows resolution of jet transverse energy 
+%in 3 different $|\eta|$ ranges(0-1.4, 1.4-3.0, 3.0-5.0). 
+%The resolution is measured using QCD dijet events generated by PYTHIA (version 6.226)
+%and matching to generator level jet reconstructed stable particles is done by $\Delta R < 0.2$. 
+%Jets are reconstructed using iterative cone algorithm with a cone size R = 0.5~\cite{}. 
 %\textcolor{red}{why better resolution in the endcap?}
 %
-\begin{figure}[h] 
-\vspace{1cm}
-\centering 
-\begin{tabular}{|c|} 
-\hline
-\includegraphics[width=0.6\textwidth]{figures/Figure_001-008.pdf}\\
-\hline
-\end{tabular} 
-\caption{$E_T$ resolution of jets~\cite{cmstdr1}.}
-\label{fig:hcal_res} 
-\end{figure} 
+%\begin{figure}[h] 
+%\vspace{1cm}
+%\centering 
+%\begin{tabular}{|c|} 
+%\hline
+%\includegraphics[width=0.6\textwidth]{figures/Figure_001-008.pdf}\\
+%\hline
+%\end{tabular} 
+%\caption{$E_T$ resolution of jets~\cite{cmstdr1}.}
+%\label{fig:hcal_res} 
+%\end{figure} 
 
 
 
@@ -571,7 +577,7 @@ Jets are reconstructed using iterative cone algorithm with a cone size R = 0.5~\
 The momentum of a charge particle can be determined by measuring 
 its curvature in magnetic field. Stronger magnetic field bends   
 the trajectory more, thus allows better measurement of momentum.
-CMS(as its names indicates) uses superconduncting solenoid 
+CMS(as its names indicates) uses superconducting solenoid 
 which produces a uniform magnetic field  3.8(4.0 in design)~T 
 in z direction. %\textcolor{red}{(or -z ?)}  
 The solenoid has 2168 turns and the current to generate 3.8~T magnetic field  
@@ -591,8 +597,8 @@ return yoke, outer vacuum tank and coil.
 \includegraphics[width=0.49\textwidth]{figures/CMS-solenoid-magnet.jpg} 
 \includegraphics[width=0.49\textwidth]{figures/magnet-2000-049.jpg}
 \caption{Magnet system of CMS~\cite{cmstdr1}. The top photo shows 
-the the yoke(red), outer vacuum tank and the coil. The left bottom photon shows 
-pictorial view of the magenet system and the right bottom photo shows 
+the yoke(red), outer vacuum tank and the coil. The left bottom photon shows 
+pictorial view of the magnet system and the right bottom photo shows 
 the cross section of coils.}
 \label{fig:magnet} 
 \end{figure} 
@@ -607,7 +613,7 @@ Drift Tube chambers(DT), Cathode Strip Chambers(CSC) and Resistive Plate Chamber
 that cover $0<|\eta|<1.2$, $0.9<|\eta|<2.4$ and $0<|\eta|<1.6$, respectively.
 Fig.~\ref{fig:muon_system} shows the layout of a quarter of muon system. 
 Muon Barrel region(MB) has four layers of muon station interleaved with 
-three layers of return yoke. Each layer has a cylinderical shape around 
+three layers of return yoke. Each layer has a cylindrical shape around 
 the beam axis. There are 5 segments in z direction as the return yoke. 
 Muon Endcap region(ME) also has four layers(disks) of muon stations
 placed perpendicular to the beam axis.
@@ -625,15 +631,15 @@ DT chamber consists of 250 chambers constructed in 4 layers at r = 4.0, 4.9, 5.9
 and 7.0~m from the beam axis. Each chamber has 2 superlayers in $\phi$ and 
 1 superlayer in z direction. Each superlayer has 4 layers of drift tubes. 
 Each drift tube has the width of $\approx$ 4~\cm\ and the height of $\approx$ 1~\cm, 
-and there is a streched wire(anode) in the middle of tube filled with a mixture of 
+and there is a stretched wire(anode) in the middle of tube filled with a mixture of 
 Ar and $\textrm{CO}_2$ gas. When a muon passes through a tube, it knocks 
 electrons off the atoms of the gas, and they are drifted to the anode.
 Each tube provides 2-dimensional measurement. One is given by the position of 
 the central wire, and the other is given by the drift time of electrons divided by
-drift speed. Fig.~\ref{fig:muon_dt} shows a schmetic of a 
+drift speed. Fig.~\ref{fig:muon_dt} shows a schematic of a 
 movement of electrons in a tube and an illustration of a single tube with the
 electric field lines. Each station provides $\phi$ precision better than 100~\um\ 
-in positin and 1~mrad in direction. 
+in position and 1~mrad in direction. 
 %
 \begin{figure}[h] 
 \centering
@@ -646,13 +652,13 @@ in positin and 1~mrad in direction.
 
 CSC is composed of 6 gas gaps filled with a mixture of Ar, $\textrm{CO}_2$ and $\textrm{CF}_4$,
 and each gap has a plane of radial cathode and a plane of anode wires perpendicular 
-tothe strips. The gap between the anode wires is about 3~mm and the width of a strip 
+to the strips. The gap between the anode wires is about 3~mm and the width of a strip 
 is 3-16~mm. Fig.~\ref{fig:muon_dt} shows a schematic of a CSC on the left 
 and an illustration of what happens when a muon passes through a gas gap. 
-When a muon tranverses in the gas, it knocks out electrons from the gas atoms. 
+When a muon traverses in the gas, it knocks out electrons from the gas atoms. 
 Then, an avalanche of electrons is created and moves to the wires.
 The ionized positive atoms move toward the strips and make a charge pulse. 
-Because the wires are the strips are laid perpendicular to each other, 
+Because the strips are laid perpendicular to each other, 
 each gas gap provides 2-dimensional measurements. 
 By weighting by charge distribution, a precise spatial measurements can be made. 
 Each CSC provides spatial resolution of 200~\um\ using strips 
@@ -674,7 +680,7 @@ filled with a mixture of $\textrm{C}_2\textrm{H}_2\textrm{F}_4$
 and $\textrm{i-C}_2 \textrm{H}_{10}$.
 When a muon passes through the chamber, an avalanche of electrons is formed, 
 and the electrons are collected by external metallic strips. 
-The pattern of the strip hits are then traslated to the momentum measurement
+The pattern of the strip hits are then translated to the momentum measurement
 of the muon. Though the spatial resolution of RPC is not as good as DT or CSC,
 its time resolution is very good(3~ns), thus it is able to identify 
 correct bunch crossing without ambiguities. 
@@ -692,27 +698,27 @@ correct bunch crossing without ambiguities.
 \subsection{Trigger and Data Acquisition} 
 % https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookHLTTutorial
 
-The design bunch crossing rate of 40~Hz yiels $\sim 10^9$ events per second
+The design bunch crossing rate of 40~MHz yields $\sim 10^9$ events per second
 at the design luminosity. However, only $\sim 100$ Hz of events can be recorded 
-on the tape. So, the trigger system should attain about an order of $10^6$ 
+on tape. So, the trigger system should attain about an order of $10^6$ 
 reduction of events. CMS trigger and DAQ system is composed of 
 detector electronics, Level-1(L1) triggers, readout networks and 
 High-Level triggers(HLT). 
 
-The time allocated to L1 trigger decision and data transit is 3.2~\um.
+The total time allocated to L1 trigger decision and data transit is 3.2~\um.
 During this time, the data collected by detectors are kept in buffers 
-until the decision is made. The decistion is made based on the presence 
+until the decision is made. The decision is made based on the presence 
 of trigger primitives such as photons, electrons, muons and jets 
 in the kinematic region of interests. It also employs global sums 
-of $E_T$ and \met. Custum hardware processors are used for L1 decision.  
-L1 reduces the crossing rate by an order of 1000 targeting 100~kHz.  
+of $E_T$ and \met. Custom hardware processors are used for L1 decision.  
+L1 reduces the crossing rate by an order of 1000 to 100~kHz.  
 
-Once the L1 decision is made, after further processings, 
+Once the L1 decision is made, %after further processings, 
 the data on the buffer is transferred to the front-end memories for access 
 by the DAQ system. The data for an event is sent to a processor 
 in a computing farm with $\mathcal{O}(10^3)$ processors. 
 Each processor runs the same HLT software to reduce the L1 rate 100~kHz 
-down to 100~Hz. The HLT software uses partial event reconstruction, 
+down to 300~Hz. The HLT software uses partial event reconstruction, 
 and makes decision combining information from multiple virtual trigger 
 levels, for example, L2 for calorimeter and muon and L3 for tracking. 
 The use of HLT after L1 gives a maximal flexibility because 
@@ -725,17 +731,17 @@ it gives freedom in selection.
 % https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookComputingModel
 % https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookCMSSWFramework
 
-Even after the rate of data recording is reduced to 100~Hz by HLT, 
+Even after the rate of data recording is reduced to 300~Hz by HLT, 
 it is still a huge amount of data to store and process. CMS thus employed 
 highly distributed computing model(grid system) with Tier-0 center at CERN supplemented 
 by Tier-1 and Tier-2 computing centers all around the world. 
 
 Tier-0 center repacks RAW data into primary datasets using trigger information
-and send them to Tier-1 centers. It also does prompt reconstruction 
+and sends them to Tier-1 centers. It also does prompt reconstruction 
 that produces RECO and Analysis Object Data(AOD),
-and distribute them to Tier-1. Tier-0 is not accessible by analysers, but  
+and distributes them to Tier-1. Tier-0 is not accessible by analysers, but  
 performs only scheduled activities. 
-Tier-1 centers stores a subset of RAW data as backup, provides CPU power for 
+Tier-1 centers store a subset of RAW data as backup, provides CPU power for 
 re-reconstruction, skimming, calibration and AOD extraction, and 
 stores and distributes the produced datasets to Tier-0 or Tier-2. 
 Tier-2 centers participate in MC production organized by Tier-1 and 

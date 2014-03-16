@@ -31,7 +31,7 @@ For most of the nuisance parameters we use the log normal function as a
 \frac{1}{\theta}  
 \end{eqnarray} 
 where $\theta$ is a nuisance parameter, $\tilde{\theta}$ is the best measure 
-(mean or median) of the nuisance parameter, and $\kappa$ is the charateristic 
+(mean or median) of the nuisance parameter, and $\kappa$ is the characteristic 
 parameter that determines the width of the distribution. 
 For a small $\ln\kappa$($\kappa \approx 1$), we can approximate $\ln\kappa \approx \kappa - 1$.
 In this case the numerator in the exponent can be effectively treated small as well,
@@ -49,7 +49,7 @@ In this approximation, the \textit{pdf} becomes proportional to
 \end{eqnarray} 
 This equation shows that the exponential function can be 
 approximated by a Gaussian in case of $\kappa \approx 1$, and the width 
-of the nuiscance parameter $\theta$ can be parametrized by $\tilde{\theta}( \kappa - 1)$.
+of the nuisance parameter $\theta$ can be parametrized by $\tilde{\theta}( \kappa - 1)$.
 Therefore, $\kappa - 1$ is the relative width with respect to the best 
 estimate of the nuisance parameter. In this analysis, we express nuisance parameters 
 in term of $\kappa$.
@@ -59,7 +59,7 @@ and we can avoid negative values. This is a big advantage that we can avoid
 the problems such as truncation of \textit{pdf} at 0 as it happens with Gaussian \textit{pdf}.    
 
 There are two nuisance parameters we do not use log-normal as a pdf, 
-the signal stregth and the normalization of \qqww\ in the shape-based method. 
+the signal strength and the normalization of \qqww\ in the shape-based method. 
 Both nuisance parameters use a flat(=constant) function as a \textit{pdf}.  
 The rationale behind this is that there is no a priori knowledge on those 
 nuisances. The nuisance parameter for \qqww\ normalization is chosen 
@@ -71,17 +71,17 @@ of a priori knowledge.
 \subsubsection{Shape uncertainties}
 
 In the shape-based method, there are systematic sources that can change shapes 
-by bin-to-bin migrations in the 2-dimentional templates. 
+by bin-to-bin migrations in the 2-dimensional templates. 
 The normalization uncertainty described by the log-normal or the flat \textit{pdf}  
-does not account for this because it changes the overall normaliztion 
+does not account for this because it changes the overall normalization 
 keeping the shape of the distribution unchanged. So, for the sources that can cause 
 bin-by-bin migrations, we use alternate shapes.  
 The alternate shapes are constructed by changing the source of uncertainty 
 by $\pm 1\sigma$. Then, two alternate shapes, up($+1\sigma$) and down($-1\sigma$) shapes,
-are used in the statistical machinary following the vertical morphing 
+are used in the statistical machinery following the vertical morphing 
 technique~\cite{2011arXiv1103.0354C}. 
 This technique uses one additional parameter which follows Gaussian \textit{pdf},
-and morphes the alternate shapes such that when the value of the parameter 
+and morphs the alternate shapes such that when the value of the parameter 
 is +1(-1), the corresponding variation is $+1\sigma$($-1\sigma$), 
 \textit{i.e.}, up(down) shape. 
 
@@ -90,19 +90,19 @@ the correlation between \mT\ and \mll\ is also taken into account naturally.
 Given that there is only one morphing parameter that moves all bins 
 by the same amount,  
 no matter how the bins are arranged, the correlation is still conserved.  
-This is important because we unroll the 2-dimensional template to 1-dimenasional 
-histrograms in order to accommodate the allowed usage of the available statistical tools. 
+This is important because we unroll the 2-dimensional template to 1-dimensional 
+histograms in order to accommodate the allowed usage of the available statistical tools. 
 
 In the following sections, if there is a related shape uncertainty
 caused by a given source, the following plots will be shown in the
-in the region where signal is populatd($60<\mT<120~\GeV$ and $12<\mll<100~\GeV$); 
+in the region where signal is populated($60<\mT<120~\GeV$ and $12<\mll<100~\GeV$); 
 the 2-dimensional up/down shapes relative to the central shape 
 and \mT\ and \mll\ projections of the up/down/central shapes. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Theoretical systematic uncertainties}
 
-When data-driven estimation is not applicable, we should rely on the theoreical 
+When data-driven estimation is not applicable, we should rely on the theoretical 
 calculation, and it depends on various sources : The PDF and the $\alpha_s$,  
 missing higher order corrections, parton shower and underlying events 
 and jet bin fraction. 
@@ -158,7 +158,7 @@ is less than 1~\% to the expected significance.
 %\subsubsection{QCD Renormalization and factorization scale variation} 
 \subsection{Missing higher order corrections} 
 
-The cross section of a paricular process is calculated by a pertubation expansion, 
+The cross section of a particular process is calculated by a perturbation expansion, 
 where the first few orders are considered due to complication of calculation 
 with higher order terms. In case of SM Higgs production, the cross sections is calculated 
 up to NNLO in QCD as shown in Table~\ref{tab:Higgs_XS_8TeV_order}. Missing higher orders 
@@ -184,8 +184,8 @@ is to compare results calculated in different orders. For \qqww\ and \topbkg\
 backgrounds we have the shape systematics that compare two different simulations. 
 For \qqww\ an alternate sample generated by MC@NLO 4.0 which is calculated up to NLO
 is used to define a up variation, 
-and the mirror with repect to the central shape(Madgraph 5.1~\cite{Madgraph5p1}) which is calculated up to LO 
-is used as a down varition.
+and the mirror with respect to the central shape(Madgraph 5.1~\cite{Madgraph5p1}) which is calculated up to LO 
+is used as a down variation.
 Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes. 
 The MC@NLO sample uses different parton shower model, Herwig++~\cite{Corcella:2000bw}, 
 as opposed to 
@@ -194,8 +194,8 @@ so it also accounts for the effect of uncertainty
 to the modeling of parton shower. 
 For \topbkg\ an alternate sample generated by Madgraph 5.1 which is calculated up to LO
 is used to define a up variation,
-and the mirror with repect to the central shape(Powheg~\cite{Frixione:2007vw}) which is calculated up to NLO 
-is used as a down varition.
+and the mirror with respect to the central shape(Powheg~\cite{Frixione:2007vw}) which is calculated up to NLO 
+is used as a down variation.
 Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes. 
 
 %
@@ -309,7 +309,7 @@ with number of jets $\ge 0/1/2$.
 
 The systematic uncertainties on the inclusive cross sections, 
 $\sigma_{\ge\textrm{0-jet}}$, $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$ are 
-manifested by $\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ and $\kappa_{\ge\textrm{2-jet}}$, repectively.
+manifested by $\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ and $\kappa_{\ge\textrm{2-jet}}$, respectively.
 The central values of the inclusive cross sections are calculated 
 using MSTW2008 NLO PDF at the QCD scales, $\mR=\mF=\mHi/2$.
 The uncertainty on the $\sigma_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{0-jet}}$, is taken from the 
@@ -362,7 +362,7 @@ $f_{\textrm{0-jet}}$, $f_{\textrm{1-jet}}$ and $f_{\textrm{2-jet}}$.
 \end{table}
 
 For \ggH\ process, the numerical values of $\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ 
-and $\kappa_{\ge\textrm{2-jet}}$ are summurized in Table~\ref{tab:jetbinincl}.
+and $\kappa_{\ge\textrm{2-jet}}$ are summarized in Table~\ref{tab:jetbinincl}.
 %
 \begin{table}[!htbp]
 \begin{center}
@@ -518,11 +518,11 @@ and 2.2~\% at 7~\TeV~\cite{Chatrchyan:2013oda}.
 \subsubsection{Lepton momentum scale and resolution}
 
 The lepton momentum scale and resolution can affect the selection efficiency 
-fot the cuts applied on lepton momentum or variables constructed using 
-lepton momenta. The size of the uncertianties of both sources is estimated 
+for the cuts applied on lepton momentum or variables constructed using 
+lepton momenta. The size of the uncertainties of both sources is estimated 
 by comparing Z invariant mass shape between simulation and data in the \SF\ 
 final state. The momentum scale is responsible for the location of the 
-invariant mass peak, and the momentum resolution is reposible for the width 
+invariant mass peak, and the momentum resolution is responsible for the width 
 of the distribution. 
 
 The measured uncertainties are 1.5~\%(3~\%) for electrons in barrel(endcap)  
@@ -555,7 +555,7 @@ and background shapes in the likelihood fit. An additional uncertainty which is
 prominent in the low \pt\ region in the electron case 
 comes from the possible bias by using the N-1 technique. 
 This is described in section~\ref{sec:electroneff} as well as the corresponding 
-unceratinties in Table~\ref{tab:eff_electron_nmsyst}.
+uncertainties in Table~\ref{tab:eff_electron_nmsyst}.
 
 The estimated uncertainties are 1.5~\% for muons and 2~\% for electrons, 
 and we use 3~\% and 4~\% for \mumu\ and \ee\ events, respectively, 
@@ -586,7 +586,7 @@ as we select events that pass \met\ and \met-related selections.
 The uncertainty is measured 
 by comparing data and simulation using \dyll\ events. To account for the 
 difference between data and simulation, an additional Gaussian smearing for 
-the individual x and y compoments of \met\ are needed. 
+the individual x and y components of \met\ are needed. 
 For PF \met, the size of Gaussian smearing is 3.2 and 3.6~\GeV\ %and 4.3 
 for 0-jet and 1-jet categories, respectively.  
 For \trkmet, the size of Gaussian smearing is 1.0 and 4.5~\GeV\ %and 6.0 
@@ -638,16 +638,16 @@ for \qqww\ in the 0-jet \DF\ category.
 %%%
 \subsubsection{Statistics of simulated samples} 
 
-The limited statistics of the avaliable simulation samples should be taken 
+The limited statistics of the available simulation samples should be taken 
 into account as a source of systematic uncertainty. 
-For the cut-based method, overall statistical unceratianty of the sample 
+For the cut-based method, overall statistical uncertainty of the sample 
 after the final selection is taken into account. 
 For the shape-based method, the up/down alternate shapes are constructed 
 by adding/subtracting the size of statistical uncertainty in each bin. 
-This does not allow bin-by-bin fluctuation in the statistical mechinary 
+This does not allow bin-by-bin fluctuation in the statistical mechinery 
 because all bins are either up or down by the statistical uncertainties 
 in each bin. The ideal method should be considering each bin independently,
-but this requires an extensive CPU comsumption. 
+but this requires an extensive CPU consumption. 
 We checked the expected and the observed significances using both approaches,
 and found that the results are compatible within a few \%. 
 Thus, we use the former approach. 
@@ -672,7 +672,7 @@ The expected background contributions in the signal region are estimated by
 data-driven methods or taken from simulation after some data corrections.  
 All procedures and the source of systematic uncertainties are discussed 
 in chapter~\ref{ch:background_estimation}. These uncertainties are related 
-to the normalizaion of each background. But, there is a shape systematic uncertainty 
+to the normalization of each background. But, there is a shape systematic uncertainty 
 that can cause a variation of shapes. 
 
 \subsubsection{\Wjets\ alternate shapes} 

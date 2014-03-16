@@ -33,7 +33,7 @@ and the discovery of the SM Higgs boson.
 \label{sec:stat_exclusion}
 
 The procedure of constructing the likelihood and the probability density function 
-which is agreed between ALTAS anc CMS collaborations is
+which is agreed between ALTAS and CMS collaborations is
 described in detail in the reference~\cite{combination_stat}.
 
 %\begin{itemize}
@@ -69,8 +69,8 @@ the ratio of two likelihoods constructed by the two hypotheses
 is the most powerful discriminator. Instead of the ratio itself, 
 the log of the ratio is taken because of a number of advantages
 \footnote{Log converts multiplication of likelihoods into linear summation. 
-Terms in exponent becomes a mulitplication factor.}.  
-At the LHC, due to its asymtotic properties which is described in detail 
+Terms in exponent becomes a multiplication factor.}.  
+At the LHC, due to its asymptotic properties which is described in detail 
 in the reference~\cite{cowan_asimov}, 
 the profiled log-likelihood ratio (LLR) is used as a test statistic.   
 The functional form of the statistic is 
@@ -85,13 +85,13 @@ The functional form of the statistic is
 0           & \quad \quad \quad \quad \textrm{otherwise}
 \end{array} \right.
 \end{eqnarray}  
-where $\hat{\theta}_\mu$ is the bestf-fit value of $\theta$ for a given $\mu$, 
+where $\hat{\theta}_\mu$ is the best-fit value of $\theta$ for a given $\mu$, 
 $\hat{\mu}$ and $\hat{\theta}$ are the best-fit values of 
 $\mu$ and $\theta$, respectively, from the global fit on data.
 The requirement $0 \le \hat{\mu}$ is imposed because the signal rate must be positive. 
 The requirement $\hat{\mu} \le \mu$ constrains $\mu$ to one-sided confidence level. 
 This also means that the region, $\mu < \hat{\mu}$, is not considered  
-more incompatable than the data observed, $\hat{\mu}$. This region 
+more incompatible than the data observed, $\hat{\mu}$. This region 
 is not tested for setting upper limits.
 %For example, if $\hat{\mu}=1$ then we do not test for $\mu=0.5$ 
 %because $\mu=0.5$ is not less compatible than  
@@ -122,7 +122,7 @@ $f\left( \hat{q}_\mu | \mu, \hat{\theta}_\mu^{obs} \right)$ and
 $f\left( \hat{q}_\mu | 0, \hat{\theta}_0^{obs} \right)$, respectively.
 Since generating toys requires a large consumption of CPU power, 
 we can take an advantage of the fact that $\tilde{q}_\mu$ follows 
-a well-defined formula in the asymtotic limit~\cite{cowan_asimov}. 
+a well-defined formula in the asymptotic limit~\cite{cowan_asimov}. 
 %This is true if $\hat{\mu}>0$ \textcolor{red}{WHY not equal sign here?} 
 %is not applied. But, even with the requirement $\hat{\mu}>0$, 
 The $\tilde{q}_\mu$ can be calculated analytically
@@ -146,7 +146,7 @@ dataset~\cite{cowan_asimov}.
 The Asimov dataset is a representative dataset made with the expected 
 nuisance parameters. 
 In this analysis the expected sensitivity(exclusion and significance) is calculated 
-in the asymtotic limit.
+in the asymptotic limit.
 Similarly, the $pdf$ for the \textit{background-only} hypothesis,
 $f\left( \tilde{q}_\mu | 0 \right)$, can be obtained 
 using the same technique. 
@@ -168,7 +168,7 @@ p_\mu
 &=& \int^{\infty}_{\tilde{q}_\mu^{obs}}  f\left(  \tilde{q}_\mu | \mu \right) d\tilde{q}_\mu.
 \end{eqnarray} 
 A large value of $p_\mu$ represents a high chance that observation is compatible 
-with the hypothesed signal strength, $\mu$.
+with the hypothesized signal strength, $\mu$.
 The $1-p_b$ is the p-value with \textit{background-only} hypothesis, and defined by 
 \begin{eqnarray} 
 1-p_b
@@ -185,7 +185,7 @@ The $\textrm{CL}_\textrm{s}$ is defined as a ratio of the two p-values
 
 Now we set the limit on the signal strength to test the 
 compatibility of data with the SM Higgs hypothesis. 
-The upper limit on the $\mu$ at $\alpha$\% conficence level is the value of $\mu$  
+The upper limit on the $\mu$ at $\alpha$\% confidence level is the value of $\mu$  
 which gives $\textrm{CL}_\textrm{s} = 1 - \alpha \%$. Writing for $\mu$, we have 
 \begin{eqnarray} 
 \mu^{\alpha~\%} = \textrm{CL}_\textrm{s}^{-1} ( 1-\alpha\%).
@@ -198,7 +198,7 @@ When the expected limit is evaluated,
 it is useful to know how $\mu^{\alpha \%}$ varies 
 because even though the true $\mu$ (call it $\mu'$) is correct, 
 the data we actually observe can have a different value by statistical fluctuation.  
-In the asymtotic limit, the \CLs\ is given by~\cite{combination_stat}
+In the asymptotic limit, the \CLs\ is given by~\cite{combination_stat}
 \begin{eqnarray} 
 \CLs 
 = 1 - \alpha~\% 
@@ -229,7 +229,7 @@ Solving this equation for $\mu$, the median and the expected error bands are giv
 \left( 1 - \alpha \right)  \right) + N \right].
 \end{eqnarray} 
 Note that putting $N=0$ gives the median upper limit of $\mu$ 
-in the asymtotic limit. 
+in the asymptotic limit. 
 
 
 
@@ -237,7 +237,7 @@ in the asymtotic limit.
 \section{Discovery of a New Boson}
 \label{sec:stat_significance}
 
-In order to claim a discovery of a new particle, we test the compatibilty of 
+In order to claim a discovery of a new particle, we test the compatibility of 
 the \textit{background-only} hypothesis against data. A large deviation in 
 terms of p-value will indicate that the observed data is not compatible 
 with the \textit{background-only} hypothesis. 
@@ -260,7 +260,7 @@ q_0
 \end{array} \right.
 \end{eqnarray} 
 We don't consider downward fluctuations in data($\hat{\mu} < 0$) as a 
-incompatiblity with data as upward fluctuation. The downward fluctuations 
+incompatibility with data as upward fluctuation. The downward fluctuations 
 is more likely due to systematic uncertainties such as over-estimation 
 of backgrounds. So, in case of $\hat{\mu} < 0$ the test statistic is 
 set 0. 
@@ -283,7 +283,7 @@ p-value
 This is the convention in the particle physics community 
 when expressing an evidence or discovery of a new particle~\cite{Beringer:1900zz}.
 
-In the asymtotic limit, the \textit{pdf} is given by a mixture of 
+In the asymptotic limit, the \textit{pdf} is given by a mixture of 
 a Dirac delta function and a chi-square distribution for one 
 degree of freedom~\cite{combination_stat}
 \begin{eqnarray} 
@@ -305,7 +305,7 @@ Z_0 = \Phi^{-1} \left( 1 - p_0 \right) = \sqrt{q_0}.
 In this analysis(and many other analyses as well), 
 the sensitivity to the discovery of a new particle is 
 measured by the expected significance. In this case, the $q_0$ 
-is calcuated using $\mu = 1$.
+is calculated using $\mu = 1$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\section{Hypothesis Separation} 

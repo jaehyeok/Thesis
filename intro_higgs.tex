@@ -1,21 +1,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Higgs Mechanism}
 
-%There are four forces in nature, gravity, electromagneticism, weak force 
+%There are four forces in nature, gravity, electromagnetism, weak force 
 %and strong force. Gravity is described by general relativity. 
 Properties of elementary particles in nature and their interactions(forces)
-to each other are described by Standard Model(SM)~\cite{Glashow:1961tr,Weinberg:1967tq,Salam:1963tr} 
+with each other are described by the Standard 
+Model(SM)~\cite{Glashow:1961tr,Weinberg:1967tq,Salam:1963tr} 
 in particle physics. It is 
-based on the gauge symmetry and the group sturucture of 
+based on the gauge symmetry and the group structure of 
 $\textrm{SU(3)}_\textrm{c} \otimes \textrm{SU(2)}_\textrm{L} 
 \otimes \textrm{U(1)}_\textrm{Y}$, where  $\textrm{SU(3)}_\textrm{c}$, 
 $\textrm{SU(2)}_\textrm{L}$ and $\textrm{U(1)}_\textrm{Y}$  
-describe color, weak isospin and hyper charge, respectively. 
+describe color, weak iso-spin and hyper charge, respectively. 
 The gauge symmetry requires the weak gauge bosons to be massless,
 but experimentally we know that Weak gauge bosons, $W^\pm$ and $Z$ are massive. 
 The cure for this is the Higgs 
 mechanism~\cite{Englert:1964et,Higgs:1964ia,Higgs:1964pj,Guralnik:1964eu,Higgs:1966ev, Kibble:1967sv}
-based on the spontanesous symmetry breaking(SSB)
+based on the spontaneous symmetry breaking(SSB)
 which breaks $\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$
 to $\textrm{U(1)}_{\textrm{EM}}$. It gives masses to weak bosons but keeps photon massless. 
 %\textcolor{red}{Explain why fermions are massless in SM before SSB, 
@@ -37,7 +38,7 @@ where each element is a complex field,
 \phi^0 = \frac{\phi_3 + i\phi_4}{\sqrt{2}}.
 \end{eqnarray} 
 We start with the Higgs Lagrangian to understand the essence of 
-spontanesous symmetry breaking(SSB) before making things more 
+spontaneous symmetry breaking(SSB) before making things more 
 complicated. The full SM Lagrangian will be discussed later.  
 The Higgs Lagrangian($\mathcal{L}_\phi$) is composed of the kinetic 
 and the potential terms. 
@@ -62,7 +63,7 @@ SU(2) local gauge transformation,
 \phi(x)' = e^{i \vec{\alpha}(x) \cdot \frac{\vec{\sigma}}{2}} \phi(x),
 \end{eqnarray} 
 where $\vec{\alpha}(x)$ is a vector of parameters and  
-$\vec{\sigma}$ is a vector of Pauli matrice,  
+$\vec{\sigma}$ is a vector of Pauli matrices,  
 \begin{align*}
 \sigma_1 = \begin{pmatrix} 0 & 1\\
                             1 & 0
@@ -91,7 +92,7 @@ as seen in the following equation,
 =
 \frac{v^2}{2} 
 \end{eqnarray}
-where there are 4 real variables with only one contraint. 
+where there are 4 real variables with only one constraint. 
 This leads to an appropriate choice of vacuum for the physics of interest. 
 We choose the vacuum state, $\phi_0$, as 
 \begin{eqnarray} 
@@ -103,7 +104,7 @@ and expand around it by $H(x)$
 \phi(x) = \frac{1}{\sqrt{2}} \left(  \begin{array}{c} 0 \\ v + H(x) \end{array} \right)
 \end{eqnarray} 
 where $H(x)$ is the physical Higgs field.  
-In order to make the lagrangian invariant under SU(2) transformation,
+In order to make the Lagrangian invariant under SU(2) transformation,
 the derivative $\partial_\mu$ should be replaced by the covariant 
 derivative $\mathcal{D}_\mu$,
 \begin{eqnarray} 
@@ -132,7 +133,7 @@ In order to derive the masses of W and Z bosons, we use the vacuum state of Higg
 because masses are present even without dynamical fields.  
 With $Y=1$ and $\displaystyle \phi = \frac{1}{\sqrt{2}} 
 \left(  \begin{array}{c} 0 \\ v \end{array} \right)$, 
-and writing explicitly in $2\times2$ matrices, eq.~(\ref{eq:kintermHiggsLag}) becomes 
+and writing explicitly in $2\times2$ matrices, equation.~(\ref{eq:kintermHiggsLag}) becomes 
 \begin{eqnarray}
 \label{eq:WZmass}
 \begin{array}{ccc} \multicolumn{2}{c}{ \displaystyle \vspace{0.3cm}   
@@ -158,7 +159,7 @@ $\displaystyle W^\pm = \frac{1}{\sqrt{2}} \left( W^1 \mp iW^2 \right)$,
 \left[ \left( W_\mu^+ \right)^2  + \left( W_\mu^- \right)^2 \right]. 
 \end{eqnarray} 
 Thus, we have the mass of charged W boson $\displaystyle M_W = \frac{v g_2}{2}$.
-Now we know that the second term in eq.~(\ref{eq:WZmass}) should correspond to 
+Now we know that the second term in equation~(\ref{eq:WZmass}) should correspond to 
 Z boson because that is the only remaining massive boson. Imposing the same 
 normalization to the mixed field as the unmixed fields, the physical field for 
 Z boson, $Z_\mu$, is given by
@@ -172,14 +173,14 @@ There is a massless field orthogonal to $Z_\mu$,
 A_\mu = \frac{\left( g_1 B_\mu + g_2 W_\mu^3 \right)}{\sqrt{g_1^2+g_2^2}}  
 \end{eqnarray}
 It does not appear in the Lagrangian because its mass therm is zero.
-This is the field that remains unbroken by SSB. So, it corresponds to photon. 
+This is the field that remains unbroken by SSB. So, it corresponds to the photon. 
 %Using the definition of weak mixing angle, $\theta_W$, 
 %\begin{equation} 
 %\sin \theta_W = \frac{g_1}{\sqrt{g_1^2+g_2^2}}, \textrm{ and } 
 %\cos \theta_W = \frac{g_2}{\sqrt{g_1^2+g_2^2}}  
 %\end{equation} 
 
-Re-writing the potential term in eq.~(\ref{eq:lagHiggs})
+Re-writing the potential term in equation~(\ref{eq:lagHiggs})
 using the physical weak boson states, $W_\mu^\pm$ and $Z_\mu$,
 and their masses, we have the following terms for interactions between Higgs and weak bosons,
 \begin{eqnarray}
@@ -238,9 +239,9 @@ where $H^0$ and $H^1$ terms are ignored in the last line
 because they are irrelevant in S-matrix calculations. 
 %\textcolor{red}{I remember that the first order term does not 
 %affect the lagrangian, but do not remember the argument.}
-From eq.~(\ref{eq:HiggsPontential}), the Higgs mass is identified 
+From equation~(\ref{eq:HiggsPontential}), the Higgs mass is identified 
 as $\mHi^2 =  -2\mu^2$. %= 2\lambda v^2$.
-Using this definition, eq.~(\ref{eq:HiggsPontential}) becomes 
+Using this definition, equation~(\ref{eq:HiggsPontential}) becomes 
 \begin{eqnarray} 
 \mathcal{L}_{\textrm{Higgs Potential}}
 &=& 
@@ -270,11 +271,11 @@ The corresponding Feynman diagrams are shown in Fig~\ref{fig:fd_Hselfterm}.
 
 Now we see that the entire Higgs sector depends on only \mHi\ and $v$.
 The $v$ is calculated by $v = \left( \sqrt{2} \gf \right)^{-1/2} = 246~\GeV$  
-where $\gf$ is the Fermi contant which is extracted from measurement 
+where $\gf$ is the Fermi constant which is extracted from measurement 
 of muon lifetime. 
 % \gf meausurement : http://www.sciencedirect.com/science/article/pii/S0168900201012839
 Thus, the SM Higgs sector is fully described by \mHi. 
-\mHi\ is a fuction of $\lambda$ and $v$($\mHi^2 = 2 \lambda v^2$)
+\mHi\ is a function of $\lambda$ and $v$($\mHi^2 = 2 \lambda v^2$)
 and we do not know the physical meaning of $\lambda$, so 
 the mass of Higgs boson is not predictable by theory.
 It's experimentalists' task to measure \mHi\ and 
@@ -290,7 +291,7 @@ three massive and one massless gauge bosons, instead of four unphysical
 Higgs fields and four massless gauge bosons.
 
 The fermions acquire their masses by interacting with Higgs field. 
-Let's start a discusstion with leptons because the absence of right-handed neutrinos, 
+Let's start a discussion with leptons because the absence of right-handed neutrinos, 
 \textit{i.e.} neutrinos are massless, makes the case simpler than quarks which 
 have both right-handed and left-handed polarizations. 
 %We can add SU(2)-invariant terms to the Lagrangian. 
@@ -309,7 +310,7 @@ $\left(  \begin{array}{c} \phi_+  \\ \phi_0 \end{array} \right)$      & $\displa
 \label{tab:su2Qnum}
 \caption{$\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$ quantum numbers}
 \end{table}
-Tab.~\ref{tab:su2Qnum} shows the quantum numbers of  
+Table~\ref{tab:su2Qnum} shows the quantum numbers of  
 $\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$
 for the left-handed electron doublet, right-handed neutrino, right-handed electron and 
 Higgs doublet. Electron can be replaced by muon or tau leptons. 
@@ -334,7 +335,7 @@ to the Lagrangian, the lepton-Higgs interaction term becomes
 \left(  \begin{array}{c} \nu_L \\ e_L \end{array} \right)
 \right].
 \end{eqnarray} 
-Using the chosen Higgs field in eq.~(\ref{eq:HiggsfieldSSB}), 
+Using the chosen Higgs field in equation~(\ref{eq:HiggsfieldSSB}), 
 %$\frac{1}{\sqrt{2}} \left(  \begin{array}{c} 0 \\ v + H(x) \end{array} \right)$, 
 the Lagrangian is calculated to be 
 \begin{eqnarray} 
@@ -350,7 +351,7 @@ Thus, the mass is identified to be
 \begin{eqnarray} 
 m_e = \frac{g_e v}{\sqrt{2}}.
 \end{eqnarray} 
-Rewriting the Lagrangian in terms of $m_e$ instead of an arbitary $g_e$, we get 
+Rewriting the Lagrangian in terms of $m_e$ instead of an arbitrary $g_e$, we get 
 \begin{eqnarray} 
 \mathcal{L}_{int} 
 &=& 
@@ -401,7 +402,7 @@ The new Higgs field is invariant under $\textrm{SU(2)}_\textrm{L}$ transformatio
 - m_d \bar{d}d  -\frac{m_d}{v} \bar{d}d H
 - m_u \bar{u}u  -\frac{m_u}{v} \bar{u}u H
 \end{eqnarray} 
-where $u$ and $d$ are up-type and down-type quarks, respectivley, and   
+where $u$ and $d$ are up-type and down-type quarks, respectively, and   
 \begin{eqnarray} 
 m_d = \frac{g_d v}{\sqrt{2}} \quad \textrm{ and } \quad   
 m_u = \frac{g_u v}{\sqrt{2}}
@@ -409,7 +410,7 @@ m_u = \frac{g_u v}{\sqrt{2}}
 are used as the lepton case. The h.c. means hermitian conjugate of the first two terms. 
 
 As a result, the strength of interaction depends on the fermion mass, $m_f / v$. 
-Fig. \ref{fig:fd_HFFterm} shows Feynman diagram for Higgs - fermion interaction.    
+Figure~\ref{fig:fd_HFFterm} shows Feynman diagram for Higgs-fermion interaction.    
 \begin{figure}[htp]
 \centering
 \includegraphics[height=3.5cm]{figures/FD_HFFterm.pdf}
@@ -433,7 +434,7 @@ gluon-gluon fusion (\ggH),
 vector boson fusion (\qqH),
 associated production with vector bosons (\qqVH) and 
 associated production with heavy quarks(\ttH).
-The corresponding Fenyman diagrams are shown in fig.~\ref{fig:FD_HiggsProduction}.
+The corresponding Fenyman diagrams are shown in Figure~\ref{fig:FD_HiggsProduction}.
 \begin{figure}[htp] 
 \centering 
 \begin{tabular}{c} 
@@ -470,8 +471,8 @@ parton-level cross-section ($\hat{\sigma}$) convoluted with PDF,
 where i and j are colliding partons, 
 $x_1$ and $x_2$ are the longitudinal momentum fractions carried by parton i and j. 
 Each component in the equation is subject to the following uncertainties.
-The partonic cross section is calculated at given
-a renormalizaion scale $\mu_R$ and a factorization scale $\mu_F$. 
+The partonic cross section is calculated at a given
+renormalization scale($\mu_R$) and factorization scale($\mu_F$). 
 Due to possible missing higher-order QCD radiative corrections,
 the uncertainty is estimated by varying the scales around 
 the central values. In the de Florian and Grazzini (dFG) 
@@ -484,11 +485,11 @@ with a constraint $1/2 < \mu_F/\mu_R < 2$.
 PDF is obtained by fitting on data measured in deep-inelastic scattering, 
 Drell-Yan, and jet production from a wide variety of different experiments~\cite{}. 
 The accuracy on those data can introduce uncertainty on PDF calculation. 
-In addition, strong coupling constant $\alpha_s$ is used in DGLAP evolution [ref] 
+In addition, strong coupling constant $\alpha_s$ is used in DGLAP evolution~\cite{x} 
 to the higher $Q^2$ region. Thus, its uncertainty also contributes to 
 the total cross section. There are other uncertainties due to 
-the EW corrections, the different choice of top and bottom quark masses, 
-and the use of large-$m_T$ method. But, the effect to the 
+EWK corrections, the different choice of top and bottom quark masses, 
+and the use of large-$m_T$ method. But, the effect of these uncertainties to the 
 hadronic cross section is less than a few percent \cite{Dittmaier:2012vm}
 for \ggH.
 
@@ -515,7 +516,7 @@ $ pp \rightarrow ttH$       & NLO   &     \\
 \end{table}
 The highest order of QCD and EW calculations are summarized in Table 
 \ref{tab:Higgs_XS_8TeV_order}. The uncertainty is a linear combination 
-of uncertainties from QCD scale varitaion and PDF+$\alpha_S$.
+of uncertainties from QCD scale variation and PDF+$\alpha_S$.
 At $\mHi=125~\GeV$ \ggH\ contributes $\sim 87 \%$ to the total cross section.
 
 
@@ -529,7 +530,7 @@ At $\mHi=125~\GeV$ \ggH\ contributes $\sim 87 \%$ to the total cross section.
 \subsection{Decay of Higgs Boson}
 \label{sec:decayHiggs}
 
-Fig.~\ref{fig:fd_HVterm} shows that the Higgs boson can 
+Figure~\ref{fig:fd_HVterm} shows that the Higgs boson can 
 couple to a pair of weak bosons. Thus, Higgs can directly decay into $W^+W^-$ and $ZZ$.
 Depending on \mHi, one or two of the bosons can be off-shell. 
 As shown in~\cite{Djouadi20081}, at $\mHi>2m_W$ both bosons 
@@ -563,7 +564,7 @@ At high \mHi, the decay width to WW is reduced to
 For example, at $\mHi=1~\TeV$, decay width for WW is 0.33 \TeV.
 Practically, it is hard to claim a Higgs resonance at high mass regions.  
 
-The ratio of londitudinal polarization is given by \cite{PhysRevD.49.79}
+The ratio of longitudinal polarization is given by \cite{PhysRevD.49.79}
 \begin{eqnarray} 
 R_L 
 = 
@@ -576,7 +577,7 @@ Thus, vector bosons are longitudinally polarized at high \mHi\ ($\epsilon \right
 %At the production threshold, $\displaystyle \mHi = 2m_V \rightarrow \epsilon = \frac{1}{2}$, 
 At the production threshold, $\displaystyle \mHi = 2m_V$ ($\epsilon = 1/2$), 
 $R_L$ is 1/3 which means that the longitudinal and the transverse polarizations are populated 
-with a ratio of 1:2. This is shown in the fig.~\ref{fig:HVV_polarization_ratio}.
+with a ratio of 1:2. This is shown in the Figure~\ref{fig:HVV_polarization_ratio}.
 
 %
 \subsubsection{One boson is on-shell and other is off-shell : 
@@ -601,7 +602,7 @@ R(\epsilon) = \frac{3(1-8\epsilon^2+20\epsilon^4)}{(4\epsilon^2-1)^{1/2}}
 } \end{array}      
 \end{eqnarray} 
 
-The ratio of londitudinal polarization is given \cite{PhysRevD.49.79} by 
+The ratio of longitudinal polarization is given \cite{PhysRevD.49.79} by 
 \begin{eqnarray} 
 R_L 
 =
@@ -649,10 +650,16 @@ shows the uncertainty due to missing higher order terms.
 %
 \begin{figure*}[htp]
 \centering
-\includegraphics[width=0.8\textwidth]{figures/YRHXS2_BR_Fig1.eps}  \\
+\subfigure[Branching ratios]{
+\centering
+\includegraphics[width=0.8\textwidth]{figures/YRHXS2_BR_Fig1.eps}  
+}
+\subfigure[Total width]{
+\centering
 \includegraphics[width=0.7\textwidth]{figures/YRHXS_BR_fig2}
-\caption{Standard Model Higgs boson decay branching ratios at low \mHi(left) 
-and total width (right).}
+}
+\caption{Standard Model Higgs boson decay branching ratios at low \mHi 
+and the total width.}
 \label{fig:YRHXS2_BR_Fig1}
 \end{figure*}
 
@@ -665,7 +672,7 @@ and total width (right).}
 
 \subsubsection{Perturbative Unitarity : $W_L^+W_L^- \rightarrow W_L^+W_L^-$}
 
-The cross section of longditudinal vector boson scattering, $V_LV_L \to V_LV_L$, 
+The cross section of longitudinal vector boson scattering, $V_LV_L \to V_LV_L$, 
 increases as the energy increases, and it eventually violates unitarity, 
 \textit{i.e.}, probability for this process to happen is larger than unity. 
 
@@ -699,7 +706,7 @@ increases as the energy increases, and it eventually violates unitarity,
 \caption{Feynman diagrams for $W_L^+W_L^- \to W_L^+W_L^-$ scattering.} 
 \label{fig:FD_unitary}
 \end{figure*}
-Fig.~\ref{fig:FD_unitary} shows Feynman diagrams for $W_L^+W_L^- \to W_L^+W_L^-$. 
+Figure~\ref{fig:FD_unitary} shows Feynman diagrams for $W_L^+W_L^- \to W_L^+W_L^-$. 
 There are 4-point interaction, and t-channel and s-channel interactions mediated 
 by $Z/\gamma^*$ or Higgs boson.
 In the high energy limit $s \gg \mW^2$, the scattering amplitude becomes \cite{Djouadi20081} 
@@ -725,7 +732,7 @@ An scattering amplitude can be decomposed into partial waves $a_l$
 \mathcal{A} = 16 \pi \sum_{i=0}^\infty 
               \left( 2l+1 \right) P_l \left( \cos \theta \right) a_l
 \end{eqnarray} 
-where $P_l$ is the Legendre polynominals and $\theta$ is the scattering angle.
+where $P_l$ is the Legendre polynomials and $\theta$ is the scattering angle.
 For the cross section of $2 \to 2$ processes, we have the 
 following identity on the cross section ($\sigma$) by Optical theorem \cite{optical}
 \begin{eqnarray} 
@@ -754,7 +761,7 @@ a_0\left( w^+w^- \to w^+w^- \right)
 &\rightarrow&
 - \frac{\mHi^2}{8\pi v^2} 
 \end{eqnarray} 
-The unitary condition (Eq. (\ref{eq:unitaryWW})) gives upper bound on \mHi, 
+The unitary condition (equation (\ref{eq:unitaryWW})) gives upper bound on \mHi, 
 \begin{eqnarray} 
 \left| Re \left( a_0 \right) \right| 
 &=&  \frac{\mHi^2}{8\pi v^2} < \frac{1}{2} \\ 
@@ -775,9 +782,9 @@ unless there is a new physics that cures this problem.
 
 So far we calculated only tree-level terms, so we can expect that adding 
 higher order terms can solve this problem. But, including higher order 
-terms does not gaurantee that the unitary will be restored because 
+terms does not guarantee that the unitary will be restored because 
 in the high \mHi\ regime coupling to Higgs is too large and perturbative 
-calculation breaks down. Thus, the mass bound given in eq.~(\ref{eq:unitaryAll})  
+calculation breaks down. Thus, the mass bound given in equation~(\ref{eq:unitaryAll})  
 can be considered the \mHi~regime where perturbative calculation is reliable 
 in all $s$.
 
@@ -802,14 +809,14 @@ in all $s$.
 \subfigure[]{
 \centering 
 \includegraphics[width=0.2\textwidth]{figures/FD_HHHH1loop3.pdf} } 
-\caption{Feynman diagrams for Higgs boson quartic interaction. Left is tree lebel and 
+\caption{Feynman diagrams for Higgs boson quartic interaction. Left is tree level and 
 the right three are one-loop correction by Higgs boson itself.} 
 \label{fig:FD_triviality} 
 \end{figure*} 
-The variation of the Higgs quartic couping $\lambda$ is described by 
+The variation of the Higgs quartic coupling $\lambda$ is described by 
 Renormalization Group Equation (RGE). 
 When we consider one-loop radiation corrections by Higgs boson itself 
-to $\lambda$ as shown in fig.~\ref{fig:FD_triviality}, 
+to $\lambda$ as shown in Figure~\ref{fig:FD_triviality}, 
 the corresponding RGE is given by \cite{Djouadi20081} 
 \begin{eqnarray} 
 \frac{d}{dQ^2} \lambda (Q^2) 
@@ -825,9 +832,9 @@ where the EWSB scale is used as a reference energy point, $Q_0 = v$.
 If the energy is much smaller than the EWSB scale, $Q^2\ll v^2$, 
 the quadratic coupling goes to 0, and the theory is called 
 ``trivial", which means that there is no interaction. 
-On the otherhand, if the energy is much larger than the EWSB scale, $Q^2\gg v^2$,
+On the other hand, if the energy is much larger than the EWSB scale, $Q^2\gg v^2$,
 as Q increases the coupling will be infinite at a certain energy scale, $\Lambda_{cut}$. 
-Using $\lambda = \mHi^2/2v^2$ and the defition of $\lambda$ that it is positive, 
+Using $\lambda = \mHi^2/2v^2$ and the definition of $\lambda$ that it is positive, 
 we have the following equation for denominator,
 \begin{eqnarray} 
 1 > \frac{3}{4\pi^2} \frac{\mHi^2}{2v^2} \log{\frac{\Lambda_{cut}^2}{v^2}} 
@@ -841,7 +848,7 @@ This result is consistent with the limit from unitarity constraint.
 \\
 
 % Stability 
-In the previous discussion, only was one-loop correction by Higgs itself considered.
+In the previous discussion, only one-loop correction by Higgs itself is considered.
 This is a proper approximation when $\lambda$ is large, but
 when $\lambda$ is small, we need to consider the contributions from fermions 
 and vector bosons. Since, the strength of interaction with Higgs boson is proportional 
@@ -857,7 +864,7 @@ given by \cite{Djouadi20081}
 \frac{1}{16\pi^2}  
 \left[ -12 \frac{\mt^4}{v^4} + \frac{3}{16} \left(2g_2^4 + \left(g_2^2+g_1^2\right)^2 \right)   \right].
 \end{eqnarray} 
-Taking EWSB scale as the reference point, the solution to Eq.~(\ref{eq:stability_ddlogQ2}) is  
+Taking EWSB scale as the reference point, the solution to equation~(\ref{eq:stability_ddlogQ2}) is  
 \begin{eqnarray} 
 \lambda\left(Q^2\right) 
 = 
@@ -867,7 +874,7 @@ Taking EWSB scale as the reference point, the solution to Eq.~(\ref{eq:stability
                           + \frac{3}{16} \left(2g_2^4 + \left(g_2^2+g_1^2\right)^2 \right) \right]
                     \log \frac{Q^2}{v^2}.
 \end{eqnarray} 
-As $\lambda(v^2)$ becomes small, the couping can go negative, leading the vacuum unstable.   
+As $\lambda(v^2)$ becomes small, the coupling can go negative, and the vacuum becomes unstable.   
 Thus, in order to maintain the stability of vacuum, $\lambda\left(Q^2\right)$ should be 
 positive. This requirement gives
 \begin{eqnarray} 
@@ -881,21 +888,21 @@ positive. This requirement gives
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/trivial_vacstab.pdf}
-\caption{ Upper and lower bound of \mHi as a function of $\Lambda_{cut}$.
+\caption{ Upper and lower bound of \mHi\ as a function of $\Lambda_{cut}$.
 }
 \label{fig:trivial_vacstab}
 \end{figure*}
 \\
 
 So far the higher order contributions were taken up to 1-loop corrections. 
-There are calculations up to 2-loops and Fig. \ref{fig:trivial_vacstab} 
+There are calculations up to 2-loops and Figure~\ref{fig:trivial_vacstab} 
 shows lower bound (vacuum stability) and upper bound (triviality) of \mHi\ 
 as a function of cutoff scale, $\Lambda_{cut}$~\cite{}.
 
 %
 \subsubsection{Fine tuning}
-The 1-loop radiative corrections to \mHi\ when only are W/Z/H and top contributions 
-condsidered are given by \cite{Djouadi20081}
+The 1-loop radiative corrections to \mHi\ when only W/Z/H and top contributions 
+are considered are given by~\cite{Djouadi20081}
 \begin{eqnarray} 
 \mHi^2 
 = 
@@ -932,14 +939,14 @@ and $\mathcal{F} \le 1$ represents that there is no fine-tuning.
 \label{fig:finetuning}
 \end{figure*}
 
-The fig.~\ref{fig:finetuning} \cite{Kolda:2000wi} shows two regions in $[\Lambda,\mHi]$ plane
+The Figure~\ref{fig:finetuning} \cite{Kolda:2000wi} shows two regions in $[\Lambda,\mHi]$ plane
 where $\Lambda$ is the cutoff scale; 
 $\mathcal{F}>10$ in light-hatching (labeled as $10~\%$)
 and $\mathcal{F}>100$ in thick-hatching (labeled as $1~\%$).  
 In case of light Higgs scenario, the fine-tuning is required even at the low energy scale. 
 For example, at \mHi=130 \GeV\ the fine-tuning of $\mathcal{F}>10$ requires 
 $\Lambda<2.3~\TeV$. This means that new physics should exist in the regime where 
-LHC experiements can probe.
+LHC experiments can probe.
 
 %%
 \newpage
@@ -952,11 +959,11 @@ There are electroweak measurements sensitive to \mHi.
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.3\textwidth]{figures/FD_Wmass_Hloop.pdf}
-\caption{Feynman diagram for 1 loop correctioin by Higgs boson to the W propagator.}.
+\caption{Feynman diagram for 1 loop correction by Higgs boson to the W propagator.}.
 \label{fig:FD_Wmass_Hloop}
 \end{figure*}
 For example, the mass of W boson has one-loop correction of Higgs boson 
-as shown in Fig.~\ref{fig:FD_Wmass_Hloop}. Its contribution to the W mass 
+as shown in Figure~\ref{fig:FD_Wmass_Hloop}. Its contribution to the W mass 
 is parametrized by $\Delta r$ in the following equation~\cite{Djouadi20081} % page 41
 \begin{eqnarray} 
 \mW^2 
@@ -971,33 +978,33 @@ and the correction is
 \frac{\gf \mW^2}{8 \sqrt{2} \pi^2} \frac{11}{3} 
 \left( \log \frac{\mHi^2}{\mW^2} - \frac{5}{6} \right)
 \end{eqnarray} 
-which is depedent on \mHi\ logarithmically. Thus, by measuring other quantities 
+which is dependent on \mHi\ logarithmically. Thus, by measuring other quantities 
 in the equation, we can constrain \mHi\ up to the uncertainties to the measured 
 quantities. Going one step further, we can use more variables, not only \mW, 
-and put them into a statisitcal fit \cite{LEP-2}. A simultaneous fit is done to
+and put them into a statistical fit \cite{LEP-2}. A simultaneous fit is done to
 $\Delta \alpha_{had}^{(5)}(\mZ^2)$, $\alpha_S(\mZ^2)$,  
 \mZ, \mt, and  $\log_{10} \left( \mHi \right)$
 on the data collected by LEP-I/II, SLD, and Tevatron \cite{LEP-2}.  
 \begin{figure*}[t]
 \centering
 %\includegraphics[height=0.4\textheight]{figures/w12_show_higgs.eps}
-\includegraphics[height=0.5\textheight]{figures/w12_blueband.eps} % Fig. F.4 in \cite{LEP-2}
+\includegraphics[height=0.5\textheight]{figures/w12_blueband.eps} % Figure F.4 in \cite{LEP-2}
 \caption{$\Delta \chi^2 = \chi^2 - \chi^2_{min}$ as a function of \mHi~\cite{LEP-2}.}
 \label{fig:EWKprecision}
 \end{figure*}
-The fig.~\ref{fig:EWKprecision} 
+The Figure~\ref{fig:EWKprecision} 
 %top plots shows the constraints on \mHi %from each variable used by global fit, 
 shows $\Delta \chi^2$ curve as a function of \mHi\ from EWK precision measurements
 assuming that Standard Model is the true theory of nature \cite{LEP-2}. 
-The prefered \mHi\ is $94_{-24}^{+29}~\GeV$. It also shows that 
-the upper limit on \mHi at C.L. = 95 \% is 152 \GeV. 
+The preferred \mHi\ is $94_{-24}^{+29}~\GeV$. It also shows that 
+the upper limit on \mHi\ at C.L. = 95 \% is 152 \GeV. 
 
 %
 \subsubsection{Direct search}  
 
 Before 2012, there were direct searches for SM Higgs boson by LEP, Tevatron, 
 and LHC experiments. 
-The LEP data showed upper limit of $\mHi<114.4~\GeV$ at \CLs = 95 \% \cite{Beringer:1900zz} 
+The LEP data showed the limit of $\mHi>114.4~\GeV$ at \CLs = 95 \% \cite{Beringer:1900zz} 
 and the Tevatron showed exclusion of SM Higgs hypothesis in the range of 
 $147~\GeV < \mHi < 179~\GeV$ at \CLs = 95 \% \cite{Beringer:1900zz}. 
 At the end of 2011, the LHC experiments(CMS and ATLAS) showed their results with 7~\TeV\ data
@@ -1009,16 +1016,16 @@ on the standard model Higgs search \cite{Chatrchyan201226,Aad201249}.
 \caption{ CMS / ATLAS Higgs exclusion with 7 TeV data. }
 \label{fig:2011HiggsExp}
 \end{figure}
-Fig.~\ref{fig:2011HiggsExp} shows the 95\% C.L. upper limits on $\sigma/\sigma_{\textrm{SM}}$
+Figure~\ref{fig:2011HiggsExp} shows the 95\% C.L. upper limits on $\sigma/\sigma_{\textrm{SM}}$
 as a function of \mHi\ in the range of 110 - 145 \GeV\ for CMS on the left and 
 110 - 150 \GeV\ for ATLAS on the right. In both experiments, search was performed up to 
 \mHi = 600 \GeV, but only low \mHi\ region is shown on the plots. 
-In CMS, the observed exclusion range is 118 - 543 \GeV\ 
-with expected exclusion range is 127 - 600 \GeV.     
-In ATLAS, the observed exclusion range is 112.9 - 115.5, 131-238, and 251-466 \GeV\ 
-with expected exclusion range 124 - 519 \GeV.  
+In CMS, the observed exclusion range is 127 - 600~\GeV\ 
+while the expected exclusion range is 118 - 543~\GeV.     
+In ATLAS, the observed exclusion range is 131-238 and 251-466 \GeV\ 
+while the expected exclusion range 124 - 519 \GeV.  
 Both experiments, CMS and ATLAS, showed local excess of 
-$3.1\sigma$ and $3.5\sigma$, repectively, around \mHi = 125 \GeV. 
+$3.1\sigma$ and $3.5\sigma$, respectively, around \mHi = 125 \GeV. 
 
  
 
@@ -1029,8 +1036,9 @@ $3.1\sigma$ and $3.5\sigma$, repectively, around \mHi = 125 \GeV.
 %
 \subsection{Large production rate}
 
-The \hww\ channel has a good statistical power to measure $\sigma \times BR$.
-Fig.~\ref{fig:XSBR_8TeV_SM_LM} shows $\sigma \times BR$ at $\mHi<250~\GeV$.
+The \hww\ channel has a good statistical power to measure $\sigma \times BR$
+assuming the backgrounds can be controlled.
+Figure~\ref{fig:XSBR_8TeV_SM_LM} shows $\sigma \times BR$ at $\mHi<250~\GeV$.
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.6\textwidth]{figures/XSBR_8TeV_SM_LM.eps}
@@ -1058,7 +1066,7 @@ $N_{expected}$ in $\mathcal{L}_{int} = 20~\ifb$
 and the expected number of events in $\mathcal{L}_{int} = 20~\ifb$.
 $l$ means electrons or muons.}
 \end{table}
-Table \ref{tab:XSBR_8TeV_SM_125} shows $\sigma \times \textrm{BR}$ for 
+Table~\ref{tab:XSBR_8TeV_SM_125} shows $\sigma \times \textrm{BR}$ for 
 the most sensitive channels, \hww, $H \rightarrow ZZ\rightarrow 4l$
 and $H \rightarrow\gamma\gamma$, and the expected signal events at
 the integrated luminosity, $\mathcal{L}=20~\ifb$. The expected signal 
@@ -1069,6 +1077,7 @@ with this channel.
 
 %
 \subsection{Angular distribution of leptons in the final state}
+\label{subsec:angular_dist}
 
 The spin of SM Higgs is zero, so by helicity conservation the total spin 
 of the WW system should be zero as well. 
@@ -1080,9 +1089,9 @@ Solid black arrows represent momentum direction of Ws and grey arrows indicate
 the spin configuration.}
 \label{fig:HiggsSpin}
 \end{figure}
-As shown in Fig.~\ref{fig:HiggsSpin}, if we take 
+As shown in Figure~\ref{fig:HiggsSpin}, if we take 
 the direction of $W^+$ momentum as z axis in the center-of-mass(CM) frame of Higgs boson,
-there are two cases where the spin direction is parellel to the 
+there are two cases where the spin direction is parallel to the 
 momentum direction (transverse polarization) and one case where 
 it is perpendicular to the momentum direction(longitudinal polarization). 
 In case of transverse polarization, the leptons from Ws have strong 
@@ -1095,14 +1104,14 @@ fly to z direction. In order for the anti-neutrino from $W^-$ to be
 right-handed, the direction of the anti-neutrino should be in the 
 - z direction, thus lepton should fly to z direction.
 Therefore, both leptons tend to move in the same direction 
-resulting the angle between the two leptons to be small. 
+resulting in a small angle between the two leptons. 
 This is somewhat diluted due to boost of Higgs and Ws, 
 but the effect is still visible and used to separate signals 
 from non-resonant WW background. 
 On the other hand, in case of longitudinal polarization, 
 no specific angular correlation is present. 
 As discussed in section~\ref{sec:decayHiggs}, the fraction of longitudinal 
-polairzation depends on the Higgs mass. So, we expect that the two leptons 
+polarization depends on the Higgs mass. So, we expect that the two leptons 
 in the final state tend to be more aligned at \mHi\ where the fraction of longitudinal 
 polarization is small. 
 
@@ -1138,7 +1147,7 @@ events are rejected by requiring $\ptlmin>10~\GeV$.
 \delphill\ shows non-straightforward trend. The angle tends to get smaller 
 as \mHi\ increases up to 160 \GeV, and the angle becomes wide 
 after \mHi = 160~\GeV. This behavior was expected in the 
-fig.~\ref{fig:HVV_polarization_ratio} where the fraction of the 
+Figure~\ref{fig:HVV_polarization_ratio} where the fraction of the 
 longitudinal polarization is at the minimum at \mHi = 2\mW\ which is about 160~\GeV. 
 Since small \delphill\ yields small \mll\, we expect small \mll\ 
 for low \mHi\ hypotheses. The Higgs transverse mass \mT\ shows clear 

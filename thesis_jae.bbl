@@ -130,6 +130,10 @@ CMS Collaboration.
 \newblock Technical Design Report CMS. CERN, Geneva, 2006.
 \newblock There is an error on cover due to a technical problem for some items.
 
+\bibitem{LHCbeamlifetime}
+{LHC RUNNING}.
+\newblock http://lhc-closer.es/1/3/5/0.
+
 \bibitem{Anghel2009277}
 Ioana Anghel.
 \newblock Status of the {CMS} silicon strip tracker and commissioning results.
@@ -168,6 +172,11 @@ Thomas Lenzi.
   detectors.
 \newblock 2013.
 
+\bibitem{Adam:934067}
+Wolfgang Adam, Boris Mangano, Thomas Speer, and Teddy Todorov.
+\newblock {Track Reconstruction in the CMS tracker}.
+\newblock Technical Report CMS-NOTE-2006-041, CERN, Geneva, Dec 2006.
+
 \bibitem{Fruhwirth1996189}
 R.~Frühwirth, P.~Kubinec, W.~Mitaroff, and M.~Regler.
 \newblock Vertex reconstruction and track bundling at the {LEP} collider using
@@ -189,11 +198,6 @@ CMS Collaboration.
 \newblock Plots for ichep 2012 tracking pog.
 \newblock {\em CMS Physics Results}, 2012.
 
-\bibitem{muonTrkPerform}
-CMS Collaboration.
-\newblock Tracking pog plots for vertex 2012.
-\newblock {\em CMS Physics Results}, 2012.
-
 \bibitem{DAclustering}
 W.~Erdmann.
 \newblock Offline primary vertex reconstruction with deterministic annealing
@@ -204,6 +208,11 @@ W.~Erdmann.
 W.~Waltenberger R.~Fruewirth and P.~Vanlaer.
 \newblock Adaptive vertex fitting.
 \newblock {\em {CMS Note}}, NOTE-2007/008, 2007.
+
+\bibitem{muonTrkPerform}
+CMS Collaboration.
+\newblock Tracking pog plots for vertex 2012.
+\newblock {\em CMS Physics Results}, 2012.
 
 \bibitem{Baffioni:2006cd}
 S.~Baffioni, C.~Charlot, F.~Ferri, D.~Futyan, P.~Meridiani, et~al.
@@ -233,9 +242,36 @@ W~Adam, R~Frühwirth, A~Strandlie, and T~Todorov.
 
 \bibitem{PFalgo}
 {CMS} Collaboration.
-\newblock Particle-flow event reconstruction in cms and performance for jets,
-  taus and $e^{miss}_t$.
+\newblock {Particle-Flow Event Reconstruction in CMS and Performance for Jets,
+  Taus and $E^{miss}_T$}.
 \newblock {\em Physics Analysis Summary}, PFT-09-001, 2009.
+
+\bibitem{Blazey:2000qt}
+Gerald~C. Blazey, Jay~R. Dittmann, Stephen~D. Ellis, V.~Daniel Elvira,
+  K.~Frame, et~al.
+\newblock {Run II jet physics}.
+\newblock pages 47--77, 2000.
+
+\bibitem{PhysRevD.45.1448}
+{\em Phys. Rev. D}, 45:1448--1458, Mar 1992.
+
+\bibitem{PhysRevD.53.6000}
+{\em Phys. Rev. D}, 53:6000--6016, Jun 1996.
+
+\bibitem{Salam:2007xv}
+Gavin~P. Salam and Gregory Soyez.
+\newblock {A Practical Seedless Infrared-Safe Cone jet algorithm}.
+\newblock {\em JHEP}, 0705:086, 2007.
+
+\bibitem{Ellis:1993tq}
+Stephen~D. Ellis and Davison~E. Soper.
+\newblock {Successive combination jet algorithm for hadron collisions}.
+\newblock {\em Phys.Rev.}, D48:3160--3166, 1993.
+
+\bibitem{Dokshitzer:1997in}
+Yuri~L. Dokshitzer, G.D. Leder, S.~Moretti, and B.R. Webber.
+\newblock {Better jet clustering algorithms}.
+\newblock {\em JHEP}, 9708:001, 1997.
 
 \bibitem{Cacciari:2008gp}
 Matteo Cacciari, Gavin~P. Salam, and Gregory Soyez.
@@ -267,6 +303,12 @@ Matteo Cacciari and Gavin~P. Salam.
 \bibitem{Chatrchyan:1494669}
 CMS Collaboration.
 
+\bibitem{Abulencia:2005ix}
+A.~Abulencia et~al.
+\newblock {Measurements of inclusive W and Z cross sections in p anti-p
+  collisions at s**(1/2) = 1.96-TeV}.
+\newblock {\em J.Phys.}, G34:2457--2544, 2007.
+
 \bibitem{Chatrchyan:2012ufa}
 Serguei Chatrchyan et~al.
 \newblock {Observation of a new boson at a mass of 125 GeV with the CMS
@@ -290,12 +332,6 @@ The~CMS collaboration.
 \newblock Search for the standard model higgs boson decaying to a w pair in the
   fully leptonic final state in pp collisions at sqrt(s) = 8 tev.
 \newblock {\em Physics Analysis Summary}, (CMS-PAS-HIG-12-038).
-
-\bibitem{Abulencia:2005ix}
-A.~Abulencia et~al.
-\newblock {Measurements of inclusive W and Z cross sections in p anti-p
-  collisions at s**(1/2) = 1.96-TeV}.
-\newblock {\em J.Phys.}, G34:2457--2544, 2007.
 
 \bibitem{Khachatryan:2010xn}
 Vardan Khachatryan et~al.

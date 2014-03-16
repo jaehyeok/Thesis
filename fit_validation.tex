@@ -14,9 +14,9 @@
 
 \section{Validation of the Fit Model Using Real Data}
 
-In the shape-basd method, we rely on simulation for the background shapes 
+In the shape-based method, we rely on simulation for the background shapes 
 except \Wjets. Therefore, it is important to confirm that our fit model,
-both shape and normalization, correctly describes what is obsered in data. 
+both shape and normalization, correctly describes what is observed in data. 
 
 The idea is to choose a control region which is dominated by (a) process(es) 
 under study, and to fit the region using our fit model.  
@@ -42,7 +42,7 @@ and the normalization in another region.
 Following is the procedure and the result of this test. 
 
 We first select two control regions with similar statistics. It is important that 
-both regions have a similar number of events so that they have a similar statisitical 
+both regions have a similar number of events so that they have a similar statistical 
 power to constrain backgrounds. 
 %
 \begin{figure}[!hbtp]
@@ -88,9 +88,9 @@ with purity of around 70(75)\% in CR1(2).
 The signal contamination is negligible(less than 1.5\%) in both regions. 
 
 Because this test is only for \qqww, other processes have to be fixed in the fit.
-Therefore, all other processes are fixed to the post-fit normalizataion and shape 
+Therefore, all other processes are fixed to the post-fit normalization and shape 
 of the nominal fit except $qq\rightarrow\WW$ process. 
-Hereafter, this configuartion will be called ``full range" fit. 
+Hereafter, this configuration will be called ``full range" fit. 
 In the full range fit, all nuisances for $qq\rightarrow\WW$ are included, 
 but all nuisances for other processes are dropped because 
 shape and normalization for those processes are already post-fit results. 
@@ -114,7 +114,7 @@ Full range  & 4.8   & 1.9   & 143.6 &  3947.0       \\
 \hline
 \end{tabular}
 \end{center}
-\caption{Comparison of nomalization from nominal and full range fits.} 
+\caption{Comparison of normalization from nominal and full range fits.} 
 \label{tab:sanity_fullrange}
 \end{table}
 As a sanity check we compare the post-fit shape and normalization of \qqww\
@@ -162,7 +162,7 @@ the post-fit result from the other control regions.
 The uncertainty band is the post-fit uncertainty obtained by pseudo-data sets 
 generated using the post-fit uncertainties. 
 The variances in each bin of \qqww\ and all other backgrounds 
-are taken from the full range and the nominal fits, repectively, 
+are taken from the full range and the nominal fits, respectively, 
 and are added in quadrature. 
 The agreement between data and prediction is measured by
 \begin{equation} 
@@ -252,7 +252,7 @@ signal and the backgrounds that describes the data best.
 We use the maximum likelihood fit that scans nuisances, and finds 
 the point where the likelihood has its maximum. The tool 
 can do what is best in terms of finding the maximum, but 
-sometimes the result doen not make sense, which might 
+sometimes the result does not make sense, which might 
 indicate that our fit model is not correct. 
 
 This section thus discusses the post-fit result of the fit 
@@ -266,8 +266,8 @@ prediction can be wrong, thus we assign uncertainty on the nuisances. On the oth
 hand, if the prediction is wrong by a large margin, the post-fit value of the nuisance 
 can be far from the prediction, even larger than the uncertainty we assign. 
 So, we need to make sure that the post-fit nuisances are within the assigned uncertainty.
-A large variation of nuiscances may indicate that the fit model does not 
-describe data corretly. 
+A large variation of nuisances may indicate that the fit model does not 
+describe data correctly. 
 
 The measure to check this is the ``Pull" which is defined as 
 \begin{eqnarray} 
@@ -282,7 +282,7 @@ that the fit model is not correct or a lack of understanding of that nuisance.
 
 One of the reasons why we rely on fit is that the data can constrain nuisances 
 more than the assigned uncertainties. If there is a region that is dominated by 
-a certain backgroud process then the fit can use that region to constrain that 
+a certain background process then the fit can use that region to constrain that 
 background. But, if the post-fit uncertainty is larger than the assigned one, 
 this might be an evidence that the assigned uncertainty is smaller than what is 
 supposed to be. In order to assess any effects of this kind, we define the 
@@ -291,7 +291,7 @@ ratio of the post-fit uncertainty to the pre-fit uncertainty of a nuisance,
 \begin{eqnarray} 
 \sigma_{\textrm{norm}} = \frac{\sigma_{\textrm{post-fit}}}{\sigma_{\textrm{pre-fit}}}. 
 \end{eqnarray} 
-The $\sigma_{\textrm{norm}}$ larger than 1 means that the nuisance is not contrained by 
+The $\sigma_{\textrm{norm}}$ larger than 1 means that the nuisance is not constrained by 
 fit.
 
 %\textcolor{red}{Make sure how $\sigma_{\textrm{post-fit}}$ is derived by the fit. 
@@ -328,7 +328,7 @@ fit.
 \label{fig:postnuisance}
 \end{figure}
 Figure~\ref{fig:postnuisance} shows the post-fit result of nuisance parameters. 
-The x axis is the indices of the nuiscance parameters, and the y axis is the 
+The x axis is the indices of the nuisance parameters, and the y axis is the 
 Pull and the $\sigma_{\textrm{norm}}$. The black line shows the Pull 
 as the central value and 
 $\sigma_{\textrm{norm}}$ as an uncertainty bar. The grey area is drawn with the Pull as 
@@ -345,7 +345,7 @@ and the exact value of Pull is 1.023, it does not affect the
 result of the statistical interpretation.
 There are several nuisances that have $\sigma_{\textrm{norm}}$ much 
 less than 1. It is expected that $\sigma_{\textrm{norm}}$ can be less than 1, 
-but at the same time we need to examine the over-constaining of 
+but at the same time we need to examine the over-constraining of 
 those nuisances. 
 
 %CMS_hww_MVALepResBounding  :     -0.804 +/-      0.234
@@ -360,7 +360,7 @@ and alternate shape nuisances for \qqww\ and \topbkg.
 The analysis is not designed to constrain the instrumental nuisances, 
 thus some nuisances of this kind can be over-constrained allowing 
 others nuisance not being constrained enough. In addition removing 
-these nuiscance from the statistical interpretation does 
+these nuisance from the statistical interpretation does 
 change the results. In addition, we discussed that the fit model 
 for  \qqww\ and \topbkg\ were validated using dedicated control regions.  
 So, we conclude that the over-constraint of the these nuisances does 
@@ -459,7 +459,7 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \DF\ 0-jet category in 8 TeV.}
+\caption{The pre-fit and post-fit normalizations in \DF\ 0-jet category in 8~\TeV.}
 \label{tab:postfitnorm_of0j8tev}
 \end{center}
 \end{table}
@@ -489,7 +489,7 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \DF\ 1-jet category in 8 TeV.}
+\caption{The pre-fit and post-fit normalizations in \DF\ 1-jet category in 8~\TeV.}
 \label{tab:postfitnorm_of1j8tev}
 \end{center}
 \end{table}
@@ -519,7 +519,7 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \SF\ 0-jet category in 8 TeV.}
+\caption{The pre-fit and post-fit normalizations in \SF\ 0-jet category in 8~\TeV.}
 \label{tab:postfitnorm_sf0j8tev}
 \end{center}
 \end{table}
@@ -549,7 +549,7 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \SF\ 1-jet category in 8 TeV.}
+\caption{The pre-fit and post-fit normalizations in \SF\ 1-jet category in 8~\TeV.}
 \label{tab:postfitnorm_sf1j8tev}
 \end{center}
 \end{table}
@@ -577,7 +577,7 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \DF\ 0-jet category in 7 TeV.}
+\caption{The pre-fit and post-fit normalizations in \DF\ 0-jet category in 7~\TeV.}
 \label{tab:postfitnorm_of0j7tev}
 \end{center}
 \end{table}
@@ -605,7 +605,7 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \DF\ 1-jet category in 7 TeV.}
+\caption{The pre-fit and post-fit normalizations in \DF\ 1-jet category in 7~\TeV.}
 \label{tab:postfitnorm_of1j7tev}
 \end{center}
 \end{table}
@@ -632,7 +632,7 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \SF\ 0-jet category in 7 TeV.}
+\caption{The pre-fit and post-fit normalizations in \SF\ 0-jet category in 7~\TeV.}
 \label{tab:postfitnorm_sf0j7tev}
 \end{center}
 \end{table}
@@ -659,7 +659,7 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \SF\ 1-jet category in 7 TeV.}
+\caption{The pre-fit and post-fit normalizations in \SF\ 1-jet category in 7~\TeV.}
 \label{tab:postfitnorm_sf1j7tev}
 \end{center}
 \end{table}

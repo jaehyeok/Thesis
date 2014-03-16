@@ -1,5 +1,9 @@
+Chapter 4 described the event selection to suppress reducial backgrounds. 
+This chapter discusses methods to separate signal component from 
+irreducible backgrounds. 
+
 After selecting events containing two Ws, we extract the signal component 
-from the them. The events can be categorized based on the lepton flavor(\DF\ or \SF)
+from them. The events can be categorized based on the lepton flavor(\DF\ or \SF)
 and the number of jets(0 or 1). The advantage of dividing events 
 into different categories is that the background composition is different
 in the different categories. 
@@ -38,11 +42,10 @@ Therefore, we have four categories and the dedicated analysis
 is performed in each category. This allows better constraints on the 
 backgrounds and thus results in better sensitivity to the discovery.  
 
-
 The extraction of signal component is done by two methods. 
 The first method which is simpler but less sensitive to discovery 
 is the ``cut-based" method. This method is a simple cut-and-count approach 
-that uses a subset of the selected WW events with maximized S/B at a given \mHi.
+that uses a subset of the selected WW events with enhanced S/B at a given \mHi.
 The selections are optimized for a given \mHi,
 accounting for the kinematic difference between different \mHi\ hypotheses 
 which was discussed in section~\ref{subsec:kinimetic_variables}, 
@@ -50,7 +53,10 @@ This method is applied to all lepton flavor final states.
 The other method which is more complicated and sophiscated but more sensitive to discovery 
 is the ``shape-based" method which uses binned 2-dimensional templates of \mT\ and \mll. 
 A binned maximum likelihood fit to the 2-dimensional templates is performed to extract 
-the signal component. Because the fit can constrain backgrounds further than the estimated 
+the signal component. The shape-based method uses the difference in shape 
+between signal and background, \textit{i.e.}, more information than just normalization, 
+so can provide better separation between them. 
+In addition, because the fit can constrain backgrounds further than the estimated 
 uncertainties, the performance of this method is better than the cut-based method. 
 In this method most of the templates are taken from simulation,
 so it is important to ensure that the shapes taken from simulation 
@@ -72,14 +78,14 @@ this method to only \DF\ category.
 %\item Show the table of \mHi-dependent cuts : make sure that numbers are up-to-date  
 %\end{itemize} 
 
-The "cut-based" method is a simple and robuts cut-and-count anlaysis approach. 
+The "cut-based" method is a simple and robust cut-and-count analysis approach. 
 In this method, for a given \mHi\ the expected signal and background yields are 
-calculated in the region of phase space where S/B is maximized. 
+calculated in the region of phase space where S/B is enhanced. 
 The yields and the uncertainties of each process are used to determine 
 the signal component by a maximum likelihood fit. 
 Because the estimated uncertainties are used, the precise estimation
 of the uncertainties is very important.  
-This method is simpler than the other method becasue it uses only 
+This method is simpler than the other method because it uses only 
 yields(no worries about the shapes), 
 and most of the backgrounds are estimated by data-driven methods. 
 The issue is the accuracy(normalization) and the precision(uncertainty) of the measurements.  
@@ -87,19 +93,19 @@ The issue is the accuracy(normalization) and the precision(uncertainty) of the m
 As described in section~\ref{subsec:kinimetic_variables}, the kinematics of 
 the signal events vary depending on \mHi. Therefore, 
 in addition to the WW selection, a dedicated selection 
-for a \mHi\ point is applied to maximize the sensitivity at the given \mHi. 
+for each \mHi\ point is applied to enhance S/B at the given \mHi. 
 We use the following five variables to improve S/B, 
 \begin{itemize}
-\item lepton transeverse momentum : \ptlmax\ and \ptlmin
+\item lepton transverse momentum : \ptlmax\ and \ptlmin
 \item di-lepton mass : \mll 
 \item the azimuthal angle difference between the leptons : \delphill
 \item Higgs transverse mass : 
 \begin{eqnarray} 
 \mT = \sqrt{2\ptll\met(1-cos(\Delta\phi_{\ell\ell-\met}))}
 \end{eqnarray} 
-where \ptll\ is the transverse momentum of the dilepton system,
+where \ptll\ is the transverse momentum of the di-lepton system,
 \met\ is the missing transverse momentum and
-$\Delta\phi_{\ell\ell-\met}$ is the angle between dilepton
+$\Delta\phi_{\ell\ell-\met}$ is the angle between di-lepton
 direction and \met\ in the transverse plane.
 \end{itemize}
 
@@ -238,42 +244,47 @@ depending on the categories.
 %      these are what's actually used by Stat machineries. mention correlation is still there. 
 %\end{itemize}  
 
-The ``shape-based method" uses binned 2-dimentional templates of \mT\ and \mll. 
+The ``shape-based method" uses binned 2-dimensional templates of \mT\ and \mll. 
 This method is more complicated than the cut-based method
 because it uses the shape and the additional uncertainties to the shape 
 on top of normalization should be taken into account. 
 To extract the signal component, the 2-dimensional binned shape is fitted to data. 
-The shapes for the most of the background are taken from simulation except 
-the \Wjets\ which is taken from data subtacted by simulation. 
-Therefore, it is critial to make sure that the fit model correclty describes 
-what is observed in data. There was a hugh effort to validate this using 
-pseudo-data and data-control region. The chapter~\ref{ch:fit_validation} describes 
+The shapes for most of the background are taken from simulation except 
+the \Wjets\ which is taken from data subtracted by simulation. 
+Therefore, it is critical to make sure that the fit model correctly describes 
+what is observed in data. There was a huge effort to validate this using 
+pseudo-data and data-control region. Chapter~\ref{ch:fit_validation} describes 
 the details. 
 
 There are two main motivations for developing this analysis method. 
-Before this method was employed as the main anaylysis method for the 
+Before this method was employed as the main analysis method for the 
 public result of this analysis at CMS, the BDT-based multivariate method 
 had been the main analysis method~\cite{CMS-PAS-HIG-12-038}. However, because of 
 the non-trivial dependence of the discriminator(BDT score)
 on the input variables, it was very difficult to have a
 physical interpretation of the observed result with this method. 
 For example, if there is a fluctuation in data, we do not know where this comes from, 
-\textit{i.e.} which input variable is reponsible for this unexpected 
-behavior. In addtion, because a single template definition is used for multiple 
+\textit{i.e.} which input variable is responsible for this unexpected 
+behavior. In addition, because a single template definition is used for multiple 
 \mHi\ hypotheses, it avoids unnecessary statistical fluctuations between data selected 
 for adjacent hypotheses.
 On the practical side, the implementation of the 
 analysis became much simpler compared to the BDT method because of using 
 the same background template across different \mHi\ hypotheses
 while the BDT method used \mHi-dependent selection similar to the cut-based 
-method. This not only simlified the workflow but also allowed to draw 
+method. This not only simplified the work flow but also allowed to draw 
 the 2-dimensional log likelihood scan in the plane of 
 signal strength and \mHi, which was not possible with the \mHi-dependent 
 selections for some technical reasons. 
 
-The modeling of \dyll\ simulation background is quite poor in the tail of high \met,
-and the statistics of the available MC sample is limited resulting in huge weights
-per event. Therefore, we can not trust the shape of \dyll\ from simulation, and  
+The modeling of \met\ in \dyll\ background is quite poor in the tail of high \met. 
+This is because high \met\ in this process can be obtained when jet energy is 
+poorly measured. This corresponds to the tail of jet energy response distribution 
+which is not well modelled by a Gaussian function which is used to estimate the 
+resolution in the bulk of the distribution. Given that the Monte Carlo simulation 
+is based on random sampling, this part is not particularly well modelled. 
+In addition, the statistics of the available MC sample is limited resulting in huge weights
+per event. Therefore, we can not rely on \dyll\ simulation, and  
 the shape-based method is applied to only \DF\ channels. 
 
 The choice of the variables is motivated by the fact that the best 
@@ -321,7 +332,7 @@ the area of the bin in order to avoid random peaks due to difference in the bin 
 For the determination of the range and the binning, following points were considered : 
 \begin{itemize}
 \item Range should cover multiple \mHi
-\item Binning should allow enough granuality to distinguish the signal from the background 
+\item Binning should allow enough granularity to distinguish the signal from the background 
       in the region where signal is populated : sideband region can have coarser binning 
       in case of low statistics in that region
 \item statistical uncertainty of the templates should be small with respect to the 
@@ -336,7 +347,7 @@ For the determination of the range and the binning, following points were consid
 Due to large difference in the kinematics of signal events between high and low \mHi, 
 we decided to use two template definitions, one for the low Higgs masses, 
 \mHi = 110 - 250~\GeV, and the other for the high Higgs masses, \mHi = 300 - 600~\GeV. 
-In order to furthur enhance S/B, $\ptlmax>50~\GeV$ is applied for the 
+In order to further enhance S/B, $\ptlmax>50~\GeV$ is applied for the 
 high \mHi\ templates. 
 So, for the low(high) \mHi\ hypotheses, we use 
 $60 < \mT < 280~\GeV$($60 < \mT < 380~\GeV$)
@@ -357,8 +368,8 @@ so we take 20-25~\GeV as a maximum size of a bin for low \mHi\ templates.
 \centering
 \subfigure[$\mT=10~\GeV, \mll=10~\GeV$]{
 \centering
-\label{subfig:SoverB_2d_20_25}
-\includegraphics[width=0.45\textwidth]{figures/SoverB_2d_20_25.pdf}
+\label{subfig:SoverB_2d_10_10}
+\includegraphics[width=0.45\textwidth]{figures/SoverB_2d_10_10.pdf}
 }
 \subfigure[$\mT=20~\GeV, \mll=10~\GeV$]{
 \centering
@@ -370,22 +381,23 @@ so we take 20-25~\GeV as a maximum size of a bin for low \mHi\ templates.
 \label{subfig:SoverB_2d_10_25}
 \includegraphics[width=0.45\textwidth]{figures/SoverB_2d_10_25.pdf}
 }
-\subfigure[$\mT=20~\GeV, \mll=20~\GeV$]{
+\subfigure[$\mT=20~\GeV, \mll=25~\GeV$]{
 \centering
-\label{subfig:SoverB_2d_10_10}
-\includegraphics[width=0.45\textwidth]{figures/SoverB_2d_10_10.pdf}
+\label{subfig:SoverB_2d_20_25}
+\includegraphics[width=0.45\textwidth]{figures/SoverB_2d_20_25.pdf}
 }
 \caption{ S/B using different binnings.   
-The region($60<\mT<120~\GeV$, $0<\mll<100~\GeV$) is showen.}
+The region($60<\mT<120~\GeV$, $0<\mll<100~\GeV$) is shown.}
 \label{fig:SoverBdiffbinning}
 \end{figure}
 Fig.~\ref{fig:SoverBdiffbinning} shows the S/B with 4 different binnings
 in the region where \mHi=125~\GeV\ signal is populated($60<\mT<120~\GeV$, $0<\mll<100~\GeV$)
 in the 0-jet \DF category ;
 bin size of [\mT, \mll]  = [10~\GeV, 10~\GeV], [20~\GeV, 10~\GeV], 
-[20~\GeV, 10~\GeV], and [20~\GeV, 20~\GeV]. 
+[10~\GeV, 20~\GeV], and [20~\GeV, 20~\GeV]. 
 The S/B with the bin size of 10 - 20~\GeV\ does not change S/B, 
-so we can use any bin size in that range. 
+so we can use any bin size in that range as long as each bin
+contains enough statistics. 
 
 \begin{table}[htp] 
 \begin{center} 
@@ -420,7 +432,7 @@ significance from the BDT method is 1.80.}
 \end{table} 
 
 This method gives about 25~\% better sensitivity at \mHi=125~\GeV\ 
-in terms of the expected significance compared to the state-of-the-art 
+in terms of expected significance compared to the state-of-the-art 
 analysis method(BDT method)~\cite{CMS-PAS-HIG-12-038} when this method was developed. 
 The improvement comes from using expanded phase space 
 which can be used to constrain backgrounds further. 
@@ -435,8 +447,8 @@ The expected significance increases significantly as the range is expanded.
 
 Considering all these as well as a necessity of fine bins 
 in the signal region for the spin-parity hypothesis separation test
-which will be discussed in chapter~\ref{ch:study_spin}, 
-we use the following binning and the ranges as shown in Table~\ref{tab:binning}. 
+which will be discussed in chapter~\ref{ch:spin}, 
+we use the binning and the ranges as shown in Table~\ref{tab:binning}. 
 \vspace{0.5cm}
 \begin{table}[!htb]
 \begin{center}
@@ -474,8 +486,8 @@ The fig.~\ref{fig:2dtemplate_125_0j_1} - \ref{fig:2dtemplate_125_0j_4} show the 
 in the \DF\ 0-jet category at 8 \TeV\
 and the relative statistical uncertainty of the template with respect to the total background 
 for each process. 
-There is not any background process that has large statistical uncertainty. 
-More templates can be found in the Appendix~\ref{blah}.
+There is not any background process that has large statistical uncertainty.
+More templates can be found in the Appendix~\ref{app:more_templates}.
 
 \begin{figure}[htp]
 \centering
@@ -485,7 +497,8 @@ More templates can be found in the Appendix~\ref{blah}.
 \includegraphics[width=0.8\textwidth]{figures/2dtemplate_ggH_mH125_0j.pdf}
 \caption{Templates(left) and relative statistical uncertainty of the MC sample(right) 
 of \qqWH, \qqZH, \qqH\ and \ggH. 
-The templates are for \mHi\ = 125 \GeV\ analysis in the 0-jet category.}
+The templates are for \mHi\ = 125 \GeV\ analysis in the 0-jet category.
+}
 \label{fig:2dtemplate_125_0j_1}
 \end{figure}
 
