@@ -1,5 +1,99 @@
 \begin{thebibliography}{10}
 
+\bibitem{Goria:2011wa}
+Stefano Goria, Giampiero Passarino, and Dario Rosco.
+\newblock {The Higgs Boson Lineshape}.
+\newblock {\em Nucl.Phys.}, B864:530--579, 2012.
+
+\bibitem{pilkuhn1967interactions}
+H.M. Pilkuhn.
+\newblock {\em The interactions of hadrons}.
+\newblock North-Holland Pub. Co., 1967.
+
+\bibitem{PhysRevD.49.79}
+V.~Barger, K.~Cheung, A.~Djouadi, B.~A. Kniehl, and P.~M. Zerwas.
+\newblock Higgs bosons: Intermediate mass range at ${e}^{+}{e}^{-}$ colliders.
+\newblock {\em Phys. Rev. D}, 49:79--90, Jan 1994.
+
+\bibitem{LEP-2}
+{The ALEPH, DELPHI, L3, OPAL Collaborations, the LEP Electroweak Working
+  Group}.
+\newblock {Electroweak Measurements in Electron-Positron Collisions at
+  W-Boson-Pair Energies at LEP}.
+\newblock 2013.
+
+\bibitem{Anghel2009277}
+Ioana Anghel.
+\newblock Status of the {CMS} silicon strip tracker and commissioning results.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  604(1–2):277 -- 280, 2009.
+
+\bibitem{Abbaneo2004331}
+D.~Abbaneo.
+\newblock Layout and performance of the {CMS} silicon strip tracker.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  518(1–2):331 -- 335, 2004.
+
+\bibitem{cmstdr1}
+{CMS} Collaboration.
+\newblock {\em CMS Physics: Technical Design Report Volume 1: Detector
+  Performance and Software}.
+\newblock Technical Design Report CMS. CERN, Geneva, 2006.
+\newblock There is an error on cover due to a technical problem for some items.
+
+\bibitem{Chatrchyan:2009hw}
+S~Chatrchyan et~al.
+\newblock Performance of {CMS} hadron calorimeter timing and synchronization
+  using test beam, cosmic ray, and lhc beam data.
+\newblock {\em JINST}, 5:T03013, 2010.
+
+\bibitem{Kim:2012ix}
+Min~Suk Kim et~al.
+\newblock {CMS reconstruction improvement for the muon tracking by the RPC
+  chambers}.
+\newblock {\em PoS}, RPC2012:045, 2012.
+
+\bibitem{Maselli:1196170}
+Silvia Maselli.
+\newblock Calibration of the barrel muon drift tubes system in {CMS}.
+\newblock Technical Report CMS-CR-2009-100, CERN, Geneva, May 2009.
+
+\bibitem{Lenzi:2013xpa}
+Thomas Lenzi.
+\newblock Development and study of different muon track reconstruction
+  algorithms for the level-1 trigger for the {CMS} muon upgrade with gem
+  detectors.
+\newblock 2013.
+
+\bibitem{TrkPerform}
+CMS Collaboration.
+\newblock Plots for ichep 2012 tracking pog.
+\newblock {\em CMS Physics Results}, 2012.
+
+\bibitem{muonTrkPerform}
+CMS Collaboration.
+\newblock Tracking pog plots for vertex 2012.
+\newblock {\em CMS Physics Results}, 2012.
+
+\bibitem{PAS-HIG-13-002}
+{CMS} Collaboration.
+\newblock Properties of the higgs-like boson in the decay $h \rightarrow zz
+  \rightarrow 4l$ in pp collisions at $\sqrt{s}=7 \textrm{ and }
+  8~\textrm{TeV}$.
+\newblock {\em Physics Analysis Summary}, HIG-13-002, 2013.
+
+\bibitem{DPS-2013-011}
+{CMS Collaboration}.
+\newblock {Status of the 8 TeV Jet Energy Corrections and Uncertainties based
+  on 11~\ifb of data in CMS}.
+\newblock {\em CMS Performance Note}, DPS-2013/011, 2013.
+
+\bibitem{CMS-PAS-JME-12-002}
+{MET performance in 8 TeV data}.
+\newblock Technical Report CMS-PAS-JME-12-002, {CERN}, Geneva, 2013.
+
 \bibitem{Glashow:1961tr}
 S.L. Glashow.
 \newblock {Partial Symmetries of Weak Interactions}.
@@ -47,6 +141,22 @@ T.W.B. Kibble.
 \newblock {Symmetry breaking in nonAbelian gauge theories}.
 \newblock {\em Phys.Rev.}, 155:1554--1561, 1967.
 
+\bibitem{Altarelli:1977zs}
+Guido Altarelli and G.~Parisi.
+\newblock {Asymptotic Freedom in Parton Language}.
+\newblock {\em Nucl.Phys.}, B126:298, 1977.
+
+\bibitem{Dokshitzer:1977sg}
+Yuri~L. Dokshitzer.
+\newblock {Calculation of the Structure Functions for Deep Inelastic Scattering
+  and e+ e- Annihilation by Perturbation Theory in Quantum Chromodynamics.}
+\newblock {\em Sov.Phys.JETP}, 46:641--653, 1977.
+
+\bibitem{Gribov:1972ri}
+V.N. Gribov and L.N. Lipatov.
+\newblock {Deep inelastic e p scattering in perturbation theory}.
+\newblock {\em Sov.J.Nucl.Phys.}, 15:438--450, 1972.
+
 \bibitem{Dittmaier:2012vm}
 S.~Dittmaier, S.~Dittmaier, C.~Mariotti, G.~Passarino, R.~Tanaka, et~al.
 \newblock {Handbook of LHC Higgs Cross Sections: 2. Differential
@@ -58,11 +168,6 @@ Abdelhak Djouadi.
 \newblock The anatomy of electroweak symmetry breaking: Tome i: The higgs boson
   in the standard model.
 \newblock {\em Physics Reports}, 457(1–4):1 -- 216, 2008.
-
-\bibitem{PhysRevD.49.79}
-V.~Barger, K.~Cheung, A.~Djouadi, B.~A. Kniehl, and P.~M. Zerwas.
-\newblock Higgs bosons: Intermediate mass range at ${e}^{+}{e}^{-}$ colliders.
-\newblock {\em Phys. Rev. D}, 49:79--90, Jan 1994.
 
 \bibitem{Dittmaier:1318996}
 S~Dittmaier, C~Mariotti, G~Passarino, R~Tanaka, J~Baglio, P~Bolzoni,
@@ -93,13 +198,6 @@ Christopher~F. Kolda and Hitoshi Murayama.
   model}.
 \newblock {\em JHEP}, 0007:035, 2000.
 
-\bibitem{LEP-2}
-{The ALEPH, DELPHI, L3, OPAL Collaborations, the LEP Electroweak Working
-  Group}.
-\newblock {Electroweak Measurements in Electron-Positron Collisions at
-  W-Boson-Pair Energies at LEP}.
-\newblock 2013.
-
 \bibitem{Beringer:1900zz}
 J.~Beringer et~al.
 \newblock {Review of Particle Physics (RPP)}.
@@ -117,60 +215,15 @@ ATLAS Collaboration.
   \ifb{} of pp collision data at with the atlas detector at the lhc.
 \newblock {\em Physics Letters B}, 710(1):49 -- 66, 2012.
 
-\bibitem{Chatrchyan201291}
-CMS Collaboration.
-\newblock Search for the standard model higgs boson decaying to in the fully
-  leptonic final state in pp collisions at.
-\newblock {\em Physics Letters B}, 710(1):91 -- 113, 2012.
-
-\bibitem{cmstdr1}
-{CMS} Collaboration.
-\newblock {\em CMS Physics: Technical Design Report Volume 1: Detector
-  Performance and Software}.
-\newblock Technical Design Report CMS. CERN, Geneva, 2006.
-\newblock There is an error on cover due to a technical problem for some items.
+\bibitem{Chatrchyan:2012ty}
+Serguei Chatrchyan et~al.
+\newblock {Search for the standard model Higgs boson decaying to a $W$ pair in
+  the fully leptonic final state in $pp$ collisions at $\sqrt{s}=7$ TeV}.
+\newblock {\em Phys.Lett.}, B710:91--113, 2012.
 
 \bibitem{LHCbeamlifetime}
 {LHC RUNNING}.
 \newblock http://lhc-closer.es/1/3/5/0.
-
-\bibitem{Anghel2009277}
-Ioana Anghel.
-\newblock Status of the {CMS} silicon strip tracker and commissioning results.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment},
-  604(1–2):277 -- 280, 2009.
-
-\bibitem{Abbaneo2004331}
-D.~Abbaneo.
-\newblock Layout and performance of the {CMS} silicon strip tracker.
-\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment},
-  518(1–2):331 -- 335, 2004.
-
-\bibitem{Chatrchyan:2009hw}
-S~Chatrchyan et~al.
-\newblock Performance of {CMS} hadron calorimeter timing and synchronization
-  using test beam, cosmic ray, and lhc beam data.
-\newblock {\em JINST}, 5:T03013, 2010.
-
-\bibitem{Kim:2012ix}
-Min~Suk Kim et~al.
-\newblock {CMS} reconstruction improvement for the muon tracking by the rpc
-  chambers.
-\newblock {\em PoS}, RPC2012:045, 2012.
-
-\bibitem{Maselli:1196170}
-Silvia Maselli.
-\newblock Calibration of the barrel muon drift tubes system in {CMS}.
-\newblock Technical Report CMS-CR-2009-100, CERN, Geneva, May 2009.
-
-\bibitem{Lenzi:2013xpa}
-Thomas Lenzi.
-\newblock Development and study of different muon track reconstruction
-  algorithms for the level-1 trigger for the {CMS} muon upgrade with gem
-  detectors.
-\newblock 2013.
 
 \bibitem{Adam:934067}
 Wolfgang Adam, Boris Mangano, Thomas Speer, and Teddy Todorov.
@@ -193,11 +246,6 @@ M.~Pioppi.
 \newblock Iterative tracking.
 \newblock {\em CMS Internal Note}, (2007/065), 2008.
 
-\bibitem{TrkPerform}
-CMS Collaboration.
-\newblock Plots for ichep 2012 tracking pog.
-\newblock {\em CMS Physics Results}, 2012.
-
 \bibitem{DAclustering}
 W.~Erdmann.
 \newblock Offline primary vertex reconstruction with deterministic annealing
@@ -209,13 +257,9 @@ W.~Waltenberger R.~Fruewirth and P.~Vanlaer.
 \newblock Adaptive vertex fitting.
 \newblock {\em {CMS Note}}, NOTE-2007/008, 2007.
 
-\bibitem{muonTrkPerform}
-CMS Collaboration.
-\newblock Tracking pog plots for vertex 2012.
-\newblock {\em CMS Physics Results}, 2012.
-
 \bibitem{Baffioni:2006cd}
-S.~Baffioni, C.~Charlot, F.~Ferri, D.~Futyan, P.~Meridiani, et~al.
+F.~Ferri D. Futyan P. Meridiani I. Puljak C. Rovelli R. Salerno Y.~Sirois
+  S.~Baffioni, C.~Charlot.
 \newblock Electron reconstruction in {CMS}.
 \newblock {\em Eur.Phys.J.}, C49:1099--1116, 2007.
 
@@ -232,13 +276,6 @@ W~Adam, R~Frühwirth, A~Strandlie, and T~Todorov.
   tracker at the lhc.
 \newblock {\em Journal of Physics G: Nuclear and Particle Physics}, 31(9):N9,
   2005.
-
-\bibitem{PAS-HIG-13-002}
-{CMS} Collaboration.
-\newblock Properties of the higgs-like boson in the decay $h \rightarrow zz
-  \rightarrow 4l$ in pp collisions at $\sqrt{s}=7 \textrm{ and }
-  8~\textrm{TeV}$.
-\newblock {\em Physics Analysis Summary}, HIG-13-002, 2013.
 
 \bibitem{PFalgo}
 {CMS} Collaboration.
@@ -290,16 +327,6 @@ Matteo Cacciari and Gavin~P. Salam.
 \newblock {\em J. Instrum.}, 6(arXiv:1107.4277. CMS-JME-10-011.
   CERN-PH-EP-2011-102):P11002. 67 p, Jul 2011.
 
-\bibitem{DPS-2013-011}
-{CMS Collaboration}.
-\newblock {Status of the 8 TeV Jet Energy Corrections and Uncertainties based
-  on 11~\ifb of data in CMS}.
-\newblock {\em CMS Performance Note}, DPS-2013/011, 2013.
-
-\bibitem{CMS-PAS-JME-12-002}
-{MET performance in 8 TeV data}.
-\newblock Technical Report CMS-PAS-JME-12-002, {CERN}, Geneva, 2013.
-
 \bibitem{Chatrchyan:1494669}
 CMS Collaboration.
 
@@ -321,11 +348,27 @@ Andreas Hoecker, Peter Speckmayer, Joerg Stelzer, Jan Therhaag, Eckhard von
 \newblock {TMVA: Toolkit for Multivariate Data Analysis}.
 \newblock {\em PoS}, ACAT:040, 2007.
 
+\bibitem{CMS-PAS-JME-13-005}
+{Pileup Jet Identification}.
+\newblock Technical Report CMS-PAS-JME-13-005, CERN, Geneva, 2013.
+
 \bibitem{dymva}
 {G. Cerati, \textit{et al.} }.
 \newblock {A multivariate approach for Drell-Yan rejection in $H \rightarrow
   W^+W^-$ analysis}.
 \newblock {\em CMS Analysis Note}, AN-2012/211, 2012.
+
+\bibitem{Madgraph5p1}
+Johan Alwall, Michel Herquet, Fabio Maltoni, Olivier Mattelaer, and Tim
+  Stelzer.
+\newblock Madgraph 5: going beyond.
+\newblock {\em Journal of High Energy Physics}, 2011(6):1--40, 2011.
+
+\bibitem{Frixione:2007vw}
+Stefano Frixione, Paolo Nason, and Carlo Oleari.
+\newblock {Matching NLO QCD computations with Parton Shower simulations: the
+  POWHEG method}.
+\newblock {\em JHEP}, 0711:070, 2007.
 
 \bibitem{CMS-PAS-HIG-12-038}
 The~CMS collaboration.
@@ -350,11 +393,41 @@ Serguei Chatrchyan et~al.
   leptons}.
 \newblock 2014.
 
+\bibitem{Jadach:1990mz}
+Stanislaw Jadach, Johann~H. Kuhn, and Zbigniew Was.
+\newblock {TAUOLA: A Library of Monte Carlo programs to simulate decays of
+  polarized tau leptons}.
+\newblock {\em Comput.Phys.Commun.}, 64:275--299, 1990.
+
 \bibitem{combination_stat}
 CMS~Collaborations The~ATLAS and the LHC Higgs Combination~Group.
 \newblock \textit{Procedure for the LHC Higgs boson search combination in
   summer 2011}.
 \newblock {\em ATL-PHYS-PUB-2011-11, CMS-NOTE-2011-005}, 2011.
+
+\bibitem{neymanpearson}
+{Neyman, Jerzy; Pearson, Egon S.}
+\newblock On the problem of the most efficient tests of statistical hypothese.
+\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
+  Physical and Engi neering Science}, 231(694-704):289--337, 1933.
+
+\bibitem{cowan_asimov}
+E.~Gross G.~Cowan, K.~Cranmer and O.~Vitells.
+\newblock \textit{Asymptotic formulae for likelihood-based tests of new
+  physics}.
+\newblock {\em The European Physical Journal C}, \textbf{71}:1--19, 2011.
+
+\bibitem{Read:451614}
+A~L Read.
+\newblock {Modified frequentist analysis of search results (the $CL_{s}$
+  method)}.
+\newblock (CERN-OPEN-2000-205), 2000.
+
+\bibitem{Junk:1999kv}
+Thomas Junk.
+\newblock {Confidence level computation for combining searches with small
+  statistics}.
+\newblock {\em Nucl.Instrum.Meth.}, A434:435--443, 1999.
 
 \bibitem{2011arXiv1103.0354C}
 J.~S. {Conway}.
@@ -379,12 +452,6 @@ Stefano Frixione and Bryan~R. Webber.
 \newblock {Matching NLO QCD computations and parton shower simulations}.
 \newblock {\em JHEP}, 0206:029, 2002.
 
-\bibitem{Madgraph5p1}
-Johan Alwall, Michel Herquet, Fabio Maltoni, Olivier Mattelaer, and Tim
-  Stelzer.
-\newblock Madgraph 5: going beyond.
-\newblock {\em Journal of High Energy Physics}, 2011(6):1--40, 2011.
-
 \bibitem{Corcella:2000bw}
 G.~Corcella, I.G. Knowles, G.~Marchesini, S.~Moretti, K.~Odagiri, et~al.
 \newblock {HERWIG 6: An Event generator for hadron emission reactions with
@@ -395,12 +462,6 @@ G.~Corcella, I.G. Knowles, G.~Marchesini, S.~Moretti, K.~Odagiri, et~al.
 Torbjorn Sjostrand, Stephen Mrenna, and Peter~Z. Skands.
 \newblock {PYTHIA 6.4 Physics and Manual}.
 \newblock {\em JHEP}, 0605:026, 2006.
-
-\bibitem{Frixione:2007vw}
-Stefano Frixione, Paolo Nason, and Carlo Oleari.
-\newblock {Matching NLO QCD computations with Parton Shower simulations: the
-  POWHEG method}.
-\newblock {\em JHEP}, 0711:070, 2007.
 
 \bibitem{Chatrchyan:2011id}
 Serguei Chatrchyan et~al.
@@ -442,30 +503,6 @@ Serguei Chatrchyan et~al.
 \newblock {Determination of Jet Energy Calibration and Transverse Momentum
   Resolution in CMS}.
 \newblock {\em JINST}, 6:P11002, 2011.
-
-\bibitem{neymanpearson}
-{Neyman, Jerzy; Pearson, Egon S.}
-\newblock On the problem of the most efficient tests of statistical hypothese.
-\newblock {\em Philosophical Transactions of the Royal Society A: Mathematical,
-  Physical and Engi neering Science}, 231(694-704):289--337, 1933.
-
-\bibitem{cowan_asimov}
-E.~Gross G.~Cowan, K.~Cranmer and O.~Vitells.
-\newblock \textit{Asymptotic formulae for likelihood-based tests of new
-  physics}.
-\newblock {\em The European Physical Journal C}, \textbf{71}:1--19, 2011.
-
-\bibitem{Read:451614}
-A~L Read.
-\newblock {Modified frequentist analysis of search results (the $CL_{s}$
-  method)}.
-\newblock (CERN-OPEN-2000-205), 2000.
-
-\bibitem{Junk:1999kv}
-Thomas Junk.
-\newblock {Confidence level computation for combining searches with small
-  statistics}.
-\newblock {\em Nucl.Instrum.Meth.}, A434:435--443, 1999.
 
 \bibitem{Chatrchyan:1637951}
 {CMS Collaboration}.

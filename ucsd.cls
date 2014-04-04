@@ -405,7 +405,7 @@
 % The number of committee members, which affects both the
 % number of lines and the amount of space between lines
 % on the approval page. 
-\def\@numberofmembers{3}
+\def\@numberofmembers{6}
 \def\@approvalspace{.75in}
 \def\numberofmembers#1{\gdef\@numberofmembers{#1}
 \ifnum \@numberofmembers > 3
@@ -562,6 +562,9 @@ on microfilm and electronically: }}\\
   \hline
 \fi
 
+& \rule{0pt}{\@approvalspace} \\ % Jae 
+\hline % Jae
+
 \ifx\UCSD@cochair\@isnotdefined% No cochair
   &\rule{0pt}{\@approvalspace} \\
   \hline
@@ -659,7 +662,7 @@ on microfilm and electronically: }}\\
 \def\vitapage{\@restonecolfalse\if@twocolumn\@restonecoltrue\onecolumn
      \else \newpage \fi\pagestyle{preliminary}
      \phantomsection
-     \addcontentsline{toc}{frontmatter}{\protect\numberline{}Vita and Publications}}
+     \addcontentsline{toc}{frontmatter}{\protect\numberline{}Vita}}
 % Special label for the vita list
 %
 \def\vitalabel#1{#1\hfill}

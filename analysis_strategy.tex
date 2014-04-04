@@ -180,7 +180,12 @@ depending on the categories.
 %
 \begin{table}[!ht]
   \begin{center}
- {\small
+  \small
+  \label{tab:cutbasedtable}
+  \vspace{0.5cm} 
+  \caption{\mHi-dependent event selection for the cut-based analysis 
+           in the 0-jet and 1-jet categories. }
+  \vspace{0.5cm} 
   \begin{tabular} {|c|c|c|c|c|c|c|}
   \hline
 \mHi~[\GeV] & \ptlmax~[\GeV] & \ptlmin~[\GeV] & \mll~[\GeV]   & \delphill~[$\cdot$] 
@@ -212,10 +217,6 @@ depending on the categories.
     600 & 140 &  25   	& 500 & 175 & 120 - 600 \\
   \hline
   \end{tabular}
-  }
-  \caption{\mHi-dependent event selection for the cut-based analysis 
-           in the 0-jet and 1-jet categories. }
-   \label{tab:cutbasedtable}
   \end{center}
 \end{table}
 
@@ -390,7 +391,7 @@ so we take 20-25~\GeV as a maximum size of a bin for low \mHi\ templates.
 The region($60<\mT<120~\GeV$, $0<\mll<100~\GeV$) is shown.}
 \label{fig:SoverBdiffbinning}
 \end{figure}
-Fig.~\ref{fig:SoverBdiffbinning} shows the S/B with 4 different binnings
+Figure~\ref{fig:SoverBdiffbinning} shows the S/B with 4 different binnings
 in the region where \mHi=125~\GeV\ signal is populated($60<\mT<120~\GeV$, $0<\mll<100~\GeV$)
 in the 0-jet \DF category ;
 bin size of [\mT, \mll]  = [10~\GeV, 10~\GeV], [20~\GeV, 10~\GeV], 
@@ -401,6 +402,12 @@ contains enough statistics.
 
 \begin{table}[htp] 
 \begin{center} 
+\small
+\label{tab:2dbinningrangetest} 
+\vspace{0.5cm}
+\caption{Expected significance with different binnings and range combinations. 
+The result is from 0-jet \DF\ with 12.1 \ifb of data. As a reference, the expected 
+significance from the BDT method is 1.80.} 
 \vspace{0.5cm}
 \begin{tabular}{c|c|c||c|c|c} 
 \hline
@@ -423,11 +430,6 @@ $\mT \times \mll$ & [\GeV]  & significance & $\mT \times \mll$ & [\GeV] & signif
                             & \mll\ : 0 - 150 &   \\
 \hline
 \end{tabular} 
-\vspace{0.5cm}
-\caption{Expected significance with different binnings and range combinations. 
-The result is from 0-jet \DF\ with 12.1 \ifb of data. As a reference, the expected 
-significance from the BDT method is 1.80.} 
-\label{tab:2dbinningrangetest} 
 \end{center} 
 \end{table} 
 
@@ -449,10 +451,15 @@ Considering all these as well as a necessity of fine bins
 in the signal region for the spin-parity hypothesis separation test
 which will be discussed in chapter~\ref{ch:spin}, 
 we use the binning and the ranges as shown in Table~\ref{tab:binning}. 
-\vspace{0.5cm}
 \begin{table}[!htb]
 \begin{center}
 \footnotesize
+\label{tab:binning}
+\vspace{0.5cm}
+\caption{Summary of template parameters. For the high-\mHi\ templates, 
+         overflow up to \mll=600~\GeV\ and \mT=600~\GeV\ is included
+         in the last bin.}
+\vspace{0.5cm}
 %\begin{tabular}{ cm{2cm} | cm{2cm} | lm{10cm} } % needs array package
 \begin{tabular}{c | c | c}
 \hline 
@@ -475,14 +482,10 @@ we use the binning and the ranges as shown in Table~\ref{tab:binning}.
     & 8 bins & \\
 \hline 
 \end{tabular}
-\label{tab:binning}
-\caption{Summary of template parameters. For the high-\mHi\ templates, 
-         overflow up to \mll=600~\GeV\ and \mT=600~\GeV\ is included
-         in the last bin.}
 \end{center}
 \end{table}
 
-The fig.~\ref{fig:2dtemplate_125_0j_1} - \ref{fig:2dtemplate_125_0j_4} show the templates 
+The Figure~\ref{fig:2dtemplate_125_0j_1} - \ref{fig:2dtemplate_125_0j_4} show the templates 
 in the \DF\ 0-jet category at 8 \TeV\
 and the relative statistical uncertainty of the template with respect to the total background 
 for each process. 

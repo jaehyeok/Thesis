@@ -267,7 +267,7 @@ The vertex is retained if the distance between the vertex and the beam line
 is less than 1~\cm.
 %In case there is less than two tracks beam spot is used as a primary vertex. 
 
-Fig.~\ref{fig:VtxEff} shows the vertex reconstruction efficiency as a function 
+Figure~\ref{fig:VtxEff} shows the vertex reconstruction efficiency as a function 
 of number of tracks($N_{track}$) for data and simulation, 
 and the transverse in the x direction and the longitudinal vertex resolution 
 as a function of $N_{track}$ in the jet-enriched data and the min-bias data. 
@@ -368,7 +368,7 @@ At each layer, the trajectory state is updated using the weighed mean of the mea
 and the prediction. When there are multiple compatible hits, the two most compatible ones 
 from $\chi^2$ test are kept. Finally, a track is created if there are at least five hits. 
 
-Fig.~\ref{fig:ElectronEnergyResMC} shows the resolution of reconstructed electron energy 
+Figure~\ref{fig:ElectronEnergyResMC} shows the resolution of reconstructed electron energy 
 as a function of the true electron energy measured with simulation~\cite{PAS-HIG-13-002}.   
 As shown in the figure, precision is dominated by the information 
 from the tracker(blue reverse triangle) and the ECAL(green upright triangle) 
@@ -461,7 +461,7 @@ Red, blue and green are global, standalone and tracker muons,
 respectively~\cite{cmstdr1}.} 
 \label{fig:muon_res}
 \end{figure}
-Fig.~\ref{fig:muon_res} shows the momentum resolution of different muon 
+Figure~\ref{fig:muon_res} shows the momentum resolution of different muon 
 reconstruction algorithms as a function of muon \pt\ 
 in the barrel(left) and endcap(right)~\cite{cmstdr1}. 
 The resolution of standalone muons is dominated by multiple scattering in the material 
@@ -553,7 +553,7 @@ Due to the non-linear calorimeter response of the CMS detector,
 the measured jet energy can be different from the energy of the true parton which 
 initiated the jet. CMS employs a jet energy correction(JEC) 
 method~\cite{Chatrchyan:1369486} factorized into multiple levels, 
-the L1, L2, L3 and the residual L2L3 corrections for data as shown in fig.~\ref{fig:jec}. 
+the L1, L2, L3 and the residual L2L3 corrections for data as shown in Figure~\ref{fig:jec}. 
 \begin{figure}[!hbtp]
 \centering
 \includegraphics[width=.95\textwidth]{figures/jec.pdf}
@@ -588,7 +588,7 @@ residual corrections are applied to data in order to account for the small diffe
 between data and MC. 
 % http://arxiv.org/pdf/1107.4277.pdf
 
-Fig.~\ref{fig:jecuncert} shows the uncertainty on the JEC factor
+Figure~\ref{fig:jecuncert} shows the uncertainty on the JEC factor
 as a function of jet \pt\ at $|\eta_{jet}|=0, 2.0, \textrm{ and }2.7$ 
 They show that the uncertainty is less than 3~\% for jets with 
 $\pt>30~\GeV$ at $|\eta_{jet}|=0 \textrm{ and } 2.0$. 
@@ -646,6 +646,10 @@ the form of correction is given by
 where $\alpha$ and $\beta$ shown in Table~\ref{tab:metxycorrection} are constants 
 and $N_{\textrm{vertex}}$ is the number of primary vertices. 
 \begin{table}[htp] 
+\label{tab:metxycorrection} 
+\vspace{0.5cm} 
+\caption{Parameters used for XY shift correction for \met.} 
+\vspace{0.5cm} 
 \begin{center} 
 \begin{tabular}{c||c|c|c} 
 \hline 
@@ -662,8 +666,6 @@ and $N_{\textrm{vertex}}$ is the number of primary vertices.
 %    metx -= (-2.99576e-02 - 6.61932e-02*nvtx_);
 %    mety -= (+3.70819e-01 - 1.48617e-01*nvtx_);
 \end{tabular} 
-\caption{Parameters used for XY shift correction for \met.} 
-\label{tab:metxycorrection} 
 \end{center} 
 \end{table} 
 %\textcolor{red}{optional : show the met distribution before/after the correction}
@@ -682,7 +684,7 @@ hadronic recoil in the data events with Z or photon as a function of reconstruct
 vertices~\cite{CMS-PAS-JME-12-002}.} 
 \label{fig:metres} 
 \end{figure} 
-Fig.~\ref{fig:metres} shows the resolution of parallel and perpendicular components of 
+Figure~\ref{fig:metres} shows the resolution of parallel and perpendicular components of 
 the hadronic recoil in the data events with Z or photon as a function of reconstructed 
 vertices~\cite{CMS-PAS-JME-12-002}. These events do not have genuine source of 
 \met, \textit{i.e.} no neutrinos in the final state, so \met\ originates from 
@@ -712,7 +714,7 @@ meet the following requirements.
       should be larger than 0.1 in order to avoid counting leptons twice. 
 \end{itemize}
 
-Fig.~\ref{fig:metcomp} shows the distributions of \pfmet\ and \trkmet\ 
+Figure~\ref{fig:metcomp} shows the distributions of \pfmet\ and \trkmet\ 
 for the Drell-Yan and the signal in simulation. The events with the number 
 of reconstructed vertices($N_{vtx}$) greater than 20 and less than 5 
 are drawn separately. In case of Drell-Yan process, \pfmet\ increases 

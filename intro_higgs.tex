@@ -157,8 +157,8 @@ $\displaystyle W^\pm = \frac{1}{\sqrt{2}} \left( W^1 \mp iW^2 \right)$,
 \begin{eqnarray}
 \frac{1}{2} \left( \frac{v g_2}{2} \right)^2 
 \left[ \left( W_\mu^+ \right)^2  + \left( W_\mu^- \right)^2 \right]. 
-\end{eqnarray} 
-Thus, we have the mass of charged W boson $\displaystyle M_W = \frac{v g_2}{2}$.
+\end{eqnarray}
+Thus, we have the mass of charged W boson $\displaystyle m_W = \frac{v g_2}{2}$.
 Now we know that the second term in equation~(\ref{eq:WZmass}) should correspond to 
 Z boson because that is the only remaining massive boson. Imposing the same 
 normalization to the mixed field as the unmixed fields, the physical field for 
@@ -166,7 +166,7 @@ Z boson, $Z_\mu$, is given by
 \begin{eqnarray} 
 Z_\mu = \frac{\left( g_1 B_\mu - g_2 W_\mu^3 \right)}{\sqrt{g_1^2+g_2^2}}  
 \end{eqnarray} 
-which gives its mass, $\displaystyle M_Z = \frac{v}{2} \sqrt{g_1^2+g_2^2}$. 
+which gives its mass, $\displaystyle m_Z = \frac{v}{2} \sqrt{g_1^2+g_2^2}$. 
 
 There is a massless field orthogonal to $Z_\mu$,  
 \begin{eqnarray} 
@@ -185,11 +185,11 @@ using the physical weak boson states, $W_\mu^\pm$ and $Z_\mu$,
 and their masses, we have the following terms for interactions between Higgs and weak bosons,
 \begin{eqnarray}
 \begin{array}{ccc} \multicolumn{2}{c}{\displaystyle 
-2\frac{M_W^2}{v} H(x) W^+_\mu W^-_\mu
-+ \frac{M_Z^2}{v} H(x) \left( Z_\mu \right)^2
+2\frac{m_W^2}{v} H(x) W^+_\mu W^-_\mu
++ \frac{m_Z^2}{v} H(x) \left( Z_\mu \right)^2
 } & \\ & \multicolumn{2}{c}{\hspace{2cm} \displaystyle
-+ \frac{M_W^2}{v^2} H(x)^2 W^+_\mu W^-_\mu 
-+\frac{M_Z^2}{2v^2} H(x)^2 \left( Z_\mu \right)^2.
++ \frac{m_W^2}{v^2} H(x)^2 W^+_\mu W^-_\mu 
++\frac{m_Z^2}{2v^2} H(x)^2 \left( Z_\mu \right)^2.
 } \end{array}   
 \end{eqnarray} 
 For Higgs-Weak boson interactions, the couplings are proportional to the square 
@@ -213,7 +213,7 @@ of weak boson mass.
 \vspace{0.5cm}
 \label{fig:fd_HVterm}
 \end{figure}
-The corresponding Feynman diagrams are shown in Fig~\ref{fig:fd_HVterm}. 
+The corresponding Feynman diagrams are shown in Figure~\ref{fig:fd_HVterm}. 
 Considering additional factorials due to identical particles, the 
 vertex factors can be written as $\displaystyle 2i \frac {m_V^2}{v}$ 
 and $\displaystyle 2i \frac{m_V^2}{v^2}$ for H-VV and HH-VV vertices, respectively, 
@@ -247,7 +247,7 @@ Using this definition, equation~(\ref{eq:HiggsPontential}) becomes
 &=& 
 ... - \frac{1}{2} \mHi^2 H^2 - \frac{\mHi^2}{2v} H^3  - \frac{\mHi^2}{8v^2} H^4    
 \end{eqnarray}
-The corresponding Feynman diagrams are shown in Fig~\ref{fig:fd_Hselfterm}. 
+The corresponding Feynman diagrams are shown in Figure~\ref{fig:fd_Hselfterm}. 
 %
 \begin{figure}[htp]
 \centering
@@ -297,6 +297,10 @@ have both right-handed and left-handed polarizations.
 %We can add SU(2)-invariant terms to the Lagrangian. 
 \begin{table}[htb] 
 \centering
+\vspace{0.5cm} 
+\caption{$\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$ quantum numbers.}
+\vspace{0.5cm} 
+\label{tab:su2Qnum}
 \begin{tabular}{c c c}
 \hline 
       & $T_3$ & Y \\
@@ -307,8 +311,6 @@ $ e_R$                                                           & 0 & -2 \\
 $\left(  \begin{array}{c} \phi_+  \\ \phi_0 \end{array} \right)$      & $\displaystyle  \frac{1}{2} $ & -1 \\
 \hline 
 \end{tabular}
-\label{tab:su2Qnum}
-\caption{$\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$ quantum numbers}
 \end{table}
 Table~\ref{tab:su2Qnum} shows the quantum numbers of  
 $\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$
@@ -455,8 +457,9 @@ and top quark has very large coupling to Higgs boson.
 as a function of \mHi\ at $\sqrt{s}=8~\TeV$ for each 
 production mode. %\cite{Dittmaier:2012vm}. 
 The \ggH\ and \qqH\ processes are 
-calculated in complex-pole-scheme (CPS)~\cite{}, while other WH/ZH and ttH processes 
-are calculated in zero-width-approximation (ZWA)~\cite{}. }
+calculated in complex-pole-scheme(CPS)~\cite{Goria:2011wa}, while other WH/ZH and ttH processes 
+are calculated in zero-width-approximation(ZWA)~\cite{pilkuhn1967interactions}. }
+% Ref is  https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt8TeV
 \label{fig:Higgs_XS_8TeV_LM200}
 \end{figure*}
 
@@ -483,9 +486,10 @@ $\mu_0/2 < \mu_F, \mu_R < 2\mu_0$
 %with a constraint $\displaystyle \frac{1}{2} < \frac{\mu_F}{\mu_R} < 2$. 
 with a constraint $1/2 < \mu_F/\mu_R < 2$. 
 PDF is obtained by fitting on data measured in deep-inelastic scattering, 
-Drell-Yan, and jet production from a wide variety of different experiments~\cite{}. 
+Drell-Yan, and jet production from a wide variety of different experiments. 
 The accuracy on those data can introduce uncertainty on PDF calculation. 
-In addition, strong coupling constant $\alpha_s$ is used in DGLAP evolution~\cite{x} 
+In addition, strong coupling constant $\alpha_s$ is used in DGLAP 
+evolution~\cite{Altarelli:1977zs,Dokshitzer:1977sg,Gribov:1972ri} 
 to the higher $Q^2$ region. Thus, its uncertainty also contributes to 
 the total cross section. There are other uncertainties due to 
 EWK corrections, the different choice of top and bottom quark masses, 
@@ -500,6 +504,10 @@ are based on complex-pole-scheme (CPS), while VH and ttH ones
 are based on zero-width-approximation (ZWA). 
 \begin{table}[htb]
 \centering
+\vspace{0.5cm} 
+\caption{The highest order of QCD and EW calculations.}
+\label{tab:Higgs_XS_8TeV_order}
+\vspace{0.5cm} 
 \begin{tabular}{c c c  }
 \hline
 process     & QCD   & EW \\
@@ -511,8 +519,6 @@ $ pp \rightarrow ZH$        & NNLO  & NLO \\
 $ pp \rightarrow ttH$       & NLO   &     \\
 \hline 
 \end{tabular}
-\label{tab:Higgs_XS_8TeV_order}
-\caption{The highest order of QCD and EW calculations.}
 \end{table}
 The highest order of QCD and EW calculations are summarized in Table 
 \ref{tab:Higgs_XS_8TeV_order}. The uncertainty is a linear combination 
@@ -667,6 +673,14 @@ and the total width.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Limits on Higgs Boson Mass} 
+
+
+The Higgs mass is constrained by various theoretical limits 
+and experimental measurements. This section discusses theoretical 
+limits by perturbative unitarity, triviality and stability, 
+and fine tuning. Then it discusses the experimental limits 
+from indirect and direct measurements as of 2011. 
+
 
 \subsection{Theoretical Limits} 
 
@@ -897,7 +911,7 @@ positive. This requirement gives
 So far the higher order contributions were taken up to 1-loop corrections. 
 There are calculations up to 2-loops and Figure~\ref{fig:trivial_vacstab} 
 shows lower bound (vacuum stability) and upper bound (triviality) of \mHi\ 
-as a function of cutoff scale, $\Lambda_{cut}$~\cite{}.
+as a function of cutoff scale, $\Lambda_{cut}$~\cite{Djouadi20081}.
 
 %
 \subsubsection{Fine tuning}
@@ -1033,6 +1047,15 @@ $3.1\sigma$ and $3.5\sigma$, respectively, around \mHi = 125 \GeV.
 \newpage
 \section{The \hww\ channel} 
 
+The \hww\ is an important channel because of its large production rate, 
+which allows a good statistical power to measure the production rate. 
+It has a special event topology due to Higgs' spin being zero and 
+the V-A nature of leptonic W decays. This special topology results 
+in difference between signal and backgrounds in some kinematic variables
+and those variables are used to separate signal from backgrounds. 
+CMS performed a search for SM Higgs boson with 7~\TeV\ data
+in \hww\ channel and no excess was found~\cite{Chatrchyan:2012ty}. 
+
 %
 \subsection{Large production rate}
 
@@ -1050,6 +1073,12 @@ is large compared to the other sensitive channels, $H \rightarrow ZZ\rightarrow 
 and $H \rightarrow\gamma\gamma$. 
 \begin{table}[htb]
 \centering
+\label{tab:XSBR_8TeV_SM_125}
+\vspace{0.5cm} 
+\caption{$\sigma \times BR$ at $\mHi=125~\GeV$ for most sensitive channels 
+and the expected number of events in $\mathcal{L}_{int} = 20~\ifb$.
+$l$ means electrons or muons.}
+\vspace{0.5cm} 
 \begin{tabular}{c | c c c}
 \hline 
         & $H \rightarrow WW \rightarrow 2l2\nu$   & $H \rightarrow ZZ\rightarrow 4l$ 
@@ -1061,10 +1090,6 @@ $N_{expected}$ in $\mathcal{L}_{int} = 20~\ifb$
         & 4480 &  56 & 1018 \\ 
 \hline 
 \end{tabular}
-\label{tab:XSBR_8TeV_SM_125}
-\caption{$\sigma \times BR$ at $\mHi=125~\GeV$ for most sensitive channels 
-and the expected number of events in $\mathcal{L}_{int} = 20~\ifb$.
-$l$ means electrons or muons.}
 \end{table}
 Table~\ref{tab:XSBR_8TeV_SM_125} shows $\sigma \times \textrm{BR}$ for 
 the most sensitive channels, \hww, $H \rightarrow ZZ\rightarrow 4l$
@@ -1158,7 +1183,7 @@ drop at \mHi.
 \subsection{CMS \hww\ result before 2012}
 
 Before 2012, 4.6 \ifb\ of data at $\sqrt{s}=7~\TeV$ collected by CMS detector 
-was analyzed for SM Higgs search in \hww\ channel~\cite{Chatrchyan201291}. 
+was analyzed for SM Higgs search in \hww\ channel~\cite{Chatrchyan:2012ty}. 
 \begin{figure}
 \centering
 \includegraphics[width=0.9\textwidth]{figures/limits_nj_shape.pdf}
@@ -1167,9 +1192,8 @@ The observed(expected) exclusion limit at CL  = 95 \% is \mHi = 129 - 270(127 - 
 \label{fig:hww2011}
 \end{figure}
 Figure~\ref{fig:hww2011} shows exclusion limit of SM Higgs boson 
-using a multivariate technique based on the boosted decision tree(BDT) algorithm~\cite{}.
+using a multivariate technique based on the boosted decision tree(BDT) algorithm~\cite{Chatrchyan:2012ty}.
 The observed exclusion limit at \CLs  = 95 \% is \mHi\ = 129 - 270 \GeV\
 with expected limit \mHi\ = 127 - 270 \GeV. There is a slight overall excess 
 in low \mHi\ region which might indicate existence of SM Higgs boson at low \mHi.  
 
-%FIXME : I am here 

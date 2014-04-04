@@ -1,11 +1,11 @@
 In order to test a compatibility of observed data with a hypothesis, 
 one performs statistical hypothsis tests. In the Higgs search or 
-other searchesn in general, there are two hypotheses to be tested: 
+other searches in general, there are two hypotheses to be tested: 
 a hypothsis that Higgs exists and a hypothesis that Higgs does not exist. 
 For a quantitative analysis, we first construct a test statistic. 
 It is a function of expected signal($s$) and background yields($b$),
 and the observed data. Then, probability density functions(\textit{pdf}) for 
-each hypotheiss is constructed by pseudo-data or analytic functions. 
+each hypothesis are constructed by pseudo-data or analytic functions. 
 After that, the compatibility of data with each hypothesis is estimated
 in terms of p-value, the probability for the \textit{pdf} to have the measurement 
 at observed data or greater. 
@@ -72,7 +72,18 @@ the log of the ratio is taken because of a number of advantages
 Terms in exponent becomes a multiplication factor.}.  
 At the LHC, due to its asymptotic properties which is described in detail 
 in the reference~\cite{cowan_asimov}, 
-the profiled log-likelihood ratio (LLR) is used as a test statistic.   
+the profile log-likelihood ratio (LLR) is used as a test statistic.    
+The profile log-likelihood is constructed using values of nuisance parameters 
+that maximize the likelihood function. By varing a nuisance parameter($\theta_i$)
+according to the constraint function($p\left( \tilde{\theta_i} | \theta_i \right)$) 
+a new central value along with new uncertainty is determined and used 
+for statistical interpretation. However, there can be a case where 
+some nuisance parameters are over-constrained, \textit{i.e.} becoming too 
+small compared to the estimated value, because of high statistics in data. 
+Therefore, it is important to examine the post-fit nuisance parameters 
+and make sure that over-contraining some of them does not affect the final 
+results. This issue is discussed in section~\ref{sec:postfit-ana}.
+
 The functional form of the statistic is 
 \begin{eqnarray} 
 \tilde{q}_\mu 
@@ -259,11 +270,10 @@ q_0
              & \qquad \textrm{ with } \hat{\mu} < 0    
 \end{array} \right.
 \end{eqnarray} 
-We don't consider downward fluctuations in data($\hat{\mu} < 0$) as a 
-incompatibility with data as upward fluctuation. The downward fluctuations 
+We don't consider downward fluctuations in data($\hat{\mu} < 0$) as an 
+compatibility with data. The downward fluctuations 
 is more likely due to systematic uncertainties such as over-estimation 
-of backgrounds. So, in case of $\hat{\mu} < 0$ the test statistic is 
-set 0. 
+of backgrounds. So, in case of $\hat{\mu} < 0$ the test statistic, $q_0$, is set 0. 
 
 Given the test statistic, we construct the \textit{pdf}, $f(q_0|0,\hat{\theta}_0)$, 
 with many pseudo-datasets generated assuming \textit{background-only} hypothesis.
@@ -273,7 +283,7 @@ p_0
 &=& P \left( q_0 \ge q_0^{obs} | background-only \right)  \\
 &=& \int^{\infty}_{ q_0^{obs} }  f\left( q_0 | 0, \hat{\theta}_0 \right) dq_0.
 \end{eqnarray} 
-The calculated p-value can be converted into an one-sided%(\textcolor{red}{Why one-sided?}) 
+The calculated p-value can be converted into an one-sided %(\textcolor{red}{Why one-sided?}) 
 significance Z by finding Z that satisfies 
 \begin{eqnarray} 
 p-value 

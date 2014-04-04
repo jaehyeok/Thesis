@@ -25,11 +25,12 @@ and normalization would not describe the data correctly,
 \textit{i.e.} difference between data and the post-fit shape and normalization
 would be large. 
 
-This section describes the validation of fit model of dominant backgrounds, 
+This section describes the validation of the fit model for the dominant backgrounds, 
 \qqww, \topbkg, \Wjets\ and \wgamma/\wgammastar, using dedicated control regions. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Validation of \qqww\ fit model}  
+\label{subsec:valqqww}
 
 The most sensitive channel, 0-jet \DF, is dominated by the $qq\rightarrow\WW$ background. 
 Therefore validating the $qq\rightarrow\WW$ fit model is crucial. 
@@ -39,7 +40,7 @@ The basic idea is that if the fit model is not correct then the prediction using
 one region may not be compatible with that using another region. To test this, 
 we use the post-fit result in one control region, and predict the shape 
 and the normalization in another region. 
-Following is the procedure and the result of this test. 
+Following are the procedure and the result of this test. 
 
 We first select two control regions with similar statistics. It is important that 
 both regions have a similar number of events so that they have a similar statistical 
@@ -61,8 +62,13 @@ The CR1 is defined as $120<\mT<280~\GeV$ and $12<\mll<200~\GeV$,
 and the CR2 is defined as $60<\mT<120~\GeV$ and $60<\mll<200~\GeV$. 
 %
 \begin{table}
-\footnotesize
 \begin{center}
+\footnotesize
+\label{tab:WWctlregions_composition}
+\vspace{0.5cm} 
+\caption{Expected signal and background yields in the two control regions(CR1 and CR2) 
+         and the full temmplate region(Full range).} 
+\vspace{0.5cm} 
 \begin{tabular}{c|ccccc|c}
 \hline
 Region      & Signal & \qqww & \ggww & \vv & \topbkg &  \\
@@ -79,8 +85,6 @@ Full range  &  282.8 &  331.8 &  115.6  & 167.8 &  46.0 &   5729 \\
 \hline
 \end{tabular}
 \end{center}
-\caption{Definition of signal region(SR), and two control regions(CR1 and CR2).} 
-\label{tab:WWctlregions_composition}
 \end{table}
 The composition of signal and backgrounds in the two control regions is summarized 
 in Table \ref{tab:WWctlregions_composition}. Both regions are dominated by \qqww  
@@ -105,6 +109,10 @@ shape and normalization for those processes are already post-fit results.
 %
 \begin{table}
 \begin{center}
+\label{tab:sanity_fullrange}
+\vspace{0.5cm} 
+\caption{Comparison of normalization from nominal and full range fits.} 
+\vspace{0.5cm} 
 \begin{tabular}{c|cccc}
 \hline
 Fit         & \qqVH    & \qqH   & \ggH   & \qqww          \\
@@ -114,13 +122,11 @@ Full range  & 4.8   & 1.9   & 143.6 &  3947.0       \\
 \hline
 \end{tabular}
 \end{center}
-\caption{Comparison of normalization from nominal and full range fits.} 
-\label{tab:sanity_fullrange}
 \end{table}
 As a sanity check we compare the post-fit shape and normalization of \qqww\
 from the full range fit with those from the nominal fit in 
 Figure~\ref{fig:sanity_fullrange} and Table~\ref{tab:sanity_fullrange}. 
-Both shapes and normalizations using full range card 
+Both shapes and normalizations from the full range fit 
 are consistent with the nominal fit results. 
 
 Since the full range fit has been validated, 
@@ -176,11 +182,16 @@ $N^{data(simulation)}_i$ is the yield of data(simulation) in the $i^{th}$ bin
 and $\sigma^{data(simulation)}_i$ is the uncertainty of data(simulation) 
 in the $i^{th}$ bin. As shown on each plot, the $\chi^2/n.d.f.$
 is close to 1, which means that all distributions show a good agreement with data.
-
 This indicates that our \qqww\ fit model is not biased.
+
 %
 \begin{table}
 \begin{center}
+\label{tab:bestfitmu_compare}
+\vspace{0.5cm} 
+\caption{Comparison of the best-fit $\mu$ values from the full range, CR1 and CR2 fits, 
+where $\mu$ is the signal strength.} 
+\vspace{0.5cm} 
 \begin{tabular}{c|ccc}
 \hline
                     & full range fit    & CR1 fit   & CR2 fit   \\
@@ -189,16 +200,52 @@ Best-fit $\mu$      & 0.63              & 0.63      & 0.62      \\
 \hline
 \end{tabular}
 \end{center}
-\caption{Comparison of the best-fit $\mu$ values from the full range, CR1 and CR2 fits.} 
-\label{tab:bestfitmu_compare}
 \end{table}
 
-Table~\ref{tab:bestfitmu_compare} shows the best-fit $\mu$ values from full range, 
-CR1 and CR2 fits. Using different control regions results in consistent 
-best-fit $\mu$ values. 
-This is an another evidence that our fit model is correct. 
+Table~\ref{tab:bestfitmu_compare} shows the best-fit $\mu$(signal strength) 
+values from full range, CR1 and CR2 fits. 
+Using different control regions results in consistent best-fit $\mu$ values. 
+This is another evidence that our fit model is correct. 
 
-Therefore, we conclude that our fit model for \qqww\ process fits data correctly.  
+The fit model is further examined by using an alternate shape(MC@NLO or Powheg) 
+as the central shape and the central shape(Madgraph) as an alternate shape.   
+Ideally, if the fit model is consistent with data, switching central and 
+alternate shapes should not affect the final result because any difference 
+between data and prediction should be covered by the shape uncertainty. 
+%
+\begin{table}[htp] 
+\begin{center} 
+\small
+\vspace{0.5cm}
+\caption{Exclusion limit on the production rate of \hww\ at \CLs=95~\%
+normalized by SM prediction, 
+significance in the unit of standard deviation($\sigma$) 
+and the observed(best-fit) signal strength using different 
+central shapes for \qqww\ process in the shape-based analysis. } 
+\vspace{0.5cm}
+\label{tab:diffqqwwshape} 
+\begin{tabular}{c|ccc} 
+\hline 
+Central & Exclusion limit & Significance & Signal strength  \\ 
+shape & observed / expected  & observed / expected & observed \\ 
+\hline 
+\hline 
+Madgraph(default) & $1.2~/~0.4$ & $4.0\sigma~/~5.2\sigma$ & $0.76\pm0.21$ \\
+MC@NLO            & $1.2~/~0.4$ & $4.2\sigma~/~5.3\sigma$ & $0.82\pm0.24$ \\
+Powheg            & $1.2~/~0.4$ & $3.9\sigma~/~5.1\sigma$ & $0.74\pm0.21$ \\
+\hline 
+\end{tabular} 
+\end{center} 
+\end{table} 
+%
+Table~\ref{tab:diffqqwwshape} shows exclusion limit normalized by SM prediction, 
+significance in the unit of standard deviation($\sigma$) 
+and the observed(best-fit) signal strength using different 
+central shapes for \qqww\ process in the shape-based analysis.
+It shows that the results do not depend on the choice of central shape.   
+As mentioned, this is an indication that our fit model is correct. 
+
+Based on above observations, we conclude that our fit model for \qqww\ process fits data correctly.  
 
 %%%%
 \subsection{Validation of \topbkg\ fit model} 
@@ -246,6 +293,7 @@ that the \Wjets\ and \wgamma/\wgammastar\ fit models are correct.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Post-fit Analysis}
+\label{sec:postfit-ana}
 
 Fit is a tool that determines the normalization and shape of the 
 signal and the backgrounds that describes the data best. 
@@ -277,22 +325,27 @@ where $\theta_{\textrm{pre-fit(post-fit)}}$ is the central value of a nuisance
 before(after) the fit, and $\sigma_{\textrm{pre-fit}}$ is the assigned uncertainty 
 to that nuisance. If the prediction is perfect, and there is no variation of 
 the nuisance by fit, then the Pull should be 0. The Pull with larger than 1, 
-\textit{i.e.} the variation if larger than the assigned error, may indicate 
+\textit{i.e.} the variation is larger than the assigned error, may indicate 
 that the fit model is not correct or a lack of understanding of that nuisance. 
 
 One of the reasons why we rely on fit is that the data can constrain nuisances 
 more than the assigned uncertainties. If there is a region that is dominated by 
 a certain background process then the fit can use that region to constrain that 
-background. But, if the post-fit uncertainty is larger than the assigned one, 
-this might be an evidence that the assigned uncertainty is smaller than what is 
-supposed to be. In order to assess any effects of this kind, we define the 
+background. Also, as discussed in section~\ref{sec:stat_exclusion}, profiling 
+nuisances can sometimes over-constrains them. Therefore, we should verify  
+that the nuisances deserve to be over-constrained, and if they do not, what the 
+impact of these nuisance parameters to the final result is, for example, 
+to the measurement of signal strength. 
+
+In order to assess any effects of this kind, we define the 
 normalized uncertainty, $\sigma_{\textrm{norm}}$, which is defined as a 
-ratio of the post-fit uncertainty to the pre-fit uncertainty of a nuisance, 
+ratio of the post-fit uncertainty($\sigma_{\textrm{post-fit}}$) 
+to the pre-fit uncertainty($\sigma_{\textrm{pre-fit}}$) of a nuisance, 
 \begin{eqnarray} 
 \sigma_{\textrm{norm}} = \frac{\sigma_{\textrm{post-fit}}}{\sigma_{\textrm{pre-fit}}}. 
 \end{eqnarray} 
-The $\sigma_{\textrm{norm}}$ larger than 1 means that the nuisance is not constrained by 
-fit.
+Nuisances with $\sigma_{\textrm{norm}}$ much smaller than 1 should be 
+examined to avoid the issue of over-constraining. 
 
 %\textcolor{red}{Make sure how $\sigma_{\textrm{post-fit}}$ is derived by the fit. 
 %can go over an example in the text book}  
@@ -339,32 +392,51 @@ The nuisances are divided into 5 groups; nuisances that are used (a) in all fina
 (d) only in the \DF\ 1-jet category,  and (e) only in the \SF\ 1-jet category. 
 
 There is one nuisance parameter that has Pull greater than 1. 
-But, it is one of the theory uncertainties on the \ggww process. 
+It is one of the theory uncertainties on the \ggww process. 
 Given that this process is not the dominant background process, 
-and the exact value of Pull is 1.023, it does not affect the
-result of the statistical interpretation.
-There are several nuisances that have $\sigma_{\textrm{norm}}$ much 
-less than 1. It is expected that $\sigma_{\textrm{norm}}$ can be less than 1, 
-but at the same time we need to examine the over-constraining of 
-those nuisances. 
+it does not affect the result of the statistical interpretation. 
+This nuiscance causes a large variation of \ggww\ normalization by fit,
+which is discussed in section~\ref{sec:postnorm}.
 
+%There are several nuisances that have $\sigma_{\textrm{norm}}$ much 
+%less than 1. It is expected that $\sigma_{\textrm{norm}}$ can be less than 1, 
+%but at the same time we need to examine the over-constraining of 
+%those nuisances. 
 %CMS_hww_MVALepResBounding  :     -0.804 +/-      0.234
 %CMS_hww_MVAMETResBounding  :     -0.064 +/-      0.225
 %CMS_hww_MVATopBounding     :     -0.003 +/-      0.081
 %CMS_hww_MVAWWBounding      :      0.103 +/-      0.094
 %CMS_hww_MVAWWNLOBounding   :     -0.244 +/-      0.101
-There are 5 nuisance parameters that are constrained by more than 30 \%, 
+There are 5 shape nuisance parameters that are constrained by more than 70 \%, 
 \textit{i.e.} $\sigma_{\textrm{norm}}$ is less than 0.3. They are 
 instrumental nuisances for lepton momentum resolution, \met\ resolution 
 and alternate shape nuisances for \qqww\ and \topbkg.
-The analysis is not designed to constrain the instrumental nuisances, 
-thus some nuisances of this kind can be over-constrained allowing 
-others nuisance not being constrained enough. In addition removing 
-these nuisance from the statistical interpretation does 
-change the results. In addition, we discussed that the fit model 
-for  \qqww\ and \topbkg\ were validated using dedicated control regions.  
-So, we conclude that the over-constraint of the these nuisances does 
-not affect the final result. 
+The analysis is not designed to constrain the instrumental nuisances 
+as opposed to, for example, $Z\to \ell\ell$ where lepton momentum resolution
+can be constrained using the width of Z peak. 
+Thus, some nuisances of this kind can be over-constrained 
+as an artifact of the fit allowing others nuisance not being constrained enough. 
+In section~\ref{sec:systinst}, it is mentioned that 
+the instrumental uncertainties does not affect the final result.
+This was re-confirmed by that the final result does not change 
+even without these nuisance parameters or replacing them by normalization 
+nuisance parameters used by cut-based method.  
+
+Apart from the intstrumental nuiscance parameters, the \qqww\ and \topbkg\ shape 
+nuisance parameters can be constrained by the information in the signal-free region, 
+\textit{i.e.}, high \mT\ and/or high \mll. But, the degree by which they are 
+constrained is still questionable. In section~\ref{subsec:valqqww} it was 
+confirmed that switching central and alternate shape of \qqww\ does not 
+affect the final result. In the fit's point of view switching the central and 
+an alternate shape is effectively forcing $1\sigma$ variation 
+with respect to the default configuration. Table~\ref{tab:diffqqwwshape} 
+shows that the result is not affected by switching the \qqww\ central 
+shape to two alternate shapes, MC@NLO and Powheg. 
+This means that even though these nuisance parameters were not constrained,
+the final result would not change. They have small impact on the final 
+quantities we measure. So, we conclude that the over-constraint of the these 
+nuisance parameters is acceptable.   
+ 
 
 %\subsection{Correlations of nuisances}
 %
@@ -428,6 +500,7 @@ not affect the final result.
 %
 %
 \subsection{Post-fit Result of Normalization} 
+\label{sec:postnorm}
 
 In this section we check if there is any process of which post-fit 
 normalization changes dramatically. A large variation which touches 
@@ -436,6 +509,10 @@ the fit model is not correct.
 
 \begin{table}[ht!]
 \begin{center}
+\label{tab:postfitnorm_of0j8tev}
+\vspace{0.5cm} 
+\caption{The pre-fit and post-fit normalizations in \DF\ 0-jet category in 8~\TeV.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc|cc}
 \hline
 \hline
@@ -459,13 +536,15 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \DF\ 0-jet category in 8~\TeV.}
-\label{tab:postfitnorm_of0j8tev}
 \end{center}
 \end{table}
 
 \begin{table}[ht!]
 \begin{center}
+\label{tab:postfitnorm_of1j8tev}
+\vspace{0.5cm} 
+\caption{The pre-fit and post-fit normalizations in \DF\ 1-jet category in 8~\TeV.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc|cc}
 \hline
 \hline
@@ -489,13 +568,15 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \DF\ 1-jet category in 8~\TeV.}
-\label{tab:postfitnorm_of1j8tev}
 \end{center}
 \end{table}
 
 \begin{table}[ht!]
 \begin{center}
+\label{tab:postfitnorm_sf0j8tev}
+\vspace{0.5cm} 
+\caption{The pre-fit and post-fit normalizations in \SF\ 0-jet category in 8~\TeV.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc|cc}
 \hline
 \hline
@@ -519,13 +600,15 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \SF\ 0-jet category in 8~\TeV.}
-\label{tab:postfitnorm_sf0j8tev}
 \end{center}
 \end{table}
 
 \begin{table}[ht!]
 \begin{center}
+\label{tab:postfitnorm_sf1j8tev}
+\vspace{0.5cm} 
+\caption{The pre-fit and post-fit normalizations in \SF\ 1-jet category in 8~\TeV.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc|cc}
 \hline
 \hline
@@ -549,13 +632,15 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \SF\ 1-jet category in 8~\TeV.}
-\label{tab:postfitnorm_sf1j8tev}
 \end{center}
 \end{table}
 
 \begin{table}[ht!]
 \begin{center}
+\label{tab:postfitnorm_of0j7tev}
+\vspace{0.5cm} 
+\caption{The pre-fit and post-fit normalizations in \DF\ 0-jet category in 7~\TeV.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc|cc}
 \hline
 \hline
@@ -577,13 +662,15 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \DF\ 0-jet category in 7~\TeV.}
-\label{tab:postfitnorm_of0j7tev}
 \end{center}
 \end{table}
 
 \begin{table}[ht!]
 \begin{center}
+\label{tab:postfitnorm_of1j7tev}
+\vspace{0.5cm} 
+\caption{The pre-fit and post-fit normalizations in \DF\ 1-jet category in 7~\TeV.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc|cc}
 \hline
 \hline
@@ -605,13 +692,15 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \DF\ 1-jet category in 7~\TeV.}
-\label{tab:postfitnorm_of1j7tev}
 \end{center}
 \end{table}
 
 \begin{table}[ht!]
 \begin{center}
+\label{tab:postfitnorm_sf0j7tev}
+\vspace{0.5cm} 
+\caption{The pre-fit and post-fit normalizations in \SF\ 0-jet category in 7~\TeV.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc|cc}
 \hline
 \hline
@@ -632,13 +721,16 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \SF\ 0-jet category in 7~\TeV.}
-\label{tab:postfitnorm_sf0j7tev}
 \end{center}
 \end{table}
 
 \begin{table}[ht!]
 \begin{center}
+\small
+\label{tab:postfitnorm_sf1j7tev}
+\vspace{0.5cm} 
+\caption{The pre-fit and post-fit normalizations in \SF\ 1-jet category in 7~\TeV.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc|cc}
 \hline
 \hline
@@ -659,8 +751,6 @@ the fit model is not correct.
 \hline
 \hline
 \end{tabular}
-\caption{The pre-fit and post-fit normalizations in \SF\ 1-jet category in 7~\TeV.}
-\label{tab:postfitnorm_sf1j7tev}
 \end{center}
 \end{table}
 
@@ -668,13 +758,17 @@ Tables~\ref{tab:postfitnorm_of0j8tev} - \ref{tab:postfitnorm_sf1j7tev} show
 the pre-fit and post-fit normalizations of each process, and the difference 
 in absolute yield and relative fraction in \%, in each categories. In general 
 most of the processes are stable, but \ggww has a large change. This is driven 
-by the nuisance, \verb|QCDscale_ggVV|, which was pulled by 1$\sigma$. 
+by the one theory nuisance which was pulled by 1$\sigma$. 
 This nuisance is anti-correlated with those of \qqww\ and \topbkg, 
-which are moved down by the fit. Given that this background is small, 
-and its shape is different from that of signal, this does not 
-affect the result of statistical interpretation.
-
-
-
-
-
+which are moved down by the fit. 
+In \SF\ channel the shift is less than 10~\% of signal, for example, 
+Table~\ref{tab:postfitnorm_sf0j8tev} shows that the shift is 3.2 
+which is about 4~\% of the signal.  
+In \DF\ channel the shift is as large as 50~\% of signal, 
+but its shape is different from that of signal as shown in
+Figure~\ref{fig:2dtemplate_125_0j_1} and \ref{fig:2dtemplate_125_0j_2} 
+and thus the shift in the region where signal is populated is negligible.  
+% in 8TeV 0jet 
+% root [9] histo2_ggWW.Integral(1,4,1,3)
+% (const Double_t)2.37579457759857178e+01 
+Therefore, it does not affect the final result of statistical interpretation.

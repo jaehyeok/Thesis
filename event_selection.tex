@@ -87,8 +87,14 @@ the kinematics(\pt\ and \Eta).
 The naming convention and the corresponding 
 cut variables with their cut values are listed in Table~\ref{tab:trg_requirement_def}.
 %
-\begin{table}[!ht]
+\begin{table}[htp]
  \centering
+ \label{tab:trg_requirement_def}
+ \vspace{0.5cm}  
+ \caption{Summary of requirements applied to electrons in the analysis triggers.
+The selection requirements are shown for electrons in the barrel (endcap).
+The abbreviation in the names means L=Loose, VL=Very Loose, T=Tight, and VT=Very Tight.}
+ \vspace{0.5cm}  
  \begin{tabular}{l|c}
    \hline
    name                       &  criterion \\
@@ -130,10 +136,6 @@ cut variables with their cut values are listed in Table~\ref{tab:trg_requirement
                        			& $\mathrm{TrkIso/E_T <0.05\;(0.05)}$\\
     \hline
  \end{tabular}
- \caption{Summary of requirements applied to electrons in the analysis triggers.
-The selection requirements are shown for electrons in the barrel (endcap).
-The abbreviation in the names means L=Loose, VL=Very Loose, T=Tight, and VT=Very Tight.}
- \label{tab:trg_requirement_def}
 \end{table}
 The H/E is the ratio of energy deposit in HCAL to that of ECAL. 
 The $\sigma_{\eta\eta}$ is the weighted sum of \Eta\ difference between the 
@@ -153,8 +155,14 @@ The details of these variables are discussed in section~\ref{sec:electron}.
 
 In this analysis we use double-lepton triggers as shown in Table~\ref{tab:trg_doublelepton} 
 and single-lepton triggers as shown in Table~\ref{tab:trg_singlelepton}.
-\begin{table}[!ht]
+\begin{table}[htp]
   \centering 
+  \small
+  \label{tab:trg_doublelepton}
+  \vspace{0.5cm}  
+  \caption{Double-lepton triggers used to collect signal events. 
+           The naming convention is shown in Table~\ref{tab:trg_requirement_def}.} 
+  \vspace{0.5cm}  
   \begin{tabular} {l|l}
   \hline
   Double-lepton trigger name & L1 seed \\
@@ -174,13 +182,15 @@ and single-lepton triggers as shown in Table~\ref{tab:trg_singlelepton}.
   %190456-190738 %190762-191419 %191512-193686 %193806-194533
   \hline
   \end{tabular} 
-  \caption{Double-lepton triggers used to collect signal events. 
-           The naming convention is shown in Table~\ref{tab:trg_requirement_def}.} 
-  \label{tab:trg_doublelepton}
 \end{table}
 %
-\begin{table}[!ht]
+\begin{table}[htp]
   \centering 
+  \label{tab:trg_singlelepton}
+  \vspace{0.5cm}  
+  \caption{Single-lepton triggers used to collect signal events. 
+           The naming convention is shown in Table~\ref{tab:trg_requirement_def}.} 
+   \vspace{0.5cm} 
   \begin{tabular} {l|l}
   \hline
   Single-lepton trigger name & L1 seed \\
@@ -192,9 +202,6 @@ and single-lepton triggers as shown in Table~\ref{tab:trg_singlelepton}.
   %190456-190738 %190762-193686 %193806-194533
   \hline \hline
   \end{tabular}
-  \caption{Single-lepton triggers used to collect signal events. 
-           The naming convention is shown in Table~\ref{tab:trg_requirement_def}.} 
-  \label{tab:trg_singlelepton}
 \end{table}
 The double-lepton triggers require two HLT objects to be present, 
 and each of them is required to match an L1 seed. The offline lepton \pt\ 
@@ -277,9 +284,15 @@ for measurement of fake rate and estimation of its systematic uncertainty.
 %and the photon triggers used for this analysis are listed in the Table~\ref{tab:}.
 
 
-\begin{table}[!ht]
+\begin{table}[htp]
   \begin{center}
- {\small
+   \label{tab:triggers_fr}
+   \vspace{0.5cm} 
+  \caption{Utility triggers for fake rate method. %and zeta method. 
+  The identification and isolation requirements for electrons are described 
+  in Table~\ref{tab:trg_requirement_def}. 
+  Jet30 in the electron triggers means that there should be at least one jet of $\pt>30~\GeV$.}
+   \vspace{0.5cm} 
   \begin{tabular} {l|l}
 \hline
  Trigger name & L1 seed \\
@@ -304,14 +317,6 @@ for measurement of fake rate and estimation of its systematic uncertainty.
 % HLT\_Photon90\_R9Id90\_HE10\_Iso40\_EBOnly\_v[2-4]					& L1\_SingleEG22		\\ %190456-190738 190762-191419 %191512-194731
     \hline 
   \end{tabular}
-}
-  \caption{Utility triggers for fake rate method. %and zeta method. 
-  The identification and isolation requirements for electrons are described in Table~\ref{tab:trg_requirement_def}. 
-  Jet30 in the electron triggers means that there should be at least one jet of $\pt>30~\GeV$.
-%The identification and isolation requirements for photons are described in Table~\ref{tab:PhotonPlusLeptonTriggerCuts}.
-}
-%and ``$\zeta$ method " are used for Drell-Yan background estimation.}
-   \label{tab:triggers_fr}
   \end{center}
 \end{table}
 
@@ -522,8 +527,13 @@ a track and an ECAL energy deposit as well as electrons from pileup vertices.
 
 For selecting good electrons, we finally require that the BDT score be greater 
 than the values depending on the kinematic region as shown in Table~\ref{tab:electronid_bdtcut}. 
-\begin{table}[!ht]
+\begin{table}[htp]
   \centering 
+  \label{tab:electronid_bdtcut}
+  \vspace{0.5cm}  
+  \caption{Cut values on BDT score for electron identification. Electrons with BDT score 
+  greater than the corresponding values in the table are considered as good electrons.} 
+  \vspace{0.5cm}  
   \begin{tabular} {c||c|c|c}
   \hline
         & $0<|\eta|<0.8$ & $0.8<|\eta|<1.479$ & $1.479<|\eta|<2.5$\\
@@ -533,9 +543,6 @@ than the values depending on the kinematic region as shown in Table~\ref{tab:ele
    $\pt>20~\GeV$            & 0.94  & 0.85  & 0.92 \\ 
   \hline 
   \end{tabular}
-  \caption{Cut values on BDT score for electron identification. Electrons with BDT score 
-  greater than the corresponding values in the table are considered as good electrons.} 
-  \label{tab:electronid_bdtcut}
 \end{table}
 
 % isolation 
@@ -572,8 +579,12 @@ where $\rho$ is the event-by-event energy density~\cite{x} calculated using
 \texttt{kt6PFJets} algorithm~\cite{x}, 
 and $\textrm{A}_{\textrm{eff}}$ is the effective area as shown 
 in Table~\ref{tab:electron_Aeff}. 
-\begin{table}[!ht]
+\begin{table}[htp]
   \centering 
+  \label{tab:electron_Aeff}
+  \vspace{0.5cm}  
+  \caption{Effective area used for electron isolation calculation.}
+  \vspace{0.5cm}  
   \begin{tabular} {c||c|c|c|c|c|c}
   \hline
     $|\eta|$    & 0 - 1.0 & 1.0 - 1.479 & 1.479 - 2.0 & 2.0 - 2.2 & 2.2 - 2.3 & 2.3 - 2.4  \\
@@ -581,8 +592,6 @@ in Table~\ref{tab:electron_Aeff}.
     $\textrm{A}_{\rm{eff}}$  & 0.19 & 0.25 & 0.12 & 0.21 & 0.27 & 0.44 \\ 
   \hline 
   \end{tabular}
-  \caption{Effective area used for electron isolation calculation.}
-  \label{tab:electron_Aeff}
 \end{table}
 The correction is applied to only neutral particles because charged particles 
 are required to be from the event primary vertex. 
@@ -747,11 +756,16 @@ and 0.86 (0.82) in $\pt~>20~\GeV$. The cut values correspond to the ones in barr
 
 \begin{table}[htp]
 	\centering
+    \footnotesize
+	\label{tab:muAeff} 
+    \vspace{0.5cm} 
+    \caption{ Effective areas used for muon isolation. They were calculated with Fall11 MC sample.}
+    \vspace{0.5cm} 
 		\begin{tabular}{c|c|c|c|c|c|c}
 			\hline 
 				\multicolumn{7}{c}{PF gamma} \\
 	  	    \hline
-			 	$|\eta|$     & $0.0 - 1.0$ & $1.0 - 1.479$ & $1.479 - 2.0$ & $2.0 - 2.2$ & $2.2 - 2.3$ & $2.3-$ \\       		
+			 	$|\eta|$     & $0.0 - 1.0$ & $1.0 - 1.479$ & $1.479 - 2.0$ & $2.0 - 2.2$ & $2.2 - 2.3$ & $2.3-2.4$ \\       		
 	  	    \hline \hline
 				$0.0<dR<0.1$ & 0.004& 0.002& 0.003& 0.009& 0.003& 0.011 \\
 				$0.1<dR<0.2$ & 0.012& 0.008& 0.006& 0.012& 0.019& 0.024 \\
@@ -761,7 +775,7 @@ and 0.86 (0.82) in $\pt~>20~\GeV$. The cut values correspond to the ones in barr
 	  	    \hline \hline 
 				\multicolumn{7}{c}{PF neutral hadron} \\
 	  	    \hline 
-			 	$|\eta|$     & $0.0 - 1.0$ & $1.0 - 1.479$ & $1.479 - 2.0$ & $2.0 - 2.2$ & $2.2 - 2.3$ & $2.3-$ \\       		
+			 	$|\eta|$     & $0.0 - 1.0$ & $1.0 - 1.479$ & $1.479 - 2.0$ & $2.0 - 2.2$ & $2.2 - 2.3$ & $2.3-2.4$ \\       		
 	  	    \hline \hline
 				$0.0<dR<0.1$ & 0.002& 0.004& 0.004& 0.004& 0.010& 0.014 \\
 			    $0.1<dR<0.2$ & 0.005& 0.007& 0.009& 0.009& 0.015& 0.017 \\
@@ -770,8 +784,6 @@ and 0.86 (0.82) in $\pt~>20~\GeV$. The cut values correspond to the ones in barr
 				$0.4<dR<0.5$ & 0.017& 0.026& 0.035& 0.046& 0.063& 0.135 \\ 
 			\hline
 		\end{tabular}
-		\caption{ Effective areas used for muon isolation. They were calculated with Fall11 MC sample.}
-	\label{tab:muAeff}
 \end{table}
 
 %impact parameter 
@@ -813,7 +825,7 @@ the jets from hard interaction, and thus need to be overlaid to pass the
 the shower shape is broader than that of jets from hard interaction.     
 
 In this analysis, we apply a BDT-based technique to suppress jets originated 
-from pileups~\cite{x} using variables related to above-mentioned characteristics. 
+from pileup~\cite{CMS-PAS-JME-13-005} using variables related to above-mentioned characteristics. 
 The following variables are used in the BDT-based suppression technique
 \begin{itemize}
 \item Number of reconstructed primary vertices in the event 
@@ -860,6 +872,12 @@ We select jets of which BDT scores are greater than the values in Table~\ref{tab
 \begin{table}[htp]
 \small
 	\centering
+	\label{tab:jetidcut}
+    \vspace{0.5cm} 
+	\caption{Cut values on jet identification BDT scores. 
+                 The BDT score is required to be greater than 
+			  	 these values to be counted as a jet.}
+    \vspace{0.5cm} 
 		\begin{tabular}{c|c|c|c|c}
 			\hline
 			\pt(\GeV)	&  $0<|\eta|<2.5$ 	& $2.5<|\eta|<2.75$		& $2.75<|\eta|<3.0$ 	& $3.0<|\eta|<4.7$ 		\\ 
@@ -870,10 +888,6 @@ We select jets of which BDT scores are greater than the values in Table~\ref{tab
 				30 - 		& 0.0 				& 0.0					& 0.6	 				& 0.2					\\
 			\hline 
 		\end{tabular}
-		\caption{Cut values on jet identification BDT scores. 
-                 The BDT score is required to be greater than 
-			  	 these values to be counted as a jet.}
-	\label{tab:jetidcut}
 \end{table}
 On top of the BDT requirement, jets are required not to overlap selected electrons 
 and muons in order to avoid cases where leptons are reconstructed as jets.  
@@ -1037,7 +1051,8 @@ for signal and \dyll\ MC for background. The motivation of using a combination o
 are used in the training because there should not be any difference in the training 
 variables between \SF\ and \DF\ events. 
 As a background sample, 
-a combination of the Madgraph and the Powheg samples is used to maximize statistics. 
+a combination of the Madgraph~\cite{Madgraph5p1} and the Powheg~\cite{Frixione:2007vw} 
+samples is used to maximize statistics. 
 For the training, we apply the WW selection which is defined in section~\ref{sec:wwsel}) 
 for the cut-based analysis
 which is discussed in sec~\ref{sec:wwsel}.
@@ -1163,6 +1178,11 @@ Table~\ref{tab:wwselection} summarizes the requirements of the WW selection.
 
 \begin{table}[htp] 
 \begin{center} 
+\label{tab:wwselection} 
+\vspace{0.5cm} 
+\caption{Summary of WW selection. [*] For shape-based method 
+$\ptll>30~\GeV$ is applied and for cut-based method $\ptll>45~\GeV$ is applied.}
+\vspace{0.5cm} 
 \begin{tabular}{c|cc}
 \hline
 Selection & \DF & \SF \\
@@ -1181,9 +1201,6 @@ Top veto & applied & applied \\
 \ptll & $>30~\GeV$[*] & $>45~\GeV$ \\
 \hline
 \end{tabular} 
-\caption{Summary of WW selection. [*] For shape-based method 
-$\ptll>30~\GeV$ is applied and for cut-based method $\ptll>45~\GeV$ is applied.}
-\label{tab:wwselection} 
 \end{center} 
 \end{table} 
 

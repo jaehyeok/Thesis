@@ -13,14 +13,18 @@ how they are estimated, and the result of the estimations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Treatment of systematic uncertainties}
- 
-%%%
-\subsubsection{Choice of probability density function(\textit{pdf})}
 
-The systematic uncertainties on the signal and the background yields are 
-treated by nuisance parameters. Each nuisance parameter is assumed to follow 
-a Probability Density Function(\textit{pdf}).
-For most of the nuisance parameters we use the log normal function as a 
+As discussed in chapter~\ref{ch:systematics}, systematic uncertainties 
+on the signal and the background yields are treated by nuisance parameters. 
+There are two kinds of nuisance parameters; that affect normalization and 
+that affect shape of templates. Because the normalization uncertainty can not account 
+for variation of shape, the nuisance parameters for shape variation are 
+treated differently. 
+
+%%%
+\subsubsection{Normalization uncertainties}
+
+For most of the normalization nuisance parameters we use the log normal function as a 
 \textit{pdf}~\cite{combination_stat}. The functional form of the log normal is 
 \begin{eqnarray} 
 \rho(\theta) 
@@ -91,10 +95,10 @@ Given that there is only one morphing parameter that moves all bins
 by the same amount,  
 no matter how the bins are arranged, the correlation is still conserved.  
 This is important because we unroll the 2-dimensional template to 1-dimensional 
-histograms in order to accommodate the allowed usage of the available statistical tools. 
+histograms because of a limitation of the available statistical tools. 
 
 In the following sections, if there is a related shape uncertainty
-caused by a given source, the following plots will be shown in the
+caused by a given source, the following plots will be shown 
 in the region where signal is populated($60<\mT<120~\GeV$ and $12<\mll<100~\GeV$); 
 the 2-dimensional up/down shapes relative to the central shape 
 and \mT\ and \mll\ projections of the up/down/central shapes. 
@@ -105,8 +109,11 @@ and \mT\ and \mll\ projections of the up/down/central shapes.
 When data-driven estimation is not applicable, we should rely on the theoretical 
 calculation, and it depends on various sources : The PDF and the $\alpha_s$,  
 missing higher order corrections, parton shower and underlying events 
-and jet bin fraction. 
-This section discusses these systematic uncertainties. 
+and jet bin fraction. The theory uncertainties contribute to the 70~\%\footnote{70~\% means a half 
+of the total uncertainty because it is added in quadrature.} of 
+the expected total systematic uncertainty of the signal strength. 
+The uncertainty on the jet bin fraction of signal is the dominant theory systemtic
+uncertainty which accounts for about half of the total theory uncertainty.
 
 \subsection{PDF+$\alpha_s$}
 
@@ -123,14 +130,14 @@ The processes in the same group are assumed to be 100 \% correlated
 while the processes in the different groups are assumed to be 100 \% uncorrelated.
 The uncertainty for \ggH\ ranges from 7~\% to 12~\%,  
 and the uncertainty for other signal processes is 5~\%.
-All other processes, \ggww, \qqww, \vv, \wgamma\ and \wgammastar\  has 4~\% of uncertainty.
+All other processes, \ggww, \qqww, \vv, \wgamma\ and \wgammastar\ have uncertainty of 4~\%.
 
 In the shape-based method, the PDF+$\alpha_s$ shape uncertainty 
 is considered for \qqww\ and \ggww.  
 Following the method described in~\cite{pdfAN}, we take an envelop of different PDF 
 sets(NNPDF2.0, CT10(CTEQ) and MSTW2008), and measure variation with respect to the default 
 PDF set(LO CTEQ6L1 PDF) used in MC generation. 
-Fig.~\ref{fig:alter_pdfqqww} and~\ref{fig:alter_pdfggww} show the up/down 
+Figure~\ref{fig:alter_pdfqqww} and~\ref{fig:alter_pdfggww} show the up/down 
 shapes in 2-dimensional template and its projection to \mT\ and \mll\ axes
 in the signal region. 
 The variation is almost flat on the 2D plane with a size less than 5~\%. 
@@ -142,7 +149,9 @@ is less than 1~\% to the expected significance.
 \begin{tabular}{c} 
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_PDFqqWW_0j_zoom.pdf} 
 \end{tabular} 
-\caption{ \qqww\ PDF+$\alpha_s$ in the 0-jet category}
+\caption{ \qqww\ PDF+$\alpha_s$ in the 0-jet category. 
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_pdfqqww} 
 \end{figure} 
 %
@@ -151,7 +160,9 @@ is less than 1~\% to the expected significance.
 \begin{tabular}{c} 
 \includegraphics[width=0.8\textwidth]{figures/histo_ggWW_CMS_hww_PDFggWW_0j_zoom.pdf} 
 \end{tabular} 
-\caption{ \ggww\ PDF+$\alpha_s$ in the 0-jet category.}
+\caption{ \ggww\ PDF+$\alpha_s$ in the 0-jet category.
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_pdfggww} 
 \end{figure} 
 
@@ -175,18 +186,18 @@ In the shape-based method, the effect of the \mR\ and \mF\ variations to shapes
 is considered for \qqww. The MC@NLO 4.0~\cite{Frixione:2002ik} is used for the matrix element calculation 
 with different choice of scales. The up variation corresponds to $\mR=0.5\mu$ and $\mR=2.0\mu$,
 and the down variation corresponds to $\mR=2.0\mu$ and $\mR=0.5\mu$ where $\mu$ is the nominal 
-scale value. Fig.~\ref{fig:alter_qqwwnlo} shows the up and down  
+scale value. Figure~\ref{fig:alter_qqwwnlo} shows the up and down  
 shapes in the 2-dimensional template and its projection to \mT\ and \mll\ axes
 in the signal region.
 
-Another way of include the effect of missing higher order corrections 
-is to compare results calculated in different orders. For \qqww\ and \topbkg\ 
+Another way of including the effect of missing higher order corrections 
+is to compare results calculated at different orders. For \qqww\ and \topbkg\ 
 backgrounds we have the shape systematics that compare two different simulations. 
 For \qqww\ an alternate sample generated by MC@NLO 4.0 which is calculated up to NLO
 is used to define a up variation, 
 and the mirror with respect to the central shape(Madgraph 5.1~\cite{Madgraph5p1}) which is calculated up to LO 
 is used as a down variation.
-Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes. 
+Figure~\ref{fig:alter_qqww} shows the up/down alternate shapes. 
 The MC@NLO sample uses different parton shower model, Herwig++~\cite{Corcella:2000bw}, 
 as opposed to 
 Pythia 6.4~\cite{Sjostrand:2006za} used by the default sample, 
@@ -196,7 +207,7 @@ For \topbkg\ an alternate sample generated by Madgraph 5.1 which is calculated u
 is used to define a up variation,
 and the mirror with respect to the central shape(Powheg~\cite{Frixione:2007vw}) which is calculated up to NLO 
 is used as a down variation.
-Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes. 
+Figure~\ref{fig:alter_qqww} shows the up/down alternate shapes. 
 
 %
 \begin{figure}[htp]
@@ -204,7 +215,9 @@ Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVAWWNLOBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{ \qqww\ QCD scale variation in the 0-jet category.}
+\caption{ \qqww\ QCD scale variation in the 0-jet category.
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_qqwwnlo}
 \end{figure}
 %
@@ -213,7 +226,9 @@ Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVAWWBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{ \qqww\ Madgraph vs. MC@NLO in the 0-jet category.}
+\caption{ \qqww\ Madgraph vs. MC@NLO in the 0-jet category.
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_qqww}
 \end{figure}
 %
@@ -222,7 +237,9 @@ Fig.~\ref{fig:alter_qqww} shows the up/down alternate shapes.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_Top_CMS_hww_MVATopBounding_1j_zoom.pdf}
 \end{tabular}
-\caption{ \topbkg\ Powheg vs. Madgraph in 1-jet category.}
+\caption{ \topbkg\ Powheg vs. Madgraph in 1-jet category.
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_top}
 \end{figure}
 
@@ -244,6 +261,11 @@ for a given \mHi.
 %
 \begin{table}[htp] 
 \begin{center} 
+\label{tab:UEPS} 
+\vspace{0.5cm} 
+\caption{$\kappa$ values of systematic uncertainty due to modeling 
+         of parton showering and underlying events.} 
+\vspace{0.5cm} 
 \begin{tabular}{c|ccc} 
 \hline 
 \mHi\ [\GeV]  & 0-jet & 1-jet & 2-jet \\
@@ -268,8 +290,6 @@ for a given \mHi.
 600 & 0.920 & 1.121 & 0.872 \\   
 \hline 
 \end{tabular} 
-\caption{$\kappa$ values of systematic uncertainty due to modeling of parton showering and underlying events.} 
-\label{tab:UEPS} 
 \end{center} 
 \end{table} 
 
@@ -281,7 +301,7 @@ for a given \mHi.
 The analysis is optimized in the different jet categories, 
 and the jets are counted with the requirement that  
 its transverse momentum is greater than 30~\GeV. For the processes that the yields in the 
-different jet categories are estimated by data-driven methods, there is not related uncertainty 
+different jet categories are estimated by data-driven methods, there is no related uncertainty 
 because the fraction of events in the different jet categories comes from data. 
 On the other hand, for the processes taken from simulation we need to account for this effect.    
 The fraction of events that falls into a particular jet category is 
@@ -338,8 +358,17 @@ uncertainties to the exclusive jet bin uncertainties by the formulae shown in
 Table~\ref{tab:jetbinexcl}~\cite{Dittmaier:2012vm}.
 \begin{table}[!htbp]
 \begin{center}
+\label{tab:jetbinformula}
+\vspace{0.5cm} 
+\caption{Table of formulae expressing the $\kappa$ values for the systematic uncertainties on the
+jet bin fractions due to the missing higher order corrections on 
+$\sigma_{\ge\textrm{0-jet}}$, $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$,
+in terms of the $\kappa$ values for these cross sections, 
+$\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ and $\kappa_{\ge\textrm{2-jet}}$, 
+respectively, and the jet bin fractions, 
+$f_{\textrm{0-jet}}$, $f_{\textrm{1-jet}}$ and $f_{\textrm{2-jet}}$.}
+\vspace{0.5cm} 
 \begin{tabular}{c|ccc}
-
 \hline
 Nuisance Parameter & $\kappa$'s for 0-jet bin   & $\kappa$'s for 1-jet bin  & $\kappa$'s for 2-jet bin                       \\
 \hline \hline
@@ -349,15 +378,6 @@ $\theta_{\textrm{from } \ge \textrm{2-jet}}$  & $1.0$ & $(\kappa_{\geq 2})^{- \f
 \hline
 
 \end{tabular}
-\caption{Table of formulae expressing the $\kappa$ values for the systematic uncertainties on the
-jet bin fractions due to the missing higher order corrections on 
-$\sigma_{\ge\textrm{0-jet}}$, $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$,
-in terms of the $\kappa$ values for these cross sections, 
-$\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ and $\kappa_{\ge\textrm{2-jet}}$, respectively, 
-and the jet bin fractions, 
-$f_{\textrm{0-jet}}$, $f_{\textrm{1-jet}}$ and $f_{\textrm{2-jet}}$.
-}
-\label{tab:jetbinformula}
 \end{center}
 \end{table}
 
@@ -366,6 +386,14 @@ and $\kappa_{\ge\textrm{2-jet}}$ are summarized in Table~\ref{tab:jetbinincl}.
 %
 \begin{table}[!htbp]
 \begin{center}
+\label{tab:jetbinincl}
+\vspace{0.5cm} 
+\caption{ $\kappa$ values for the systematic uncertainties due to missing higher order corrections
+for the inclusive \ggH\ production cross section, 
+$\sigma_{\ge\textrm{0-jet}}$, $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$. 
+The corresponding $\kappa$s are $\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ 
+and $\kappa_{\ge\textrm{2-jet}}$, respectively. }
+\vspace{0.5cm} 
 \begin{tabular}{c|ccc}
 \hline
 \mHi[\GeV]    &     $\kappa_{\ge\textrm{0-jet}}$        &   $\kappa_{\ge\textrm{1-jet}}$        &     $\kappa_{\ge\textrm{2-jet}}$       \\
@@ -391,13 +419,6 @@ and $\kappa_{\ge\textrm{2-jet}}$ are summarized in Table~\ref{tab:jetbinincl}.
 
 \hline
 \end{tabular}
-\caption{ $\kappa$ values for the systematic uncertainties due to missing higher order corrections
-for the inclusive \ggH\ production cross section, 
-$\sigma_{\ge\textrm{0-jet}}$, $\sigma_{\ge\textrm{1-jet}}$ and $\sigma_{\ge\textrm{2-jet}}$. 
-The corresponding $\kappa$s are $\kappa_{\ge\textrm{0-jet}}$, $\kappa_{\ge\textrm{1-jet}}$ 
-and $\kappa_{\ge\textrm{2-jet}}$, respectively. 
-}
-\label{tab:jetbinincl}
 \end{center}
 \end{table}
 Combining information in Table~\ref{tab:jetbinincl} and Table~\ref{tab:jetbinformula} 
@@ -405,8 +426,15 @@ we obtain the final $\kappa$'s for \ggH\ process as shown in Table~\ref{tab:jetb
 %
 \begin{table}[!htbp]
 \begin{center}
-\begin{tabular}{c|cc|cc|c}
+\label{tab:jetbinexcl}
+\vspace{0.5cm} 
+\caption{ Table of $\kappa$ values for the systematic uncertainties for the jet bin 
+fractions due to missing higher order corrections for the total inclusive Higgs
+cross section, the inclusive Higgs+1jet cross section, and the inclusive Higgs+2jet
+cross section. }
+\vspace{0.5cm} 
 
+\begin{tabular}{c|cc|cc|c}
 \hline
 \multirow{2}{*}{\mHi [\GeV]} 
                & \multicolumn{2}{c|}{0-jet bin}  & \multicolumn{2}{c|}{1-jet bin}  & 2-jet bin \\ 
@@ -432,15 +460,9 @@ we obtain the final $\kappa$'s for \ggH\ process as shown in Table~\ref{tab:jetb
  500 & $ 1.22$  & $ 0.80$  & $ 1.25$  & $ 0.95$  & $ 1.17$  \\
  550 & $ 1.24$  & $ 0.78$  & $ 1.26$  & $ 0.95$  & $ 1.19$  \\
  600 & $ 1.25$  & $ 0.78$  & $ 1.26$  & $ 0.94$  & $ 1.19$  \\
-
 \hline
-
 \end{tabular}
-\caption{ Table of $\kappa$ values for the systematic uncertainties for the jet bin 
-fractions due to missing higher order corrections for the total inclusive Higgs
-cross section, the inclusive Higgs+1jet cross section, and the inclusive Higgs+2jet
-cross section. }
-\label{tab:jetbinexcl}
+
 \end{center}
 \end{table}
 
@@ -460,6 +482,13 @@ as shown in Table~\ref{tab:jetbinexcl_ww}.
 %
 \begin{table}[!htbp]
 \begin{center}
+\label{tab:jetbinexcl_ww}
+\vspace{0.5cm} 
+\caption{ Table of $\kappa$ values for the systematic uncertainties for the jet bin
+fractions due to missing higher order corrections for the total inclusive \qqww\
+cross section, the inclusive \qqww+1jet cross section, and the inclusive \qqww+2jet
+cross section. }
+\vspace{0.5cm} 
 \begin{tabular}{cc|cc|c}
 \hline
 \multicolumn{2}{c|}{0-jet bin}  & \multicolumn{2}{c|}{1-jet bin}  & 2-jet bin \\
@@ -470,19 +499,15 @@ $\kappa_{\mathrm{from } \ge \textrm{0-jet}}$ & $\kappa_{\mathrm{from } \ge \text
 $1.042$  & $ 0.978$  & $ 1.076$  & $ 0.914$  & $ 1.42$  \\
 \hline
 \end{tabular}
-\caption{ Table of $\kappa$ values for the systematic uncertainties for the jet bin
-fractions due to missing higher order corrections for the total inclusive \qqww\
-cross section, the inclusive \qqww+1jet cross section, and the inclusive \qqww+2jet
-cross section. }
-\label{tab:jetbinexcl_ww}
 \end{center}
 \end{table}
 
-%\subsection{Theoretial extrapolation uncertainty for WW}
+%\subsection{Theoretical extrapolation uncertainty for WW}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Instrumental Systematic Uncertainties} 
+\label{sec:systinst}
 %\begin{itemize} 
 %\item Luminosity : for 8 TeV which luminosity uncertainty to quote? %4.4\% of 2.6\%? 
 %      How is the uncertainty estimated?
@@ -498,6 +523,16 @@ cross section. }
 %\item  MC statistics shape uncertainty : mention bin-by-bin treatment gives consistent result  
 %\end{itemize} 
 
+There are systematic sources induced by uncertainty on the measurement 
+of basic quantities such as luminosity, lepton momentum and resolution, 
+lepton selection efficiency, \met\ resolution and jet energy scale.
+Another source is the statistics of the available MC samples.
+These sources are classified as instrumental systematic uncertainty. 
+
+These uncertainties contribute to about 45~\% of 
+the expected total systematic uncertainty of signal strength. 
+This means that without these uncertainties, the total uncertainty is reduced by ~10~\%. 
+Thus, instrumental uncertainty makes small effect to the measurement of signal strength.
 
 %%%
 \subsubsection{Luminosity}
@@ -532,7 +567,7 @@ For the shape-based method, new \mT\ and \mll\ are calculated using the
 lepton momenta scaled by the measured resolutions.
 The up shape is made by adding the smeared momentum resolution to both leptons,
 and the down shape is made by subtracting the smeared momentum resolution to both leptons.
-Fig.~\ref{fig:alter_lepres} shows the corresponding up/down alternate shapes 
+Figure~\ref{fig:alter_lepres} shows the corresponding up/down alternate shapes 
 for \qqww\ in the 0-jet \DF\ category. 
 %
 \begin{figure}[htp]
@@ -540,7 +575,9 @@ for \qqww\ in the 0-jet \DF\ category.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVALepResBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for lepton momentum scale and resolution for \qqww\ in the 0-jet \DF\ category.}
+\caption{Alternate shapes for lepton momentum scale and resolution for \qqww\ in the 0-jet \DF\ category.
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_lepres}
 \end{figure}
 
@@ -549,7 +586,7 @@ for \qqww\ in the 0-jet \DF\ category.
 \subsubsection{Lepton efficiency} 
 
 The lepton selection and trigger efficiencies are measured by the Tag-and-Probe method
-as described in chapter~\ref{ch:efficiency_measurement}. In this method, uncertainties come from 
+as described in section~\ref{sec:lepeff}. In this method, uncertainties come from 
 the determination of the background contribution and the modeling of the signal 
 and background shapes in the likelihood fit. An additional uncertainty which is 
 prominent in the low \pt\ region in the electron case 
@@ -563,7 +600,7 @@ in the cut-based method.
 For the shape-based method, alternate shapes are constructed by
 scaling up/down the lepton efficiencies using the systematics sources
 as a function of lepton \pt\ and \Eta.
-Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes
+Figure~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes
 for \qqww\ in the 0-jet \DF\ category. 
 
 %
@@ -572,7 +609,9 @@ for \qqww\ in the 0-jet \DF\ category.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVALepEffBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for lepton efficiency for \qqww\ in the 0-jet \DF\ category. }
+\caption{Alternate shapes for lepton efficiency for \qqww\ in the 0-jet \DF\ category. 
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 %\textcolor{red}{looks too small at low \mT\ and \mll.}}
 \label{fig:alter_lepeff}
 \end{figure}
@@ -595,7 +634,7 @@ for 0-jet and 1-jet categories, respectively.
 For the cut-based method, the resultant effect of smearing to yields is around 2~\%. 
 For the shape-based method, the up/down alternate shapes are constructed 
 with the new \mT\ calculated using the smeared x and y components of \met.
-Fig.~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes
+Figure~\ref{fig:alter_lepeff} shows the corresponding up/down alternate shapes
 for \qqww\ in the 0-jet \DF\ category. 
 
 %
@@ -604,7 +643,9 @@ for \qqww\ in the 0-jet \DF\ category.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVAMETResBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for \met\ resolution for \qqww\ in the 0-jet \DF\ category.}
+\caption{Alternate shapes for \met\ resolution for \qqww\ in the 0-jet \DF\ category.
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_metres}
 \end{figure}
 
@@ -622,7 +663,7 @@ For the cut-based method, the resultant effect of 5~\% of jet energy resolution
 to yields is around 2~\%. 
 For the shape-based method, the up/down alternate shapes are constructed
 by scaling the jet transverse momentum by $\pm 5$~\%.
-Fig.~\ref{fig:alter_jes} shows the corresponding up/down alternate shapes
+Figure~\ref{fig:alter_jes} shows the corresponding up/down alternate shapes
 for \qqww\ in the 0-jet \DF\ category. 
 
 %
@@ -631,7 +672,9 @@ for \qqww\ in the 0-jet \DF\ category.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_qqWW_CMS_hww_MVAJESBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for jet energy resolution for \qqww\ in the 0-jet \DF\ category.}
+\caption{Alternate shapes for jet energy resolution for \qqww\ in the 0-jet \DF\ category.
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_jes}
 \end{figure}
 
@@ -651,7 +694,7 @@ but this requires an extensive CPU consumption.
 We checked the expected and the observed significances using both approaches,
 and found that the results are compatible within a few \%. 
 Thus, we use the former approach. 
-Fig.~\ref{fig:alter_stat} shows the corresponding up/down alternate shapes
+Figure~\ref{fig:alter_stat} shows the corresponding up/down alternate shapes
 for \ggww\ in the 0-jet category. 
 %
 \begin{figure}[htp]
@@ -659,7 +702,9 @@ for \ggww\ in the 0-jet category.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_ggWW_CMS_hww_of_0j_MVAggWWStatBounding_8TeV_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for MC statistics for \ggww\ in the 0-jet \DF\ category }
+\caption{Alternate shapes for MC statistics for \ggww\ in the 0-jet \DF\ category. 
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_stat}
 \end{figure}
 
@@ -669,11 +714,15 @@ for \ggww\ in the 0-jet category.
 \section{Background Estimation Uncertainty} 
 
 The expected background contributions in the signal region are estimated by 
-data-driven methods or taken from simulation after some data corrections.  
+data-driven methods or taken from simulation.  
 All procedures and the source of systematic uncertainties are discussed 
 in chapter~\ref{ch:background_estimation}. These uncertainties are related 
-to the normalization of each background. But, there is a shape systematic uncertainty 
-that can cause a variation of shapes. 
+to the normalization of each background. But, there is a shape systematic 
+uncertainty that can cause a variation of shapes. 
+
+These uncertainties contribute to about 55~\% of 
+the expected total systematic uncertainty of signal strength. 
+
 
 \subsubsection{\Wjets\ alternate shapes} 
 
@@ -684,10 +733,10 @@ and the uncertainty of 30~\% is assigned to take this account.
 In the shape-based method, the affect of the varying the away jet \pt\ 
 to the shape is considered as well. 
 The alternate up shape is constructed using alternate jet \pt\ thresholds, 
-15~\GeV for muons and 20~\GeV for electrons, and the relative difference 
+15~\GeV\ for muons and 20~\GeV\ for electrons, and the relative difference 
 in shape is taken. The alternate down shape is taken as a mirror of 
 the up shape with respect to the central shape. 
-Fig.~\ref{fig:alter_wjets} shows the corresponding up/down alternate shapes
+Figure~\ref{fig:alter_wjets} shows the corresponding up/down alternate shapes
 for \Wjets\ when muon is an FO. 
 %
 \begin{figure}[htp]
@@ -695,9 +744,59 @@ for \Wjets\ when muon is an FO.
 \begin{tabular}{c}
 \includegraphics[width=0.8\textwidth]{figures/histo_WjetsM_CMS_hww_MVAWMBounding_0j_zoom.pdf}
 \end{tabular}
-\caption{Alternate shapes for \WjetsM. }
+\caption{Alternate shapes for \WjetsM. 
+         Top are 2-dimensional up and down shapes expressed in terms of relative 
+         difference from the nominal shape.}
 \label{fig:alter_wjets}
 \end{figure}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \section{Summary table?} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\section{Summary} 
+
+\begin{table}[htp] 
+\begin{center} 
+\vspace{0.5cm} 
+\caption{Summary of systematic uncertainties and their relative contributions 
+to the expected total systematic uncertainty of signal strength.} 
+\vspace{0.5cm} 
+\footnotesize
+\label{tab:syst_summary} 
+\begin{tabular}{c | c | c | c }  
+\hline                  
+\multirow{3}{*}{Systematic sources} & \multirow{3}{*}{sub-division} 
+                                    & contribution to total   &     \multirow{3}{*}{Total} \\     
+                                    & & systematic uncertainty  &       \\
+                                    & & of signal strength    &         \\   
+\hline  \hline                  
+\multirow{3}{*}{Theory uncertainty} & signal(jet bin fraction) & 50~\%  &  \multirow{3}{*}{70~\%}   \\
+                                    & signal(except jet bin fraction) & 35~\%  &                \\
+                                    & background & 30~\%  &                             \\
+\hline                  
+\multirow{2}{*}{Instrumental uncertainty}   & MC statistics & 25~\% &  \multirow{2}{*}{45~\%}   \\
+                                            & except MC statistics          & 40~\% &           \\
+\hline                  
+\multirow{2}{*}{Background Estimation}      & \Wjets\        & 40~\% &  \multirow{2}{*}{55~\%} \\
+                                            & except \Wjets\ & 40~\% &                         \\
+\hline                  
+\end{tabular} 
+\end{center} 
+\end{table} 
+
+Table~\ref{tab:syst_summary} shows a summary of systematic uncertainties and 
+their contributions to the expected total systematic uncertainty of signal strength.  
+Each contribution in the table is estimated by removing relevant nuisance parameters 
+in the fit. Therefore, these numbers are not the exact values in the full fit
+because removing some nuisance parameters can alter correlations between them. 
+But, these numbers give a sense of which component is dominant and which is not.
+
+The dominant systematic source is the theory uncertainty, particularly, 
+the jet bin fraction uncertainty of signal. 
+The instrumental uncertainty contributes little compared to other sources. 
+The background estimation uncertainties is dominated by \Wjets.  
+
+In chaper~\ref{sec:mu} it will be shown that the systematic 
+and statistical uncertainties of signal strength are at the same level 
+with current data. The analysis will be limited by systematic 
+uncertainties as more data is added. Therefore, to improve the analysis, 
+one needs to reduce the theoretical uncertainty on the signal.
