@@ -1063,7 +1063,8 @@ on microfilm and electronically: }}\\
 %   \@dotsep    : Separation between dots, in mu units.  Should be
 %                 \def'd to a number like 2 or 1.7
 
-\def\@pnumwidth{1.55em}
+%\def\@pnumwidth{1.55em}
+\def\@pnumwidth{1.75em} % Jae 
 \def\@tocrmarg {2.55em}
 \def\@dotsep{4.5}
 \setcounter{tocdepth}{2}
@@ -1191,7 +1192,8 @@ on microfilm and electronically: }}\\
 \newlength{\@figurelength}
 \settowidth{\@figurelength}{\figurename }
 % Magic value, but consistent with the standard figure length
-\addtolength{\@figurelength}{2.8em}
+%\addtolength{\@figurelength}{2.8em}
+\addtolength{\@figurelength}{3.3em} % Jae  
 \def\l@figure{\normalfont\@dottedtocline{1}{0em}{\@figurelength}}
 
 % LIST OF TABLES
@@ -1217,7 +1219,8 @@ on microfilm and electronically: }}\\
 \newlength{\@tablelength}
 \settowidth{\@tablelength}{\tablename }
 % Magic value, but consistent with the standard table length.
-\addtolength{\@tablelength}{2.8em}
+%\addtolength{\@tablelength}{2.8em}
+\addtolength{\@tablelength}{3.3em} % Jae
 \def\l@table{\normalfont\@dottedtocline{1}{0em}{\@tablelength}}
 
 

@@ -137,6 +137,21 @@ of \pt~and \Eta~of a lepton. From the study, we assume that the reconstruction
 efficiency for an electron is unity with an uncertainty at the level of 2 \%.
 Some representative plots of di-lepton mass distribution are shown in 
 Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5} and \ref{fig:ideff_pt30to40_eta0p8to1p5}. 
+Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5} shows di-lepton mass distributions 
+for data(top) and MC(bottom) in $0.8<|\Eta|<1.5$ and $10 < \pt < 15~\GeV$ for events 
+where the probe passes and fails ID selection on left and right, 
+respectively. In data, there is a considerable contribution from backgrounds, 
+particularly in the failing case(right). This is accounted in the fit. 
+The blue and red lines in the data plots are for signal and background, respectively. 
+Figure~\ref{fig:ideff_pt30to40_eta0p8to1p5} shows  
+di-lepton mass distributions for data(top) and MC(bottom) 
+in $0.8<|\Eta|<1.5$ and $30 < \pt < 40~\GeV$ for events 
+where the probe passes and fails ID selection on left and right, 
+respectively. The blue and red lines in the data plots 
+are for signal and background, respectively. Apart from 
+the low \pt\ case in Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5}, 
+the there is negligible contribution from backgrounds. 
+
 %
 \begin{figure}[htp] 
 \centering 
@@ -148,10 +163,8 @@ Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5} and \ref{fig:ideff_pt30to40_eta0p8to
 \end{tabular} 
 \caption{Di-lepton mass distributions for data(top) and MC(bottom) 
          in $0.8<|\Eta|<1.5$ and $10 < \pt < 15~\GeV$ for events 
-         where the probe passes and fails ID selection on left and right, 
-         respectively. In data, there is a considerable contribution from backgrounds, 
-         particularly in the failing case(right). This is accounted in the fit. 
-         The blue and red lines in the data plots are for signal and background, respectively.} 
+         where the probe passes and fails the ID selection on left and right, 
+         respectively. } 
 \label{fig:ideff_pt10to15_eta0p8to1p5} 
 \end{figure} 
 %
@@ -165,11 +178,8 @@ Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5} and \ref{fig:ideff_pt30to40_eta0p8to
 \end{tabular} 
 \caption{Di-lepton mass distributions for data(top) and MC(bottom) 
          in $0.8<|\Eta|<1.5$ and $30 < \pt < 40~\GeV$ for events 
-         where the probe passes and fails ID selection on left and right, 
-         respectively. The blue and red lines in the data plots 
-         are for signal and background, respectively. Apart from 
-         the low \pt\ case in Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5}, 
-         the there is negligible contribution from backgrounds.} 
+         where the probe passes and fails the ID selection on left and right, 
+         respectively. }
 \label{fig:ideff_pt30to40_eta0p8to1p5} 
 \end{figure} 
 
@@ -179,9 +189,8 @@ Figure~\ref{fig:ideff_pt10to15_eta0p8to1p5} and \ref{fig:ideff_pt30to40_eta0p8to
 \begin{table}[!htp]
 \begin{center} 
 \footnotesize
-\label{tab:eff_electron_id}
 \vspace{0.5cm}  
-\caption{Electron ID efficiency in data and simulation, and the data/simulation scale factors.}
+\caption{Electron ID efficiency in data and simulation, and the scale factors.}
 \vspace{0.5cm}  
 \begin{tabular}{c|c|c|c|c}
 \hline & $ 0 < |\eta| < 0.8$ & $ 0.8 < |\eta| < 1.479$ & $ 1.479 < |\eta| < 2 $ & $ 2 < |\eta| < 2.5 $  \\
@@ -214,15 +223,15 @@ $ 40 < p_T <  50$ & $0.9828 \pm 0.0006$ & $0.9724 \pm 0.0007$ & $0.9637 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9834 \pm 0.0009$ & $0.9746 \pm 0.0009$ & $0.9776 \pm 0.0021$ & $0.9639 \pm 0.0032$  \\
 \hline
 \end{tabular}
+\label{tab:eff_electron_id}
 \end{center}
 \end{table}
 
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:eff_electron_iso}
 \vspace{0.5cm} 
-\caption{Electron ISO efficiency in data and simulation, and the data/simulation scale factors.}
+\caption{Electron ISO efficiency in data and simulation, and the scale factors.}
 \vspace{0.5cm} 
 \begin{tabular}{c|c|c|c|c}
 \hline & $ 0 < |\eta| < 0.8$ & $ 0.8 < |\eta| < 1.479$ & $ 1.479 < |\eta| < 2 $ & $ 2 < |\eta| < 2.5 $  \\
@@ -255,6 +264,7 @@ $ 40 < p_T <  50$ & $0.9951 \pm 0.0002$ & $0.9952 \pm 0.0003$ & $0.9996 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9973 \pm 0.0003$ & $0.9973 \pm 0.0008$ & $0.9988 \pm 0.0005$ & $1.0065 \pm 0.0008$  \\
 \hline
 \end{tabular}
+\label{tab:eff_electron_iso}
 \end{center}
 \end{table}
 
@@ -268,9 +278,8 @@ The scale factors are close to unity except the low \pt~bins for ID efficiency.
 \begin{table}[!htp]
 \begin{center}
 \small
-\label{tab:eff_electron_nmsyst}
 \vspace{0.5cm} 
-\caption{The additional systematic uncertainty $\delta_{\rm{SF}}$ on the data/simulation 
+\caption{The additional systematic uncertainty $\delta_{\rm{SF}}$ on the  
 scale factor for the electron selection due to the N-1 factorization scheme.}
 \vspace{0.5cm} 
 \begin{tabular}{c|c|c|c|c}
@@ -284,6 +293,7 @@ $ 40 < p_T <  50$ &    0.000  &     0.000  &     0.000  &     0.001  \\
 $ 50 < p_T $ &   0.000  &     0.000  &     0.000  &     0.000  \\
 \hline
 \end{tabular}
+\label{tab:eff_electron_nmsyst}
 \end{center}
 \end{table}
 
@@ -309,9 +319,8 @@ efficiency for a muon is unity with uncertainty at the level of 1.5 \%.
 %
 \begin{table}[!htp]
 \begin{center}
-\label{tab:eff_muon_id}
 \vspace{0.5cm} 
-\caption{Muon ID efficiency in data and simulation, and the data/simulation scale factors.}
+\caption{Muon ID efficiency in data and simulation, and scale factors.}
 \vspace{0.5cm} 
 \begin{tabular}{c|c|c|c}
 \hline & $ 0 < |\eta| < 0.8 $ & $ 0.8 < |\eta| < 1.2 $ & $ 1.2 < |\eta| < 2.4 $  \\
@@ -344,15 +353,15 @@ $ 40 < p_T <  50$ & $0.9881 \pm 0.0002$ & $0.9859 \pm 0.0004$ & $0.9899 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9854 \pm 0.0005$ & $0.9826 \pm 0.0008$ & $0.9829 \pm 0.0005$  \\
 \hline
 \end{tabular}
+\label{tab:eff_muon_id}
 \end{center}
 \end{table}
 
 \begin{table}[!htp]
 \begin{center}
 \vspace{0.5cm} 
-\caption{Muon ISO efficiency in data and simulation, and the data/simulation scale factors.}
+\caption{Muon ISO efficiency in data and simulation, and scale factors.}
 \vspace{0.5cm} 
-\label{tab:eff_muon_iso}
 \begin{tabular}{c|c|c|c}
 \hline & $ 0 < |\eta| < 0.8 $ & $ 0.8 < |\eta| < 1.2 $ & $ 1.2 < |\eta| < 2.4 $  \\
 \hline
@@ -384,6 +393,7 @@ $ 40 < p_T <  50$ & $0.9980 \pm 0.0001$ & $0.9977 \pm 0.0002$ & $1.0014 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9990 \pm 0.0003$ & $0.9977 \pm 0.0003$ & $1.0011 \pm 0.0002$  \\
 \hline
 \end{tabular}
+\label{tab:eff_muon_iso}
 \end{center}
 \end{table}
 
@@ -446,10 +456,11 @@ so (2) is not included in the per event efficiency calculation.
 \centering
 \includegraphics[width=0.8\textwidth]{figures/TriggerEfficiencyDiagram.pdf}
 \caption{ Diagrams for the cases where double-lepton triggers fail. Lepton1(2) 
-denotes offline leptons. L means leading leg requirement of double-lepton trigger. 
+denotes offline leptons. } 
+L means leading leg requirement of double-lepton trigger. 
 T means trailing leg requirement of double-lepton trigger. F means failing of 
 trailing lepton requirement, thus leading lepton requirement,of double-lepton trigger.
-Shade means that the corresponding offline lepton falls into that online requirement.}
+Shade means that the corresponding offline lepton falls into that online requirement.
 \label{fig:trg_eff_diagram}
 \end{figure*}
 % Table version of the figure, figures/TriggerEfficiencyDiagram.pdf
@@ -499,6 +510,7 @@ Shade means that the corresponding offline lepton falls into that online require
 Figure \ref{fig:trg_eff_diagram} shows the failing cases of the double-lepton trigger. 
 Online, there are three cases for each lepton : passing leading leg requirement(L), 
 passing trailing lepton requirement(T), and passing none of them(F). 
+Shade means that the corresponding offline lepton falls into that online requirement.
 There are 9($3\times3$) possible combinations in total, of which there are 6 cases 
 where the trigger fails. The category 1(4 combinations) is the case where none of the 
 two leptons pass the leading leg requirement. The category 2 and 3 are the cases where one 
@@ -572,7 +584,6 @@ Therefore, the total per-event trigger efficiency is given by
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:trg_electron_dzdbl}
 \vspace{0.5cm} 
 \caption{Efficiency of dZ requirement of the double-electron trigger.}
 \vspace{0.5cm} 
@@ -593,13 +604,13 @@ $ 40 < p_T <  50$ & $0.9997 \pm 0.0000$ & $0.9990 \pm 0.0000$ & $0.9973 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9997 \pm 0.0000$ & $0.9992 \pm 0.0001$ & $0.9978 \pm 0.0002$ & $0.9922 \pm 0.0005$  \\
 \hline
 \end{tabular}
+\label{tab:trg_electron_dzdbl}
 \end{center}
 \end{table}
 %
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:trg_electron_leaddbl}
 \vspace{0.5cm} 
 \caption{Efficiency of the leading leg of the double-electron trigger.}
 \vspace{0.5cm} 
@@ -620,6 +631,7 @@ $ 40 < p_T <  50$ & $0.9900 \pm 0.0001$ & $0.9903 \pm 0.0001$ & $0.9945 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9910 \pm 0.0002$ & $0.9925 \pm 0.0002$ & $0.9958 \pm 0.0003$ & $0.9911 \pm 0.0005$  \\
 \hline
 \end{tabular}
+\label{tab:trg_electron_leaddbl}
 \end{center}
 \end{table}
 
@@ -627,7 +639,6 @@ $ 50 < p_T < 7000$ & $0.9910 \pm 0.0002$ & $0.9925 \pm 0.0002$ & $0.9958 \pm 0.0
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:trg_electron_traildbl}
 \vspace{0.5cm} 
 \caption{Efficiency of the trailing leg of the double-electron trigger.}
 \vspace{0.5cm} 
@@ -648,6 +659,7 @@ $ 40 < p_T <  50$ & $0.9870 \pm 0.0001$ & $0.9874 \pm 0.0002$ & $0.9883 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9882 \pm 0.0003$ & $0.9893 \pm 0.0003$ & $0.9900 \pm 0.0004$ & $0.9888 \pm 0.0006$  \\
 \hline
 \end{tabular}
+\label{tab:trg_electron_traildbl}
 \end{center}
 \end{table}
 
@@ -655,7 +667,6 @@ $ 50 < p_T < 7000$ & $0.9882 \pm 0.0003$ & $0.9893 \pm 0.0003$ & $0.9900 \pm 0.0
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:trg_electron_sgl}
 \vspace{0.5cm} 
 \caption{Efficiency of the single-electron trigger.}
 \vspace{0.5cm} 
@@ -676,6 +687,7 @@ $ 40 < p_T <  50$ & $0.9361 \pm 0.0002$ & $0.9239 \pm 0.0003$ & $0.7618 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9471 \pm 0.0004$ & $0.9402 \pm 0.0005$ & $0.7808 \pm 0.0012$ & $0.7374 \pm 0.0017$  \\
 \hline
 \end{tabular}
+\label{tab:trg_electron_sgl}
 \end{center}
 \end{table}
 
@@ -687,7 +699,6 @@ The efficiency of the single-electron trigger is shown in Table~\ref{tab:trg_ele
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:trg_muon_dzdbl}
 \vspace{0.5cm} 
 \caption{Efficiency of dZ requirement of the double-muon trigger.}
 \vspace{0.5cm} 
@@ -708,13 +719,13 @@ $ 40 < p_T <  50$ & $0.9934 \pm 0.0001$ & $0.9855 \pm 0.0002$ & $0.9767 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9937 \pm 0.0002$ & $0.9855 \pm 0.0003$ & $0.9747 \pm 0.0004$ & $0.9799 \pm 0.0009$  \\
 \hline
 \end{tabular}
+\label{tab:trg_muon_dzdbl}
 \end{center}
 \end{table}
 
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:trg_muon_leaddbl}
 \vspace{0.5cm} 
 \caption{Efficiency of the leading leg of the double-muon trigger.}
 \vspace{0.5cm} 
@@ -735,13 +746,13 @@ $ 40 < p_T <  50$ & $0.9726 \pm 0.0002$ & $0.9320 \pm 0.0004$ & $0.9215 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9725 \pm 0.0003$ & $0.9337 \pm 0.0007$ & $0.9216 \pm 0.0006$ & $0.9016 \pm 0.0018$  \\
 \hline
 \end{tabular}
+\label{tab:trg_muon_leaddbl}
 \end{center}
 \end{table}
 
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:trg_muon_traildbl}
 \vspace{0.5cm} 
 \caption{Efficiency of the trailing leg of the double-muon trigger.}
 \vspace{0.5cm} 
@@ -762,13 +773,13 @@ $ 40 < p_T <  50$ & $0.9846 \pm 0.0001$ & $0.9800 \pm 0.0002$ & $0.9831 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9851 \pm 0.0002$ & $0.9804 \pm 0.0004$ & $0.9829 \pm 0.0003$ & $0.9563 \pm 0.0013$  \\
 \hline
 \end{tabular}
+\label{tab:trg_muon_traildbl}
 \end{center}
 \end{table}
 
 \begin{table}[!htp]
 \begin{center}
 \footnotesize
-\label{tab:trg_muon_sgl}
 \vspace{0.5cm} 
 \caption{Efficiency of the single-muon trigger.}
 \vspace{0.5cm} 
@@ -789,6 +800,7 @@ $ 40 < p_T <  50$ & $0.9350 \pm 0.0002$ & $0.8480 \pm 0.0004$ & $0.8161 \pm 0.00
 $ 50 < p_T < 7000$ & $0.9408 \pm 0.0003$ & $0.8526 \pm 0.0007$ & $0.8207 \pm 0.0006$ & $0.0002 \pm 0.0001$  \\
 \hline
 \end{tabular}
+\label{tab:trg_muon_sgl}
 \end{center}
 \end{table}
 

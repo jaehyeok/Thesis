@@ -1,15 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Goria:2011wa}
-Stefano Goria, Giampiero Passarino, and Dario Rosco.
-\newblock {The Higgs Boson Lineshape}.
-\newblock {\em Nucl.Phys.}, B864:530--579, 2012.
-
-\bibitem{pilkuhn1967interactions}
-H.M. Pilkuhn.
-\newblock {\em The interactions of hadrons}.
-\newblock North-Holland Pub. Co., 1967.
-
 \bibitem{PhysRevD.49.79}
 V.~Barger, K.~Cheung, A.~Djouadi, B.~A. Kniehl, and P.~M. Zerwas.
 \newblock Higgs bosons: Intermediate mass range at ${e}^{+}{e}^{-}$ colliders.
@@ -44,13 +34,13 @@ D.~Abbaneo.
 \newblock There is an error on cover due to a technical problem for some items.
 
 \bibitem{Chatrchyan:2009hw}
-S~Chatrchyan et~al.
+CMS Collaboration.
 \newblock Performance of {CMS} hadron calorimeter timing and synchronization
   using test beam, cosmic ray, and lhc beam data.
 \newblock {\em JINST}, 5:T03013, 2010.
 
 \bibitem{Kim:2012ix}
-Min~Suk Kim et~al.
+Min Suk on behalf of the CMS~Collaboration Kim.
 \newblock {CMS reconstruction improvement for the muon tracking by the RPC
   chambers}.
 \newblock {\em PoS}, RPC2012:045, 2012.
@@ -93,6 +83,14 @@ CMS Collaboration.
 \bibitem{CMS-PAS-JME-12-002}
 {MET performance in 8 TeV data}.
 \newblock Technical Report CMS-PAS-JME-12-002, {CERN}, Geneva, 2013.
+
+\bibitem{Chatrchyan:1633401}
+{CMS Collaboration}.
+\newblock {Measurement of Higgs boson production and properties in the WW decay
+  channel with leptonic final states}.
+\newblock {\em J. High Energy Phys.}, 01(arXiv:1312.1129. CMS-HIG-13-023.
+  CERN-PH-EP-2013-221):096. 83 p, Dec 2013.
+\newblock Comments: Submitted to JHEP.
 
 \bibitem{Glashow:1961tr}
 S.L. Glashow.
@@ -158,10 +156,39 @@ V.N. Gribov and L.N. Lipatov.
 \newblock {\em Sov.J.Nucl.Phys.}, 15:438--450, 1972.
 
 \bibitem{Dittmaier:2012vm}
-S.~Dittmaier, S.~Dittmaier, C.~Mariotti, G.~Passarino, R.~Tanaka, et~al.
+G.~Passarino R. Tanaka (eds.) S. Alekhin J. Alwall E. A. Bagnaschi A. Banfi J.
+  Blumlein S. Bolognesi N. Chanon T. Cheng L. Cieri A. M. Cooper-Sarkar M.
+  Cutajar S. Dawson G. Davies N. De Filippis G. Degrassi A. Denner D.
+  D'Enterria S. Diglio B. Di Micco R. Di Nardo R. K. Ellis A. Farilla S.
+  Farrington M. Felcini G. Ferrera M. Flechl D. de Florian S. Forte S. Ganjour
+  M. V. Garzelli S. Gascon-Shotkin S. Glazov S. Goria M. Grazzini J.-Ph.
+  Guillet C. Hackstein K. Hamilton R. Harlander M. Hauru S. Heinemeyer S. Hoche
+  J. Huston C. Jackson P. Jimenez-Delgado M. D. Jorgensen M. Kado S. Kallweit
+  A. Kardos N. Kauer H. Kim M. Kovac M. Kramer F. Krauss C.-M. Kuo S. Lehti Q.
+  Li N. Lorenzo F. Maltoni B. Mellado S. O. Moch A. Muck M. Muhlleitner P.
+  Nadolsky P. Nason C. Neu A. Nikitenko C. Oleari J. Olsen S. Palmer S. Paganis
+  C. G. Papadopoulos T .C. Petersen F. Petriello F. Petrucci G. Piacquadio E.
+  Pilon C. T. Potter J. Price I. Puljak W. Quayle V. Radescu D. Rebuzzi L.
+  Reina J. Rojo D. Rosco G. P. Salam A. Sapronov J. Schaarschmidt M. Schonherr
+  M. Schumacher F. Siegert P. Slavich M. Spira I. W. Stewart W. J. Stirling F.
+  Stockli C. Sturm F. J. Tackmann R. S. Thorne D. Tommasini P. Torrielli F.
+  Tramontano Z. Trocsanyi M. Ubiali S. Uccirati M. Vazquez Acosta T. Vickey A.
+  Vicini W. J. Waalewijn D. Wackeroth M. Warsinsky M. Weber M. Wiesemann G.
+  Weiglein J. Yu G.~Zanderighi LHC Higgs Cross Section Working Group:
+  S.~Dittmaier, C.~Mariotti.
 \newblock {Handbook of LHC Higgs Cross Sections: 2. Differential
   Distributions}.
 \newblock 2012.
+
+\bibitem{Goria:2011wa}
+Stefano Goria, Giampiero Passarino, and Dario Rosco.
+\newblock {The Higgs Boson Lineshape}.
+\newblock {\em Nucl.Phys.}, B864:530--579, 2012.
+
+\bibitem{pilkuhn1967interactions}
+H.M. Pilkuhn.
+\newblock {\em The interactions of hadrons}.
+\newblock North-Holland Pub. Co., 1967.
 
 \bibitem{Djouadi20081}
 Abdelhak Djouadi.
@@ -199,7 +226,7 @@ Christopher~F. Kolda and Hitoshi Murayama.
 \newblock {\em JHEP}, 0007:035, 2000.
 
 \bibitem{Beringer:1900zz}
-J.~Beringer et~al.
+Particle~Data Group.
 \newblock {Review of Particle Physics (RPP)}.
 \newblock {\em Phys.Rev.}, D86:010001, 2012.
 
@@ -216,7 +243,7 @@ ATLAS Collaboration.
 \newblock {\em Physics Letters B}, 710(1):49 -- 66, 2012.
 
 \bibitem{Chatrchyan:2012ty}
-Serguei Chatrchyan et~al.
+CMS Collaboration.
 \newblock {Search for the standard model Higgs boson decaying to a $W$ pair in
   the fully leptonic final state in $pp$ collisions at $\sqrt{s}=7$ TeV}.
 \newblock {\em Phys.Lett.}, B710:91--113, 2012.
@@ -284,8 +311,9 @@ W~Adam, R~Frühwirth, A~Strandlie, and T~Todorov.
 \newblock {\em Physics Analysis Summary}, PFT-09-001, 2009.
 
 \bibitem{Blazey:2000qt}
-Gerald~C. Blazey, Jay~R. Dittmann, Stephen~D. Ellis, V.~Daniel Elvira,
-  K.~Frame, et~al.
+Stephen D. Ellis V. Daniel Elvira K. Frame S. Grinstein Robert Hirosky R.
+  Piegaia H. Schellman R. Snihur V.Sorin Dieter~Zeppenfeld Gerald C.~Blazey,
+  Jay R.~Dittmann.
 \newblock {Run II jet physics}.
 \newblock pages 47--77, 2000.
 
@@ -329,15 +357,19 @@ Matteo Cacciari and Gavin~P. Salam.
 
 \bibitem{Chatrchyan:1494669}
 CMS Collaboration.
+\newblock {Identification of b-quark jets with the CMS experiment}.
+\newblock {\em J. Instrum.}, 8(arXiv:1211.4462. CMS-BTV-12-001.
+  CERN-PH-EP-2012-262):P04013. 67 p, Nov 2012.
+\newblock Comments: Submitted to the Journal of Instrumentation.
 
 \bibitem{Abulencia:2005ix}
-A.~Abulencia et~al.
+CDF Collaboration.
 \newblock {Measurements of inclusive W and Z cross sections in p anti-p
   collisions at s**(1/2) = 1.96-TeV}.
 \newblock {\em J.Phys.}, G34:2457--2544, 2007.
 
 \bibitem{Chatrchyan:2012ufa}
-Serguei Chatrchyan et~al.
+CMS Collaboration.
 \newblock {Observation of a new boson at a mass of 125 GeV with the CMS
   experiment at the LHC}.
 \newblock {\em Phys.Lett.}, B716:30--61, 2012.
@@ -353,7 +385,14 @@ Andreas Hoecker, Peter Speckmayer, Joerg Stelzer, Jan Therhaag, Eckhard von
 \newblock Technical Report CMS-PAS-JME-13-005, CERN, Geneva, 2013.
 
 \bibitem{dymva}
-{G. Cerati, \textit{et al.} }.
+{L. Bauerdick, K. Burkett, I. Fisk, Y. Gao, O. Gutsche, B. Hooberman, S.
+  Jindariani, J. Linacre, V. Martinez Outschoorn, S. Tkaczyk A. Apyan, G.
+  Bauer, J. Bendavid, E. Butz, M. Chan, V. Dutta, G. Gomez-Ceballos, M.
+  Goncharov, K. Hahn, P. Harris, M. Klute, A. Levin, S. Nahn, C. Paus, D.
+  Ralph, F. Stoeckli, K. Sumorok, K. Sung, R. Wolf, S. Xie, M. Yang, M. Zanetti
+  D. Barge, C. Campagnari, D. Kovalskyi, V. Krutelyov W. Andrews, G. Cerati, D.
+  Evans, F. Golf, I. MacNeill, S. Padhi, Y. Tu, F. Wurthwein, A. Yagil, J. Yoo
+  I. Kravchenko}.
 \newblock {A multivariate approach for Drell-Yan rejection in $H \rightarrow
   W^+W^-$ analysis}.
 \newblock {\em CMS Analysis Note}, AN-2012/211, 2012.
@@ -377,7 +416,7 @@ The~CMS collaboration.
 \newblock {\em Physics Analysis Summary}, (CMS-PAS-HIG-12-038).
 
 \bibitem{Khachatryan:2010xn}
-Vardan Khachatryan et~al.
+CMS Collaboration.
 \newblock {Measurements of Inclusive $W$ and $Z$ Cross Sections in $pp$
   Collisions at $\sqrt{s}=7$ TeV}.
 \newblock {\em JHEP}, 1101:080, 2011.
@@ -388,7 +427,7 @@ Nikolaos Kidonakis.
 \newblock 2012.
 
 \bibitem{Chatrchyan:2014nva}
-Serguei Chatrchyan et~al.
+CMS Collaboration.
 \newblock {Evidence for the 125 GeV Higgs boson decaying to a pair of tau
   leptons}.
 \newblock 2014.
@@ -436,13 +475,17 @@ J.~S. {Conway}.
 \newblock {\em ArXiv e-prints}, March 2011.
 
 \bibitem{Botje:2011sn}
-Michiel Botje, Jon Butterworth, Amanda Cooper-Sarkar, Albert de~Roeck, Joel
-  Feltesse, et~al.
+Amanda Cooper-Sarkar Albert de Roeck Joel Feltesse Stefano Forte Alexander
+  Glazov Joey Huston Ronan McNulty Torbjorn Sjostrand Robert~Thorne
+  Michiel~Botje, Jon~Butterworth.
 \newblock {The PDF4LHC Working Group Interim Recommendations}.
 \newblock 2011.
 
 \bibitem{pdfAN}
-et~al G.~Bauer.
+E.~Butz M. Chan V. Dutta P. Everaerts G. Gomez-Ceballos M. Goncharov K. Hahn P.
+  Harris M. Klute I. Kravchenko S. Nahn C. Paus D. Ralph M. Rudolph F. Stoeckli
+  K. Sumorok K. Sung S. Tkaczyk R. Wolf S. Xie M. Yang M.~Zanetti G.~Bauer,
+  J.~Bendavid.
 \newblock Acceptance uncertainties for the inclusive w and z cross section
   measurements.
 \newblock {\em CMS}, (AN-2011/055), 2011.
@@ -453,7 +496,8 @@ Stefano Frixione and Bryan~R. Webber.
 \newblock {\em JHEP}, 0206:029, 2002.
 
 \bibitem{Corcella:2000bw}
-G.~Corcella, I.G. Knowles, G.~Marchesini, S.~Moretti, K.~Odagiri, et~al.
+G.Marchesini S.Moretti K.Odagiri P.Richardson M.H.Seymour~B.R.Webber
+  G.Corcella, I.G.Knowles.
 \newblock {HERWIG 6: An Event generator for hadron emission reactions with
   interfering gluons (including supersymmetric processes)}.
 \newblock {\em JHEP}, 0101:010, 2001.
@@ -464,13 +508,13 @@ Torbjorn Sjostrand, Stephen Mrenna, and Peter~Z. Skands.
 \newblock {\em JHEP}, 0605:026, 2006.
 
 \bibitem{Chatrchyan:2011id}
-Serguei Chatrchyan et~al.
+CMS Collaboration.
 \newblock {Measurement of the Underlying Event Activity at the LHC with
   $\sqrt{s}= 7$ TeV and Comparison with $\sqrt{s} = 0.9$ TeV}.
 \newblock {\em JHEP}, 1109:109, 2011.
 
 \bibitem{Chatrchyan:2012tb}
-Serguei Chatrchyan et~al.
+CMS Collaboration.
 \newblock {Measurement of the underlying event in the Drell-Yan process in
   proton-proton collisions at $\sqrt{s}=7$ TeV}.
 \newblock {\em Eur.Phys.J.}, C72:2080, 2012.
@@ -493,13 +537,13 @@ The~CMS collaboration.
 \newblock {\em Physics Analysis Summary}, (CMS-PAS-LUM-13-001), 2013.
 
 \bibitem{Chatrchyan:2013oda}
-Serguei Chatrchyan et~al.
+CMS Collaboration.
 \newblock {Rapidity distributions in exclusive Z + jet and $\gamma$ + jet
   events in pp collisions at $\sqrt{s}$=7 TeV}.
 \newblock {\em Phys.Rev.}, D88:112009, 2013.
 
 \bibitem{Chatrchyan:2011ds}
-Serguei Chatrchyan et~al.
+CMS Collaboration.
 \newblock {Determination of Jet Energy Calibration and Transverse Momentum
   Resolution in CMS}.
 \newblock {\em JINST}, 6:P11002, 2011.
@@ -524,26 +568,32 @@ C.~N. Yang.
 \newblock {\em Phys. Rev.}, 77:242--245, Jan 1950.
 
 \bibitem{Bolognesi:2012mm}
-Sara Bolognesi, Yanyan Gao, Andrei~V. Gritsan, Kirill Melnikov, Markus Schulze,
-  et~al.
+Andrei V. Gritsan Kirill Melnikov Markus Schulze Nhan V. Tran-Andrew~Whitbeck
+  Sara~Bolognesi, Yanyan~Gao.
 \newblock {On the spin and parity of a single-produced resonance at the LHC}.
 \newblock {\em Phys.Rev.}, D86:095031, 2012.
 
 \bibitem{Gao:2010qx}
-Yanyan Gao, Andrei~V. Gritsan, Zijin Guo, Kirill Melnikov, Markus Schulze,
-  et~al.
+Zijin Guo Kirill Melnikov Markus Schulze Nhan V.~Tran Yanyan~Gao, Andrei
+  V.~Gritsan.
 \newblock {Spin determination of single-produced resonances at hadron
   colliders}.
 \newblock {\em Phys.Rev.}, D81:075022, 2010.
 
 \bibitem{GaoAN}
-\textit{et al.} Yanyan~Gao.
+I.~Fisk Y. Gao O. Gutsche B. Hooberman S. Jindariani-J. Linacre V. Martinez
+  Outschoorn S. Tkaczyk A. Apyan G. Bauer J. Bendavid E. Butz M. Chan V. Dutta
+  G. Gomez-Ceballos M. Goncharov K. Hahn P. Harris M. Klute A. Levin S. Nahn C.
+  Paus D. Ralph F. Stoeckli K. Sumorok K. Sung R. Wolf S. Xie M. Yang M.
+  Zanetti D. Barge C. Campagnari D. Kovalskyi V. Krutelyov W. Andrews G. Cerati
+  D. Evans F. Golf I. MacNeill S. Padhi-Y. Tu F. Wurthwein A. Yagil J. Yoo
+  I.~Kravchenko L.~Bauerdick, K.~Burkett.
 \newblock {The Spin of a Single Produced Resonance in the Fully Leptonic
   $W^+W^-$ Final State}.
 \newblock {\em {CMS AN}}, CMS AN-2012/453, 2012.
 
 \bibitem{Aad:2012tfa}
-Georges Aad et~al.
+ATLAS Collaboration.
 \newblock {Observation of a new particle in the search for the Standard Model
   Higgs boson with the ATLAS detector at the LHC}.
 \newblock {\em Phys.Lett.}, B716:1--29, 2012.

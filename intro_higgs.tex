@@ -300,7 +300,6 @@ have both right-handed and left-handed polarizations.
 \vspace{0.5cm} 
 \caption{$\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$ quantum numbers.}
 \vspace{0.5cm} 
-\label{tab:su2Qnum}
 \begin{tabular}{c c c}
 \hline 
       & $T_3$ & Y \\
@@ -311,6 +310,7 @@ $ e_R$                                                           & 0 & -2 \\
 $\left(  \begin{array}{c} \phi_+  \\ \phi_0 \end{array} \right)$      & $\displaystyle  \frac{1}{2} $ & -1 \\
 \hline 
 \end{tabular}
+\label{tab:su2Qnum}
 \end{table}
 Table~\ref{tab:su2Qnum} shows the quantum numbers of  
 $\textrm{SU(2)}_\textrm{L} \otimes \textrm{U(1)}_\textrm{Y}$
@@ -456,10 +456,7 @@ and top quark has very large coupling to Higgs boson.
 \caption{ Standard model Higgs production cross sections 
 as a function of \mHi\ at $\sqrt{s}=8~\TeV$ for each 
 production mode. %\cite{Dittmaier:2012vm}. 
-The \ggH\ and \qqH\ processes are 
-calculated in complex-pole-scheme(CPS)~\cite{Goria:2011wa}, while other WH/ZH and ttH processes 
-are calculated in zero-width-approximation(ZWA)~\cite{pilkuhn1967interactions}. }
-% Ref is  https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt8TeV
+}
 \label{fig:Higgs_XS_8TeV_LM200}
 \end{figure*}
 
@@ -499,14 +496,15 @@ for \ggH.
 
 Figure \ref{fig:Higgs_XS_8TeV_LM200} shows the hadronic cross sections 
 as a function of \mHi\ for SM Higgs production and uncertainty 
-in different production modes. The \ggH\ and \qqH\ cross sections 
-are based on complex-pole-scheme (CPS), while VH and ttH ones 
-are based on zero-width-approximation (ZWA). 
+in different production modes. 
+The \ggH\ and \qqH\ processes are 
+calculated in complex-pole-scheme(CPS)~\cite{Goria:2011wa}, while other WH/ZH and ttH processes 
+are calculated in zero-width-approximation(ZWA)~\cite{pilkuhn1967interactions}. 
+% Ref is  https://twiki.cern.ch/twiki/bin/view/LHCPhysics/CERNYellowReportPageAt8TeV
 \begin{table}[htb]
 \centering
 \vspace{0.5cm} 
 \caption{The highest order of QCD and EW calculations.}
-\label{tab:Higgs_XS_8TeV_order}
 \vspace{0.5cm} 
 \begin{tabular}{c c c  }
 \hline
@@ -519,6 +517,7 @@ $ pp \rightarrow ZH$        & NNLO  & NLO \\
 $ pp \rightarrow ttH$       & NLO   &     \\
 \hline 
 \end{tabular}
+\label{tab:Higgs_XS_8TeV_order}
 \end{table}
 The highest order of QCD and EW calculations are summarized in Table 
 \ref{tab:Higgs_XS_8TeV_order}. The uncertainty is a linear combination 
@@ -1073,7 +1072,6 @@ is large compared to the other sensitive channels, $H \rightarrow ZZ\rightarrow 
 and $H \rightarrow\gamma\gamma$. 
 \begin{table}[htb]
 \centering
-\label{tab:XSBR_8TeV_SM_125}
 \vspace{0.5cm} 
 \caption{$\sigma \times BR$ at $\mHi=125~\GeV$ for most sensitive channels 
 and the expected number of events in $\mathcal{L}_{int} = 20~\ifb$.
@@ -1090,6 +1088,7 @@ $N_{expected}$ in $\mathcal{L}_{int} = 20~\ifb$
         & 4480 &  56 & 1018 \\ 
 \hline 
 \end{tabular}
+\label{tab:XSBR_8TeV_SM_125}
 \end{table}
 Table~\ref{tab:XSBR_8TeV_SM_125} shows $\sigma \times \textrm{BR}$ for 
 the most sensitive channels, \hww, $H \rightarrow ZZ\rightarrow 4l$
@@ -1110,7 +1109,7 @@ of the WW system should be zero as well.
 \centering
 \includegraphics[width=0.7\textwidth]{figures/HiggsSpin.pdf}
 \caption{Spin configuration of Higgs boson decaying to $W^+W^-$ in the CM frame of Higgs.
-Solid black arrows represent momentum direction of Ws and grey arrows indicate 
+Solid black arrows represent the momentum direction of Ws and grey arrows indicate 
 the spin configuration.}
 \label{fig:HiggsSpin}
 \end{figure}

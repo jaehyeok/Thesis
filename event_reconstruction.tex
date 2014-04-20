@@ -172,9 +172,19 @@ are different to maximize the performance.
 
 Figure~\ref{fig:TrackingEffMC} shows the tracking efficiency 
 measured in single muon and single pion simulations as a function 
-of \pt\ and \Eta. The tracking efficiency of muons is close to 1 
-for $\pt>1~\GeV$ in all \Eta\ regions. The tracking efficiency 
-of pions is lower because they decay in flight. 
+of \pt\ and \Eta. 
+Top left plot shows the efficiency of muon track reconstruction as a function of \Eta\
+for muon \pt\ = 1, 10 and 100~\GeV. 
+Top right plot shows the efficiency of muon track reconstruction as a function of \pt\
+for different \Eta\ regions. 
+Bottom left plot shows the efficiency of pion track reconstruction as a function of \Eta\
+for pion \pt\ = 1, 10 and 100~\GeV. 
+Bottom right plot shows the efficiency of pion track reconstruction as a function of \pt\
+for different \Eta\ regions. 
+They show that the tracking efficiency for muons is very close to 100~\% 
+in the region of phase space we are interested in for this analysis
+($\pt>10~\GeV$ and $|\Eta|<2.4$). Efficiency for pion is lower than the one for muon 
+because pions decay in flight($\pi^+\to\mu^+\nu_\mu$).  
 
 \begin{figure}[htp] 
 \centering 
@@ -186,19 +196,7 @@ of pions is lower because they decay in flight.
 \end{tabular}
 %https://twiki.cern.ch/twiki/bin/view/CMSPublic/PhysicsResultsTRK
 \caption{Tracking efficiency measured using single pion 
-and single muon simulation~\cite{TrkPerform}. 
-Top left plot shows the efficiency of muon track reconstruction as a function of \Eta\
-for muon \pt\ = 1, 10 and 100~\GeV. 
-Top right plot shows the efficiency of muon track reconstruction as a function of \pt\
-for different \Eta\ regions. 
-Bottom left plot shows the efficiency of pion track reconstruction as a function of \Eta\
-for pion \pt\ = 1, 10 and 100~\GeV. 
-Bottom right plot shows the efficiency of pion track reconstruction as a function of \pt\
-for different \Eta\ regions. 
-These plots show that the tracking efficiency for muons is very close to 100~\% 
-in the region of phase space we are interested in for this analysis
-($\pt>10~\GeV$ and $|\Eta|<2.4$). Efficiency for pion is lower than the one for muon 
-because pions decay in flight($\pi^+\to\mu^+\nu_\mu$).  
+and single muon simulation as a function of \pt\ and \Eta~\cite{TrkPerform}. 
 % pi+ -> mu+ nu_mu (~ 100%, ctau = 7.8 m) 
 % simple calculation : e^{-1/7.8} = 0.88 
 % about 12% of pions decay in the tracker
@@ -285,13 +283,19 @@ the min-bias data are less than 30 and 40~\um, respectively, with $N_{track}=30$
 \begin{figure}[htp] 
 \centering 
 \begin{tabular}{c} 
-\includegraphics[width=0.45\textwidth]{figures/PrimaryVertexTagAndProbeEfficiency.png} \\ 
+\subfigure[]{
+\centering
+\includegraphics[width=0.45\textwidth]{figures/PrimaryVertexTagAndProbeEfficiency.png}  
+} \\
+\subfigure[]{
+\centering
 \includegraphics[width=0.9\textwidth]{figures/PrimaryVertexResolutions.png}  
+}
 \end{tabular} 
-\caption{The vertex resolution in x and z directions as a function of associated tracks
-for data and Simulation at the top 
-and the vertex reconstruction efficiency as a function of number of associated tracks
-for jet-enriched data and min-bias data at the bottom~\cite{muonTrkPerform}. }
+\caption{(a) vertex resolution in x and z directions as a function of associated tracks
+for data and Simulation and 
+(b) vertex reconstruction efficiency as a function of number of associated tracks
+in jet-enriched data and min-bias data~\cite{muonTrkPerform}. }
 \label{fig:VtxEff} 
 \end{figure} 
 %$root /hadoop/cms/store/user/jaehyeok/CMS2_V05-03-28/GluGluToHToWWTo2LAndTau2Nu_M-125_8TeV-powheg-pythia6_Summer12_DR53X-PU_S10_START53_V7A-v1/ntuple_10_1_hON.root
@@ -370,6 +374,13 @@ from $\chi^2$ test are kept. Finally, a track is created if there are at least f
 
 Figure~\ref{fig:ElectronEnergyResMC} shows the resolution of reconstructed electron energy 
 as a function of the true electron energy measured with simulation~\cite{PAS-HIG-13-002}.   
+Blue reverse triangle is measured using only tracker information 
+and green upright triangle is measured using only ECAL information. 
+The red star is a combination of the tracker and ECAL measurements. 
+The resolution is estimated the half minimum width that
+contains 68.3\%(Gaussian 1$\sigma$ width) in the energy distribution
+as denoted as effective resolution. The red circle corresponds to the 
+width of Guassian fit in the core of the energy distribution.
 As shown in the figure, precision is dominated by the information 
 from the tracker(blue reverse triangle) and the ECAL(green upright triangle) 
 at low and high energy, respectively. 
@@ -387,13 +398,6 @@ energy distribution.
 \caption{Energy resolution of reconstructed electrons as a function 
 of generated electron energy from different information 
 in simulation~\cite{PAS-HIG-13-002}. 
-Blue reverse triangle is measured using only tracker information 
-and green upright triangle is measured using only ECAL information. 
-The red star is a combination of the tracker and ECAL measurements. 
-The resolution is estimated the half minimum width that
-contains 68.3\%(Gaussian 1$\sigma$ width) in the energy distribution
-as denoted as effective resolution. The red circle corresponds to the 
-width of Guassian fit in the core of the energy distribution.
 }
 \label{fig:ElectronEnergyResMC} 
 \end{figure} 
@@ -646,7 +650,6 @@ the form of correction is given by
 where $\alpha$ and $\beta$ shown in Table~\ref{tab:metxycorrection} are constants 
 and $N_{\textrm{vertex}}$ is the number of primary vertices. 
 \begin{table}[htp] 
-\label{tab:metxycorrection} 
 \vspace{0.5cm} 
 \caption{Parameters used for XY shift correction for \met.} 
 \vspace{0.5cm} 
@@ -666,6 +669,7 @@ and $N_{\textrm{vertex}}$ is the number of primary vertices.
 %    metx -= (-2.99576e-02 - 6.61932e-02*nvtx_);
 %    mety -= (+3.70819e-01 - 1.48617e-01*nvtx_);
 \end{tabular} 
+\label{tab:metxycorrection} 
 \end{center} 
 \end{table} 
 %\textcolor{red}{optional : show the met distribution before/after the correction}
@@ -801,7 +805,7 @@ which has the second highest $\sigma_{IP}$.
 \includegraphics[width=0.45\textwidth]{figures/TCHE.pdf}
 \includegraphics[width=0.45\textwidth]{figures/Figure_007-a.pdf}
 \end{tabular} 
-\caption{Distribution of the discriminating variable for b-tagging is shown 
+\caption{Distribution of the discriminating variable for the b-tagging is shown 
 on the left. MC and data shows a good agreement.   
 The b-tagging efficiency(x-axis) and mis-tag rate of udsg jets(y-axis) 
 are shown on the right.}
